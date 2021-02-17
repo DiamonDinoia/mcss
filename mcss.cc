@@ -7,6 +7,9 @@
 #include <cmath>
 #include <random>
 
+#include <ctime>
+#include <iostream>
+
 //
 // ============================================================================
 // Definitions of some constants:
@@ -24,16 +27,16 @@ static const double kMASS        =  0.510998910;            // electron mass [Me
 //
 // ============================================================================
 // Auxiliary functions to compute the screening parameter, the mean free path,
-// sample the angular deflectiona and rotate the direction, computed in the 
+// sample the angular deflections and rotate the direction, computed in the
 // scattering frame, to the lab frame. A simple track data structure is also 
-// defined to keep track of postion and direction infomation.
+// defined to keep track of position and direction information.
  
 //
 // Computes the A `screening parameter` value for the screened Rutherford DCS 
 // in the given `mat` material at the given `ptot2` e- total momentum square. 
 // (Eq. (52) in the DOC)
 double ComputeScrParam(Material mat, double ptot2) {
-  return kMolierXc2[mat]/(4.0*ptot2*kMolierBc[mat]);
+  return kMolierXc2[mat] / (4.0 * ptot2 * kMolierBc[mat]);
 }
 
 //
@@ -42,7 +45,7 @@ double ComputeScrParam(Material mat, double ptot2) {
 // screening parameter is assumed to be already known `scrpar`. 
 // (Eq. (50) in DOC)
 double ComputeMFP(Material mat, double beta2, double scrpar) {
-  return beta2*(1.0+scrpar)/kMolierBc[mat];
+  return beta2 * (1.0 + scrpar) / kMolierBc[mat];
 }
 
 //
@@ -51,7 +54,7 @@ double ComputeMFP(Material mat, double beta2, double scrpar) {
 // parameter. The additional input `rn` is a uniformly random value in [0,1).
 // (Eq. (26) in DOC)
 double SampleCosTheta(double scrpar, double rn) {
-  double cost = 1.0-2*scrpar*rn/(1.0-rn+scrpar);
+  double cost = 1.0 - 2 * scrpar * rn / (1.0 - rn + scrpar);
   // could be omitted just a bad habit
   return std::max(-1.0, std::min(1.0, cost));
 }
@@ -60,23 +63,23 @@ double SampleCosTheta(double scrpar, double rn) {
 // A simple track data structure to keep positon, direction and accumulated track 
 // length information.
 struct Track {
-  double fPosition[3];   // rx, ry, rz
-  double fDirection[3];  // dx, dy, dz normalised to 1
-  double fTrackLength;   // cummulative track length
-  //
+  double fPosition[3]{};   // rx, ry, rz
+  double fDirection[3]{};  // dx, dy, dz normalised to 1
+  double fTrackLength{};   // cumulative track length
+
   Track() {
     Reset();
   }
-  //
+
   void Reset() {
     fPosition[0]  = 0.0;
     fPosition[1]  = 0.0;
     fPosition[2]  = 0.0;
-    //
+
     fDirection[0] = 0.0;
     fDirection[1] = 0.0;
     fDirection[2] = 1.0;
-    //
+
     fTrackLength  = 0.0;    
   }
 };
@@ -89,21 +92,20 @@ struct Track {
 // needs to be accounted and the final new direction, i.e. in the lab frame is 
 // computed.
 void RotateToLabFrame(double &u, double &v, double &w, double u1, double u2, double u3) {
-  double up = u1*u1 + u2*u2;
-  if (up>0.) {
+  double up = u1 * u1 + u2 * u2;
+  if (up > 0.) {
     up = std::sqrt(up);
     double px = u;
     double py = v;
     double pz = w;
-    u = (u1*u3*px - u2*py)/up + u1*pz;
-    v = (u2*u3*px + u1*py)/up + u2*pz;
-    w =    -up*px +             u3*pz;
-  } else if (u3<0.) {       // phi=0  teta=pi
+    u = (u1 * u3 * px - u2 * py) / up + u1 * pz;
+    v = (u2 * u3 * px + u1 * py) / up + u2 * pz;
+    w = -up * px + u3 * pz;
+  } else if (u3 < 0.) {       // phi=0  teta=pi
     u = -u;
     w = -w;
   }
 }
-
 
 //
 // ============================================================================
@@ -111,11 +113,11 @@ void RotateToLabFrame(double &u, double &v, double &w, double u1, double u2, dou
 void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double theLimit) {
   // Create histogram (i.e. array) for longitudinal distribution of final position
   const int longiDistNumBin   = 201;
-  const double longiDistInvD  = (longiDistNumBin-1.0)/2.0;
+  const double longiDistInvD  = (longiDistNumBin - 1.0) / 2.0;
   std::size_t* theLongiDistr  = new std::size_t[longiDistNumBin]; // on [-1,1]
   // same for the transverse distribution
   const int transDistNumBin   = 101;
-  const double transDistInvD  = (transDistNumBin-1.0)/1.0;
+  const double transDistInvD  = (transDistNumBin - 1.0) / 1.0;
   std::size_t* theTransDistr  = new std::size_t[transDistNumBin]; // on [0,1]
   //
   // Create a c++11 RNG for getting uniformly random values in [0,1)
@@ -127,7 +129,7 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
   //
   // create a Track 
   Track aTrack;
-  printf(" ==== Starts the simulation of %lu trajectory histories...\n", theNumHists);
+  printf(" ==== Starts the simulation of %u trajectory histories...\n", theNumHists);
   for (std::size_t ih = 0; ih < theNumHists; ++ih) {
     // init the history
     aTrack.Reset();
@@ -141,7 +143,7 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
       // - samples from exponential distribution p(x) = Sig exp(-Sig x) where 
       // Sig=1/mfp is the macroscopic cross section and x is the step length.
       double stepLength = -theMFP*std::log(dis(gen));
-      // update cummulative track length
+      // update cumulative track length
       trackLength += stepLength;
       // stop tracking if the track length limit is reached (the track will be 
       // propagated its final position)
@@ -150,22 +152,22 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
         stop = true; 
       }
       // update track position,
-      aTrack.fPosition[0] += aTrack.fDirection[0]*stepLength;
-      aTrack.fPosition[1] += aTrack.fDirection[1]*stepLength;
-      aTrack.fPosition[2] += aTrack.fDirection[2]*stepLength; 
-      // update cummulative track length
+      aTrack.fPosition[0] += aTrack.fDirection[0] * stepLength;
+      aTrack.fPosition[1] += aTrack.fDirection[1] * stepLength;
+      aTrack.fPosition[2] += aTrack.fDirection[2] * stepLength;
+      // update cumulative track length
       aTrack.fTrackLength += stepLength;
       // keep tracking: sample angular deflection and update propagation direction 
       if (!stop) {
         // sample cos(\theta)
         const double cost = SampleCosTheta(theScrPar, dis(gen));
-        const double dum0 = 1.0-cost;
-        const double sint = std::sqrt(dum0*(2.0-dum0));
-        // smaple \phi: uniform in [0,2Pi] <== spherical symmetry of the scattering potential
-        const double phi  = 2.0*kPI*dis(gen);
+        const double dum0 = 1.0 - cost;
+        const double sint = std::sqrt(dum0 * (2.0 - dum0));
+        // sample \phi: uniform in [0,2Pi] <== spherical symmetry of the scattering potential
+        const double phi  = 2.0 * kPI * dis(gen);
         // compute new direction (relative to 0,0,1 i.e. in the scattering frame)
-        double u1 = sint*std::cos(phi);
-        double u2 = sint*std::sin(phi);
+        double u1 = sint * std::cos(phi);
+        double u2 = sint * std::sin(phi);
         double u3 = cost;
         // rotate new direction from the scattering to the lab frame
         RotateToLabFrame(u1, u2, u3, aTrack.fDirection[0], aTrack.fDirection[1], aTrack.fDirection[2]);
@@ -178,30 +180,30 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
     //
     // Record final track position in the longitudinal and transverse distributions
     // ==> z/track-length ==> [-1,1]
-    const double longi = aTrack.fPosition[2]/aTrack.fTrackLength; 
-    std::size_t  lIndx = (std::size_t) ((longi+1.0)*longiDistInvD);    
+    const double longi = aTrack.fPosition[2] / aTrack.fTrackLength;
+    std::size_t  lIndx = (std::size_t) ((longi + 1.0) * longiDistInvD);
     ++theLongiDistr[lIndx];
     // ==> r_{xy}/track-length ==> [0,1] 
-    const double trans = std::sqrt(aTrack.fPosition[0]*aTrack.fPosition[0] + aTrack.fPosition[1]*aTrack.fPosition[1])/aTrack.fTrackLength; 
-    std::size_t  tIndx = (std::size_t) (trans*transDistInvD);
+    const double trans = std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] + aTrack.fPosition[1] * aTrack.fPosition[1]) / aTrack.fTrackLength;
+    std::size_t  tIndx = (std::size_t) (trans * transDistInvD);
     ++theTransDistr[tIndx];
   }
-  printf(" ==== Completed the simulation of %lu trajectory histories.\n", theNumHists);
+  printf(" ==== Completed the simulation of %u trajectory histories.\n", theNumHists);
   printf(" ==== Writing results to files...\n");
   // 
   // == Write distributions into file with normalisation (to integral = 1.0) 
-  double longiNormFactor = 1.0/theNumHists*longiDistInvD;
-  FILE* f = fopen("Res_Longi.dat","w");
-  for (int i=0; i<longiDistNumBin-1; ++i) {
-    double longiMid = ((i+0.5)/longiDistInvD - 1.0);
-    fprintf(f, "%g %g\n", longiMid, theLongiDistr[i]*longiNormFactor);
+  double longiNormFactor = 1.0 / theNumHists * longiDistInvD;
+  FILE* f = fopen("Res_Longi.dat", "w");
+  for (int i = 0; i < longiDistNumBin - 1; ++i) {
+    double longiMid = ((i + 0.5) / longiDistInvD - 1.0);
+    fprintf(f, "%g %g\n", longiMid, theLongiDistr[i] * longiNormFactor);
   }
   fclose(f);
   //
-  double transNormFactor = 1.0/theNumHists*transDistInvD;
-  f = fopen("Res_Trans.dat","w");
-  for (int i=0; i<transDistNumBin-1; ++i) {
-    double transMid = (i+0.5)/transDistInvD;
+  double transNormFactor = 1.0 / theNumHists * transDistInvD;
+  f = fopen("Res_Trans.dat", "w");
+  for (int i = 0; i < transDistNumBin - 1; ++i) {
+    double transMid = (i + 0.5) / transDistInvD;
     fprintf(f, "%g %g\n", transMid, theTransDistr[i]*transNormFactor);
   }
   fclose(f);
@@ -214,7 +216,8 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
 
 
 int main() {
-  
+  std::clock_t start = std::clock();
+
   // Define settings
   Material    theMaterial =   GOLD;  // WATER, AIR, BONE, TISSUE or GOLD
   double      theEKin     =   0.128; // [MeV]
@@ -224,9 +227,9 @@ int main() {
   
   // Compute paramters according to the above settings:
   // - total momentum square [MeV]^2
-  double   thePC2      = theEKin*(theEKin + 2.0*kMASS);      
+  double   thePC2      = theEKin * (theEKin + 2.0 * kMASS);
   // - beta2
-  double   theBeta2    = thePC2/(thePC2 + kMASS*kMASS);
+  double   theBeta2    = thePC2 / (thePC2 + kMASS * kMASS);
   // - screening parameter
   double   theScrPar   = ComputeScrParam(theMaterial, thePC2);
   // - elastic mfp [mm]
@@ -255,7 +258,10 @@ int main() {
   // presentation below: 128 [MeV] should be 128 [keV] which is correct here above.
   // https://indico.fnal.gov/event/9717/contributions/115128/attachments/74561/89448/MihalyNovakGeant4CollaborationMeetingNewEMModels.pdf
   Simulate(theNumHists, theMFP, theScrPar, theLimit);
-  
+
+
+  double duration = (std::clock() - start) / (double) CLOCKS_PER_SEC;
+  std::cout << duration << std::endl;
   return 0;
 }
 
