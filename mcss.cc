@@ -7,6 +7,7 @@
 #include <cmath>
 #include <random>
 
+#include <thread>
 #include <ctime>
 #include <iostream>
 
@@ -23,6 +24,14 @@ static const double kMolierXc2[] = {0.0661905, 7.88813e-05, 0.17879, 0.0647072, 
 static const double kPI          =  3.14159265358979323846; // Pi 
 static const double kMASS        =  0.510998910;            // electron mass [MeV]
 
+//
+// Create a c++11 RNG for getting uniformly random values in [0,1)
+std::random_device rd;
+std::mt19937 gen(rd());
+std::uniform_real_distribution<> dis(0, 1.0);
+
+// Number of threads for CPU multithreading
+static const int numThreads = std::thread::hardware_concurrency();
 
 //
 // ============================================================================
@@ -85,7 +94,7 @@ struct Track {
 };
 
 //
-// Roate the direction [u,v,w] given in the scattering frame to the lab frame.
+// Rotate the direction [u,v,w] given in the scattering frame to the lab frame.
 // Details: scattering is described relative to the [0,0,1] direction (i.e. scattering 
 // frame). Therefore, after the new direction is computed relative to this [0,0,1]
 // original direction, the real original direction [u1,u2,u3] in the lab frame 
@@ -110,46 +119,28 @@ void RotateToLabFrame(double &u, double &v, double &w, double u1, double u2, dou
 //
 // ============================================================================
 // The main simulation happens here. This function contains the tracking loop.
-void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double theLimit) {
-  // Create histogram (i.e. array) for longitudinal distribution of final position
-  const int longiDistNumBin   = 201;
-  const double longiDistInvD  = (longiDistNumBin - 1.0) / 2.0;
-  std::size_t* theLongiDistr  = new std::size_t[longiDistNumBin]; // on [-1,1]
-  // same for the transverse distribution
-  const int transDistNumBin   = 101;
-  const double transDistInvD  = (transDistNumBin - 1.0) / 1.0;
-  std::size_t* theTransDistr  = new std::size_t[transDistNumBin]; // on [0,1]
-  //
-  // Create a c++11 RNG for getting uniformly random values in [0,1)
-  std::random_device rd;
-  std::mt19937 gen(rd());
-  std::uniform_real_distribution<> dis(0, 1.0);
-  //
-  // === Preparation and start of the simulation loop to generate `theNumHists` histories
-  //
-  // create a Track 
-  Track aTrack;
-  printf(" ==== Starts the simulation of %u trajectory histories...\n", theNumHists);
-  for (std::size_t ih = 0; ih < theNumHists; ++ih) {
-    // init the history
+void Simulate(double theMFP, double theScrPar, double theLimit, double longiDistInvD, double transDistInvD, std::size_t *theLongiDistr, std::size_t *theTransDistr) {
+      //
+      // create a Track
+    Track aTrack;
     aTrack.Reset();
     double trackLength = 0.0;
     double        xDir = 0.0;
     double        yDir = 0.0;
     double        zDir = 1.0;
-    bool          stop = false; 
+    bool          stop = false;
     do {
       // how far we go in the current direction till the next elastic interaction:
-      // - samples from exponential distribution p(x) = Sig exp(-Sig x) where 
+      // - samples from exponential distribution p(x) = Sig exp(-Sig x) where
       // Sig=1/mfp is the macroscopic cross section and x is the step length.
-      double stepLength = -theMFP*std::log(dis(gen));
+      double stepLength = -theMFP * std::log(dis(gen));
       // update cumulative track length
       trackLength += stepLength;
-      // stop tracking if the track length limit is reached (the track will be 
+      // stop tracking if the track length limit is reached (the track will be
       // propagated its final position)
-      if (trackLength>theLimit) {
-        stepLength = theLimit-aTrack.fTrackLength;
-        stop = true; 
+      if (trackLength > theLimit) {
+        stepLength = theLimit - aTrack.fTrackLength;
+        stop = true;
       }
       // update track position,
       aTrack.fPosition[0] += aTrack.fDirection[0] * stepLength;
@@ -157,7 +148,7 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
       aTrack.fPosition[2] += aTrack.fDirection[2] * stepLength;
       // update cumulative track length
       aTrack.fTrackLength += stepLength;
-      // keep tracking: sample angular deflection and update propagation direction 
+      // keep tracking: sample angular deflection and update propagation direction
       if (!stop) {
         // sample cos(\theta)
         const double cost = SampleCosTheta(theScrPar, dis(gen));
@@ -183,61 +174,35 @@ void Simulate(std::size_t theNumHists, double theMFP, double theScrPar, double t
     const double longi = aTrack.fPosition[2] / aTrack.fTrackLength;
     std::size_t  lIndx = (std::size_t) ((longi + 1.0) * longiDistInvD);
     ++theLongiDistr[lIndx];
-    // ==> r_{xy}/track-length ==> [0,1] 
+    // ==> r_{xy}/track-length ==> [0,1]
     const double trans = std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] + aTrack.fPosition[1] * aTrack.fPosition[1]) / aTrack.fTrackLength;
     std::size_t  tIndx = (std::size_t) (trans * transDistInvD);
     ++theTransDistr[tIndx];
-  }
-  printf(" ==== Completed the simulation of %u trajectory histories.\n", theNumHists);
-  printf(" ==== Writing results to files...\n");
-  // 
-  // == Write distributions into file with normalisation (to integral = 1.0) 
-  double longiNormFactor = 1.0 / theNumHists * longiDistInvD;
-  FILE* f = fopen("Res_Longi.dat", "w");
-  for (int i = 0; i < longiDistNumBin - 1; ++i) {
-    double longiMid = ((i + 0.5) / longiDistInvD - 1.0);
-    fprintf(f, "%g %g\n", longiMid, theLongiDistr[i] * longiNormFactor);
-  }
-  fclose(f);
-  //
-  double transNormFactor = 1.0 / theNumHists * transDistInvD;
-  f = fopen("Res_Trans.dat", "w");
-  for (int i = 0; i < transDistNumBin - 1; ++i) {
-    double transMid = (i + 0.5) / transDistInvD;
-    fprintf(f, "%g %g\n", transMid, theTransDistr[i]*transNormFactor);
-  }
-  fclose(f);
-  printf(" ==== Completed.\n");
-  //
-  // == Clean dynamically allocate auxiliary memory
-  delete[] theLongiDistr;
-  delete[] theTransDistr;
 }
 
 
 int main() {
   std::clock_t start = std::clock();
 
-  // Define settings
-  Material    theMaterial =   GOLD;  // WATER, AIR, BONE, TISSUE or GOLD
-  double      theEKin     =   0.128; // [MeV]
-  double      theLimit    =    33.5; // limit of cummulative track lenght in units of MFP
-  std::size_t theNumHists = 1000000; // #histories to simulate
-  
-  
-  // Compute paramters according to the above settings:
-  // - total momentum square [MeV]^2
-  double   thePC2      = theEKin * (theEKin + 2.0 * kMASS);
-  // - beta2
-  double   theBeta2    = thePC2 / (thePC2 + kMASS * kMASS);
-  // - screening parameter
-  double   theScrPar   = ComputeScrParam(theMaterial, thePC2);
-  // - elastic mfp [mm]
-  double   theMFP      = ComputeMFP(theMaterial, theBeta2, theScrPar);
-  // get the track length limit in [mm]
-  theLimit *= theMFP;
+    // Define settings
+    Material    theMaterial =   GOLD;  // WATER, AIR, BONE, TISSUE or GOLD
+    double      theEKin     =   0.128; // [MeV]
+    double      theLimit    =    33.5; // limit of cumulative track length in units of MFP
+    std::size_t theNumHists = 1000000; // #histories to simulate
+
+    // Compute parameters according to the above settings:
+    // - total momentum square [MeV]^2
+    double   thePC2      = theEKin * (theEKin + 2.0 * kMASS);
+    // - beta2
+    double   theBeta2    = thePC2 / (thePC2 + kMASS * kMASS);
+    // - screening parameter
+    double   theScrPar   = ComputeScrParam(theMaterial, thePC2);
+    // - elastic mfp [mm]
+    double   theMFP      = ComputeMFP(theMaterial, theBeta2, theScrPar);
+    // get the track length limit in [mm]
+    theLimit *= theMFP;
     
-  // Compute total-track lenght / firsr-transport-mfp just for checking
+  // Compute total-track length / first-transport-mfp just for checking
 //  double g1      = 2.0*theScrPar*((1.0+theScrPar)*std::log(1.0/theScrPar+1.0)-1.0);
 //  double lambda1 = theMFP/g1;  // first transport mean free path
 //  printf("theLimit/lambda1 = %g\n", theLimit/lambda1);
@@ -247,21 +212,68 @@ int main() {
   //  `theNumHists` trajectory histories will be generated. Each trajectory starts 
   //  at the [0,0,0] position and the track points to the [0,0,1] direction. 
   //  The only interaction of the e- is elastic scattering and each trajectory 
-  //  is followed untill the cumulative track length reaches `theLimit`.
+  //  is followed until the cumulative track length reaches `theLimit`.
   //  Therefore, each trajectory will have exactly `theLimit` length but the 
   //  final position will be different. This final position is used to generate 
-  //  the longitudinal (along the <z> axes) and the transverse (perpendicualr 
+  //  the longitudinal (along the <z> axes) and the transverse (perpendicular
   //  to the <z> axes i.e. along the <x><y> plane) position distributions. 
   //
   // The default settings reproduce the distributions shown in page #25 and #26 
   // in my very old presentation (see below). NOTE: there is a typo in the 
   // presentation below: 128 [MeV] should be 128 [keV] which is correct here above.
   // https://indico.fnal.gov/event/9717/contributions/115128/attachments/74561/89448/MihalyNovakGeant4CollaborationMeetingNewEMModels.pdf
-  Simulate(theNumHists, theMFP, theScrPar, theLimit);
 
+
+    // Create histogram (i.e. array) for longitudinal distribution of final position
+    const int longiDistNumBin   = 201;
+    const double longiDistInvD  = (longiDistNumBin - 1.0) / 2.0;
+    std::size_t* theLongiDistr  = new std::size_t[longiDistNumBin]; // on [-1,1]
+    // same for the transverse distribution
+    const int transDistNumBin   = 101;
+    const double transDistInvD  = (transDistNumBin - 1.0) / 1.0;
+    std::size_t* theTransDistr  = new std::size_t[transDistNumBin]; // on [0,1]
+
+    //
+    // === Preparation and start of the simulation loop to generate `theNumHists` histories
+    printf("Running with %i threads\n", numThreads);
+    printf(" ==== Starts the simulation of %lu trajectory histories...\n", theNumHists);
+    std::vector<std::thread> threads;
+    const int particlesPerThread = (int) theNumHists / numThreads;
+//    for (int i = 0; i < numThreads; i++) {
+//        for (int j = 0)
+//    }
+
+    for (int i = 0; i < theNumHists; i++) {
+        Simulate(theMFP, theScrPar, theLimit, longiDistInvD, transDistInvD, theLongiDistr, theTransDistr);
+    }
+
+    printf(" ==== Completed the simulation of %lu trajectory histories.\n", theNumHists);
+    printf(" ==== Writing results to files...\n");
+    //
+    // == Write distributions into file with normalisation (to integral = 1.0)
+    double longiNormFactor = 1.0 / theNumHists * longiDistInvD;
+    FILE* f = fopen("Res_Longi.dat", "w");
+    for (int i = 0; i < longiDistNumBin - 1; ++i) {
+        double longiMid = ((i + 0.5) / longiDistInvD - 1.0);
+        fprintf(f, "%g %g\n", longiMid, theLongiDistr[i] * longiNormFactor);
+    }
+    fclose(f);
+    //
+    double transNormFactor = 1.0 / theNumHists * transDistInvD;
+    f = fopen("Res_Trans.dat", "w");
+    for (int i = 0; i < transDistNumBin - 1; ++i) {
+        double transMid = (i + 0.5) / transDistInvD;
+        fprintf(f, "%g %g\n", transMid, theTransDistr[i] * transNormFactor);
+    }
+    fclose(f);
+    printf(" ==== Completed.\n");
+    //
+    // == Clean dynamically allocated auxiliary memory
+    delete[] theLongiDistr;
+    delete[] theTransDistr;
 
   double duration = (std::clock() - start) / (double) CLOCKS_PER_SEC;
-  std::cout << duration << std::endl;
+  std::cout << duration << " seconds" << std::endl;
   return 0;
 }
 
