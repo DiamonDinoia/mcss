@@ -25,7 +25,7 @@ void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
         u = (u1 * u3 * px - u2 * py) / up + u1 * pz;
         v = (u2 * u3 * px + u1 * py) / up + u2 * pz;
         w = -up * px + u3 * pz;
-    } else if (u3 < 0.) {  // phi=0  teta=pi
+    } else if (u3 < 0.) {
         u = -u;
         w = -w;
     }
@@ -104,20 +104,25 @@ void Simulate() {
     printf(" ==== Writing results to files...\n");
 
     real_type longiNormFactor = 1.0 / theNumHists * longiDistInvD;
-    FILE *f = fopen("Res_Longi.dat", "w");
-    for (int i = 0; i < longiDistNumBin - 1; ++i) {
-        real_type longiMid = ((i + 0.5) / longiDistInvD - 1.0);
-        fprintf(f, "%g\r\n", globalLongiDistr[i] * longiNormFactor);
+    std::ofstream f;
+    f.open("Res_Longi.dat");
+    if (f.is_open())  {
+        for (int i = 0; i < longiDistNumBin - 1; i++) {
+            real_type longiMid = ((i + 0.5) / longiDistInvD - 1.0);
+            f << globalLongiDistr[i] * longiNormFactor << std::endl;
+        }
     }
-    fclose(f);
+    f.close();
 
     real_type transNormFactor = 1.0 / theNumHists * transDistInvD;
-    f = fopen("Res_Trans.dat", "w");
-    for (int i = 0; i < transDistNumBin - 1; ++i) {
-        real_type transMid = (i + 0.5) / transDistInvD;
-        fprintf(f, "%g\r\n", globalTransDistr[i] * transNormFactor);
+    f.open("Res_Trans.dat");
+    if (f.is_open()) {
+        for (int i = 0; i < transDistNumBin - 1; i++) {
+            real_type transMid = (i + 0.5) / transDistInvD;
+            f << globalTransDistr[i] * transNormFactor << std::endl;
+        }
     }
-    fclose(f);
+    f.close();
     printf(" ==== Completed.\n");
 }
 

@@ -8,6 +8,7 @@
 #include <ctime>
 #include <iostream>
 #include <chrono>
+#include <fstream>
 
 using real_type = double;
 enum Material { WATER, AIR, BONE, TISSUE, GOLD};
