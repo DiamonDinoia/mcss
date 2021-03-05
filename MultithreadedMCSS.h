@@ -32,6 +32,11 @@ const real_type   theScrPar   = ComputeScrParam(theMaterial, thePC2);
 const real_type   theMFP      = ComputeMFP(theMaterial, theBeta2, theScrPar);
 const real_type   theLimit = theMFP * 33.5; // limit of cumulative track length in units of MFP
 
+const int longiDistNumBin   = 201;
+const real_type longiDistInvD  = (longiDistNumBin - 1.0) / 2.0;
+const int transDistNumBin   = 101;
+const real_type transDistInvD  = (transDistNumBin - 1.0) / 1.0;
+
 struct Track {
     real_type fPosition[3]{};   // rx, ry, rz
     real_type fDirection[3]{};  // dx, dy, dz normalised to 1

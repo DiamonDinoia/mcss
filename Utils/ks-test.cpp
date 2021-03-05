@@ -19,10 +19,11 @@
 /**************************************************************************/
 
 #include "ks-test.h"
-#include <cstdlib>
+
 #include <cmath>
-#include <vector>
+#include <cstdlib>
 #include <iostream>
+#include <vector>
 
 /* KOLMOGOROV-SMIRNOV TEST OF HOMOGENEITY
  *
@@ -230,7 +231,6 @@
  * probability).
  */
 
-
 /* The following three functions are copied from
  * G. Marsaglia, W. W. Tsang, J. Wang: "Evaluating  Kolmogorov's Distribution"
  *
@@ -242,48 +242,88 @@
  * The results correspond more or less to the tables found in
  * Hartung: "Statistik", 13rd Edition, pp. 521-523
  */
-void mMultiply(double *A,double *B,double *C,int m)
-{
-    int i,j,k; double s;
-    for(i=0;i<m;i++) for(j=0; j<m; j++)
-        {s=0.; for(k=0;k<m;k++) s+=A[i*m+k]*B[k*m+j]; C[i*m+j]=s;}
+void mMultiply(double *A, double *B, double *C, int m) {
+    int i, j, k;
+    double s;
+    for (i = 0; i < m; i++)
+        for (j = 0; j < m; j++) {
+            s = 0.;
+            for (k = 0; k < m; k++) s += A[i * m + k] * B[k * m + j];
+            C[i * m + j] = s;
+        }
 }
 
-void mPower(double *A,int eA,double *V,int *eV,int m,int n)
-{
-    double *B;int eB,i;
-    if(n==1) {for(i=0;i<m*m;i++) V[i]=A[i];*eV=eA; return;}
-    mPower(A,eA,V,eV,m,n/2);
-    B=(double*)malloc((m*m)*sizeof(double));
-    mMultiply(V,V,B,m); eB=2*(*eV);
-    if(n%2==0){for(i=0;i<m*m;i++) V[i]=B[i]; *eV=eB;}
-    else {mMultiply(A,B,V,m); *eV=eA+eB;}
-    if(V[(m/2)*m+(m/2)]>1e140) {for(i=0;i<m*m;i++) V[i]=V[i]*1e-140;*eV+=140;}
+void mPower(double *A, int eA, double *V, int *eV, int m, int n) {
+    double *B;
+    int eB, i;
+    if (n == 1) {
+        for (i = 0; i < m * m; i++) V[i] = A[i];
+        *eV = eA;
+        return;
+    }
+    mPower(A, eA, V, eV, m, n / 2);
+    B = (double *)malloc((m * m) * sizeof(double));
+    mMultiply(V, V, B, m);
+    eB = 2 * (*eV);
+    if (n % 2 == 0) {
+        for (i = 0; i < m * m; i++) V[i] = B[i];
+        *eV = eB;
+    } else {
+        mMultiply(A, B, V, m);
+        *eV = eA + eB;
+    }
+    if (V[(m / 2) * m + (m / 2)] > 1e140) {
+        for (i = 0; i < m * m; i++) V[i] = V[i] * 1e-140;
+        *eV += 140;
+    }
     free(B);
 }
 
-double K(int n,double d)
-{
-    int k,m,i,j,g,eH,eQ;
-    double h,s,*H,*Q;
-    //OMIT NEXT LINE IF YOU REQUIRE >7 DIGIT ACCURACY IN THE RIGHT TAIL
-    s=d*d*n; if(s>7.24||(s>3.76&&n>99)) return 1-2*exp(-(2.000071+.331/sqrt((double) n)+1.409/n)*s);
-    k=(int)(n*d)+1; m=2*k-1; h=k-n*d;
-    H=(double*)malloc((m*m)*sizeof(double));
-    Q=(double*)malloc((m*m)*sizeof(double));
-    for(i=0;i<m;i++) for(j=0;j<m;j++)
-            if(i-j+1<0) H[i*m+j]=0; else H[i*m+j]=1;
-    for(i=0;i<m;i++) {H[i*m]-=pow(h,i+1); H[(m-1)*m+i]-=pow(h,(m-i));}
-    H[(m-1)*m]+=(2*h-1>0?pow(2*h-1,m):0);
-    for(i=0;i<m;i++) for(j=0;j<m;j++)
-            if(i-j+1>0) for(g=1;g<=i-j+1;g++) H[i*m+j]/=g;
-    eH=0; mPower(H,eH,Q,&eQ,m,n);
-    s=Q[(k-1)*m+k-1];
-    for(i=1;i<=n;i++) {s=s*i/n; if(s<1e-140) {s*=1e140; eQ-=140;}}
-    s*=pow(10.,eQ); free(H); free(Q); return s;
+double K(int n, double d) {
+    int k, m, i, j, g, eH, eQ;
+    double h, s, *H, *Q;
+    // OMIT NEXT LINE IF YOU REQUIRE >7 DIGIT ACCURACY IN THE RIGHT TAIL
+    s = d * d * n;
+    if (s > 7.24 || (s > 3.76 && n > 99))
+        return 1 -
+               2 * exp(-(2.000071 + .331 / sqrt((double)n) + 1.409 / n) * s);
+    k = (int)(n * d) + 1;
+    m = 2 * k - 1;
+    h = k - n * d;
+    H = (double *)malloc((m * m) * sizeof(double));
+    Q = (double *)malloc((m * m) * sizeof(double));
+    for (i = 0; i < m; i++)
+        for (j = 0; j < m; j++)
+            if (i - j + 1 < 0)
+                H[i * m + j] = 0;
+            else
+                H[i * m + j] = 1;
+    for (i = 0; i < m; i++) {
+        H[i * m] -= pow(h, i + 1);
+        H[(m - 1) * m + i] -= pow(h, (m - i));
+    }
+    H[(m - 1) * m] += (2 * h - 1 > 0 ? pow(2 * h - 1, m) : 0);
+    for (i = 0; i < m; i++)
+        for (j = 0; j < m; j++)
+            if (i - j + 1 > 0)
+                for (g = 1; g <= i - j + 1; g++) H[i * m + j] /= g;
+    eH = 0;
+    mPower(H, eH, Q, &eQ, m, n);
+    s = Q[(k - 1) * m + k - 1];
+    for (i = 1; i <= n; i++) {
+        s = s * i / n;
+        if (s < 1e-140) {
+            s *= 1e140;
+            eQ -= 140;
+        }
+    }
+    s *= pow(10., eQ);
+    free(H);
+    free(Q);
+    return s;
 }
 
-std::ostream & operator << (std::ostream & os, const std::list<int64_t> & L) {
+std::ostream &operator<<(std::ostream &os, const std::list<int64_t> &L) {
     std::list<int64_t>::const_iterator it = L.begin();
     while (it != L.end()) {
         os << *it << ',';
@@ -292,7 +332,7 @@ std::ostream & operator << (std::ostream & os, const std::list<int64_t> & L) {
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::list<double> & L) {
+std::ostream &operator<<(std::ostream &os, const std::list<double> &L) {
     std::list<double>::const_iterator it = L.begin();
     while (it != L.end()) {
         os << *it << ',';
@@ -301,7 +341,7 @@ std::ostream & operator << (std::ostream & os, const std::list<double> & L) {
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::vector<unsigned> & V) {
+std::ostream &operator<<(std::ostream &os, const std::vector<unsigned> &V) {
     std::vector<unsigned>::const_iterator it = V.begin();
     while (it != V.end()) {
         os << *it << ',';
@@ -310,7 +350,7 @@ std::ostream & operator << (std::ostream & os, const std::vector<unsigned> & V) 
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::vector<int64_t> & V) {
+std::ostream &operator<<(std::ostream &os, const std::vector<int64_t> &V) {
     std::vector<int64_t>::const_iterator it = V.begin();
     os << "( ";
     while (it != V.end()) {
@@ -321,7 +361,7 @@ std::ostream & operator << (std::ostream & os, const std::vector<int64_t> & V) {
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::vector<double> & V) {
+std::ostream &operator<<(std::ostream &os, const std::vector<double> &V) {
     std::vector<double>::const_iterator it = V.begin();
     os << "( ";
     while (it != V.end()) {
@@ -332,11 +372,13 @@ std::ostream & operator << (std::ostream & os, const std::vector<double> & V) {
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::list<std::vector<int64_t> > & L) {
+std::ostream &operator<<(std::ostream &os,
+                         const std::list<std::vector<int64_t> > &L) {
     // We need a ckeck as L for sample_new is initially empty
     if (L.size() > 0) {
         std::list<std::vector<int64_t> >::const_iterator it = L.begin();
-        os << *it; it++;
+        os << *it;
+        it++;
         while (it != L.end()) {
             os << ", " << *it;
             it++;
@@ -345,11 +387,13 @@ std::ostream & operator << (std::ostream & os, const std::list<std::vector<int64
     return os;
 }
 
-std::ostream & operator << (std::ostream & os, const std::list<std::vector<double> > & L) {
+std::ostream &operator<<(std::ostream &os,
+                         const std::list<std::vector<double> > &L) {
     // We need a ckeck as L for sample_new is initially empty
     if (L.size() > 0) {
         std::list<std::vector<double> >::const_iterator it = L.begin();
-        os << *it; it++;
+        os << *it;
+        it++;
         while (it != L.end()) {
             os << ", " << *it;
             it++;
@@ -387,9 +431,8 @@ std::ostream & operator << (std::ostream & os, const std::list<std::vector<doubl
  * makes sense, cannot be computed easily with our current means (Marsaglia's
  * procedure or the limiting form of D_nm).
  */
-double ks_test (std::list<double> sample1, std::list<double> sample2,
-                std::ostream & outfile) {
-
+double ks_test(std::list<double> sample1, std::list<double> sample2,
+               std::ostream &outfile) {
     unsigned int n1, n2, n_approx;
     // sample sizes
     float d;
@@ -405,12 +448,14 @@ double ks_test (std::list<double> sample1, std::list<double> sample2,
     n2 = sample2.size();
 
     // Calculate a conservative n approximation
-    n_approx = (unsigned) ceil(float(n1*n2)/(n1+n2));
+    n_approx = (unsigned)ceil(float(n1 * n2) / (n1 + n2));
     outfile << "n_approx=" << n_approx << std::endl;
 
     // Sort samples
-    sample1.sort(); outfile << "sorted sample1: " << sample1 << std::endl;
-    sample2.sort(); outfile << "sorted sample2: " << sample2 << std::endl;
+    sample1.sort();
+    outfile << "sorted sample1: " << sample1 << std::endl;
+    sample2.sort();
+    outfile << "sorted sample2: " << sample2 << std::endl;
 
     // We divide the range 0..1 into n1*n2 intervals of equal size 1/(n1*n2).
     //
@@ -434,14 +479,14 @@ double ks_test (std::list<double> sample1, std::list<double> sample2,
     //    D_n1n2 = sup |s_cdf_1 - s_cdf_2|
     //           = max [ |Dmin/(n1*n2)| ; |Dmax/(n1*n2)| ]
 
-    D = 0; Dmin = 0; Dmax = 0;
+    D = 0;
+    Dmin = 0;
+    Dmax = 0;
     it1 = sample1.begin();
     it2 = sample2.begin();
 
-    while ( (it1 != sample1.end()) && (it2 != sample2.end()) ) {
-
+    while ((it1 != sample1.end()) && (it2 != sample2.end())) {
         if (*it1 == *it2) {
-
             outfile << *it1 << " tie!";
             // steps in both sample c.d.f., we need to perform all steps
             // in this point before comparing D to Dmin and Dmax
@@ -451,14 +496,12 @@ double ks_test (std::list<double> sample1, std::list<double> sample2,
             do {
                 D += n2;
                 it1++;
-            }
-            while ( (*it1 == s) && (it1 != sample1.end()) );
+            } while ((*it1 == s) && (it1 != sample1.end()));
             // perform all steps in s_cdf_2 now
             do {
                 D -= n1;
                 it2++;
-            }
-            while ( (*it2 == s) && (it2 != sample2.end()) );
+            } while ((*it2 == s) && (it2 != sample2.end()));
 
             // now adapt Dmin, Dmax if necessary
             if (D > Dmax)
@@ -469,31 +512,26 @@ double ks_test (std::list<double> sample1, std::list<double> sample2,
         }
 
         else if (*it1 < *it2) {
-
             outfile << *it1;
             // step in s_cdf_1, increase D by n2
             D += n2;
             it1++;
 
-            if (D > Dmax)
-                Dmax = D;
+            if (D > Dmax) Dmax = D;
 
         }
 
         else {
-
             outfile << *it2;
             // step in F2, decrease D by n1
             D -= n1;
             it2++;
 
-            if (D < Dmin)
-                Dmin = D;
-
+            if (D < Dmin) Dmin = D;
         }
 
-        outfile << " D=" << D << " Dmin=" << Dmin << " Dmax=" << Dmax << std::endl;
-
+        outfile << " D=" << D << " Dmin=" << Dmin << " Dmax=" << Dmax
+                << std::endl;
     }
 
     // For two-sided test, take D = max (|Dmax|, |Dmin|) and compute
@@ -505,11 +543,9 @@ double ks_test (std::list<double> sample1, std::list<double> sample2,
         D = Dmax;
 
     // Hence the observed value of Kolmogorov's statistic:
-    d = float(D)/(n1*n2);
+    d = float(D) / (n1 * n2);
 
     std::cout << "the K-S statistic is " << d << std::endl;
     // Return p-value
-    return 1 - K(n_approx,d);
-
+    return 1 - K(n_approx, d);
 }
-
