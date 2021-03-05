@@ -39,9 +39,6 @@ void addLocalDistrToGlobal(int size, std::vector<real_type> &targetDistr,
 }
 
 void Simulate() {
-    //    std::size_t* globalLongiDistr  = new std::size_t[longiDistNumBin];
-    //    std::size_t* globalTransDistr  = new std::size_t[transDistNumBin];
-
     std::vector<real_type> globalLongiDistr(longiDistNumBin);
     std::vector<real_type> globalTransDistr(transDistNumBin);
 
@@ -54,15 +51,11 @@ void Simulate() {
         std::vector<real_type> theLongiDistr(longiDistNumBin);
         std::vector<real_type> theTransDistr(transDistNumBin);
 
-        //        std::size_t* theLongiDistr  = new
-        //        std::size_t[longiDistNumBin]; // on [-1,1] std::size_t*
-        //        theTransDistr  = new std::size_t[transDistNumBin]; // on [0,1]
-
         Track aTrack;
         aTrack.Reset();
         real_type trackLength = 0.0;
         bool stop = false;
-        do {
+        while (!stop) {
             real_type stepLength = -theMFP * std::log(dis(gen));
             trackLength += stepLength;
             if (trackLength > theLimit) {
@@ -87,7 +80,7 @@ void Simulate() {
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
             }
-        } while (!stop);
+        }
 
         const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
         std::size_t lIndx = (std::size_t)((longi + 1.0) * longiDistInvD);
