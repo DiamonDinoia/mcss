@@ -13,9 +13,8 @@
 using real_type = double;
 enum Material { WATER, AIR, BONE, TISSUE, GOLD};
 
-void runSimulation();
-real_type ComputeScrParam(const Material &mat, const real_type ptot2);
-real_type ComputeMFP(const Material &mat, const real_type beta2, const real_type scrpar);
+real_type ComputeScrParam(const Material &mat, real_type ptot2);
+real_type ComputeMFP(const Material &mat, real_type beta2, real_type scrpar);
 
 const real_type kMolierBc[]  = {877.879, 1.02281, 1645.05, 888.813, 12481.2 }; // 1/mm
 const real_type kMolierXc2[] = {0.0661905, 7.88813e-05, 0.17879, 0.0647072, 9.72643 }; // MeV^2/mm
@@ -25,7 +24,7 @@ const real_type kMASS        =  0.510998910;            // electron mass [MeV]
 
 const Material    theMaterial =   GOLD;  // WATER, AIR, BONE, TISSUE or GOLD
 const real_type      theEKin     =   0.128; // [MeV]
-const std::size_t theNumHists = 1000000; // #histories to simulate
+const int theNumHists = 1000000; // #histories to simulate
 
 const real_type   thePC2      = theEKin * (theEKin + 2.0 * kMASS);
 const real_type   theBeta2    = thePC2 / (thePC2 + kMASS * kMASS);
@@ -37,6 +36,13 @@ const int longiDistNumBin   = 201;
 const real_type longiDistInvD  = (longiDistNumBin - 1.0) / 2.0;
 const int transDistNumBin   = 101;
 const real_type transDistInvD  = (transDistNumBin - 1.0) / 1.0;
+
+const int NUM_THREADS = 8;
+
+struct Histograms {
+    std::vector<real_type> longiHist;
+    std::vector<real_type> transHist;
+};
 
 struct Track {
     real_type fPosition[3]{};   // rx, ry, rz
@@ -59,5 +65,7 @@ struct Track {
         fTrackLength  = 0.0;
     }
 };
+
+Histograms Simulate();
 
 #endif

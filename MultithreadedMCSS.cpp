@@ -11,7 +11,7 @@ real_type ComputeMFP(const Material &mat, const real_type beta2,
 
 real_type SampleCosTheta(const real_type scrpar, const real_type rn) {
     real_type cost = 1.0 - 2 * scrpar * rn / (1.0 - rn + scrpar);
-    return std::max((real_type)-1.0, std::min((real_type)1.0, cost));
+    return std::max((real_type) -1.0, std::min((real_type) 1.0, cost));
 }
 
 void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
@@ -31,25 +31,29 @@ void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
     }
 }
 
-void addLocalDistrToGlobal(int size, std::vector<real_type> &targetDistr,
-                           std::vector<real_type> &sourceDistr) {
-    for (int i = 0; i < size - 1; i++) {
-        targetDistr[i] += sourceDistr[i];
+std::vector<std::vector<real_type>> initialiseHistogram(int numThreads, int numBins) {
+    std::vector<std::vector<real_type>> histogram;
+    for (int i = 0; i < numThreads; i++) {
+        std::vector<real_type> sub_vector(numBins, 0.0);
+        histogram.push_back(sub_vector);
     }
+    return histogram;
 }
 
-void Simulate() {
+Histograms Simulate() {
+    omp_set_num_threads(NUM_THREADS);
+
     std::vector<real_type> globalLongiDistr(longiDistNumBin);
     std::vector<real_type> globalTransDistr(transDistNumBin);
 
-#pragma omp parallel for
+    std::vector<std::vector<real_type>> threadsLongiHists = initialiseHistogram(NUM_THREADS, longiDistNumBin);
+    std::vector<std::vector<real_type>> threadsTransHists = initialiseHistogram(NUM_THREADS, transDistNumBin);
+
+#pragma omp parallel for num_threads(NUM_THREADS)
     for (int i = 0; i < theNumHists; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(0, 1.0);
-
-        std::vector<real_type> theLongiDistr(longiDistNumBin);
-        std::vector<real_type> theTransDistr(transDistNumBin);
 
         Track aTrack;
         aTrack.Reset();
@@ -83,59 +87,27 @@ void Simulate() {
         }
 
         const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
-        std::size_t lIndx = (std::size_t)((longi + 1.0) * longiDistInvD);
-        ++theLongiDistr[lIndx];
+        real_type lIndx = (longi + 1.0) * longiDistInvD;
+        threadsLongiHists[omp_get_thread_num()][lIndx]++;
 
         const real_type trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
             aTrack.fTrackLength;
-        std::size_t tIndx = (std::size_t)(trans * transDistInvD);
-        ++theTransDistr[tIndx];
-
-#pragma omp critical
-        addLocalDistrToGlobal(longiDistNumBin, globalLongiDistr, theLongiDistr);
-#pragma omp critical
-        addLocalDistrToGlobal(transDistNumBin, globalTransDistr, theTransDistr);
+        real_type tIndx = trans * transDistInvD;
+        threadsTransHists[omp_get_thread_num()][tIndx]++;
     }
-
-    printf(" ==== Completed the simulation of %lu trajectory histories.\n",
-           theNumHists);
-    printf(" ==== Writing results to files...\n");
 
     real_type longiNormFactor = 1.0 / theNumHists * longiDistInvD;
-    std::ofstream f;
-    f.open("Res_Longi.dat");
-    if (f.is_open())  {
-        for (int i = 0; i < longiDistNumBin - 1; i++) {
-            real_type longiMid = ((i + 0.5) / longiDistInvD - 1.0);
-            f << globalLongiDistr[i] * longiNormFactor << std::endl;
-        }
-    }
-    f.close();
-
     real_type transNormFactor = 1.0 / theNumHists * transDistInvD;
-    f.open("Res_Trans.dat");
-    if (f.is_open()) {
-        for (int i = 0; i < transDistNumBin - 1; i++) {
-            real_type transMid = (i + 0.5) / transDistInvD;
-            f << globalTransDistr[i] * transNormFactor << std::endl;
+    for (int i = 0; i < NUM_THREADS; i++) {
+        for (int j = 0; j < longiDistNumBin; j++) {
+            globalLongiDistr[j] += threadsLongiHists[i][j] * longiNormFactor;
+        }
+        for (int j = 0; j < transDistNumBin; j++) {
+            globalTransDistr[j] += threadsTransHists[i][j] * transNormFactor;
         }
     }
-    f.close();
-    printf(" ==== Completed.\n");
-}
-
-void runSimulation() {
-    auto start = std::chrono::high_resolution_clock::now();
-
-    printf(" ==== Starts the simulation of %lu trajectory histories...\n",
-           theNumHists);
-    Simulate();
-
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<real_type> time_span =
-        std::chrono::duration_cast<std::chrono::duration<real_type>>(end -
-                                                                     start);
-    std::cout << time_span.count() << " seconds" << std::endl;
+    Histograms histograms = {globalLongiDistr, globalTransDistr};
+    return histograms;
 }
