@@ -15,7 +15,7 @@ real_type SampleCosTheta(const real_type scrpar, const real_type rn) {
 }
 
 void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
-                      real_type u2, real_type u3) {
+                              real_type u2, real_type u3) {
     real_type up = u1 * u1 + u2 * u2;
     if (up > 0.) {
         up = std::sqrt(up);
@@ -79,7 +79,7 @@ Histograms Simulate() {
                 real_type u2 = sint * std::sin(phi);
                 real_type u3 = cost;
                 RotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
-                                 aTrack.fDirection[1], aTrack.fDirection[2]);
+                                         aTrack.fDirection[1], aTrack.fDirection[2]);
                 aTrack.fDirection[0] = u1;
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
@@ -88,14 +88,14 @@ Histograms Simulate() {
 
         const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
         real_type lIndx = (longi + 1.0) * longiDistInvD;
-        threadsLongiHists[omp_get_thread_num()][lIndx]++;
+        ++threadsLongiHists[omp_get_thread_num()][lIndx];
 
         const real_type trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
             aTrack.fTrackLength;
         real_type tIndx = trans * transDistInvD;
-        threadsTransHists[omp_get_thread_num()][tIndx]++;
+        ++threadsTransHists[omp_get_thread_num()][tIndx];
     }
 
     real_type longiNormFactor = 1.0 / theNumHists * longiDistInvD;

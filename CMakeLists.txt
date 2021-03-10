@@ -20,5 +20,5 @@ add_compile_options(-march=native)
 endif ()
 
 add_executable(mcss mcss.cpp MultithreadedMCSS.h MultithreadedMCSS.cpp)
-add_executable(mcssOriginal mcssOriginal.cpp)
-add_executable(comparison CompareDistributions.cpp MultithreadedMCSS.cpp MultithreadedMCSS.h Utils/ks-test.cpp Utils/ks-test.h Utils/Utils.cpp Utils/Utils.h)
+#add_executable(mcssOriginal mcssOriginal.cpp mcssOriginal.h)
+add_executable(comparison CompareDistributions.cpp MultithreadedMCSS.cpp MultithreadedMCSS.h Utils/ks-test.cpp Utils/ks-test.h Utils/Utils.cpp Utils/Utils.h mcssOriginal.cpp mcssOriginal.h)
