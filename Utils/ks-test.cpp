@@ -431,8 +431,6 @@ std::ostream &operator<<(std::ostream &os,
  * makes sense, cannot be computed easily with our current means (Marsaglia's
  * procedure or the limiting form of D_nm).
  */
-//double ks_test(std::list<double> sample1, std::list<double> sample2,
-//               std::ostream &outfile) {
 double ks_test(std::list<double> sample1, std::list<double> sample2) {
     unsigned int n1, n2, n_approx;
     // sample sizes
@@ -546,7 +544,6 @@ double ks_test(std::list<double> sample1, std::list<double> sample2) {
     // Hence the observed value of Kolmogorov's statistic:
     d = float(D) / (n1 * n2);
 
-    std::cout << "the K-S statistic is " << d << std::endl;
     // Return p-value
     return 1 - K(n_approx, d);
 }

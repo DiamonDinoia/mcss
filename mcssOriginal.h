@@ -1,10 +1,8 @@
-
-const int OriginalTransDistNumBin = 101;
-const int OriginalLongiDistNumBin = 201;
+#include "common.h"
 
 struct OriginalHistograms {
-    double longiHist[OriginalLongiDistNumBin]{};
-    double transHist[OriginalTransDistNumBin]{};
+    double longiHist[longiDistNumBin]{};
+    double transHist[transDistNumBin]{};
 };
 
 OriginalHistograms OriginalSimulate();

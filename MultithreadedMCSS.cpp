@@ -1,36 +1,5 @@
 #include "MultithreadedMCSS.h"
 
-real_type ComputeScrParam(const Material &mat, const real_type ptot2) {
-    return kMolierXc2[mat] / (4.0 * ptot2 * kMolierBc[mat]);
-}
-
-real_type ComputeMFP(const Material &mat, const real_type beta2,
-                     const real_type scrpar) {
-    return beta2 * (1.0 + scrpar) / kMolierBc[mat];
-}
-
-real_type SampleCosTheta(const real_type scrpar, const real_type rn) {
-    real_type cost = 1.0 - 2 * scrpar * rn / (1.0 - rn + scrpar);
-    return std::max((real_type) -1.0, std::min((real_type) 1.0, cost));
-}
-
-void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
-                              real_type u2, real_type u3) {
-    real_type up = u1 * u1 + u2 * u2;
-    if (up > 0.) {
-        up = std::sqrt(up);
-        real_type px = u;
-        real_type py = v;
-        real_type pz = w;
-        u = (u1 * u3 * px - u2 * py) / up + u1 * pz;
-        v = (u2 * u3 * px + u1 * py) / up + u2 * pz;
-        w = -up * px + u3 * pz;
-    } else if (u3 < 0.) {
-        u = -u;
-        w = -w;
-    }
-}
-
 std::vector<std::vector<real_type>> initialiseHistogram(int numThreads, int numBins) {
     std::vector<std::vector<real_type>> histogram;
     for (int i = 0; i < numThreads; i++) {
@@ -59,7 +28,7 @@ Histograms Simulate() {
         aTrack.Reset();
         real_type trackLength = 0.0;
         bool stop = false;
-        while (!stop) {
+        do {
             real_type stepLength = -theMFP * std::log(dis(gen));
             trackLength += stepLength;
             if (trackLength > theLimit) {
@@ -84,18 +53,18 @@ Histograms Simulate() {
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
             }
-        }
+        } while (!stop);
 
         const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
         real_type lIndx = (longi + 1.0) * longiDistInvD;
-        ++threadsLongiHists[omp_get_thread_num()][lIndx];
+        threadsLongiHists[omp_get_thread_num()][lIndx]++;
 
         const real_type trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
             aTrack.fTrackLength;
         real_type tIndx = trans * transDistInvD;
-        ++threadsTransHists[omp_get_thread_num()][tIndx];
+        threadsTransHists[omp_get_thread_num()][tIndx]++;
     }
 
     real_type longiNormFactor = 1.0 / theNumHists * longiDistInvD;
@@ -108,6 +77,7 @@ Histograms Simulate() {
             globalTransDistr[j] += threadsTransHists[i][j] * transNormFactor;
         }
     }
+
     Histograms histograms = {globalLongiDistr, globalTransDistr};
     return histograms;
 }
