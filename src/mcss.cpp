@@ -1,6 +1,7 @@
-#include "MultithreadedMCSS.h"
+#include "../include/mcss.h"
 
-std::vector<std::vector<real_type>> initialiseHistogram(int numThreads, int numBins) {
+std::vector<std::vector<real_type>> initialiseHistogram(int numThreads,
+                                                        int numBins) {
     std::vector<std::vector<real_type>> histogram;
     for (int i = 0; i < numThreads; i++) {
         std::vector<real_type> sub_vector(numBins, 0.0);
@@ -15,8 +16,10 @@ Histograms Simulate() {
     std::vector<real_type> globalLongiDistr(longiDistNumBin);
     std::vector<real_type> globalTransDistr(transDistNumBin);
 
-    std::vector<std::vector<real_type>> threadsLongiHists = initialiseHistogram(NUM_THREADS, longiDistNumBin);
-    std::vector<std::vector<real_type>> threadsTransHists = initialiseHistogram(NUM_THREADS, transDistNumBin);
+    std::vector<std::vector<real_type>> threadsLongiHists =
+        initialiseHistogram(NUM_THREADS, longiDistNumBin);
+    std::vector<std::vector<real_type>> threadsTransHists =
+        initialiseHistogram(NUM_THREADS, transDistNumBin);
 
 #pragma omp parallel for num_threads(NUM_THREADS)
     for (int i = 0; i < theNumHists; i++) {
@@ -48,7 +51,7 @@ Histograms Simulate() {
                 real_type u2 = sint * std::sin(phi);
                 real_type u3 = cost;
                 RotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
-                                         aTrack.fDirection[1], aTrack.fDirection[2]);
+                                 aTrack.fDirection[1], aTrack.fDirection[2]);
                 aTrack.fDirection[0] = u1;
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;

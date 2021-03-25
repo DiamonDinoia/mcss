@@ -2,6 +2,7 @@
 #define MultithreadedMCSS_H
 
 #include <vector>
+
 #include "common.h"
 
 struct Histograms {

@@ -1,9 +1,9 @@
+#include "../include/mcssOriginal.h"
+
 #include <cmath>
 #include <random>
 
-#include "mcssOriginal.h"
-
-OriginalHistograms OriginalSimulate() {
+Original::Histograms Original::Simulate() {
     double theLongiDistr[longiDistNumBin] = {0.0};
     double theTransDistr[transDistNumBin] = {0.0};
 
@@ -39,7 +39,7 @@ OriginalHistograms OriginalSimulate() {
                 double u3 = cost;
 
                 RotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
-                                         aTrack.fDirection[1], aTrack.fDirection[2]);
+                                 aTrack.fDirection[1], aTrack.fDirection[2]);
                 aTrack.fDirection[0] = u1;
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
@@ -47,28 +47,28 @@ OriginalHistograms OriginalSimulate() {
         } while (!stop);
 
         const double longi = aTrack.fPosition[2] / aTrack.fTrackLength;
-        const int lIndx = (int) ((longi + 1.0) * longiDistInvD);
+        const int lIndx = (int)((longi + 1.0) * longiDistInvD);
         ++theLongiDistr[lIndx];
 
         const double trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
             aTrack.fTrackLength;
-        const int tIndx = (int) (trans * transDistInvD);
+        const int tIndx = (int)(trans * transDistInvD);
         ++theTransDistr[tIndx];
     }
 
     double longiNormFactor = 1.0 / theNumHists * longiDistInvD;
     double transNormFactor = 1.0 / theNumHists * transDistInvD;
 
-    OriginalHistograms originalHistograms = {};
+    Original::Histograms histograms = {};
     for (int i = 0; i < longiDistNumBin; i++) {
-        originalHistograms.longiHist[i] = theLongiDistr[i] * longiNormFactor;
+        histograms.longiHist[i] = theLongiDistr[i] * longiNormFactor;
     }
 
     for (int i = 0; i < transDistNumBin; i++) {
-        originalHistograms.transHist[i] = theTransDistr[i] * transNormFactor;
+        histograms.transHist[i] = theTransDistr[i] * transNormFactor;
     }
 
-    return originalHistograms;
+    return histograms;
 }

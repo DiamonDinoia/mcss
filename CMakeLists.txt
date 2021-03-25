@@ -3,11 +3,11 @@ project(mcss)
 
 set(CMAKE_CXX_STANDARD 11)
 
-#if(CMAKE_BUILD_TYPE MATCHES Debug)
-##message(STATUS "Build type: ${​​CMAKE_BUILD_TYPE}​​")
-#add_compile_options(-fstack-protector-all)
-#add_compile_options(-Wall -Wextra -pedantic)
-#endif()
+if(CMAKE_BUILD_TYPE MATCHES Debug)
+#message(STATUS "Build type: ${​​CMAKE_BUILD_TYPE}​​")
+add_compile_options(-fstack-protector-all)
+add_compile_options(-Wall -Wextra -pedantic)
+endif()
 
 if(CMAKE_BUILD_TYPE MATCHES Release)
 #message(STATUS "Build type: ${​​CMAKE_BUILD_TYPE}​​")
@@ -16,12 +16,11 @@ add_compile_options(-O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge
 add_compile_options(-march=native)
 endif()
 
-add_executable(mcss mcss.cpp MultithreadedMCSS.h MultithreadedMCSS.cpp common.cpp common.h)
-#add_executable(mcssOriginal mcssOriginal.cpp mcssOriginal.h)
-add_executable(comparison CompareDistributions.cpp MultithreadedMCSS.cpp MultithreadedMCSS.h Utils/ks-test.cpp Utils/ks-test.h Utils/Utils.cpp Utils/Utils.h mcssOriginal.cpp mcssOriginal.h common.cpp common.h)
+#add_executable(mcss include/mcss.h src/mcss.cpp src/common.cpp include/common.h)
+add_executable(comparison test/CompareDistributions.cpp src/mcss.cpp include/mcss.h test/ksTest.cpp include/ksTest.h src/mcssOriginal.cpp include/mcssOriginal.h src/common.cpp include/common.h)
 
 find_package(OpenMP)
 if (OpenMP_CXX_FOUND)
-    target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
+#    target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
     target_link_libraries(comparison PUBLIC OpenMP::OpenMP_CXX)
 endif()
