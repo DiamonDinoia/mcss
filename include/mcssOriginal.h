@@ -1,3 +1,6 @@
+#ifndef MCSS_ORIGINAL_H
+#define MCSS_ORIGINAL_H
+
 #include "../include/common.h"
 
 namespace Original {
@@ -8,3 +11,5 @@ struct Histograms {
 
 Histograms Simulate();
 }
+
+#endif
