@@ -1,8 +1,8 @@
 #include <chrono>
 #include <iostream>
 
-#include "../mcssMultithreaded.h"
-#include "../mcssOriginal.h"
 #include "ksTest.h"
+#include "mcss_multithread.h"
+#include "mcss_reference.h"
 
 std::vector<double> compareDistributions();

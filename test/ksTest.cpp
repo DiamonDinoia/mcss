@@ -18,7 +18,7 @@
 /*                                                                        */
 /**************************************************************************/
 
-#include "../include/test/ksTest.h"
+#include "ksTest.h"
 
 #include <cmath>
 #include <cstdlib>

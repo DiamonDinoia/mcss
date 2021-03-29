@@ -1,15 +1,15 @@
 #ifndef MCSS_ORIGINAL_H
 #define MCSS_ORIGINAL_H
 
-#include "../include/common.h"
+#include "common.h"
 
-namespace Original {
+namespace Reference {
 struct Histograms {
     double longiHist[longiDistNumBin]{};
     double transHist[transDistNumBin]{};
 };
 
 Histograms Simulate();
-}
+}  // namespace Reference
 
 #endif

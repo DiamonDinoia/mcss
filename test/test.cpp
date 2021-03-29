@@ -2,16 +2,16 @@
 #define CATCH_CONFIG_ENABLE_BENCHMARKING
 #include <catch2/catch.hpp>
 
-#include "../include/mcssMultithreaded.h"
-#include "../include/mcssOriginal.h"
-#include "../include/test/compareDistributions.h"
+#include "compareDistributions.h"
+#include "mcss_multithread.h"
+#include "mcss_reference.h"
 
-Original::Histograms calculateOriginalDistribution() {
-    return Original::Simulate();
+Reference::Histograms calculateOriginalDistribution() {
+    return Reference::Simulate();
 }
 
-Histograms calculateMultithreadedDistribution() {
-    return Simulate();
+multithread::Histograms calculateMultithreadedDistribution() {
+    return multithread::Simulate();
 }
 
 TEST_CASE("Correctness") {
@@ -26,11 +26,7 @@ TEST_CASE("Correctness") {
 }
 
 TEST_CASE("Benchmarking") {
-    BENCHMARK("Original") {
-        return calculateOriginalDistribution();
-    };
+    BENCHMARK("Original") { return calculateOriginalDistribution(); };
 
-    BENCHMARK("Multithreaded") {
-        return calculateMultithreadedDistribution();
-    };
+    BENCHMARK("Multithreaded") { return calculateMultithreadedDistribution(); };
 }

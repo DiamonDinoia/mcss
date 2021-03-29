@@ -1,4 +1,4 @@
-#include "../include/common.h"
+#include "common.h"
 
 real_type ComputeScrParam(const Material &mat, const real_type ptot2) {
     return kMolierXc2[mat] / (4.0 * ptot2 * kMolierBc[mat]);
