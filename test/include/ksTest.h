@@ -1,4 +1,6 @@
-#include <list>
-#include <ostream>
+#include "common.h"
 
-double ks_test(std::list<double> sample1, std::list<double> sample2);
+#include <ostream>
+#include <vector>
+
+double ks_test(std::vector<real_type> vector1, std::vector<real_type> vector2);

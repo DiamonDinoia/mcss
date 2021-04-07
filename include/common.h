@@ -21,14 +21,16 @@ using real_type = double;
 const int NUM_THREADS = std::thread::hardware_concurrency();
 enum Material { WATER, AIR, BONE, TISSUE, GOLD };
 
-real_type ComputeScrParam(const Material &mat, real_type ptot2);
+real_type computeScrParam(const Material &mat, real_type ptot2);
 
-real_type ComputeMFP(const Material &mat, real_type beta2, real_type scrpar);
+real_type computeMFP(const Material &mat, real_type beta2,
+                     real_type scrpar);
 
-real_type SampleCosTheta(real_type scrpar, real_type rn);
+real_type sampleCosTheta(real_type scrpar, real_type rn);
 
-void RotateToLabFrame(real_type &u, real_type &v, real_type &w, real_type u1,
-                      real_type u2, real_type u3);
+void rotateToLabFrame(real_type &u, real_type &v, real_type &w,
+                      const real_type &u1, const real_type &u2,
+                      const real_type &u3);
 
 const real_type kMolierBc[] = {877.879, 1.02281, 1645.05, 888.813,
                                12481.2};  // 1/mm
@@ -38,14 +40,14 @@ const real_type kMolierXc2[] = {0.0661905, 7.88813e-05, 0.17879, 0.0647072,
 const real_type kPI = 3.14159265358979323846;  // Pi
 
 const real_type kMASS = 0.510998910;  // electron mass [MeV]
-const Material theMaterial = GOLD;    // WATER, AIR, BONE, TISSUE or GOLD
+extern Material theMaterial;    // WATER, AIR, BONE, TISSUE or GOLD
 const real_type theEKin = 0.128;      // [MeV]
 
-const int theNumHists = 1000000;  // #histories to simulate
+extern int numHists;  // #histories to simulate
 const real_type thePC2 = theEKin * (theEKin + 2.0 * kMASS);
 const real_type theBeta2 = thePC2 / (thePC2 + kMASS * kMASS);
-const real_type theScrPar = ComputeScrParam(theMaterial, thePC2);
-const real_type theMFP = ComputeMFP(theMaterial, theBeta2, theScrPar);
+const real_type theScrPar = computeScrParam(theMaterial, thePC2);
+const real_type theMFP = computeMFP(theMaterial, theBeta2, theScrPar);
 
 const real_type theLimit =
     theMFP * 33.5;  // limit of cumulative track length in units of MFP

@@ -1,4 +1,5 @@
 #include "mcss_reference.h"
+#include "common.h"
 
 #include <cmath>
 #include <random>
@@ -13,7 +14,7 @@ Histograms Simulate() {
     std::uniform_real_distribution<> dis(0, 1.0);
     Track aTrack;
 
-    for (int ih = 0; ih < theNumHists; ih++) {
+    for (int ih = 0; ih < numHists; ih++) {
         aTrack.Reset();
         double trackLength = 0.0;
         bool stop = false;
@@ -31,15 +32,15 @@ Histograms Simulate() {
             aTrack.fTrackLength += stepLength;
 
             if (!stop) {
-                const double cost = SampleCosTheta(theScrPar, dis(gen));
+                const double cost = sampleCosTheta(theScrPar, dis(gen));
                 const double dum0 = 1.0 - cost;
                 const double sint = std::sqrt(dum0 * (2.0 - dum0));
                 const double phi = 2.0 * kPI * dis(gen);
-                double u1 = sint * std::cos(phi);
-                double u2 = sint * std::sin(phi);
-                double u3 = cost;
+                real_type u1 = sint * std::cos(phi);
+                real_type u2 = sint * std::sin(phi);
+                real_type u3 = cost;
 
-                RotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
+                rotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
                                  aTrack.fDirection[1], aTrack.fDirection[2]);
                 aTrack.fDirection[0] = u1;
                 aTrack.fDirection[1] = u2;
@@ -59,8 +60,8 @@ Histograms Simulate() {
         ++theTransDistr[tIndx];
     }
 
-    double longiNormFactor = 1.0 / theNumHists * longiDistInvD;
-    double transNormFactor = 1.0 / theNumHists * transDistInvD;
+    double longiNormFactor = 1.0 / numHists * longiDistInvD;
+    double transNormFactor = 1.0 / numHists * transDistInvD;
 
     Histograms histograms = {};
     for (int i = 0; i < longiDistNumBin; i++) {

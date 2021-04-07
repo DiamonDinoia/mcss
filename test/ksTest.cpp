@@ -18,11 +18,12 @@
 /*                                                                        */
 /**************************************************************************/
 
-#include "ksTest.h"
+#include "include/ksTest.h"
 
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <list>
 #include <vector>
 
 /* KOLMOGOROV-SMIRNOV TEST OF HOMOGENEITY
@@ -431,52 +432,23 @@ std::ostream &operator<<(std::ostream &os,
  * makes sense, cannot be computed easily with our current means (Marsaglia's
  * procedure or the limiting form of D_nm).
  */
-double ks_test(std::list<double> sample1, std::list<double> sample2) {
+double ks_test(std::vector<real_type> vector1, std::vector<real_type> vector2) {
+    std::list<real_type> sample1(vector1.begin(), vector1.end());
+    std::list<real_type> sample2(vector2.begin(), vector2.end());
+
     unsigned int n1, n2, n_approx;
-    // sample sizes
     float d;
-    // the value of Kolmogorov's statistic
-    // for the particular values of sample1 and sample2
     double D, Dmin, Dmax, s;
-    // used in computing this value d
 
-    std::list<double>::iterator it1, it2;
+    std::list<real_type>::iterator it1, it2;
 
-    // Determine sample sizes
     n1 = sample1.size();
     n2 = sample2.size();
 
-    // Calculate a conservative n approximation
     n_approx = (unsigned)ceil(float(n1 * n2) / (n1 + n2));
-    //    outfile << "n_approx=" << n_approx << std::endl;
 
-    // Sort samples
     sample1.sort();
-    //    outfile << "sorted sample1: " << sample1 << std::endl;
     sample2.sort();
-    //    outfile << "sorted sample2: " << sample2 << std::endl;
-
-    // We divide the range 0..1 into n1*n2 intervals of equal size 1/(n1*n2).
-    //
-    // Each item in sample1 makes the sample c.d.f of sample1
-    // jump by a step of n2 intervals.
-    // Each item in sample2 makes the sample c.d.f of sample2
-    // jump by a step of n1 intervals.
-    //
-    // For each item we compute D, related to the distance between the two
-    // sample c.d.f., s_cdf_1 - s_cdf_2, by:
-    //
-    //    D/(n1*n2) = s_cdf_1 - s_cdf_2
-    //
-    // We want to determine:
-    //
-    //    Dmin/(n1*n2) = min [s_cdf_1 - s_cdf_2] <= 0
-    //    Dmax/(n1*n2) = max [s_cdf_1 - s_cdf_2] >= 0
-    //
-    // And then the value of Kolmorogov's statistic D_n1n2 is just:
-    //
-    //    D_n1n2 = sup |s_cdf_1 - s_cdf_2|
-    //           = max [ |Dmin/(n1*n2)| ; |Dmax/(n1*n2)| ]
 
     D = 0;
     Dmin = 0;
@@ -486,23 +458,16 @@ double ks_test(std::list<double> sample1, std::list<double> sample2) {
 
     while ((it1 != sample1.end()) && (it2 != sample2.end())) {
         if (*it1 == *it2) {
-            //            outfile << *it1 << " tie!";
-            // steps in both sample c.d.f., we need to perform all steps
-            // in this point before comparing D to Dmin and Dmax
-
             s = *it1;
-            // perform all steps in s_cdf_1 first
             do {
                 D += n2;
                 it1++;
             } while ((*it1 == s) && (it1 != sample1.end()));
-            // perform all steps in s_cdf_2 now
             do {
                 D -= n1;
                 it2++;
             } while ((*it2 == s) && (it2 != sample2.end()));
 
-            // now adapt Dmin, Dmax if necessary
             if (D > Dmax)
                 Dmax = D;
             else if (D < Dmin)
@@ -511,39 +476,25 @@ double ks_test(std::list<double> sample1, std::list<double> sample2) {
         }
 
         else if (*it1 < *it2) {
-            //            outfile << *it1;
-            // step in s_cdf_1, increase D by n2
             D += n2;
             it1++;
 
             if (D > Dmax) Dmax = D;
-
         }
 
         else {
-            //            outfile << *it2;
-            // step in F2, decrease D by n1
             D -= n1;
             it2++;
 
             if (D < Dmin) Dmin = D;
         }
-
-        //        outfile << " D=" << D << " Dmin=" << Dmin << " Dmax=" << Dmax
-        //                << std::endl;
     }
-
-    // For two-sided test, take D = max (|Dmax|, |Dmin|) and compute
-    // the value d of Kolmogorov's statistic (two-sided only)
 
     if (-Dmin > Dmax)
         D = -Dmin;
     else
         D = Dmax;
 
-    // Hence the observed value of Kolmogorov's statistic:
     d = float(D) / (n1 * n2);
-
-    // Return p-value
     return 1 - K(n_approx, d);
 }

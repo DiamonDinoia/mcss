@@ -3,7 +3,6 @@ project(tests)
 
 add_definitions(-DTEST=42)
 
-add_subdirectory(lib/Catch2)
 link_libraries(Catch2::Catch2)
 
 include_directories(include)

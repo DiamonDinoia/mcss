@@ -5,13 +5,13 @@
 
 #include "common.h"
 
-namespace multithread {
+namespace Multithread {
 struct Histograms {
     std::vector<real_type> longiHist;
     std::vector<real_type> transHist;
 };
 
 Histograms Simulate();
-}  // namespace multithread
+}  // namespace Multithread
 
 #endif
