@@ -14,17 +14,17 @@ std::vector<std::vector<real_type>> initialiseHistogram(int numThreads,
 }
 
 Histograms Simulate() {
-    omp_set_num_threads(NUM_THREADS);
+    omp_set_num_threads(numThreads);
 
     std::vector<real_type> globalLongiDistr(longiDistNumBin);
     std::vector<real_type> globalTransDistr(transDistNumBin);
 
     std::vector<std::vector<real_type>> threadsLongiHists =
-        initialiseHistogram(NUM_THREADS, longiDistNumBin);
+        initialiseHistogram(numThreads, longiDistNumBin);
     std::vector<std::vector<real_type>> threadsTransHists =
-        initialiseHistogram(NUM_THREADS, transDistNumBin);
+        initialiseHistogram(numThreads, transDistNumBin);
 
-#pragma omp parallel for num_threads(NUM_THREADS)
+#pragma omp parallel for num_threads(numThreads)
     for (int i = 0; i < numHists; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
@@ -73,9 +73,9 @@ Histograms Simulate() {
         threadsTransHists[omp_get_thread_num()][tIndx]++;
     }
 
-    real_type longiNormFactor = 1.0 / numHists * longiDistInvD;
-    real_type transNormFactor = 1.0 / numHists * transDistInvD;
-    for (int i = 0; i < NUM_THREADS; i++) {
+    real_type longiNormFactor = longiDistInvD / numHists;
+    real_type transNormFactor = transDistInvD / numHists;
+    for (int i = 0; i < numThreads; i++) {
         for (int j = 0; j < longiDistNumBin; j++) {
             globalLongiDistr[j] += threadsLongiHists[i][j] * longiNormFactor;
         }

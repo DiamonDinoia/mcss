@@ -87,9 +87,9 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[1] >= 0.95);
     }
 
-    SECTION("Tissue, 50,000 histories") {
-        theMaterial = WATER;
-        numHists = 50000;
+    SECTION("Tissue, 500,000 histories") {
+        theMaterial = TISSUE;
+        numHists = 500000;
         auto reference = calculateReferenceDistribution();
         auto multithreaded = calculateMultithreadedDistribution();
         auto pValues = compareDistributions(reference, multithreaded);

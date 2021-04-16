@@ -4,6 +4,7 @@ project(mcss)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(OpenMP REQUIRED)
+find_package(PythonLibs REQUIRED)
 
 if (NOT DEFINED SINGLE)
     set(SINGLE ON)
@@ -19,18 +20,24 @@ endif ()
 if (CMAKE_BUILD_TYPE MATCHES Release)
     add_compile_options(-O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
     add_compile_options(-march=native)
+    add_subdirectory(test)
 endif ()
 
 if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
     add_compile_options(-g -fno-omit-frame-pointer)
     add_compile_options(-O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
     add_compile_options(-march=native)
+#    add_subdirectory(test)
 endif ()
 
 include_directories(include)
 
-file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*" "mcss.cpp")
+file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*")
 message(SOURCES = ${SOURCES})
 
-add_executable(mcss ${SOURCES})
+add_executable(mcss ${SOURCES} mcss.cpp)
 target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
+
+add_executable(plot ${SOURCES} include/util/matplotlibcpp.h src/plot.cpp)
+include_directories(${PYTHON_INCLUDE_DIRS})
+target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX ${PYTHON_LIBRARIES})

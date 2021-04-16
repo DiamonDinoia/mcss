@@ -1,8 +1,9 @@
-#include "../include/common.h"
+#include "common.h"
 
 // Default values
 int numHists = 1000000;
 Material theMaterial = GOLD;
+int numThreads = std::thread::hardware_concurrency();
 
 real_type computeScrParam(const Material &mat, const real_type ptot2) {
     return kMolierXc2[mat] / (4.0 * ptot2 * kMolierBc[mat]);

@@ -18,7 +18,7 @@ using real_type = float;
 using real_type = double;
 #endif  // SINGLE
 
-const int NUM_THREADS = std::thread::hardware_concurrency();
+extern int numThreads;
 enum Material { WATER, AIR, BONE, TISSUE, GOLD };
 
 real_type computeScrParam(const Material &mat, real_type ptot2);

@@ -14,7 +14,6 @@ message(TEST SOURCES = ${SOURCES})
 
 add_executable(test ${SOURCES})
 
-
 find_package(OpenMP REQUIRED)
 target_link_libraries(test PUBLIC OpenMP::OpenMP_CXX)
 
