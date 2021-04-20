@@ -110,6 +110,7 @@ TEST_CASE("Correctness") {
 
 TEST_CASE("Benchmarking") {
     BENCHMARK("Reference") {
+//        numHists = 10000000;
         return calculateReferenceDistribution();
     };
 
