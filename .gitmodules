@@ -1,3 +1,6 @@
 [submodule "test/lib/Catch2"]
 	path = test/lib/Catch2
 	url = https://github.com/catchorg/Catch2.git
+[submodule "util/matplotlib-cpp"]
+	path = util/matplotlib-cpp
+	url = https://github.com/lava/matplotlib-cpp

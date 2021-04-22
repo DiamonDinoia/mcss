@@ -109,8 +109,9 @@ TEST_CASE("Correctness") {
 }
 
 TEST_CASE("Benchmarking") {
+    numHists = 1000000;
+    theMaterial = GOLD;
     BENCHMARK("Reference") {
-//        numHists = 10000000;
         return calculateReferenceDistribution();
     };
 

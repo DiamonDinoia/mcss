@@ -4,7 +4,6 @@ project(mcss)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(OpenMP REQUIRED)
-find_package(PythonLibs REQUIRED)
 
 if (NOT DEFINED SINGLE)
     set(SINGLE ON)
@@ -38,6 +37,5 @@ message(SOURCES = ${SOURCES})
 add_executable(mcss ${SOURCES} mcss.cpp)
 target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
 
-add_executable(plot ${SOURCES} util/matplotlibcpp.h util/plot.cpp)
-include_directories(${PYTHON_INCLUDE_DIRS})
-target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX ${PYTHON_LIBRARIES})
+add_executable(plot ${SOURCES} util/c++/plot.cpp)
+target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX)

@@ -22,10 +22,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    std::cout << theMaterial << std::endl;
-    std::cout << numHists << std::endl;
-    std::cout << numThreads << std::endl;
-
     Multithread::Simulate();
     exit(EXIT_SUCCESS);
 }
