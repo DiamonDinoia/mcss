@@ -23,17 +23,9 @@ std::vector<double> compareDistributions(Reference::Histograms originalHistogram
     return std::vector<double>{pLong, pTrans};
 }
 
-Reference::Histograms calculateReferenceDistribution() {
-    return Reference::Simulate();
-}
-
-Multithread::Histograms calculateMultithreadedDistribution() {
-    return Multithread::Simulate();
-}
-
 TEST_CASE("Correctness") {
-    auto referenceHistograms = calculateReferenceDistribution();
-    auto multithreadedHistograms = calculateMultithreadedDistribution();
+    auto referenceHistograms = Reference::Simulate();
+    auto multithreadedHistograms = Multithread::Simulate();
 
     SECTION("Default K-S test p values are statistically significant") {
         auto pValues = compareDistributions(referenceHistograms, multithreadedHistograms);
@@ -58,64 +50,46 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Water, 1,000,000 histories") {
-        theMaterial = WATER;
-        numHists = 1000000;
-        auto reference = calculateReferenceDistribution();
-        auto multithreaded = calculateMultithreadedDistribution();
+        auto reference = Reference::Simulate(WATER, 1000000);
+        auto multithreaded = Multithread::Simulate(WATER, 1000000);
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
     SECTION("Air, 100,000 histories") {
-        theMaterial = AIR;
-        numHists = 100000;
-        auto reference = calculateReferenceDistribution();
-        auto multithreaded = calculateMultithreadedDistribution();
+        auto reference = Reference::Simulate(AIR, 100000);
+        auto multithreaded = Multithread::Simulate(AIR, 100000);
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
     SECTION("Bone, 100,000 histories") {
-        theMaterial = BONE;
-        numHists = 100000;
-        auto reference = calculateReferenceDistribution();
-        auto multithreaded = calculateMultithreadedDistribution();
+        auto reference = Reference::Simulate(BONE, 100000);
+        auto multithreaded = Multithread::Simulate(BONE, 100000);
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
     SECTION("Tissue, 500,000 histories") {
-        theMaterial = TISSUE;
-        numHists = 500000;
-        auto reference = calculateReferenceDistribution();
-        auto multithreaded = calculateMultithreadedDistribution();
+        auto reference = Reference::Simulate(TISSUE, 500000);
+        auto multithreaded = Multithread::Simulate(TISSUE, 500000);
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
-
-    //TODO: Test floats and doubles
-    //TODO: Edge cases?
-    SECTION("Floats work") {
-
-    }
-
-    SECTION("Doubles work") {
-
-    }
 }
 
 TEST_CASE("Benchmarking") {
-    numHists = 1000000;
-    theMaterial = GOLD;
+    int numHists = 1000000;
+    Material material = GOLD;
     BENCHMARK("Reference") {
-        return calculateReferenceDistribution();
+        return Reference::Simulate(material, numHists);
     };
 
     BENCHMARK("Multithreaded") {
-        return calculateMultithreadedDistribution();
+        return Multithread::Simulate(material, numHists);
     };
 }

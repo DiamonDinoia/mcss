@@ -3,6 +3,7 @@
 
 namespace Multithread {
 
+// Create and initialise histograms with correct dimensions.
 std::vector<std::vector<real_type>> initialiseHistogram(int numThreads,
                                                         int numBins) {
     std::vector<std::vector<real_type>> histogram;
@@ -13,19 +14,31 @@ std::vector<std::vector<real_type>> initialiseHistogram(int numThreads,
     return histogram;
 }
 
-Histograms Simulate() {
+// Simulates a given number of particle histories and plots the outputs
+// on transverse and longitudinal histograms.
+Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
+    const real_type theScrPar = computeScrParam(material, thePC2);
+    const real_type theMFP = computeMFP(material, theBeta2, theScrPar);
+    const real_type theLimit = theMFP * 33.5;
+
     omp_set_num_threads(numThreads);
 
+    // Final longitudinal and transverse histograms.
     std::vector<real_type> globalLongiDistr(longiDistNumBin);
     std::vector<real_type> globalTransDistr(transDistNumBin);
 
+    // A vector of num_threads histograms, each dedicated to a
+    // different thread. Each histogram is independently thread-safe.
     std::vector<std::vector<real_type>> threadsLongiHists =
         initialiseHistogram(numThreads, longiDistNumBin);
     std::vector<std::vector<real_type>> threadsTransHists =
         initialiseHistogram(numThreads, transDistNumBin);
 
+    // Main loop to simulate a particle history.
+    // Multi-threaded using OpenMP threading.
 #pragma omp parallel for num_threads(numThreads)
     for (int i = 0; i < numHists; i++) {
+        // Generate a random decimal between 0 and 1.
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(0, 1.0);
@@ -61,8 +74,11 @@ Histograms Simulate() {
             }
         } while (!stop);
 
+        // Calculate final longitudinal location.
         const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
         real_type lIndx = (longi + 1.0) * longiDistInvD;
+        // Increment the relevent element of the thread-specific
+        // longitudinal histogram.
         threadsLongiHists[omp_get_thread_num()][lIndx]++;
 
         const real_type trans =
@@ -73,14 +89,14 @@ Histograms Simulate() {
         threadsTransHists[omp_get_thread_num()][tIndx]++;
     }
 
-    real_type longiNormFactor = longiDistInvD / numHists;
-    real_type transNormFactor = transDistInvD / numHists;
+    // Thread-specific histograms are combined and normalised
+    // to form the overall distributions.
     for (int i = 0; i < numThreads; i++) {
         for (int j = 0; j < longiDistNumBin; j++) {
-            globalLongiDistr[j] += threadsLongiHists[i][j] * longiNormFactor;
+            globalLongiDistr[j] += threadsLongiHists[i][j] * (longiDistInvD / numHists);
         }
         for (int j = 0; j < transDistNumBin; j++) {
-            globalTransDistr[j] += threadsTransHists[i][j] * transNormFactor;
+            globalTransDistr[j] += threadsTransHists[i][j] * (transDistInvD / numHists);
         }
     }
 

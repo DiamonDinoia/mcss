@@ -1,8 +1,7 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
+# Takes an array of CSV files and plots a graph with a given title.
 def plot_graph(filenames, title):
     xs = [[]]
     ys = [[]]
@@ -25,7 +24,7 @@ def plot_graph(filenames, title):
 
 
 def main():
-    filenames = ["../../plots/multithreaded_transverse.csv", "../../plots/reference_transverse.csv"]
+    filenames = ["../../plots/multithreaded_longitudinal.csv", "../../plots/reference_longitudinal.csv"]
     plot_graph(filenames, "A plot between reference and multithreaded transverse distributions")
 
 

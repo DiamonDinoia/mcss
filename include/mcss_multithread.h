@@ -11,7 +11,9 @@ struct Histograms {
     std::vector<real_type> transHist;
 };
 
-Histograms Simulate();
+Histograms Simulate(
+    Material material = GOLD, int numHists = 1000000,
+    unsigned int numThreads = std::thread::hardware_concurrency());
 }  // namespace Multithread
 
 #endif

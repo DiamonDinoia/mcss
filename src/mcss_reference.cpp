@@ -4,8 +4,13 @@
 #include <cmath>
 #include <random>
 
+// Minimally-altered, single-threaded MCSS implementation.
 namespace Reference {
-Histograms Simulate() {
+Histograms Simulate(Material material, int numHists) {
+    const real_type theScrPar = computeScrParam(material, thePC2);
+    const real_type theMFP = computeMFP(material, theBeta2, theScrPar);
+    const real_type theLimit = theMFP * 33.5;
+
     double theLongiDistr[longiDistNumBin] = {0.0};
     double theTransDistr[transDistNumBin] = {0.0};
 
@@ -65,13 +70,17 @@ Histograms Simulate() {
 
     Histograms histograms = {};
     for (int i = 0; i < longiDistNumBin; i++) {
-        histograms.longiHist[i] = theLongiDistr[i] * longiNormFactor;
+        histograms.longiHist[i] = theLongiDistr[i] * (longiDistInvD / numHists);
     }
 
     for (int i = 0; i < transDistNumBin; i++) {
-        histograms.transHist[i] = theTransDistr[i] * transNormFactor;
+        histograms.transHist[i] = theTransDistr[i] * (transDistInvD / numHists);
     }
 
     return histograms;
+}
+
+Histograms Simulate() {
+    return Simulate(GOLD, 1000000);
 }
 }  // namespace Reference

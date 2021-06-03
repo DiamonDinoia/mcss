@@ -9,7 +9,7 @@ struct Histograms {
     double transHist[transDistNumBin]{};
 };
 
-Histograms Simulate();
+Histograms Simulate(Material material = GOLD, int numHists = 1000000);
 }  // namespace Reference
 
 #endif
