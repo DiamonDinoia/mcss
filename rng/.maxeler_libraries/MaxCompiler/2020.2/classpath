@@ -1,0 +1,14 @@
+lib/commons-math3-3.6.1.jar
+lib/bcpkix-jdk15on-160.jar
+lib/protobuf-java-3.11.4.jar
+lib/ecj.jar
+lib/Max5Platform.jar
+lib/commons-math3-3.6.1-javadoc.jar
+lib/commons-math3-3.6.1-tools.jar
+lib/MaxCoreCache.jar
+lib/GenericIPPlatform.jar
+lib/MaxCompiler.jar
+lib/Max4Platform.jar
+lib/mesos-1.9.0.jar
+lib/bcprov-jdk15on-160.jar
+lib/json-simple-1.1.1.jar

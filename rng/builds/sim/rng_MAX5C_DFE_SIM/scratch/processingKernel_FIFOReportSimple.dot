@@ -1,0 +1,44 @@
+digraph fifoReportGraph {
+	NodeprocessingKernel26 [shape=invhouse, label="processingKernel.maxj\nline: 26"];
+	NodeprocessingKernel27 [shape=hexagon, orientation=90, label="processingKernel.maxj\nline: 27"];
+	NodeprocessingKernel38 [shape=invhouse, label="processingKernel.maxj\nline: 38"];
+	NodeprocessingKernel31 [shape=house, label="processingKernel.maxj\nline: 31"];
+	NodeprocessingKernel54 [shape=house, label="processingKernel.maxj\nline: 54"];
+	NodeprocessingKernel32 [shape=hexagon, orientation=90, label="processingKernel.maxj\nline: 32"];
+	NodeprocessingKernel44 [shape=house, label="processingKernel.maxj\nline: 44"];
+	NodeprocessingKernel23 [shape=invhouse, label="processingKernel.maxj\nline: 23"];
+	NoderngManager19 [shape=house, label="rngManager.maxj\nline: 19"];
+	NodeprocessingKernel34 [shape=invhouse, label="processingKernel.maxj\nline: 34"];
+	NodeprocessingKernel40 [shape=house, label="processingKernel.maxj\nline: 40"];
+	NodeprocessingKernel39 [shape=house, label="processingKernel.maxj\nline: 39"];
+	NodeprocessingKernel27NodeprocessingKernel27FIFO [shape=box, label="TotalCosts: 7 \n"];
+	NodeprocessingKernel32NodeprocessingKernel32FIFO [shape=box, label="TotalCosts: 7 \n"];
+	NodeprocessingKernel34NodeprocessingKernel54FIFO [shape=box, label="TotalCosts: 4 \n"];
+	NodeprocessingKernel34NodeprocessingKernel44FIFO [shape=box, label="TotalCosts: 4 \n"];
+	NodeprocessingKernel34NodeprocessingKernel40FIFO [shape=box, label="TotalCosts: 4 \n"];
+	NodeprocessingKernel38NodeprocessingKernel39FIFO [shape=box, label="TotalCosts: 3 \n"];
+	NodeprocessingKernel23NoderngManager19FIFO [shape=box, label="TotalCosts: 1 \n"];
+	NodeprocessingKernel26NodeprocessingKernel27FIFO [shape=box, label="TotalCosts: 1 \n"];
+	NodeprocessingKernel23NodeprocessingKernel31FIFO [shape=box, label="TotalCosts: 1 \n"];
+	NodeprocessingKernel26NoderngManager19FIFO [shape=box, label="TotalCosts: 1 \n"];
+	NodeprocessingKernel23 -> NodeprocessingKernel23NoderngManager19FIFO[color="/dark28/1"]
+	NodeprocessingKernel23NoderngManager19FIFO -> NoderngManager19[color="/dark28/2"]
+	NodeprocessingKernel27 -> NodeprocessingKernel27NodeprocessingKernel27FIFO[color="/dark28/3"]
+	NodeprocessingKernel27NodeprocessingKernel27FIFO -> NodeprocessingKernel27[color="/dark28/4"]
+	NodeprocessingKernel32 -> NodeprocessingKernel32NodeprocessingKernel32FIFO[color="/dark28/5"]
+	NodeprocessingKernel32NodeprocessingKernel32FIFO -> NodeprocessingKernel32[color="/dark28/6"]
+	NodeprocessingKernel26 -> NodeprocessingKernel26NodeprocessingKernel27FIFO[color="/dark28/7"]
+	NodeprocessingKernel26NodeprocessingKernel27FIFO -> NodeprocessingKernel27[color="/dark28/8"]
+	NodeprocessingKernel38 -> NodeprocessingKernel38NodeprocessingKernel39FIFO[color="/dark28/1"]
+	NodeprocessingKernel38NodeprocessingKernel39FIFO -> NodeprocessingKernel39[color="/dark28/2"]
+	NodeprocessingKernel23 -> NodeprocessingKernel23NodeprocessingKernel31FIFO[color="/dark28/3"]
+	NodeprocessingKernel23NodeprocessingKernel31FIFO -> NodeprocessingKernel31[color="/dark28/4"]
+	NodeprocessingKernel34 -> NodeprocessingKernel34NodeprocessingKernel54FIFO[color="/dark28/5"]
+	NodeprocessingKernel34NodeprocessingKernel54FIFO -> NodeprocessingKernel54[color="/dark28/6"]
+	NodeprocessingKernel34 -> NodeprocessingKernel34NodeprocessingKernel44FIFO[color="/dark28/7"]
+	NodeprocessingKernel34NodeprocessingKernel44FIFO -> NodeprocessingKernel44[color="/dark28/8"]
+	NodeprocessingKernel26 -> NodeprocessingKernel26NoderngManager19FIFO[color="/dark28/1"]
+	NodeprocessingKernel26NoderngManager19FIFO -> NoderngManager19[color="/dark28/2"]
+	NodeprocessingKernel34 -> NodeprocessingKernel34NodeprocessingKernel40FIFO[color="/dark28/3"]
+	NodeprocessingKernel34NodeprocessingKernel40FIFO -> NodeprocessingKernel40[color="/dark28/4"]
+}

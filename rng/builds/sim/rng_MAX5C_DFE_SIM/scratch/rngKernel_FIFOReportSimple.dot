@@ -1,0 +1,15 @@
+digraph fifoReportGraph {
+	NodeMersenneTwister271 [shape=house, label="MersenneTwister.maxj\nline: 271"];
+	NodeMersenneTwister275 [shape=house, label="MersenneTwister.maxj\nline: 275"];
+	NodeMersenneTwister247 [shape=hexagon, orientation=90, label="MersenneTwister.maxj\nline: 247"];
+	NodeMersenneTwister248 [shape=invhouse, label="MersenneTwister.maxj\nline: 248"];
+	NodeMersenneTwister248NodeMersenneTwister247FIFO [shape=box, label="TotalCosts: 3 \n"];
+	NodeMersenneTwister247NodeMersenneTwister275FIFO [shape=box, label="TotalCosts: 3 \n"];
+	NodeMersenneTwister247NodeMersenneTwister271FIFO [shape=box, label="TotalCosts: 3 \n"];
+	NodeMersenneTwister248 -> NodeMersenneTwister248NodeMersenneTwister247FIFO[color="/dark28/1"]
+	NodeMersenneTwister248NodeMersenneTwister247FIFO -> NodeMersenneTwister247[color="/dark28/2"]
+	NodeMersenneTwister247 -> NodeMersenneTwister247NodeMersenneTwister275FIFO[color="/dark28/3"]
+	NodeMersenneTwister247NodeMersenneTwister275FIFO -> NodeMersenneTwister275[color="/dark28/4"]
+	NodeMersenneTwister247 -> NodeMersenneTwister247NodeMersenneTwister271FIFO[color="/dark28/5"]
+	NodeMersenneTwister247NodeMersenneTwister271FIFO -> NodeMersenneTwister271[color="/dark28/6"]
+}

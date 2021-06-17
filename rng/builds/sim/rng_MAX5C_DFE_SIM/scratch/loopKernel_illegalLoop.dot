@@ -1,0 +1,36 @@
+digraph loopKernel_illegalLoop{
+	NodeMux107 [color=red, style="bold, filled", fillcolor=yellow, shape=invtrapezium, height=0.5, label="MUX\nID: 107"];
+	NodeSub106 [color=red, style="bold, filled", fillcolor=yellow, label="-\nID: 106"];
+	NodeMux19 [color=red, style="bold, filled", fillcolor=yellow, shape=invtrapezium, height=0.5, label="MUX\nID: 19"];
+	NodeAdd1254 [color=red, style="bold, filled", fillcolor=yellow, label="+\nID: 1254"];
+	NodeGt104 [shape=point];
+	NodeGt104 -> NodeMux107[label="(2)" headport="w" color="/dark28/1" photon_data="EDGE,SrcNode:104,SrcNodePort:result"];
+	NodeMul101 [shape=point];
+	NodeMul101 -> NodeMux107[label="(8)" color="/dark28/2" photon_data="EDGE,SrcNode:101,SrcNodePort:result"];
+	NodeSub106 -> NodeMux107[label="(11)" color=red style=bold photon_data="EDGE,SrcNode:106,SrcNodePort:result"];
+	NodeMul108 [shape=point];
+	NodeMux107 -> NodeMul108 [label="(1)"];
+	NodeMul110 [shape=point];
+	NodeMux107 -> NodeMul110 [label="(1)"];
+	NodeMul112 [shape=point];
+	NodeMux107 -> NodeMul112 [label="(1)"];
+	NodeAdd114 [shape=point];
+	NodeMux107 -> NodeAdd114 [label="(1)"];
+	NodeConstantRawBits1817 [shape=point];
+	NodeConstantRawBits1817 -> NodeSub106[label="(0)" color="/dark28/3" photon_data="EDGE,SrcNode:1817,SrcNodePort:value"];
+	NodeMux19 -> NodeSub106[label="(1)" color=red style=bold photon_data="EDGE,SrcNode:19,SrcNodePort:result"];
+	NodeOr5 [shape=point];
+	NodeOr5 -> NodeMux19[label="(1)" headport="w" color="/dark28/4" photon_data="EDGE,SrcNode:5,SrcNodePort:result"];
+	NodeAdd1254 -> NodeMux19[label="(11)" color=red style=bold photon_data="EDGE,SrcNode:1254,SrcNodePort:result"];
+	NodeConstantRawBits18 [shape=point];
+	NodeConstantRawBits18 -> NodeMux19[label="(0)" color="/dark28/5" photon_data="EDGE,SrcNode:18,SrcNodePort:value"];
+	NodeAdd114 [shape=point];
+	NodeMux19 -> NodeAdd114 [label="(1)"];
+	NodeOutput1349 [shape=point];
+	NodeMux19 -> NodeOutput1349 [label="(1)"];
+	NodeStreamOffset1253 [shape=point];
+	NodeStreamOffset1253 -> NodeAdd1254[label="(-loopLength)" color="/dark28/6" photon_data="EDGE,SrcNode:1253,SrcNodePort:output"];
+	NodeMux107 -> NodeAdd1254[label="(1)" headport="n" tailport="s" color=red style=bold photon_data="EDGE,SrcNode:107,SrcNodePort:result"];
+	NodePrintf1260 [shape=point];
+	NodeAdd1254 -> NodePrintf1260 [label="(11)"];
+}

@@ -1,0 +1,7 @@
+lib/gluegen-rt.jar
+lib/jogl.jar
+lib/vecmath.jar
+lib/MaxGenFD.jar
+lib/MaxCompiler.jar
+lib/axion2.jar
+lib/MaxBlox.jar

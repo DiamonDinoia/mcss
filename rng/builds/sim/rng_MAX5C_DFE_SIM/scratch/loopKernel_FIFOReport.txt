@@ -1,0 +1,1076 @@
+NodeMul * {HWFloat:8, 24} ID: 104
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(79) {HWFloat:8, 24} 79 ID: 2137
+	FIFO(36) {HWFloat:8, 24} 36 ID: 2416
+
+NodeMux MUX {HWFloat:8, 24} ID: 134
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.max(KernelMath.java:648)
+rng.loopKernel.sampleCosTheta(loopKernel.maxj:18)
+rng.loopKernel.<init>(loopKernel.maxj:76)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(85) {HWFloat:8, 24} 85 ID: 2348
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2432
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2433
+
+NodeStreamOffset stream offset: -91 {HWFloat:8, 24} ID: 2103
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(86) {HWFloat:8, 24} 86 ID: 2409
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2420
+
+NodeMux MUX {HWFloat:8, 24} ID: 1269
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:121)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(57) {HWFloat:8, 24} 57 ID: 2421
+	FIFO(36) {HWFloat:8, 24} 36 ID: 2112
+
+NodeMux MUX {HWFloat:8, 24} ID: 1255
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:114)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2141
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2454
+
+NodeMux MUX {HWFloat:8, 24} ID: 1259
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:116)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2388
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2455
+
+NodeMux MUX {HWFloat:8, 24} ID: 1261
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:117)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(90) {HWFloat:8, 24} 90 ID: 2392
+
+NodeMux MUX {HWFloat:8, 24} ID: 20
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:51)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2441
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2360
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2443
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2440
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2442
+
+NodeMux MUX {HWFloat:8, 24} ID: 14
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:48)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2403
+
+NodeMux MUX {HWFloat:8, 24} ID: 18
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:50)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2448
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2369
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2447
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2449
+
+NodeAdd + {HWFloat:8, 24} ID: 117
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+rng.loopKernel.<init>(loopKernel.maxj:73)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(58) {HWFloat:8, 24} 58 ID: 2452
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2405
+
+NodeMul * {HWFloat:8, 24} ID: 1190
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(58) {HWFloat:8, 24} 58 ID: 2364
+
+NodeMul * {HWFloat:8, 24} ID: 664
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2437
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2346
+
+NodeMux MUX {HWFloat:8, 24} ID: 22
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:52)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(27) {HWFloat:8, 24} 27 ID: 2347
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2438
+	FIFO(4) {HWFloat:8, 24} 4 ID: 2439
+
+NodeAdd + {HWFloat:8, 24} ID: 105
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+rng.loopKernel.<init>(loopKernel.maxj:64)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(35) {HWFloat:8, 24} 35 ID: 2407
+	FIFO(5) {HWFloat:8, 24} 5 ID: 2418
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2419
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2417
+
+NodeMux MUX {HWFloat:8, 24} ID: 1156
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(38) {HWFloat:8, 24} 38 ID: 2244
+
+NodeMux MUX {HWFloat:8, 24} ID: 630
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(38) {HWFloat:8, 24} 38 ID: 2342
+
+NodeMux MUX {HWFloat:8, 24} ID: 24
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:53)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2453
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2378
+
+NodeReinterpret <{HWFloat:8, 24}> {HWFloat:8, 24} ID: 35
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+rng.loopKernel.<init>(loopKernel.maxj:62)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(28) {HWFloat:8, 24} 28 ID: 2151
+
+NodeAdd + {HWFloat:8, 24} ID: 1193
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+rng.loopKernel.<init>(loopKernel.maxj:84)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(25) {HWFloat:8, 24} 25 ID: 2367
+
+NodeStreamOffset stream offset: -91 {HWFloat:8, 24} ID: 2107
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(25) {HWFloat:8, 24} 25 ID: 2410
+
+NodeMux MUX {HWFloat:8, 24} ID: 1265
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:119)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2359
+
+NodeFIFO FIFO(2) {HWFloat:8, 24} ID: 2449
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2450
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2451
+
+NodeMul * {HWFloat:8, 24} ID: 1165
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:147)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2242
+
+NodeMul * {HWFloat:8, 24} ID: 639
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:147)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2340
+
+NodeMux MUX {HWFloat:8, 24} ID: 1245
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1187)
+rng.loopKernel.<init>(loopKernel.maxj:100)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2356
+
+NodeCast NodeCast
+{HWOffsetFix:79, -79, UNSIGNED} 
+->
+ {HWOffsetFix:80, -79, TWOSCOMPLEMENT} {HWOffsetFix:80, -79, TWOSCOMPLEMENT} ID: 709
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:46)
+maxpower.math.Utils.ldexp(Utils.java:108)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 4 ID: 2435
+	FIFO(3) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 3 ID: 2158
+
+NodeCast NodeCast
+{HWOffsetFix:79, -79, UNSIGNED} 
+->
+ {HWOffsetFix:80, -79, TWOSCOMPLEMENT} {HWOffsetFix:80, -79, TWOSCOMPLEMENT} ID: 183
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:46)
+maxpower.math.Utils.ldexp(Utils.java:108)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 4 ID: 2436
+	FIFO(3) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 3 ID: 2258
+
+NodeMux MUX {HWOffsetFix:25, -24, UNSIGNED} ID: 95
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1187)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:50)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(18) {HWOffsetFix:25, -24, UNSIGNED} 18 ID: 2135
+
+NodeMul * {HWFloat:8, 24} ID: 121
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+rng.loopKernel.sampleCosTheta(loopKernel.maxj:17)
+rng.loopKernel.<init>(loopKernel.maxj:76)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(14) {HWFloat:8, 24} 14 ID: 2147
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 78
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(16) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 16 ID: 2131
+
+NodeSub - {HWFloat:8, 24} ID: 136
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.subAsRHS(DFEVar.java:1000)
+rng.loopKernel.<init>(loopKernel.maxj:77)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(11) {HWFloat:8, 24} 11 ID: 2150
+
+NodeMux MUX {HWFloat:8, 24} ID: 16
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:49)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(11) {HWFloat:8, 24} 11 ID: 2394
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 79
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(10) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 10 ID: 2128
+
+NodeMux MUX {HWFloat:8, 24} ID: 1158
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2240
+
+NodeMux MUX {HWFloat:8, 24} ID: 632
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2338
+
+NodeSlice [7:0] {HWRawBits:8} ID: 65
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:46)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(29) {HWRawBits:8} 29 ID: 2118
+
+NodeMul * {HWFloat:8, 24} ID: 143
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+rng.loopKernel.<init>(loopKernel.maxj:79)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWFloat:8, 24} 6 ID: 2153
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2434
+
+NodeMux MUX {HWOffsetFix:17, -17, UNSIGNED} ID: 77
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:181)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWOffsetFix:17, -17, UNSIGNED} 6 ID: 2126
+	FIFO(6) {HWOffsetFix:17, -17, UNSIGNED} 6 ID: 2415
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 80
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 4 ID: 2125
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2024
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2178
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2025
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2208
+
+NodeFIFO FIFO(25) {HWFloat:8, 24} ID: 2367
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2444
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2026
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2276
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2027
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2306
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 10
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+rng.loopKernel.<init>(loopKernel.maxj:42)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(25) {HWOffsetFix:1, 0, UNSIGNED} 25 ID: 2423
+	FIFO(21) {HWOffsetFix:1, 0, UNSIGNED} 21 ID: 2358
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2424
+	FIFO(12) {HWOffsetFix:1, 0, UNSIGNED} 12 ID: 2422
+	FIFO(12) {HWOffsetFix:1, 0, UNSIGNED} 12 ID: 2425
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 1187
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:47)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(79) {HWOffsetFix:1, 0, UNSIGNED} 79 ID: 2247
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 661
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:43)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(79) {HWOffsetFix:1, 0, UNSIGNED} 79 ID: 2345
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 226
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:38)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(78) {HWOffsetFix:1, 0, UNSIGNED} 78 ID: 2344
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 752
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:41)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(76) {HWOffsetFix:1, 0, UNSIGNED} 76 ID: 2246
+
+NodeSub - {HWFloat:8, 24} ID: 128
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.subAsRHS(DFEVar.java:1000)
+rng.loopKernel.sampleCosTheta(loopKernel.maxj:17)
+rng.loopKernel.<init>(loopKernel.maxj:76)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2148
+
+NodeMux MUX {HWFloat:8, 24} ID: 132
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.min(KernelMath.java:615)
+rng.loopKernel.sampleCosTheta(loopKernel.maxj:18)
+rng.loopKernel.<init>(loopKernel.maxj:76)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2149
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 1172
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:151)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(64) {HWOffsetFix:1, 0, UNSIGNED} 64 ID: 2245
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 646
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:151)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(64) {HWOffsetFix:1, 0, UNSIGNED} 64 ID: 2343
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 780
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2171
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 981
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2176
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 254
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2269
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 455
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2274
+
+NodeSlice [30:0] {HWRawBits:31} ID: 2076
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWRawBits:31} 2 ID: 2354
+
+NodePulse pulse(90) {HWOffsetFix:1, 0, UNSIGNED} ID: 4
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.pulse(Count.java:703)
+rng.loopKernel.<init>(loopKernel.maxj:30)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(58) {HWOffsetFix:1, 0, UNSIGNED} 58 ID: 2414
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2139
+
+NodeCast NodeCast
+{HWOffsetFix:27, -23, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:25, -24, UNSIGNED} {HWOffsetFix:25, -24, UNSIGNED} ID: 70
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:48)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWOffsetFix:25, -24, UNSIGNED} 2 ID: 2121
+
+NodeGte >= {HWOffsetFix:1, 0, UNSIGNED} ID: 100
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:55)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(47) {HWOffsetFix:1, 0, UNSIGNED} 47 ID: 2136
+
+NodeGt > {HWOffsetFix:1, 0, UNSIGNED} ID: 107
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:845)
+rng.loopKernel.<init>(loopKernel.maxj:65)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2249
+	FIFO(11) {HWOffsetFix:1, 0, UNSIGNED} 11 ID: 2428
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2429
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2426
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 2430
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2427
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2431
+
+NodeGt > {HWOffsetFix:1, 0, UNSIGNED} ID: 1195
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:845)
+rng.loopKernel.<init>(loopKernel.maxj:85)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2250
+	FIFO(18) {HWOffsetFix:1, 0, UNSIGNED} 18 ID: 2446
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 2445
+
+NodeNot ~ {HWOffsetFix:1, 0, UNSIGNED} ID: 2050
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(32) {HWOffsetFix:1, 0, UNSIGNED} 32 ID: 2119
+
+NodeCast NodeCast
+{HWOffsetFix:10, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, TWOSCOMPLEMENT} {HWOffsetFix:8, 0, TWOSCOMPLEMENT} ID: 2031
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:8, 0, TWOSCOMPLEMENT} 4 ID: 2157
+
+NodeMux MUX {HWFloat:8, 24} ID: 746
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.math.Utils.ldexp(Utils.java:117)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2163
+
+NodeCast NodeCast
+{HWOffsetFix:10, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, TWOSCOMPLEMENT} {HWOffsetFix:8, 0, TWOSCOMPLEMENT} ID: 2039
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:8, 0, TWOSCOMPLEMENT} 4 ID: 2257
+
+NodeMux MUX {HWFloat:8, 24} ID: 220
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.math.Utils.ldexp(Utils.java:117)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2263
+
+NodeSlice [79:79] {HWRawBits:1} ID: 1578
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(29) {HWRawBits:1} 29 ID: 2275
+
+NodeSlice [0:0] {HWRawBits:1} ID: 747
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:40)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(27) {HWRawBits:1} 27 ID: 2177
+
+NodeShift >> {HWRawBits:24} ID: 803
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2206
+
+NodeShift >> {HWRawBits:24} ID: 1004
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2236
+
+NodeShift >> {HWRawBits:24} ID: 277
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2304
+
+NodeShift >> {HWRawBits:24} ID: 478
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2334
+
+NodeSlice [22:0] {HWRawBits:23} ID: 1382
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:23} 1 ID: 2113
+
+NodeAnd & {HWOffsetFix:1, 0, UNSIGNED} ID: 1233
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:579)
+rng.loopKernel.<init>(loopKernel.maxj:95)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(18) {HWOffsetFix:1, 0, UNSIGNED} 18 ID: 2375
+
+NodeReinterpret <{HWOffsetFix:8, 0, UNSIGNED}> {HWOffsetFix:8, 0, UNSIGNED} ID: 49
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getExponent(FloatingPoint.java:38)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:39)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWOffsetFix:8, 0, UNSIGNED} 2 ID: 2115
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 945
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2203
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 1146
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2233
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 419
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2301
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 620
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2331
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 948
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2205
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 1149
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2235
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 422
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2303
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 623
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2333
+
+NodeSub - {HWOffsetFix:9, 0, TWOSCOMPLEMENT} ID: 51
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getExponent(FloatingPoint.java:41)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:39)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:9, 0, TWOSCOMPLEMENT} 1 ID: 2117
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, UNSIGNED} {HWOffsetFix:8, 0, UNSIGNED} ID: 734
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.Utils.ldexp(Utils.java:115)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:8, 0, UNSIGNED} 1 ID: 2161
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, UNSIGNED} {HWOffsetFix:8, 0, UNSIGNED} ID: 208
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.Utils.ldexp(Utils.java:115)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:8, 0, UNSIGNED} 1 ID: 2261
+
+NodeSlice [31:31] {HWRawBits:1} ID: 790
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2207
+
+NodeSlice [31:31] {HWRawBits:1} ID: 991
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2237
+
+NodeSlice [31:31] {HWRawBits:1} ID: 264
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2305
+
+NodeSlice [31:31] {HWRawBits:1} ID: 465
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+rng.loopKernel.<init>(loopKernel.maxj:80)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2335
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1401
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2156
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1569
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2256
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1411
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2170
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1415
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2175
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1580
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2268
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1584
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2273
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1408
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2159
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1576
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2259
+
+NodeSlice [80:79] {HWRawBits:2} ID: 701
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:29)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+rng.loopKernel.<init>(loopKernel.maxj:81)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:2} 1 ID: 2166
+
+NodeSlice [31:31] {HWRawBits:1} ID: 2077
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(2) {HWRawBits:1} 2 ID: 2353
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 45
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getMantissa(FloatingPoint.java:94)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:38)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+rng.loopKernel.<init>(loopKernel.maxj:63)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2114
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1384
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2116
+
+NodeLtInlined < {HWOffsetFix:1, 0, UNSIGNED} ID: 1406
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2162
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1420
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2179
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1491
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2209
+
+NodeLtInlined < {HWOffsetFix:1, 0, UNSIGNED} ID: 1574
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2262
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1589
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2277
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1660
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2307
+

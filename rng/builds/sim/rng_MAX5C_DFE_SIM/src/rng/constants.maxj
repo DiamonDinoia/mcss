@@ -1,0 +1,29 @@
+package rng;
+
+public class constants {
+	static int material = 4;
+	
+	// Constants
+	static double[] kMolierBc = {877.879, 1.02281, 1645.05, 888.813, 12481.2};
+	static double[] kMolierXc2 = {0.0661905, 7.88813e-05, 0.17879, 0.0647072, 9.72643};
+	static double pi = 3.14159265358979323846;
+	static double mass = 0.510998910;
+	static double eKin = 0.128;
+	
+	static double thePC2 = eKin * (eKin + 2.0 * mass);
+	static double theBeta2 = thePC2 / (thePC2 + mass * mass);
+	static double theScrPar = computeScrParam(material, thePC2);
+	static double theMFP = computeMFP(material, theBeta2, theScrPar);
+	static double theLimit = theMFP * 33.5;
+	
+	static double longiDistInvD = 100;
+	static double transDistInvD = 100;
+		
+	static double computeScrParam(int material, double ptot2) {
+		return kMolierXc2[material] / (4.0 * ptot2 * kMolierBc[material]);
+	}
+	
+	static double computeMFP(int material,  double beta2, double scrpar) {
+		return beta2 * (1.0 + scrpar) / kMolierBc[material];
+	}
+}

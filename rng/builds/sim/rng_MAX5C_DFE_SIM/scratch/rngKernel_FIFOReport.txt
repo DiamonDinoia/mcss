@@ -1,0 +1,156 @@
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 17
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 222
+
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 16
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 229
+
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 15
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 236
+
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 14
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 226
+
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 13
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 233
+
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 12
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 240
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 29
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 227
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 47
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 228
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 28
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 234
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 46
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 235
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 27
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 241
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 45
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 242
+
+NodeGteInlined >= {HWOffsetFix:1, 0, UNSIGNED} ID: 171
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 225
+
+NodeSlice [31:31] {HWRawBits:1} ID: 86
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:1} 1 ID: 224
+
+NodeSlice [31:31] {HWRawBits:1} ID: 85
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:1} 1 ID: 231
+
+NodeSlice [31:31] {HWRawBits:1} ID: 84
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+rng.rngKernel.<init>(rngKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:17)
+rng.rngManager.main(rngManager.maxj:33)
+	FIFO(1) {HWRawBits:1} 1 ID: 238
+

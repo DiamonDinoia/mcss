@@ -1,0 +1,387 @@
+NodeID     : 0
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x0; 0.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.Flush.disabled(Flush.java:174)
+rng.loopKernel.<init>(loopKernel.maxj:13)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 1
+Node       : {HWFloat:8, 24}\n0x41200000; 10.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:90)
+rng.loopKernel.<init>(loopKernel.maxj:15)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 2
+Node       : EvalStreamOffset(loopLength)
+Node type  : NodeEvalStreamOffset
+Removed by : [SubstituteEqPlaceholders]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream$OffsetExpr.getDFEVar(Stream.java:183)
+rng.loopKernel.<init>(loopKernel.maxj:17)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 38
+  Node       : EvalStreamOffset(12)
+  Node type  : NodeEvalStreamOffset
+  Removed by : [ReplaceEvalStreamOffsetNodes]
+  Creator    : SubstituteEqPlaceholders
+
+  NodeID     : 41
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x0000000c; 12.0
+  Node type  : NodeConstantRawBits
+  Creator    : ReplaceEvalStreamOffsetNodes
+
+------------
+NodeID     : 3
+Node       : WatchNode
+Node type  : NodeWatch
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.simWatch(DFEVar.java:1148)
+rng.loopKernel.<init>(loopKernel.maxj:18)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 4
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:524)
+rng.loopKernel.<init>(loopKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+Led to:
+  NodeID     : 36
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 5
+Node       : {HWOffsetFix:33, 0, UNSIGNED}\n0x100000000; 4.294967296E9
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:524)
+rng.loopKernel.<init>(loopKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 6
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:524)
+rng.loopKernel.<init>(loopKernel.maxj:20)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 7
+Node       : Scalar input (io_y_force_disabled)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+rng.loopKernel.<init>(loopKernel.maxj:22)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 8
+Node       : ~
+Node type  : NodeNot
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+rng.loopKernel.<init>(loopKernel.maxj:22)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 9
+Node       : Input(y)
+Node type  : NodeInput
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+rng.loopKernel.<init>(loopKernel.maxj:22)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 10
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.pulse(Count.java:703)
+rng.loopKernel.<init>(loopKernel.maxj:25)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 11
+Node       : pulse(1)
+Node type  : NodePulse
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.pulse(Count.java:703)
+rng.loopKernel.<init>(loopKernel.maxj:25)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 12
+Node       : {HWFloat:8, 24}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:25)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 13
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+rng.loopKernel.<init>(loopKernel.maxj:25)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 14
+Node       : NodeCast
+{HWFloat:8, 24} 
+->
+ {HWFloat:8, 24}
+Node type  : NodeCast
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+rng.loopKernel.<init>(loopKernel.maxj:26)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 15
+Node       : +
+Node type  : NodeAdd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+rng.loopKernel.<init>(loopKernel.maxj:26)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 16
+Node       : stream offset: -loopLength
+Node type  : NodeStreamOffset
+Removed by : [SubstituteEqPlaceholders]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:353)
+rng.loopKernel.<init>(loopKernel.maxj:27)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+Led to:
+  NODE WAS REMOVED!
+  NodeID     : 37
+  Node       : stream offset: -loopLength
+  Node type  : NodeStreamOffset
+  Removed by : [SubstituteEqPlaceholders]
+  Creator    : SubstituteEqPlaceholders
+
+  NodeID     : 39
+  Node       : stream offset: -12
+  Node type  : NodeStreamOffset
+  Creator    : SubstituteEqPlaceholders
+
+------------
+NodeID     : 17
+Node       : >=
+Node type  : NodeGte
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:795)
+rng.loopKernel.<init>(loopKernel.maxj:31)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 18
+Node       : Scalar input (io_z_force_disabled)
+Node type  : NodeInputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:707)
+rng.loopKernel.<init>(loopKernel.maxj:31)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 19
+Node       : ~
+Node type  : NodeNot
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:707)
+rng.loopKernel.<init>(loopKernel.maxj:31)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 20
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:707)
+rng.loopKernel.<init>(loopKernel.maxj:31)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 21
+Node       : Output(z)
+Node type  : NodeOutput
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:707)
+rng.loopKernel.<init>(loopKernel.maxj:31)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 22
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+Led to:
+  NodeID     : 35
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 23
+Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 24
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 25
+Node       : stream offset: 1
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 26
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 27
+Node       : Scalar output (current_run_cycle_count)
+Node type  : NodeOutputMappedReg
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 28
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 29
+Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
+Node type  : NodeConstantRawBits
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NODE WAS REMOVED!
+NodeID     : 30
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Removed by : [Init Graph]
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 31
+Node       : flush on trigger
+Node type  : NodeFlush
+Creator    : User
+Stack Trace:
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+rng.rngManager.<init>(rngManager.maxj:18)
+rng.rngManager.main(rngManager.maxj:33)
+------------
+NodeID     : 32
+Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+Node type  : NodeConstantRawBits
+Creator    : PrepareSimulationPass
+------------
+NodeID     : 33
+Node       : Output(internal_watch_llv_output)
+Node type  : NodeOutput
+Creator    : PrepareSimulationPass
+------------
+NodeID     : 34
+Node       : Output(internal_watch_countloopkernel_output)
+Node type  : NodeOutput
+Creator    : PrepareSimulationPass
+------------
+NodeID     : 40
+Node       : FIFO(2)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------

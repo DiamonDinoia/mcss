@@ -1,0 +1,26 @@
+package rng;
+
+import maxpower.kernel.random.MersenneTwister;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+
+public class rngKernel extends Kernel {
+
+	public rngKernel(final KernelParameters parameters) {
+		super(parameters);
+
+		flush.disabled();
+		
+		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
+		DFEVector<DFEVar> gen = MersenneTwister.getRand(this, "gen", new DFEVectorType<DFEVar>(dfeUInt(32), 3));
+		DFEVector<DFEVar> randNums = MersenneTwister.toFloat32(gen);
+		
+		// Output
+		io.output("y", randNums, randNumType);
+	}
+}

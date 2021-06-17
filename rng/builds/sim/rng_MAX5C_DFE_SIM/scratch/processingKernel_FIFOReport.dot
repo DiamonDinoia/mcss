@@ -1,0 +1,44 @@
+digraph fifoReportGraph {
+	NodeprocessingKernel26rngManager19rngManager33 [shape=invhouse, label="rng.processingKernel.<init>(processingKernel.maxj:26)\n"];
+	NodeprocessingKernel38rngManager19rngManager33 [shape=invhouse, label="rng.processingKernel.<init>(processingKernel.maxj:38)\n"];
+	NodeprocessingKernel27rngManager19rngManager33 [shape=hexagon, orientation=90, label="rng.processingKernel.<init>(processingKernel.maxj:27)\n"];
+	NodeprocessingKernel39rngManager19rngManager33 [shape=house, label="rng.processingKernel.<init>(processingKernel.maxj:39)\n"];
+	NodeprocessingKernel44rngManager19rngManager33 [shape=house, label="rng.processingKernel.<init>(processingKernel.maxj:44)\n"];
+	NodeprocessingKernel32rngManager19rngManager33 [shape=hexagon, orientation=90, label="rng.processingKernel.<init>(processingKernel.maxj:32)\n"];
+	NoderngManager19rngManager33 [shape=house, label="rng.rngManager.<init>(rngManager.maxj:19)\nrng.rngManager.main(rngManager.maxj:33)\n"];
+	NodeprocessingKernel54rngManager19rngManager33 [shape=house, label="rng.processingKernel.<init>(processingKernel.maxj:54)\n"];
+	NodeprocessingKernel23rngManager19rngManager33 [shape=invhouse, label="rng.processingKernel.<init>(processingKernel.maxj:23)\n"];
+	NodeprocessingKernel34rngManager19rngManager33 [shape=invhouse, label="rng.processingKernel.<init>(processingKernel.maxj:34)\n"];
+	NodeprocessingKernel31rngManager19rngManager33 [shape=house, label="rng.processingKernel.<init>(processingKernel.maxj:31)\n"];
+	NodeprocessingKernel40rngManager19rngManager33 [shape=house, label="rng.processingKernel.<init>(processingKernel.maxj:40)\n"];
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel44rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 15 Depth: 3 Width: 1 ID: 3629    \n    Costs: 1 Count: 8 Depth: 4 Width: 1 ID: 3615    \n    Costs: 1 Count: 1 Depth: 6 Width: 1 ID: 3966    \n    Costs: 1 Count: 1 Depth: 5 Width: 1 ID: 4035    \n"];
+	NodeprocessingKernel26rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 33 Width: 32 ID: 3527    \n"];
+	NodeprocessingKernel26rngManager19rngManager33NoderngManager19rngManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 33 Width: 32 ID: 3527    \n"];
+	NodeprocessingKernel38rngManager19rngManager33NodeprocessingKernel39rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 3 \n    Costs: 1 Count: 31 Depth: 4 Width: 1 ID: 4268    \n    Costs: 1 Count: 31 Depth: 3 Width: 1 ID: 4175    \n    Costs: 1 Count: 15 Depth: 5 Width: 1 ID: 4298    \n"];
+	NodeprocessingKernel32rngManager19rngManager33NodeprocessingKernel32rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 7 \n    Costs: 2 Count: 2 Depth: 7 Width: 32 ID: 3542    \n    Costs: 1 Count: 1 Depth: 11 Width: 32 ID: 3549    \n    Costs: 1 Count: 1 Depth: 9 Width: 1 ID: 3545    \n    Costs: 1 Count: 1 Depth: 8 Width: 2 ID: 3548    \n    Costs: 1 Count: 1 Depth: 8 Width: 1 ID: 3547    \n    Costs: 1 Count: 1 Depth: 3 Width: 1 ID: 3543    \n"];
+	NodeprocessingKernel23rngManager19rngManager33NoderngManager19rngManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 47 Width: 32 ID: 3539    \n"];
+	NodeprocessingKernel27rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 7 \n    Costs: 2 Count: 2 Depth: 7 Width: 32 ID: 3530    \n    Costs: 1 Count: 1 Depth: 11 Width: 32 ID: 3537    \n    Costs: 1 Count: 1 Depth: 9 Width: 1 ID: 3533    \n    Costs: 1 Count: 1 Depth: 8 Width: 2 ID: 3536    \n    Costs: 1 Count: 1 Depth: 8 Width: 1 ID: 3535    \n    Costs: 1 Count: 1 Depth: 3 Width: 1 ID: 3531    \n"];
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel40rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 16 Depth: 5 Width: 1 ID: 4035    \n    Costs: 1 Count: 16 Depth: 3 Width: 1 ID: 3629    \n    Costs: 1 Count: 15 Depth: 4 Width: 1 ID: 3615    \n    Costs: 1 Count: 7 Depth: 6 Width: 1 ID: 3966    \n"];
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel54rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 31 Depth: 7 Width: 1 ID: 3881    \n    Costs: 1 Count: 23 Depth: 8 Width: 1 ID: 3837    \n    Costs: 1 Count: 22 Depth: 10 Width: 1 ID: 3775    \n    Costs: 1 Count: 16 Depth: 6 Width: 1 ID: 3966    \n"];
+	NodeprocessingKernel23rngManager19rngManager33NodeprocessingKernel31rngManager19rngManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 47 Width: 32 ID: 3539    \n"];
+	NodeprocessingKernel34rngManager19rngManager33 -> NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel44rngManager19rngManager33FIFO[color="/dark28/1"]
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel44rngManager19rngManager33FIFO -> NodeprocessingKernel44rngManager19rngManager33[color="/dark28/2"]
+	NodeprocessingKernel26rngManager19rngManager33 -> NodeprocessingKernel26rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO[color="/dark28/3"]
+	NodeprocessingKernel26rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO -> NodeprocessingKernel27rngManager19rngManager33[color="/dark28/4"]
+	NodeprocessingKernel26rngManager19rngManager33 -> NodeprocessingKernel26rngManager19rngManager33NoderngManager19rngManager33FIFO[color="/dark28/5"]
+	NodeprocessingKernel26rngManager19rngManager33NoderngManager19rngManager33FIFO -> NoderngManager19rngManager33[color="/dark28/6"]
+	NodeprocessingKernel38rngManager19rngManager33 -> NodeprocessingKernel38rngManager19rngManager33NodeprocessingKernel39rngManager19rngManager33FIFO[color="/dark28/7"]
+	NodeprocessingKernel38rngManager19rngManager33NodeprocessingKernel39rngManager19rngManager33FIFO -> NodeprocessingKernel39rngManager19rngManager33[color="/dark28/8"]
+	NodeprocessingKernel32rngManager19rngManager33 -> NodeprocessingKernel32rngManager19rngManager33NodeprocessingKernel32rngManager19rngManager33FIFO[color="/dark28/1"]
+	NodeprocessingKernel32rngManager19rngManager33NodeprocessingKernel32rngManager19rngManager33FIFO -> NodeprocessingKernel32rngManager19rngManager33[color="/dark28/2"]
+	NodeprocessingKernel23rngManager19rngManager33 -> NodeprocessingKernel23rngManager19rngManager33NoderngManager19rngManager33FIFO[color="/dark28/3"]
+	NodeprocessingKernel23rngManager19rngManager33NoderngManager19rngManager33FIFO -> NoderngManager19rngManager33[color="/dark28/4"]
+	NodeprocessingKernel27rngManager19rngManager33 -> NodeprocessingKernel27rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO[color="/dark28/5"]
+	NodeprocessingKernel27rngManager19rngManager33NodeprocessingKernel27rngManager19rngManager33FIFO -> NodeprocessingKernel27rngManager19rngManager33[color="/dark28/6"]
+	NodeprocessingKernel34rngManager19rngManager33 -> NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel40rngManager19rngManager33FIFO[color="/dark28/7"]
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel40rngManager19rngManager33FIFO -> NodeprocessingKernel40rngManager19rngManager33[color="/dark28/8"]
+	NodeprocessingKernel34rngManager19rngManager33 -> NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel54rngManager19rngManager33FIFO[color="/dark28/1"]
+	NodeprocessingKernel34rngManager19rngManager33NodeprocessingKernel54rngManager19rngManager33FIFO -> NodeprocessingKernel54rngManager19rngManager33[color="/dark28/2"]
+	NodeprocessingKernel23rngManager19rngManager33 -> NodeprocessingKernel23rngManager19rngManager33NodeprocessingKernel31rngManager19rngManager33FIFO[color="/dark28/3"]
+	NodeprocessingKernel23rngManager19rngManager33NodeprocessingKernel31rngManager19rngManager33FIFO -> NodeprocessingKernel31rngManager19rngManager33[color="/dark28/4"]
+}

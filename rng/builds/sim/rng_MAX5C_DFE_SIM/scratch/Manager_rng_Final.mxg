@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagerGraph version="2020.2" design_name="Manager_rng" compilation_phase="Final" hardwareBuild="false">
+	<Node id="0" instanceName="rngKernel" type="Kernel">
+		<PxgFile phase="original">rng-rngKernel-original.pxg</PxgFile>
+		<PxgFile phase="final-simulation">rng-rngKernel-final-simulation.pxg</PxgFile>
+		<Output clock="STREAM" name="y" type="PUSH 5" width="96">
+			<Stream name="Stream_3" sink="60" />
+		</Output>
+	</Node>
+	<Node id="60" instanceName="Stream_4" type="Fifo">
+		<Input clock="STREAM" name="input" type="PUSH 5" width="96">
+			<Stream name="Stream_61" source="0" />
+		</Input>
+		<Output clock="STREAM" name="output" type="PULL el=1 ael=2" width="96">
+			<Stream name="Stream_62" sink="1" />
+		</Output>
+	</Node>
+	<Node id="1" instanceName="loopKernel" type="Kernel">
+		<PxgFile phase="original">rng-loopKernel-original.pxg</PxgFile>
+		<PxgFile phase="final-simulation">rng-loopKernel-final-simulation.pxg</PxgFile>
+		<Input clock="STREAM" name="y" type="PULL el=1 ael=2" width="96">
+			<Stream name="Stream_63" source="60" />
+		</Input>
+		<Output clock="STREAM" name="z" type="PUSH 5" width="224">
+			<Stream name="Stream_5" sink="64" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_llv_output" type="PUSH 5" width="8">
+			<Stream name="Stream_11" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_carriedposx_output" type="PUSH 5" width="32">
+			<Stream name="Stream_13" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_carriedposz_output" type="PUSH 5" width="32">
+			<Stream name="Stream_15" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_carrieddirx_output" type="PUSH 5" width="32">
+			<Stream name="Stream_17" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_carriedlength_output" type="PUSH 5" width="32">
+			<Stream name="Stream_19" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_posz_output" type="PUSH 5" width="32">
+			<Stream name="Stream_21" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_dirx_output" type="PUSH 5" width="32">
+			<Stream name="Stream_23" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_tracklength_output" type="PUSH 5" width="32">
+			<Stream name="Stream_25" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_reset_output" type="PUSH 5" width="1">
+			<Stream name="Stream_27" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_pastlimit_output" type="PUSH 5" width="1">
+			<Stream name="Stream_29" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_lengthoffset_output" type="PUSH 5" width="32">
+			<Stream name="Stream_31" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_length_output" type="PUSH 5" width="32">
+			<Stream name="Stream_33" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_0_output" type="PUSH 5" width="32">
+			<Stream name="Stream_35" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_1_output" type="PUSH 5" width="32">
+			<Stream name="Stream_37" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_2_output" type="PUSH 5" width="32">
+			<Stream name="Stream_39" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_3_output" type="PUSH 5" width="32">
+			<Stream name="Stream_41" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_4_output" type="PUSH 5" width="32">
+			<Stream name="Stream_43" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_5_output" type="PUSH 5" width="32">
+			<Stream name="Stream_45" sink="10" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_track_6_output" type="PUSH 5" width="32">
+			<Stream name="Stream_47" sink="10" />
+		</Output>
+	</Node>
+	<Node id="10" instanceName="watch_loopKernel" type="WatchBlock">
+		<Input clock="STREAM" name="llv" type="PUSH 5" width="8">
+			<Stream name="Stream_12" source="1" />
+		</Input>
+		<Input clock="STREAM" name="carriedposx" type="PUSH 5" width="32">
+			<Stream name="Stream_14" source="1" />
+		</Input>
+		<Input clock="STREAM" name="carriedposz" type="PUSH 5" width="32">
+			<Stream name="Stream_16" source="1" />
+		</Input>
+		<Input clock="STREAM" name="carrieddirx" type="PUSH 5" width="32">
+			<Stream name="Stream_18" source="1" />
+		</Input>
+		<Input clock="STREAM" name="carriedlength" type="PUSH 5" width="32">
+			<Stream name="Stream_20" source="1" />
+		</Input>
+		<Input clock="STREAM" name="posz" type="PUSH 5" width="32">
+			<Stream name="Stream_22" source="1" />
+		</Input>
+		<Input clock="STREAM" name="dirx" type="PUSH 5" width="32">
+			<Stream name="Stream_24" source="1" />
+		</Input>
+		<Input clock="STREAM" name="tracklength" type="PUSH 5" width="32">
+			<Stream name="Stream_26" source="1" />
+		</Input>
+		<Input clock="STREAM" name="reset" type="PUSH 5" width="1">
+			<Stream name="Stream_28" source="1" />
+		</Input>
+		<Input clock="STREAM" name="pastlimit" type="PUSH 5" width="1">
+			<Stream name="Stream_30" source="1" />
+		</Input>
+		<Input clock="STREAM" name="lengthoffset" type="PUSH 5" width="32">
+			<Stream name="Stream_32" source="1" />
+		</Input>
+		<Input clock="STREAM" name="length" type="PUSH 5" width="32">
+			<Stream name="Stream_34" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_0" type="PUSH 5" width="32">
+			<Stream name="Stream_36" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_1" type="PUSH 5" width="32">
+			<Stream name="Stream_38" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_2" type="PUSH 5" width="32">
+			<Stream name="Stream_40" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_3" type="PUSH 5" width="32">
+			<Stream name="Stream_42" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_4" type="PUSH 5" width="32">
+			<Stream name="Stream_44" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_5" type="PUSH 5" width="32">
+			<Stream name="Stream_46" source="1" />
+		</Input>
+		<Input clock="STREAM" name="track_6" type="PUSH 5" width="32">
+			<Stream name="Stream_48" source="1" />
+		</Input>
+	</Node>
+	<Node id="64" instanceName="Stream_6" type="Fifo">
+		<Input clock="STREAM" name="input" type="PUSH 5" width="224">
+			<Stream name="Stream_65" source="1" />
+		</Input>
+		<Output clock="STREAM" name="output" type="PULL el=1 ael=2" width="224">
+			<Stream name="Stream_66" sink="2" />
+		</Output>
+	</Node>
+	<Node id="2" instanceName="processingKernel" type="Kernel">
+		<PxgFile phase="original">rng-processingKernel-original.pxg</PxgFile>
+		<PxgFile phase="final-simulation">rng-processingKernel-final-simulation.pxg</PxgFile>
+		<Input clock="STREAM" name="z" type="PULL el=1 ael=2" width="224">
+			<Stream name="Stream_67" source="64" />
+		</Input>
+		<Output clock="STREAM" name="output" type="PUSH 5" width="9728">
+			<Stream name="Stream_9" sink="68" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_tracklength_output" type="PUSH 5" width="32">
+			<Stream name="Stream_50" sink="49" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_lind_output" type="PUSH 5" width="32">
+			<Stream name="Stream_52" sink="49" />
+		</Output>
+		<Output clock="STREAM" name="internal_watch_longi_output" type="PUSH 5" width="32">
+			<Stream name="Stream_54" sink="49" />
+		</Output>
+	</Node>
+	<Node id="49" instanceName="watch_processingKernel" type="WatchBlock">
+		<Input clock="STREAM" name="tracklength" type="PUSH 5" width="32">
+			<Stream name="Stream_51" source="2" />
+		</Input>
+		<Input clock="STREAM" name="lind" type="PUSH 5" width="32">
+			<Stream name="Stream_53" source="2" />
+		</Input>
+		<Input clock="STREAM" name="longi" type="PUSH 5" width="32">
+			<Stream name="Stream_55" source="2" />
+		</Input>
+	</Node>
+	<Node id="68" instanceName="Stream_57" type="Fifo">
+		<Input clock="STREAM" name="input" type="PUSH 5" width="9728">
+			<Stream name="Stream_69" source="2" />
+		</Input>
+		<Output clock="STREAM" name="output" type="PULL el=1" width="9728">
+			<Stream name="Stream_70" sink="56" />
+		</Output>
+	</Node>
+	<Node id="56" instanceName="Stream_8" type="DualAspectMux">
+		<Input clock="STREAM" name="input" type="PULL el=1" width="9728">
+			<Stream name="Stream_71" source="68" />
+		</Input>
+		<Output clock="STREAM" name="output" type="PUSH 2" width="128">
+			<Stream name="Stream_58" sink="72" />
+		</Output>
+	</Node>
+	<Node id="72" instanceName="Stream_59" type="Fifo">
+		<Input clock="STREAM" name="input" type="PUSH 2" width="128">
+			<Stream name="Stream_73" source="56" />
+		</Input>
+		<Output clock="PCIE" name="output" type="PUSH 1" width="128">
+			<Stream name="Stream_74" sink="7" />
+		</Output>
+	</Node>
+	<Node id="7" instanceName="output" type="Output">
+		<Input clock="PCIE" name="output" type="PUSH 1" width="128">
+			<Stream name="Stream_75" source="72" />
+		</Input>
+	</Node>
+</ManagerGraph>
