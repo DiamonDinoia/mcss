@@ -1,0 +1,44 @@
+digraph fifoReportGraph {
+	NodeProcessingKernel31MCSSManager19MCSSManager33 [shape=house, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:31)\n"];
+	NodeProcessingKernel32MCSSManager19MCSSManager33 [shape=hexagon, orientation=90, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:32)\n"];
+	NodeProcessingKernel54MCSSManager19MCSSManager33 [shape=house, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:54)\n"];
+	NodeProcessingKernel44MCSSManager19MCSSManager33 [shape=house, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:44)\n"];
+	NodeProcessingKernel39MCSSManager19MCSSManager33 [shape=house, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:39)\n"];
+	NodeMCSSManager19MCSSManager33 [shape=house, label="mcss.MCSSManager.<init>(MCSSManager.maxj:19)\nmcss.MCSSManager.main(MCSSManager.maxj:33)\n"];
+	NodeProcessingKernel26MCSSManager19MCSSManager33 [shape=invhouse, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:26)\n"];
+	NodeProcessingKernel38MCSSManager19MCSSManager33 [shape=invhouse, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:38)\n"];
+	NodeProcessingKernel27MCSSManager19MCSSManager33 [shape=hexagon, orientation=90, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:27)\n"];
+	NodeProcessingKernel34MCSSManager19MCSSManager33 [shape=invhouse, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:34)\n"];
+	NodeProcessingKernel23MCSSManager19MCSSManager33 [shape=invhouse, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:23)\n"];
+	NodeProcessingKernel40MCSSManager19MCSSManager33 [shape=house, label="mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:40)\n"];
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel40MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 16 Depth: 5 Width: 1 ID: 4035    \n    Costs: 1 Count: 16 Depth: 3 Width: 1 ID: 3629    \n    Costs: 1 Count: 15 Depth: 4 Width: 1 ID: 3615    \n    Costs: 1 Count: 7 Depth: 6 Width: 1 ID: 3966    \n"];
+	NodeProcessingKernel27MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 7 \n    Costs: 2 Count: 2 Depth: 7 Width: 32 ID: 3530    \n    Costs: 1 Count: 1 Depth: 11 Width: 32 ID: 3537    \n    Costs: 1 Count: 1 Depth: 9 Width: 1 ID: 3533    \n    Costs: 1 Count: 1 Depth: 8 Width: 2 ID: 3536    \n    Costs: 1 Count: 1 Depth: 8 Width: 1 ID: 3535    \n    Costs: 1 Count: 1 Depth: 3 Width: 1 ID: 3531    \n"];
+	NodeProcessingKernel23MCSSManager19MCSSManager33NodeProcessingKernel31MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 47 Width: 32 ID: 3539    \n"];
+	NodeProcessingKernel23MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 47 Width: 32 ID: 3539    \n"];
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel54MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 31 Depth: 7 Width: 1 ID: 3881    \n    Costs: 1 Count: 23 Depth: 8 Width: 1 ID: 3837    \n    Costs: 1 Count: 22 Depth: 10 Width: 1 ID: 3775    \n    Costs: 1 Count: 16 Depth: 6 Width: 1 ID: 3966    \n"];
+	NodeProcessingKernel26MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 33 Width: 32 ID: 3527    \n"];
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel44MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 4 \n    Costs: 1 Count: 15 Depth: 3 Width: 1 ID: 3629    \n    Costs: 1 Count: 8 Depth: 4 Width: 1 ID: 3615    \n    Costs: 1 Count: 1 Depth: 6 Width: 1 ID: 3966    \n    Costs: 1 Count: 1 Depth: 5 Width: 1 ID: 4035    \n"];
+	NodeProcessingKernel26MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 1 \n    Costs: 1 Count: 1 Depth: 33 Width: 32 ID: 3527    \n"];
+	NodeProcessingKernel38MCSSManager19MCSSManager33NodeProcessingKernel39MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 3 \n    Costs: 1 Count: 31 Depth: 4 Width: 1 ID: 4268    \n    Costs: 1 Count: 31 Depth: 3 Width: 1 ID: 4175    \n    Costs: 1 Count: 15 Depth: 5 Width: 1 ID: 4298    \n"];
+	NodeProcessingKernel32MCSSManager19MCSSManager33NodeProcessingKernel32MCSSManager19MCSSManager33FIFO [shape=box, label="TotalCosts: 7 \n    Costs: 2 Count: 2 Depth: 7 Width: 32 ID: 3542    \n    Costs: 1 Count: 1 Depth: 11 Width: 32 ID: 3549    \n    Costs: 1 Count: 1 Depth: 9 Width: 1 ID: 3545    \n    Costs: 1 Count: 1 Depth: 8 Width: 2 ID: 3548    \n    Costs: 1 Count: 1 Depth: 8 Width: 1 ID: 3547    \n    Costs: 1 Count: 1 Depth: 3 Width: 1 ID: 3543    \n"];
+	NodeProcessingKernel34MCSSManager19MCSSManager33 -> NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel40MCSSManager19MCSSManager33FIFO[color="/dark28/1"]
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel40MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel40MCSSManager19MCSSManager33[color="/dark28/2"]
+	NodeProcessingKernel27MCSSManager19MCSSManager33 -> NodeProcessingKernel27MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO[color="/dark28/3"]
+	NodeProcessingKernel27MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel27MCSSManager19MCSSManager33[color="/dark28/4"]
+	NodeProcessingKernel23MCSSManager19MCSSManager33 -> NodeProcessingKernel23MCSSManager19MCSSManager33NodeProcessingKernel31MCSSManager19MCSSManager33FIFO[color="/dark28/5"]
+	NodeProcessingKernel23MCSSManager19MCSSManager33NodeProcessingKernel31MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel31MCSSManager19MCSSManager33[color="/dark28/6"]
+	NodeProcessingKernel23MCSSManager19MCSSManager33 -> NodeProcessingKernel23MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO[color="/dark28/7"]
+	NodeProcessingKernel23MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO -> NodeMCSSManager19MCSSManager33[color="/dark28/8"]
+	NodeProcessingKernel34MCSSManager19MCSSManager33 -> NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel54MCSSManager19MCSSManager33FIFO[color="/dark28/1"]
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel54MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel54MCSSManager19MCSSManager33[color="/dark28/2"]
+	NodeProcessingKernel26MCSSManager19MCSSManager33 -> NodeProcessingKernel26MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO[color="/dark28/3"]
+	NodeProcessingKernel26MCSSManager19MCSSManager33NodeMCSSManager19MCSSManager33FIFO -> NodeMCSSManager19MCSSManager33[color="/dark28/4"]
+	NodeProcessingKernel34MCSSManager19MCSSManager33 -> NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel44MCSSManager19MCSSManager33FIFO[color="/dark28/5"]
+	NodeProcessingKernel34MCSSManager19MCSSManager33NodeProcessingKernel44MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel44MCSSManager19MCSSManager33[color="/dark28/6"]
+	NodeProcessingKernel26MCSSManager19MCSSManager33 -> NodeProcessingKernel26MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO[color="/dark28/7"]
+	NodeProcessingKernel26MCSSManager19MCSSManager33NodeProcessingKernel27MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel27MCSSManager19MCSSManager33[color="/dark28/8"]
+	NodeProcessingKernel38MCSSManager19MCSSManager33 -> NodeProcessingKernel38MCSSManager19MCSSManager33NodeProcessingKernel39MCSSManager19MCSSManager33FIFO[color="/dark28/1"]
+	NodeProcessingKernel38MCSSManager19MCSSManager33NodeProcessingKernel39MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel39MCSSManager19MCSSManager33[color="/dark28/2"]
+	NodeProcessingKernel32MCSSManager19MCSSManager33 -> NodeProcessingKernel32MCSSManager19MCSSManager33NodeProcessingKernel32MCSSManager19MCSSManager33FIFO[color="/dark28/3"]
+	NodeProcessingKernel32MCSSManager19MCSSManager33NodeProcessingKernel32MCSSManager19MCSSManager33FIFO -> NodeProcessingKernel32MCSSManager19MCSSManager33[color="/dark28/4"]
+}

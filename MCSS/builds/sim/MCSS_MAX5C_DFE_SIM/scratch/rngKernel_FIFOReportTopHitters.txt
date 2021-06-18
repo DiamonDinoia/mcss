@@ -1,0 +1,16 @@
+Top 10 largest FIFOs
+     Costs                                              From                                                To
+         3                          MersenneTwister.maxj:248                          MersenneTwister.maxj:247
+         3                          MersenneTwister.maxj:247                          MersenneTwister.maxj:275
+         3                          MersenneTwister.maxj:247                          MersenneTwister.maxj:271
+
+Top 10 lines with FIFO sinks
+     Costs                                              LineFIFO Count
+         3                          MersenneTwister.maxj:271         1
+         3                          MersenneTwister.maxj:275         1
+         3                          MersenneTwister.maxj:247         1
+
+Top 10 lines with FIFO sources
+     Costs                                              LineFIFO Count
+         6                          MersenneTwister.maxj:247         2
+         3                          MersenneTwister.maxj:248         1

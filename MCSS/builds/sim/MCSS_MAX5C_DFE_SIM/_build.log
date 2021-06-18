@@ -1,0 +1,1013 @@
+Fri 01:03: PROGRESS: MaxCompiler version: 2020.2
+Fri 01:03: PROGRESS: Build "MCSS" start time: Fri Jun 18 01:03:54 BST 2021
+Fri 01:03: PROGRESS: Main build process running as user dc3117 on host cccad5.doc.ic.ac.uk
+Fri 01:03: INFO    : Loading build properties from bundled MaxCompiler_build.conf...
+Fri 01:03: INFO    : No bundled MaxCompiler_build.conf found.
+Fri 01:03: INFO    : No default external build property file has been specified.
+Fri 01:03: INFO    : (Set environment variable MAXCOMPILER_DEFAULT_CONF_FILE to assign one)
+Fri 01:03: INFO    : Loading user build properties from: /homes/dc3117/.MaxCompiler_build_user.conf
+Fri 01:03: INFO    : No user-specified external build property file has been specified.
+Fri 01:03: INFO    : (Set environment variable MAXCOMPILER_BUILD_CONF_FILE to assign one)
+Fri 01:03: INFO    : Loading additional parameters from MAXCOMPILER_BUILD_CONF environment variable
+Fri 01:03: INFO    : Appending build directory location to '/mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/.maxdc_builds_MCSS'
+Fri 01:03: PROGRESS: Build location: /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM
+Fri 01:03: PROGRESS: Detailed build log available in "_build.log"
+Fri 01:03: INFO    : Created build manager MCSS (MCSS_MAX5C_DFE_SIM Fri Jun 18 01:03:54 BST 2021). (01:03:55 18/06/21)
+Fri 01:03: INFO    : Working in dir: builds/sim/MCSS_MAX5C_DFE_SIM
+Fri 01:03: INFO    : Java class path (16 paths):
+Fri 01:03: INFO    : 	/mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/bin
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/commons-math3-3.6.1.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/bcpkix-jdk15on-160.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/protobuf-java-3.11.4.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/ecj.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/Max5Platform.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/commons-math3-3.6.1-javadoc.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/commons-math3-3.6.1-tools.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/MaxCoreCache.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/GenericIPPlatform.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/MaxCompiler.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/Max4Platform.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/mesos-1.9.0.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/bcprov-jdk15on-160.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/json-simple-1.1.1.jar
+Fri 01:03: INFO    : 	/vol/cc/opt/maxeler/MaxPower-2020.2/lib/MaxPower.jar
+Fri 01:03: INFO    : Java process started by 'main' method in class 'mcss.MCSSManager'.
+Fri 01:03: WARNING : build.arbitrated_core_cache is set, the arbitrated core cache is deprecated and will be removed in a future release.
+Fri 01:03: INFO    : build.arbitrated_core_cache parameter is blank, arbitrated core cache will not be used.
+Fri 01:03: INFO    : Checking license files in directory: /vol/cc/opt/maxeler/maxcompiler-2020.2/licenses
+Fri 01:03: INFO    : All license signatures valid.
+Fri 01:03: USER    : 
+Fri 01:03: USER    : ENGINE BUILD PARAMETERS
+Fri 01:03: USER    : 	 Build name: MCSS_MAX5C_DFE_SIM
+Fri 01:03: USER    : 	maxFileName: MCSS              
+Fri 01:03: USER    : 	     target: DFE_SIM           
+Fri 01:03: USER    : 	   DFEModel: DEPRECATED        
+Fri 01:03: USER    : 	 enableMPCX: false             
+Fri 01:03: PROGRESS: Instantiating kernel "rngKernel"
+Fri 01:03: PROGRESS: Compiling kernel "rngKernel"
+Fri 01:03: INFO    : Configuration:
+Fri 01:03: INFO    : 	KernelConfiguration.additionalInputPipelining = 64                                          [Init: 64]
+Fri 01:03: INFO    : 	KernelConfiguration.allowDSPCascading = true                                                [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.allowInputsOutputsBeforeFlushNode = false                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.allowZeroLatencyNodeHold = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.bramBitsThreshold = 2080                                                [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.buildTarget = MAXCOMPILERSIM_HOST_DRIVEN                                [Init: NONE, change: MAXCOMPILERSIM_HOST_DRIVEN]
+Fri 01:03: INFO    : 	KernelConfiguration.cePipelining = 2                                                        [Init: 2]
+Fri 01:03: INFO    : 	KernelConfiguration.checkPartialConnections = true                                          [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhaseBalanceThreshold = 0.1                                        [Init: 0.1]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhasingRetries = 50                                                [Init: 50]
+Fri 01:03: INFO    : 	KernelConfiguration.constantMultiplicationWithShiftAddThreshold = 3                         [Init: 3]
+Fri 01:03: INFO    : 	KernelConfiguration.criticalPathsOnly = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.dumpNeighboursString =                                                  [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.enableCeReplication = true                                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDebugIOControlRegs = true                                         [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDummyBuild = false                                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enablePipelinedComputeController = false                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableShadowRegister = false                                            [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableSmartKernelControl = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableStatesReportingPasses = true                                      [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.fifoSrlRegisterStages = 1                                               [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.flushOnInputDataCongtiguous = false                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.hardwareDebugDepth = 512                                                [Init: 512]
+Fri 01:03: INFO    : 	KernelConfiguration.hwHierarchyMode = UNSET                                                 [Init: UNSET]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotation = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationAll = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationIOs =                                                  [Init: null]
+Fri 01:03: INFO    : 	KernelConfiguration.maxCoalescedFifoWidth = 2147483647                                      [Init: 2147483647]
+Fri 01:03: INFO    : 	KernelConfiguration.maxPreAdderFanOut = 1                                                   [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.netlistMode = false                                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.numPhotonStateMachines = 1                                              [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.ceCounterRegisterDuplication = 1                          [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.conditionalArithmetic = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.counterChainWrapPipelining = 0                            [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.dspAddChain = OPTIMISE                                    [Init: null, change: OPTIMISE]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableActiveFanoutReduction = false                       [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBUFGCE = false                                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterInputRegistering = false                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterRegistering = false                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFIFOCoalescingAcrossPlacementConstraints = false    [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFifoCoalescing = true                               [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableIntegratedRounding = false                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMappedMemoryHostReadBack = true                     [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMultiCycleReset = false                             [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enablePowerTwoFloatMult = true                            [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableRedundantNodeDeletion = true                        [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableStateMachineRegisterMerging = true                  [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inlining = false                                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inputFlushDistanceFactor = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.minimumStaticFIFOSplitDepth = 1                           [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.optimizationTechnique = DEFAULT                           [Init: DEFAULT]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.preserveNodeRegisters = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.triAdd = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfBlockName =                                                [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfMode = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfTemplate = false                                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.replicateNodeCeLog2NumPartitions = 0                                    [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.romBRAMBitsThreshold = 2080                                             [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramAddressCollisionBehaviour = EXCEPTION                     [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramOutOfBoundsAccessBehaviour = EXCEPTION                    [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.simProgressMessageFrequency = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.useAsapScheduler = false                                                [Init: false]
+Fri 01:03: INFO    : 
+Fri 01:03: INFO    :  -- 
+Fri 01:03: INFO    : Deleting directory: neighbours
+Fri 01:03: INFO    : Writing current graph to: MCSS-rngKernel-original.pxg
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper.
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/rngKernel.graphs
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper took 12.3915 ms
+Fri 01:03: INFO    : Running Photon pre-schedule graph optimisations
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 950.645 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AlignOrEradicatePrintfs'.
+Fri 01:03: INFO    : Erradicated 0 printf nodes
+Fri 01:03: INFO    : Graph-pass 'AlignOrEradicatePrintfs' took 216.460 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldConstantsPass'.
+Fri 01:03: INFO    : Folded 110 nodes.
+Fri 01:03: INFO    : Graph-pass 'FoldConstantsPass' took 809.792 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'DeleteRedundantNodes'.
+Fri 01:03: INFO    : Graph-pass 'DeleteRedundantNodes' took 144.997 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CollectNumericExceptions'.
+Fri 01:03: INFO    : Graph-pass 'CollectNumericExceptions' took 69.3110 µs (1 iterations)
+Fri 01:03: INFO    : Running Photon simulation preparation
+Fri 01:03: INFO    : Running kernel graph-pass 'PrepareSimulationPass'.
+Fri 01:03: INFO    : Graph-pass 'PrepareSimulationPass' took 63.7320 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseNodesPass'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseNodesPass' took 13.8019 ms (4 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StreamOffsetDivExpand'.
+Fri 01:03: INFO    : Graph-pass 'StreamOffsetDivExpand' took 89.3820 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 14 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 3.59176 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'PO2FPMultOptimiser'.
+Fri 01:03: INFO    : Graph-pass 'PO2FPMultOptimiser' took 2.56258 ms (2 iterations)
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper took 4.12421 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'DspMultiplyAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into DSP multiply/add chains (Ultrascale mode).
+Fri 01:03: INFO    : Graph-pass 'DspMultiplyAddExtractionPass' took 7.35578 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper took 3.96435 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'TriArithInsertionPass'.
+Fri 01:03: INFO    : MultiAdd inserter didn't add any nodes.
+Fri 01:03: INFO    : Graph-pass 'TriArithInsertionPass' took 80.9530 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper took 3.06058 ms
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper took 2.85489 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into conditional adds/subs/triadds.
+Fri 01:03: INFO    : Graph-pass 'ConditionalAddExtractionPass' took 239.725 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalPosNegExtractionPass'.
+Fri 01:03: INFO    : Graph-pass 'ConditionalPosNegExtractionPass' took 65.2540 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 0 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 122.589 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'GraphLevelPipelining'.
+Fri 01:03: INFO    : Inserted 0 pipelining registers.
+Fri 01:03: INFO    : Graph-pass 'GraphLevelPipelining' took 234.827 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'LimitFanoutPass'.
+Fri 01:03: INFO    : Graph-pass 'LimitFanoutPass' took 100.378 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper took 3.19859 ms
+Fri 01:03: INFO    : Logging Photon stats to: rngKernel_photon_stats.csv
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/rngKernel_photon_stats.csv
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 1.33743 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 151.298 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 65.4780 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindInputsLeadingToFlush'.
+Fri 01:03: INFO    : Graph-pass 'FindInputsLeadingToFlush' took 41.2220 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForStatefulToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForStatefulToFlushViolations' took 221.250 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForInputToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForInputToFlushViolations' took 690.848 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindIllegalLoops'.
+Fri 01:03: INFO    : Finding illegal loops for 9 loops.
+Fri 01:03: INFO    : Graph-pass 'FindIllegalLoops' took 2.25767 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AddNodeSchedulingConstraints'.
+Fri 01:03: INFO    : Graph-pass 'AddNodeSchedulingConstraints' took 60.1900 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 134.254 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleVariables'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleVariables' took 2.24631 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 68.5410 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 110.158 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 578.697 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.10982 ms (1 iterations)
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 1)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 236.649 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 94.3160 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper took 3.29850 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseVariableFIFOs'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseVariableFIFOs' took 63.5510 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper took 3.40843 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 895.219 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleConstants'.
+Fri 01:03: INFO    : Running command: "/vol/cc/opt/maxeler/maxcompiler-2020.2/bin/cbc" "rngKernel_schedule_C.mps.gz" -threads 72 -solve  -printi csv -solu "rngKernel_schedule_C.csv" > "rngKernel_schedule_C.stdout.log"
+Fri 01:03: INFO    : Checking for file hash changes...
+Fri 01:03: INFO    : No changes.
+Fri 01:03: INFO    : Optimum found: 59716
+Fri 01:03: INFO    : Graph-pass 'ScheduleConstants' took 25.1105 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.22929 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 87.5140 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 192.736 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveDistMeasurementNodes'.
+Fri 01:03: INFO    : Graph-pass 'RemoveDistMeasurementNodes' took 19.3490 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 6.05584 ms (1 iterations)
+Fri 01:03: INFO    : Maximum stream latency for kernel 'rngKernel': 402
+Fri 01:03: INFO    : Using user logic for flush.
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 2)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 5 FIFOs.
+Fri 01:03: INFO    : Tapped 5 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 1.84669 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 134.967 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper took 3.38482 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleAsserter'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleAsserter' took 264.154 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReplaceEvalStreamOffsetNodes'.
+Fri 01:03: INFO    : Graph-pass 'ReplaceEvalStreamOffsetNodes' took 45.3080 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MoveFanoutRegsForwards'.
+Fri 01:03: INFO    : Graph-pass 'MoveFanoutRegsForwards' took 44.7060 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReport'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReport' took 1.73955 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 869.578 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 0 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 121.037 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'VariableSizeMappedRegInserter'.
+Fri 01:03: INFO    : Graph-pass 'VariableSizeMappedRegInserter' took 53.1820 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MakeMaxFileNodeData'.
+Fri 01:03: INFO    : Graph-pass 'MakeMaxFileNodeData' took 7.47172 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper took 2.96702 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 3.77084 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 2.73328 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StallScopeDump'.
+Fri 01:03: INFO    : Graph-pass 'StallScopeDump' took 1.62942 ms (1 iterations)
+Fri 01:03: INFO    : Optimization report for Kernel 'rngKernel'.
+Fri 01:03: INFO    : Enabled optimizations:
+Fri 01:03: INFO    : 	Power-of-2 Floating Point
+Fri 01:03: INFO    : 	DSP Multiply-Add Extraction
+Fri 01:03: INFO    : 	Tri-Adder
+Fri 01:03: INFO    : 	Conditional (Tri)Adds/Subs/AddSubs
+Fri 01:03: INFO    : Total compilation of 'rngKernel' took 227.565 ms.
+Fri 01:03: PROGRESS: 
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/loopKernel_graph_warnings.txt
+Fri 01:03: PROGRESS: Instantiating kernel "loopKernel"
+Fri 01:03: INFO    : Instantiating CubicSpline interpolator
+Fri 01:03: INFO    : Using 3072 bytes of memory
+Fri 01:03: INFO    : Error tolerated 2.384185791015625E-7
+Fri 01:03: INFO    : FixLog using a table of size 1024 bytes
+Fri 01:03: INFO    : Instantiating CubicSpline interpolator
+Fri 01:03: INFO    : Using 4096 bytes of memory
+Fri 01:03: INFO    : Error tolerated 1.1920928955078125E-7
+Fri 01:03: INFO    : Instantiating CubicSpline interpolator
+Fri 01:03: INFO    : Using 4096 bytes of memory
+Fri 01:03: INFO    : Error tolerated 1.1920928955078125E-7
+Fri 01:03: PROGRESS: Compiling kernel "loopKernel"
+Fri 01:03: INFO    : Configuration:
+Fri 01:03: INFO    : 	KernelConfiguration.additionalInputPipelining = 64                                          [Init: 64]
+Fri 01:03: INFO    : 	KernelConfiguration.allowDSPCascading = true                                                [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.allowInputsOutputsBeforeFlushNode = false                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.allowZeroLatencyNodeHold = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.bramBitsThreshold = 2080                                                [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.buildTarget = MAXCOMPILERSIM_HOST_DRIVEN                                [Init: NONE, change: MAXCOMPILERSIM_HOST_DRIVEN]
+Fri 01:03: INFO    : 	KernelConfiguration.cePipelining = 2                                                        [Init: 2]
+Fri 01:03: INFO    : 	KernelConfiguration.checkPartialConnections = true                                          [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhaseBalanceThreshold = 0.1                                        [Init: 0.1]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhasingRetries = 50                                                [Init: 50]
+Fri 01:03: INFO    : 	KernelConfiguration.constantMultiplicationWithShiftAddThreshold = 3                         [Init: 3]
+Fri 01:03: INFO    : 	KernelConfiguration.criticalPathsOnly = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.dumpNeighboursString =                                                  [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.enableCeReplication = true                                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDebugIOControlRegs = true                                         [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDummyBuild = false                                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enablePipelinedComputeController = false                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableShadowRegister = false                                            [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableSmartKernelControl = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableStatesReportingPasses = true                                      [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.fifoSrlRegisterStages = 1                                               [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.flushOnInputDataCongtiguous = false                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.hardwareDebugDepth = 512                                                [Init: 512]
+Fri 01:03: INFO    : 	KernelConfiguration.hwHierarchyMode = UNSET                                                 [Init: UNSET]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotation = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationAll = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationIOs =                                                  [Init: null]
+Fri 01:03: INFO    : 	KernelConfiguration.maxCoalescedFifoWidth = 2147483647                                      [Init: 2147483647]
+Fri 01:03: INFO    : 	KernelConfiguration.maxPreAdderFanOut = 1                                                   [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.netlistMode = false                                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.numPhotonStateMachines = 1                                              [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.ceCounterRegisterDuplication = 1                          [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.conditionalArithmetic = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.counterChainWrapPipelining = 0                            [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.dspAddChain = OPTIMISE                                    [Init: null, change: OPTIMISE]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableActiveFanoutReduction = false                       [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBUFGCE = false                                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterInputRegistering = false                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterRegistering = false                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFIFOCoalescingAcrossPlacementConstraints = false    [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFifoCoalescing = true                               [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableIntegratedRounding = false                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMappedMemoryHostReadBack = true                     [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMultiCycleReset = false                             [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enablePowerTwoFloatMult = true                            [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableRedundantNodeDeletion = true                        [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableStateMachineRegisterMerging = true                  [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inlining = false                                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inputFlushDistanceFactor = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.minimumStaticFIFOSplitDepth = 1                           [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.optimizationTechnique = DEFAULT                           [Init: DEFAULT]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.preserveNodeRegisters = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.triAdd = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfBlockName =                                                [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfMode = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfTemplate = false                                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.replicateNodeCeLog2NumPartitions = 0                                    [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.romBRAMBitsThreshold = 2080                                             [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramAddressCollisionBehaviour = EXCEPTION                     [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramOutOfBoundsAccessBehaviour = EXCEPTION                    [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.simProgressMessageFrequency = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.useAsapScheduler = false                                                [Init: false]
+Fri 01:03: INFO    : 
+Fri 01:03: INFO    :  -- 
+Fri 01:03: WARNING : Warning (UNCONNECTED_DESIGN_ELEMENT):
+Fri 01:03: WARNING : Unconnected elements in design 'loopKernel'
+Fri 01:03: WARNING : details in : /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/loopKernel_graph_warnings.txt
+Fri 01:03: INFO    : Deleting directory: neighbours
+Fri 01:03: INFO    : Writing current graph to: MCSS-loopKernel-original.pxg
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper.
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/loopKernel.graphs
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper took 22.9778 ms
+Fri 01:03: INFO    : Running Photon pre-schedule graph optimisations
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 867.443 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AlignOrEradicatePrintfs'.
+Fri 01:03: INFO    : Erradicated 2 printf nodes
+Fri 01:03: INFO    : Graph-pass 'AlignOrEradicatePrintfs' took 823.769 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldConstantsPass'.
+Fri 01:03: INFO    : Folded 668 nodes.
+Fri 01:03: INFO    : Folded 1334 nodes.
+Fri 01:03: INFO    : Graph-pass 'FoldConstantsPass' took 13.4653 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'DeleteRedundantNodes'.
+Fri 01:03: INFO    : Graph-pass 'DeleteRedundantNodes' took 538.824 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CollectNumericExceptions'.
+Fri 01:03: INFO    : Graph-pass 'CollectNumericExceptions' took 464.261 µs (1 iterations)
+Fri 01:03: INFO    : Running Photon simulation preparation
+Fri 01:03: INFO    : Running kernel graph-pass 'PrepareSimulationPass'.
+Fri 01:03: INFO    : Graph-pass 'PrepareSimulationPass' took 11.8679 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseNodesPass'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseNodesPass' took 39.4562 ms (3 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StreamOffsetDivExpand'.
+Fri 01:03: INFO    : Graph-pass 'StreamOffsetDivExpand' took 160.148 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 190 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 16.3673 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'PO2FPMultOptimiser'.
+Fri 01:03: INFO    : Graph-pass 'PO2FPMultOptimiser' took 8.56315 ms (2 iterations)
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper took 13.5872 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'DspMultiplyAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into DSP multiply/add chains (Ultrascale mode).
+Fri 01:03: INFO    : Graph-pass 'DspMultiplyAddExtractionPass' took 22.4576 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper took 14.2750 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'TriArithInsertionPass'.
+Fri 01:03: INFO    : Inserted 10 tri arithmetic nodes
+Fri 01:03: INFO    : Graph-pass 'TriArithInsertionPass' took 8.85975 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper took 12.8380 ms
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper took 12.6776 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into conditional adds/subs/triadds.
+Fri 01:03: INFO    : Graph-pass 'ConditionalAddExtractionPass' took 1.18789 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalPosNegExtractionPass'.
+Fri 01:03: INFO    : Graph-pass 'ConditionalPosNegExtractionPass' took 9.62453 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 8 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 6.39212 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'GraphLevelPipelining'.
+Fri 01:03: INFO    : Inserted 0 pipelining registers.
+Fri 01:03: INFO    : Graph-pass 'GraphLevelPipelining' took 1.42810 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'LimitFanoutPass'.
+Fri 01:03: INFO    : Graph-pass 'LimitFanoutPass' took 720.873 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper took 12.4197 ms
+Fri 01:03: INFO    : Logging Photon stats to: loopKernel_photon_stats.csv
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/loopKernel_photon_stats.csv
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 3.54231 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 589.317 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 341.612 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindInputsLeadingToFlush'.
+Fri 01:03: INFO    : Graph-pass 'FindInputsLeadingToFlush' took 125.521 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForStatefulToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForStatefulToFlushViolations' took 132.843 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForInputToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForInputToFlushViolations' took 1.09857 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindIllegalLoops'.
+Fri 01:03: INFO    : Finding illegal loops for 24 loops.
+Fri 01:03: INFO    : Graph-pass 'FindIllegalLoops' took 3.37532 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AddNodeSchedulingConstraints'.
+Fri 01:03: INFO    : Graph-pass 'AddNodeSchedulingConstraints' took 609.888 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 562.659 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleVariables'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleVariables' took 2.33203 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 6.76938 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 474.123 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 2.43719 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.72965 ms (1 iterations)
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 1)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 1.29384 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 556.211 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper took 13.0184 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseVariableFIFOs'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseVariableFIFOs' took 348.062 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper took 12.3076 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.31702 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleConstants'.
+Fri 01:03: INFO    : Running command: "/vol/cc/opt/maxeler/maxcompiler-2020.2/bin/cbc" "loopKernel_schedule_C.mps.gz" -threads 72 -solve  -printi csv -solu "loopKernel_schedule_C.csv" > "loopKernel_schedule_C.stdout.log"
+Fri 01:03: INFO    : Checking for file hash changes...
+Fri 01:03: INFO    : No changes.
+Fri 01:03: INFO    : Optimum found: 50988
+Fri 01:03: INFO    : Graph-pass 'ScheduleConstants' took 37.7379 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 2.07524 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : OffsetAutoLoop sizes:
+Fri 01:03: INFO    :   loopLength = 90
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 8.16527 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 555.647 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveDistMeasurementNodes'.
+Fri 01:03: INFO    : Graph-pass 'RemoveDistMeasurementNodes' took 4.27700 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 15.2520 ms (1 iterations)
+Fri 01:03: INFO    : Maximum stream latency for kernel 'loopKernel': 256
+Fri 01:03: INFO    : Using user logic for flush.
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 2)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 188 FIFOs.
+Fri 01:03: INFO    : Tapped 188 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 10.8295 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 567.183 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper took 13.7157 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleAsserter'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleAsserter' took 1.58434 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReplaceEvalStreamOffsetNodes'.
+Fri 01:03: INFO    : Graph-pass 'ReplaceEvalStreamOffsetNodes' took 5.78143 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MoveFanoutRegsForwards'.
+Fri 01:03: INFO    : Graph-pass 'MoveFanoutRegsForwards' took 407.573 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReport'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReport' took 3.32846 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 3.28861 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 0 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 784.753 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'VariableSizeMappedRegInserter'.
+Fri 01:03: INFO    : Graph-pass 'VariableSizeMappedRegInserter' took 370.268 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MakeMaxFileNodeData'.
+Fri 01:03: INFO    : Graph-pass 'MakeMaxFileNodeData' took 24.3595 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper took 16.1681 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 15.0116 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 21.4406 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StallScopeDump'.
+Fri 01:03: INFO    : Graph-pass 'StallScopeDump' took 4.52536 ms (1 iterations)
+Fri 01:03: INFO    : Optimization report for Kernel 'loopKernel'.
+Fri 01:03: INFO    : Enabled optimizations:
+Fri 01:03: INFO    : 	Power-of-2 Floating Point
+Fri 01:03: INFO    : 	DSP Multiply-Add Extraction
+Fri 01:03: INFO    : 	Tri-Adder
+Fri 01:03: INFO    : 	Conditional (Tri)Adds/Subs/AddSubs
+Fri 01:03: INFO    : Total compilation of 'loopKernel' took 620.416 ms.
+Fri 01:03: PROGRESS: 
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/processingKernel_graph_warnings.txt
+Fri 01:03: PROGRESS: Instantiating kernel "processingKernel"
+Fri 01:03: PROGRESS: Compiling kernel "processingKernel"
+Fri 01:03: INFO    : Configuration:
+Fri 01:03: INFO    : 	KernelConfiguration.additionalInputPipelining = 64                                          [Init: 64]
+Fri 01:03: INFO    : 	KernelConfiguration.allowDSPCascading = true                                                [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.allowInputsOutputsBeforeFlushNode = false                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.allowZeroLatencyNodeHold = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.bramBitsThreshold = 2080                                                [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.buildTarget = MAXCOMPILERSIM_HOST_DRIVEN                                [Init: NONE, change: MAXCOMPILERSIM_HOST_DRIVEN]
+Fri 01:03: INFO    : 	KernelConfiguration.cePipelining = 2                                                        [Init: 2]
+Fri 01:03: INFO    : 	KernelConfiguration.checkPartialConnections = true                                          [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhaseBalanceThreshold = 0.1                                        [Init: 0.1]
+Fri 01:03: INFO    : 	KernelConfiguration.clockPhasingRetries = 50                                                [Init: 50]
+Fri 01:03: INFO    : 	KernelConfiguration.constantMultiplicationWithShiftAddThreshold = 3                         [Init: 3]
+Fri 01:03: INFO    : 	KernelConfiguration.criticalPathsOnly = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.dumpNeighboursString =                                                  [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.enableCeReplication = true                                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDebugIOControlRegs = true                                         [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.enableDummyBuild = false                                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enablePipelinedComputeController = false                                [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableShadowRegister = false                                            [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableSmartKernelControl = false                                        [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.enableStatesReportingPasses = true                                      [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.fifoSrlRegisterStages = 1                                               [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.flushOnInputDataCongtiguous = false                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.hardwareDebugDepth = 512                                                [Init: 512]
+Fri 01:03: INFO    : 	KernelConfiguration.hwHierarchyMode = UNSET                                                 [Init: UNSET]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotation = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationAll = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.latencyAnnotationIOs =                                                  [Init: null]
+Fri 01:03: INFO    : 	KernelConfiguration.maxCoalescedFifoWidth = 2147483647                                      [Init: 2147483647]
+Fri 01:03: INFO    : 	KernelConfiguration.maxPreAdderFanOut = 1                                                   [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.netlistMode = false                                                     [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.numPhotonStateMachines = 1                                              [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.ceCounterRegisterDuplication = 1                          [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.conditionalArithmetic = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.counterChainWrapPipelining = 0                            [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.dspAddChain = OPTIMISE                                    [Init: null, change: OPTIMISE]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableActiveFanoutReduction = false                       [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBUFGCE = false                                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterInputRegistering = false                      [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableBetterRegistering = false                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFIFOCoalescingAcrossPlacementConstraints = false    [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableFifoCoalescing = true                               [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableIntegratedRounding = false                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMappedMemoryHostReadBack = true                     [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableMultiCycleReset = false                             [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enablePowerTwoFloatMult = true                            [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableRedundantNodeDeletion = true                        [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.enableStateMachineRegisterMerging = true                  [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inlining = false                                          [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.inputFlushDistanceFactor = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.minimumStaticFIFOSplitDepth = 1                           [Init: 1]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.optimizationTechnique = DEFAULT                           [Init: DEFAULT]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.preserveNodeRegisters = true                              [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.optimizations.triAdd = true                                             [Init: true]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfBlockName =                                                [Init: ]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfMode = false                                               [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.partialReconfTemplate = false                                           [Init: false]
+Fri 01:03: INFO    : 	KernelConfiguration.replicateNodeCeLog2NumPartitions = 0                                    [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.romBRAMBitsThreshold = 2080                                             [Init: 2080]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramAddressCollisionBehaviour = EXCEPTION                     [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.ramOutOfBoundsAccessBehaviour = EXCEPTION                    [Init: EXCEPTION]
+Fri 01:03: INFO    : 	KernelConfiguration.simulation.simProgressMessageFrequency = 0                              [Init: 0]
+Fri 01:03: INFO    : 	KernelConfiguration.useAsapScheduler = false                                                [Init: false]
+Fri 01:03: INFO    : 
+Fri 01:03: INFO    :  -- 
+Fri 01:03: WARNING : Warning (UNCONNECTED_DESIGN_ELEMENT):
+Fri 01:03: WARNING : Unconnected elements in design 'processingKernel'
+Fri 01:03: WARNING : details in : /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/processingKernel_graph_warnings.txt
+Fri 01:03: INFO    : Deleting directory: neighbours
+Fri 01:03: INFO    : Writing current graph to: MCSS-processingKernel-original.pxg
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper.
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/processingKernel.graphs
+Fri 01:03: INFO    : Dumping graph 'original' with DotDumper took 29.6525 ms
+Fri 01:03: INFO    : Running Photon pre-schedule graph optimisations
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 1.08154 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AlignOrEradicatePrintfs'.
+Fri 01:03: INFO    : Erradicated 0 printf nodes
+Fri 01:03: INFO    : Graph-pass 'AlignOrEradicatePrintfs' took 335.798 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldConstantsPass'.
+Fri 01:03: INFO    : Folded 1587 nodes.
+Fri 01:03: INFO    : Folded 3170 nodes.
+Fri 01:03: INFO    : Graph-pass 'FoldConstantsPass' took 33.5853 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'DeleteRedundantNodes'.
+Fri 01:03: INFO    : Graph-pass 'DeleteRedundantNodes' took 885.439 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CollectNumericExceptions'.
+Fri 01:03: INFO    : Graph-pass 'CollectNumericExceptions' took 465.162 µs (1 iterations)
+Fri 01:03: INFO    : Running Photon simulation preparation
+Fri 01:03: INFO    : Running kernel graph-pass 'PrepareSimulationPass'.
+Fri 01:03: INFO    : Graph-pass 'PrepareSimulationPass' took 32.5032 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseNodesPass'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseNodesPass' took 94.9556 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StreamOffsetDivExpand'.
+Fri 01:03: INFO    : Graph-pass 'StreamOffsetDivExpand' took 290.112 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 321 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 20.3985 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'PO2FPMultOptimiser'.
+Fri 01:03: INFO    : Graph-pass 'PO2FPMultOptimiser' took 227.498 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_dsp_extraction' with DotDumper took 13.6226 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'DspMultiplyAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into DSP multiply/add chains (Ultrascale mode).
+Fri 01:03: INFO    : Graph-pass 'DspMultiplyAddExtractionPass' took 38.6361 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_dsp_extraction' with DotDumper took 29.5686 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'TriArithInsertionPass'.
+Fri 01:03: INFO    : MultiAdd inserter didn't add any nodes.
+Fri 01:03: INFO    : Graph-pass 'TriArithInsertionPass' took 863.259 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'post_tri_add_extraction' with DotDumper took 16.7262 ms
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'pre_condadd_extraction' with DotDumper took 27.3863 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalAddExtractionPass'.
+Fri 01:03: INFO    : Optimized 0 sub-graphs into conditional adds/subs/triadds.
+Fri 01:03: INFO    : Graph-pass 'ConditionalAddExtractionPass' took 1.21428 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ConditionalPosNegExtractionPass'.
+Fri 01:03: INFO    : Graph-pass 'ConditionalPosNegExtractionPass' took 340.473 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 0 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 817.699 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'GraphLevelPipelining'.
+Fri 01:03: INFO    : Inserted 0 pipelining registers.
+Fri 01:03: INFO    : Graph-pass 'GraphLevelPipelining' took 1.26660 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'LimitFanoutPass'.
+Fri 01:03: INFO    : At node 69.o, applied chain fanout limit of 32 creating 6 new registers.
+Fri 01:03: INFO    : At node 122.output, applied chain fanout limit of 32 creating 9 new registers.
+Fri 01:03: INFO    : At node 120.o, applied chain fanout limit of 32 creating 3 new registers.
+Fri 01:03: INFO    : Graph-pass 'LimitFanoutPass' took 17.0170 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'optimised' with DotDumper took 15.3120 ms
+Fri 01:03: INFO    : Logging Photon stats to: processingKernel_photon_stats.csv
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/processingKernel_photon_stats.csv
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 3.22308 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 531.982 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReachabilityPass'.
+Fri 01:03: INFO    : Graph-pass 'ReachabilityPass' took 429.475 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindInputsLeadingToFlush'.
+Fri 01:03: INFO    : Graph-pass 'FindInputsLeadingToFlush' took 141.740 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForStatefulToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForStatefulToFlushViolations' took 169.946 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'CheckForInputToFlushViolations'.
+Fri 01:03: INFO    : Graph-pass 'CheckForInputToFlushViolations' took 567.149 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FindIllegalLoops'.
+Fri 01:03: INFO    : Finding illegal loops for 302 loops.
+Fri 01:03: INFO    : Graph-pass 'FindIllegalLoops' took 39.0307 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'AddNodeSchedulingConstraints'.
+Fri 01:03: INFO    : Graph-pass 'AddNodeSchedulingConstraints' took 637.065 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 944.391 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleVariables'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleVariables' took 2.75776 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 229.197 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 477.422 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 1.91499 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.76653 ms (1 iterations)
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 1)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 1.82716 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 319.147 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_1' with DotDumper took 38.6291 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'OptimiseVariableFIFOs'.
+Fri 01:03: INFO    : Graph-pass 'OptimiseVariableFIFOs' took 335.461 µs (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'validated_fifos' with DotDumper took 36.6973 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 1.71343 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleConstants'.
+Fri 01:03: INFO    : Running command: "/vol/cc/opt/maxeler/maxcompiler-2020.2/bin/cbc" "processingKernel_schedule_C.mps.gz" -threads 72 -solve  -printi csv -solu "processingKernel_schedule_C.csv" > "processingKernel_schedule_C.stdout.log"
+Fri 01:03: INFO    : Checking for file hash changes...
+Fri 01:03: INFO    : No changes.
+Fri 01:03: INFO    : Optimum found: 17772
+Fri 01:03: INFO    : Graph-pass 'ScheduleConstants' took 92.3271 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleDumper'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleDumper' took 3.21862 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SubstituteEqPlaceholders'.
+Fri 01:03: INFO    : Graph-pass 'SubstituteEqPlaceholders' took 318.147 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 871.820 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveDistMeasurementNodes'.
+Fri 01:03: INFO    : Graph-pass 'RemoveDistMeasurementNodes' took 3.36000 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleApplier'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleApplier' took 80.5754 ms (1 iterations)
+Fri 01:03: INFO    : Maximum stream latency for kernel 'processingKernel': 122
+Fri 01:03: INFO    : Using user logic for flush.
+Fri 01:03: INFO    : Running Photon post-schedule graph optimisations (pass 2)
+Fri 01:03: INFO    : Running kernel graph-pass 'TapFIFOsPass'.
+Fri 01:03: INFO    : Tapped 506 FIFOs.
+Fri 01:03: INFO    : Tapped 506 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'TapFIFOsPass' took 58.2864 ms (2 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FoldFIFOsPass'.
+Fri 01:03: INFO    : Folded 0 FIFOs.
+Fri 01:03: INFO    : Graph-pass 'FoldFIFOsPass' took 2.29773 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'tapnfold_2' with DotDumper took 50.4586 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'ScheduleAsserter'.
+Fri 01:03: INFO    : Graph-pass 'ScheduleAsserter' took 4.67977 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'ReplaceEvalStreamOffsetNodes'.
+Fri 01:03: INFO    : Graph-pass 'ReplaceEvalStreamOffsetNodes' took 355.248 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MoveFanoutRegsForwards'.
+Fri 01:03: INFO    : Graph-pass 'MoveFanoutRegsForwards' took 205.912 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReport'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReport' took 8.22587 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StatsPass'.
+Fri 01:03: INFO    : Graph-pass 'StatsPass' took 9.39134 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'RemoveUntypedConstants'.
+Fri 01:03: INFO    : Removed 0 untyped constants.
+Fri 01:03: INFO    : Graph-pass 'RemoveUntypedConstants' took 1.76297 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'VariableSizeMappedRegInserter'.
+Fri 01:03: INFO    : Graph-pass 'VariableSizeMappedRegInserter' took 323.721 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MakeMaxFileNodeData'.
+Fri 01:03: INFO    : Graph-pass 'MakeMaxFileNodeData' took 57.3036 ms (1 iterations)
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper.
+Fri 01:03: INFO    : Dumping graph 'final' with DotDumper took 42.0122 ms
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 17.3575 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'FIFOReportDotDump'.
+Fri 01:03: INFO    : Graph-pass 'FIFOReportDotDump' took 20.2966 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'StallScopeDump'.
+Fri 01:03: INFO    : Graph-pass 'StallScopeDump' took 11.0084 ms (1 iterations)
+Fri 01:03: INFO    : Optimization report for Kernel 'processingKernel'.
+Fri 01:03: INFO    : Enabled optimizations:
+Fri 01:03: INFO    : 	Power-of-2 Floating Point
+Fri 01:03: INFO    : 	DSP Multiply-Add Extraction
+Fri 01:03: INFO    : 	Tri-Adder
+Fri 01:03: INFO    : 	Conditional (Tri)Adds/Subs/AddSubs
+Fri 01:03: INFO    : Total compilation of 'processingKernel' took 1.22460 s.
+Fri 01:03: PROGRESS: 
+Fri 01:03: INFO    : Backing-up source-files (old source files in build directory will be removed first)...
+Fri 01:03: INFO    : Source directories: src
+Fri 01:03: INFO    : Deleting directory: src
+Fri 01:03: INFO    : Copying source-files took 8.93661 ms
+Fri 01:03: INFO    : SLiC mode information: adding mode 'default'
+Fri 01:03: INFO    : Manager Configuration:
+Fri 01:03: INFO    : 	ManagerConfiguration.allowNonMultipleTransitions = false                           [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.bramMappingScaleFactor = 1.0                            [Init: 1.0]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.buildEffort = MEDIUM                                    [Init: MEDIUM]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.continueAfterMeetingTiming = false                      [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enableChipScopeInserter = false                         [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enablePcieIbert = false                                 [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enablePcieJtag = false                                  [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enableTandemBoot = false                                [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enableTimingAnalysis = true                             [Init: true]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.enableXpmMacro = true                                   [Init: true]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.generateHexBitfile = false                              [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.implementationNearMissRetries = 0                       [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.implementationNearMissThreshold = 0                     [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.keepWrapperNodeHierarchy = true                         [Init: true]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.level = FULL_BUILD                                      [Init: FULL_BUILD]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.logicMappingScaleFactor = 1.0                           [Init: 1.0]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.optimizationGoal = BALANCED                             [Init: BALANCED]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.overrideSystemJitter = false                            [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.parallelism = 1                                         [Init: 1]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.powerConsumptionCritWarningThreshold = 76.5             [Init: 40.0, change: 76.5]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.powerConsumptionErrorThreshold = 91.79999542236328      [Init: 60.0, change: 91.79999542236328]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.powerConsumptionWarningThreshold = 61.20000076293945    [Init: 20.0, change: 61.20000076293945]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.suppressUramCascadingWarning = false                    [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.build.systemJitter = 0.13                                     [Init: 0.0, change: 0.13]
+Fri 01:03: INFO    : 	ManagerConfiguration.buildTarget = DFE_SIM                                         [Init: null, change: DFE_SIM]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.chipscopeCaptureDepth = 4096                            [Init: 4096]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.fifoUnderOverFlowRegs = false                           [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.memCtlDebugRegs = true                                  [Init: true]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.memCtlExtraDebugRegs = false                            [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.memMarginingSupport = false                             [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.memPhyDebugRegister = NONE                              [Init: NONE]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.memPllLockDebugRegs = true                              [Init: true]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.streamStatus = false                                    [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.debug.streamStatusChecksums = false                           [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.defaultAdditionalRegisters = 0                                [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.defaultStreamFifoDepth = 512                                  [Init: 512]
+Fri 01:03: INFO    : 	ManagerConfiguration.globalMcpConfig.ddrClockFreq = 266.6                          [Init: 0.0, change: 266.6]
+Fri 01:03: INFO    : 	ManagerConfiguration.globalMcpConfig.hasMcp = false                                [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.globalMcpConfig.onCardMemFreq = 272.5                         [Init: 0.0, change: 272.5]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.multiCycleMappedMemoryBus = false                        [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.numPCIeLanes = 0                                         [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.pcieFastClock = false                                    [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.sgFetcherListSize = 16                                   [Init: 16]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.streamFromHostMaxNum = 0                                 [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.pcie.streamToHostMaxNum = 0                                   [Init: 0]
+Fri 01:03: INFO    : 	ManagerConfiguration.reducedMaxfileMacroMode = false                               [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.javaHdlSimRunMode = CONSOLE                        [Init: CONSOLE]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.javaSimVerboseLevel = LOW                          [Init: LOW]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.javaSimulationLMemDimmSize = 1048576               [Init: 1048576]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.javaSimulationRuntime = 1000000000                 [Init: 1000000000]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.javaSimulationTimeout = 3600                       [Init: 3600]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.keepJavaSimLMemDataFile = false                    [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.simulation.nativeFloatingPoint = false                        [Init: false]
+Fri 01:03: INFO    : 	ManagerConfiguration.streamClockFrq = 100.0                                        [Init: 100.0]
+Fri 01:03: INFO    : 
+Fri 01:03: INFO    :  -- 
+Fri 01:03: INFO    : Deleting /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/scratch/Manager_MCSS.graphs
+Fri 01:03: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignClocks
+Fri 01:03: INFO    : Clock assignment: Domain 'watch_clk' in node WatchBlock (ID: 49) set to STREAM clock (100.000000 MHz)
+Fri 01:03: INFO    : Clock assignment: Domain 'watch_clk' in node WatchBlock (ID: 10) set to STREAM clock (100.000000 MHz)
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignWidths
+Fri 01:03: INFO    : Running manager compiler graph-pass: InsertDualAspectLogic
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignClocks
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignWidths
+Fri 01:03: INFO    : Running manager compiler graph-pass: InsertPullPushAdapter
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignClocks
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignWidths
+Fri 01:03: INFO    : Running manager compiler graph-pass: InsertStreamFifos
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignClocks
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignWidths
+Fri 01:03: INFO    : Running manager compiler graph-pass: InsertStreamStatus
+Fri 01:03: INFO    : Running manager compiler graph-pass: InsertChipscope
+Fri 01:03: INFO    : Inserted 0 chipscope manager nodes.
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignClocks
+Fri 01:03: INFO    : Running manager compiler graph-pass: AssignWidths
+Fri 01:03: INFO    : Running manager compiler graph-pass: ReportClockAssignments
+Fri 01:03: INFO    : Running manager compiler graph-pass: BuildSoftwareSim
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 180.604 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MaxConstantLatency'.
+Fri 01:03: INFO    : Graph-pass 'MaxConstantLatency' took 204.625 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SimCodeGraphPass'.
+Fri 01:03: INFO    : Graph-pass 'SimCodeGraphPass' took 11.4496 ms (1 iterations)
+Fri 01:03: INFO    : Writing current graph to: MCSS-rngKernel-final-simulation.pxg
+Fri 01:03: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Fri 01:03: INFO    : Graph-pass 'GeneratePXG' took 16.4682 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 4.11202 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MaxConstantLatency'.
+Fri 01:03: INFO    : Graph-pass 'MaxConstantLatency' took 886.071 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SimCodeGraphPass'.
+Fri 01:03: INFO    : Graph-pass 'SimCodeGraphPass' took 37.6606 ms (1 iterations)
+Fri 01:03: INFO    : Writing current graph to: MCSS-loopKernel-final-simulation.pxg
+Fri 01:03: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Fri 01:03: INFO    : Graph-pass 'GeneratePXG' took 123.179 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MarkConstantPass'.
+Fri 01:03: INFO    : Graph-pass 'MarkConstantPass' took 1.07227 ms (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'MaxConstantLatency'.
+Fri 01:03: INFO    : Graph-pass 'MaxConstantLatency' took 764.662 µs (1 iterations)
+Fri 01:03: INFO    : Running kernel graph-pass 'SimCodeGraphPass'.
+Fri 01:03: INFO    : Graph-pass 'SimCodeGraphPass' took 15.4616 ms (1 iterations)
+Fri 01:03: INFO    : Writing current graph to: MCSS-processingKernel-final-simulation.pxg
+Fri 01:03: INFO    : Running kernel graph-pass 'GeneratePXG'.
+Fri 01:03: INFO    : Graph-pass 'GeneratePXG' took 37.6369 ms (1 iterations)
+Fri 01:03: INFO    : Mapped register report:
+Fri 01:03: INFO    : 	0	rngKernel.io_y_force_disabled	1bytes
+Fri 01:03: INFO    : 	1	rngKernel.current_run_cycle_count	6bytes
+Fri 01:03: INFO    : 	7	rngKernel.dbg_ctld_almost_empty	1bytes
+Fri 01:03: INFO    : 	8	rngKernel.dbg_ctld_done	1bytes
+Fri 01:03: INFO    : 	9	rngKernel.dbg_ctld_empty	1bytes
+Fri 01:03: INFO    : 	a	rngKernel.dbg_ctld_read	1bytes
+Fri 01:03: INFO    : 	b	rngKernel.dbg_ctld_read_pipe_dbg	1bytes
+Fri 01:03: INFO    : 	c	rngKernel.dbg_ctld_request	1bytes
+Fri 01:03: INFO    : 	d	rngKernel.dbg_done_out	1bytes
+Fri 01:03: INFO    : 	e	rngKernel.dbg_fill_level	2bytes
+Fri 01:03: INFO    : 	10	rngKernel.dbg_flush_level	2bytes
+Fri 01:03: INFO    : 	12	rngKernel.dbg_flush_start	1bytes
+Fri 01:03: INFO    : 	13	rngKernel.dbg_flush_start_level	2bytes
+Fri 01:03: INFO    : 	15	rngKernel.dbg_flushing	1bytes
+Fri 01:03: INFO    : 	16	rngKernel.dbg_full_level	2bytes
+Fri 01:03: INFO    : 	18	rngKernel.dbg_out_stall	1bytes
+Fri 01:03: INFO    : 	19	rngKernel.dbg_out_valid	1bytes
+Fri 01:03: INFO    : 	1a	rngKernel.dbg_stall_vector	1bytes
+Fri 01:03: INFO    : 	1b	loopKernel.io_y_force_disabled	1bytes
+Fri 01:03: INFO    : 	1c	loopKernel.io_z_force_disabled	1bytes
+Fri 01:03: INFO    : 	1d	loopKernel.current_run_cycle_count	6bytes
+Fri 01:03: INFO    : 	23	loopKernel.dbg_ctld_almost_empty	1bytes
+Fri 01:03: INFO    : 	24	loopKernel.dbg_ctld_done	1bytes
+Fri 01:03: INFO    : 	25	loopKernel.dbg_ctld_empty	1bytes
+Fri 01:03: INFO    : 	26	loopKernel.dbg_ctld_read	1bytes
+Fri 01:03: INFO    : 	27	loopKernel.dbg_ctld_read_pipe_dbg	1bytes
+Fri 01:03: INFO    : 	28	loopKernel.dbg_ctld_request	1bytes
+Fri 01:03: INFO    : 	29	loopKernel.dbg_done_out	1bytes
+Fri 01:03: INFO    : 	2a	loopKernel.dbg_fill_level	2bytes
+Fri 01:03: INFO    : 	2c	loopKernel.dbg_flush_level	2bytes
+Fri 01:03: INFO    : 	2e	loopKernel.dbg_flush_start	1bytes
+Fri 01:03: INFO    : 	2f	loopKernel.dbg_flush_start_level	2bytes
+Fri 01:03: INFO    : 	31	loopKernel.dbg_flushing	1bytes
+Fri 01:03: INFO    : 	32	loopKernel.dbg_full_level	2bytes
+Fri 01:03: INFO    : 	34	loopKernel.dbg_out_stall	1bytes
+Fri 01:03: INFO    : 	35	loopKernel.dbg_out_valid	1bytes
+Fri 01:03: INFO    : 	36	loopKernel.dbg_stall_vector	1bytes
+Fri 01:03: INFO    : 	37	processingKernel.numHists	8bytes
+Fri 01:03: INFO    : 	3f	processingKernel.io_z_force_disabled	1bytes
+Fri 01:03: INFO    : 	40	processingKernel.io_output_force_disabled	1bytes
+Fri 01:03: INFO    : 	41	processingKernel.run_cycle_count	6bytes
+Fri 01:03: INFO    : 	47	processingKernel.current_run_cycle_count	6bytes
+Fri 01:03: INFO    : 	4d	processingKernel.dbg_ctld_almost_empty	1bytes
+Fri 01:03: INFO    : 	4e	processingKernel.dbg_ctld_done	1bytes
+Fri 01:03: INFO    : 	4f	processingKernel.dbg_ctld_empty	1bytes
+Fri 01:03: INFO    : 	50	processingKernel.dbg_ctld_read	1bytes
+Fri 01:03: INFO    : 	51	processingKernel.dbg_ctld_read_pipe_dbg	1bytes
+Fri 01:03: INFO    : 	52	processingKernel.dbg_ctld_request	1bytes
+Fri 01:03: INFO    : 	53	processingKernel.dbg_done_out	1bytes
+Fri 01:03: INFO    : 	54	processingKernel.dbg_fill_level	1bytes
+Fri 01:03: INFO    : 	55	processingKernel.dbg_flush_level	1bytes
+Fri 01:03: INFO    : 	56	processingKernel.dbg_flush_start	1bytes
+Fri 01:03: INFO    : 	57	processingKernel.dbg_flush_start_level	1bytes
+Fri 01:03: INFO    : 	58	processingKernel.dbg_flushing	1bytes
+Fri 01:03: INFO    : 	59	processingKernel.dbg_full_level	1bytes
+Fri 01:03: INFO    : 	5a	processingKernel.dbg_out_stall	1bytes
+Fri 01:03: INFO    : 	5b	processingKernel.dbg_out_valid	1bytes
+Fri 01:03: INFO    : 	5c	processingKernel.dbg_stall_vector	1bytes
+Fri 01:03: INFO    : 	5d	ifpga.ifpga_ctrl	1bytes
+Fri 01:03: INFO    : 	5e	SignalForwardingAdapter.SFA_FORWARD_EN	4bytes
+Fri 01:03: INFO    : Mapped register chain length = 98
+Fri 01:03: INFO    : Mapped register efficiency = 0.56 (441 / 784 bits)
+Fri 01:03: INFO    : Mapped memory report:
+Fri 01:03: INFO    : 	Memory 'rngKernel.rngKernelgen_seeds0' @ 4194304
+Fri 01:03: INFO    : 	Memory 'rngKernel.rngKernelgen_seeds1' @ 4259840
+Fri 01:03: INFO    : 	Memory 'rngKernel.rngKernelgen_seeds2' @ 4325376
+Fri 01:03: INFO    : Running manager compiler graph-pass: GenerateMXGInfo
+Fri 01:03: INFO    : Running manager compiler graph-pass: GenerateSlicHostCode
+Fri 01:03: INFO    : Generating SLIC interface information
+Fri 01:03: INFO    : Generating SLIC code for interface 'default'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'loopKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'processingKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'rngKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Generating XML description for Maxfile
+Fri 01:03: INFO    : Generating XML description for mode 'default'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'loopKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'processingKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Skipping blacklisted scalar parameter 'rngKernel.current_run_cycle_count'
+Fri 01:03: INFO    : Adding SLIC sections to the maxfile
+Fri 01:03: INFO    : Adding user files to the maxfile
+Fri 01:03: INFO    : Generating SLIC include file
+Fri 01:03: INFO    : Done generating SLIC interface information
+Fri 01:03: PROGRESS: Running back-end simulation build (3 phases)
+Fri 01:03: PROGRESS: (1/3) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+Fri 01:03: INFO    : Build pass 'GenerateMaxFileDataFile' took 33.7365 ms.
+Fri 01:03: PROGRESS: (2/3) - Compile Simulation Modules (SimCompilePass)
+Fri 01:03: INFO    : Running command: make -f $MAXCOMPILERDIR/lib/simulator/bitstream/Makefile cleanTarget
+Fri 01:03: INFO    : rm -f objdir/max_msi.o
+Fri 01:03: INFO    : Running command: make -f $MAXCOMPILERDIR/lib/simulator/bitstream/Makefile -j2
+Fri 01:03: INFO    : Checking for file hash changes...
+Fri 01:03: INFO    : Hash changed for file: '../../MaxCompilerDesignData.dat'
+Fri 01:03: INFO    : echo "Building bitstream for DFE_SIM"
+Fri 01:03: INFO    : Building bitstream for DFE_SIM
+Fri 01:03: INFO    : /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/clang/bin/start.sh clang++ -c -MMD -MT objdir/max_msi.o -MF objdir/max_msi.d -std=c++11 -fPIC -B/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/gcc -D__USE_XOPEN2K8 -O3 -Wno-format -Wno-parentheses-equality -I. -I/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/maxeleros-sim/include -I /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/simulator/bitstream/../include -I /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/simulator/bitstream/../api -I/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/lwip_sim -I/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/lwip_sim/include -I/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/lwip_sim/include/arch -I/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/lwip_sim/include/ipv4  -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS   -o objdir/max_msi.o /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/simulator/bitstream/../targets/DFE_SIM/max_msi.cpp
+Fri 01:04: INFO    : /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/clang/bin/start.sh clang++ -fPIC -shared -B/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/gcc -lrt /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/lwip_sim/lib/liblwip.a  /vol/cc/opt/maxeler/maxcompiler-2020.2/lib/simulator/bitstream/../simsystem.so -pthread -O2 -s  -o MCSS.so objdir/rngKernel_exec0.O2.o objdir/rngKernel.O0.o objdir/rngKernel_Templates.O2.o objdir/loopKernel_exec0.O2.o objdir/loopKernel.O0.o objdir/loopKernel_Templates.O2.o objdir/processingKernel_exec0.O2.o objdir/processingKernel.O0.o objdir/processingKernel_Templates.O2.o objdir/max_msi.o 
+Fri 01:04: INFO    : Build pass 'SimCompilePass' took 4.49278 s.
+Fri 01:04: PROGRESS: (3/3) - Generate MaxFile (AddSimObjectToMaxFilePass)
+Fri 01:04: INFO    : Build pass 'AddSimObjectToMaxFilePass' took 158.258 ms.
+Fri 01:04: INFO    : Final result files after build: 
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-rngKernel-original.pxg"
+Fri 01:04: INFO    : MCSS-rngKernel-original.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/rngKernel_Configuration.txt"
+Fri 01:04: INFO    : rngKernel_Configuration.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/rngKernel_NodeDiary.txt"
+Fri 01:04: INFO    : rngKernel_NodeDiary.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-loopKernel-original.pxg"
+Fri 01:04: INFO    : MCSS-loopKernel-original.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/loopKernel_Configuration.txt"
+Fri 01:04: INFO    : loopKernel_Configuration.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/loopKernel_NodeDiary.txt"
+Fri 01:04: INFO    : loopKernel_NodeDiary.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-processingKernel-original.pxg"
+Fri 01:04: INFO    : MCSS-processingKernel-original.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/processingKernel_Configuration.txt"
+Fri 01:04: INFO    : processingKernel_Configuration.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/processingKernel_NodeDiary.txt"
+Fri 01:04: INFO    : processingKernel_NodeDiary.txt (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-rngKernel-final-simulation.pxg"
+Fri 01:04: INFO    : MCSS-rngKernel-final-simulation.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-loopKernel-final-simulation.pxg"
+Fri 01:04: INFO    : MCSS-loopKernel-final-simulation.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS-processingKernel-final-simulation.pxg"
+Fri 01:04: INFO    : MCSS-processingKernel-final-simulation.pxg (BuildFilePXG)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS.xml"
+Fri 01:04: INFO    : MCSS.xml (BuildFile)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS.h"
+Fri 01:04: INFO    : MCSS.h (BuildFileSlicH)
+Fri 01:04: INFO    : Running command: ln -sf "../scratch/MCSS.max"
+Fri 01:04: INFO    : MCSS.max (BuildFileMaxFile)
+Fri 01:04: PROGRESS: MaxFile: /mnt/ccnas2/tdp/dc3117/max/mcss/MCSS/builds/sim/MCSS_MAX5C_DFE_SIM/results/MCSS.max (MD5Sum: 4f44b2517fa4b663a1a834da4cedaae9)
+Fri 01:04: INFO    : Waiting for any outstanding jobs to finish... 
+Fri 01:04: PROGRESS: Build completed: Fri Jun 18 01:04:03 BST 2021 (took 8 secs)

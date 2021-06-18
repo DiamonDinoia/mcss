@@ -1,0 +1,122 @@
+Welcome to the CBC MILP Solver 
+Version: 2.9.8 
+Build Date: Apr 18 2016 
+
+command line - /vol/cc/opt/maxeler/maxcompiler-2020.2/bin/cbc loopKernel_schedule_C.mps.gz -threads 72 -solve -printi csv -solu loopKernel_schedule_C.csv (default strategy 1)
+At line 1 NAME           CxSchedule
+At line 2 ROWS
+At line 2618 COLUMNS
+At line 6365 RHS
+At line 7674 BOUNDS
+At line 9418 ENDATA
+Problem CxSchedule has 2614 rows, 1743 columns and 6545 elements
+Coin0008I CxSchedule read with 0 errors
+threads was changed from 0 to 72
+Continuous objective value is 50988 - 0.05 seconds
+Cgl0003I 0 fixed, 2190 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1336 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1429 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1406 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1206 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 775 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1167 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 1083 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0003I 0 fixed, 625 tightened bounds, 0 strengthened rows, 0 substitutions
+Cgl0004I processed model has 2566 rows, 1721 columns (1721 integer (0 of which binary)) and 6445 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0012I Integer solution of 50988 found by DiveCoefficient after 0 iterations and 0 nodes (0.11 seconds)
+Cbc0030I Thread 0 used 0 times,  waiting to start 0.18268681, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 1 used 0 times,  waiting to start 0.18059254, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 2 used 0 times,  waiting to start 0.17835617, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 3 used 0 times,  waiting to start 0.17609286, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 4 used 0 times,  waiting to start 0.17376399, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 5 used 0 times,  waiting to start 0.17146325, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 6 used 0 times,  waiting to start 0.16916537, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 7 used 0 times,  waiting to start 0.16687965, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 8 used 0 times,  waiting to start 0.16461873, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 9 used 0 times,  waiting to start 0.16220617, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 10 used 0 times,  waiting to start 0.15987563, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 11 used 0 times,  waiting to start 0.15753794, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 12 used 0 times,  waiting to start 0.15499473, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 13 used 0 times,  waiting to start 0.15248084, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 14 used 0 times,  waiting to start 0.15000439, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 15 used 0 times,  waiting to start 0.14751387, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 16 used 0 times,  waiting to start 0.14506006, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 17 used 0 times,  waiting to start 0.14260864, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 18 used 0 times,  waiting to start 0.14018607, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 19 used 0 times,  waiting to start 0.13766313, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 20 used 0 times,  waiting to start 0.13517499, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 21 used 0 times,  waiting to start 0.13274431, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 22 used 0 times,  waiting to start 0.130193, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 23 used 0 times,  waiting to start 0.12769294, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 24 used 0 times,  waiting to start 0.12519598, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 25 used 0 times,  waiting to start 0.12270594, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 26 used 0 times,  waiting to start 0.12041903, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 27 used 0 times,  waiting to start 0.11795568, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 28 used 0 times,  waiting to start 0.11548734, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 29 used 0 times,  waiting to start 0.11298752, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 30 used 0 times,  waiting to start 0.1104455, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 31 used 0 times,  waiting to start 0.10790658, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 32 used 0 times,  waiting to start 0.10534286, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 33 used 0 times,  waiting to start 0.1029017, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 34 used 0 times,  waiting to start 0.10044026, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 35 used 0 times,  waiting to start 0.097912073, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 36 used 0 times,  waiting to start 0.095422506, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 37 used 0 times,  waiting to start 0.092938185, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 38 used 0 times,  waiting to start 0.090493441, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 39 used 0 times,  waiting to start 0.087955236, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 40 used 0 times,  waiting to start 0.085444212, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 41 used 0 times,  waiting to start 0.082958221, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 42 used 0 times,  waiting to start 0.080389977, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 43 used 0 times,  waiting to start 0.077872276, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 44 used 0 times,  waiting to start 0.075311422, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 45 used 0 times,  waiting to start 0.072816372, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 46 used 0 times,  waiting to start 0.070305347, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 47 used 0 times,  waiting to start 0.067849159, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 48 used 0 times,  waiting to start 0.065369844, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 49 used 0 times,  waiting to start 0.062877417, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 50 used 0 times,  waiting to start 0.060377598, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 51 used 0 times,  waiting to start 0.057855844, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 52 used 0 times,  waiting to start 0.055339098, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 53 used 0 times,  waiting to start 0.052865028, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 54 used 0 times,  waiting to start 0.050381899, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 55 used 0 times,  waiting to start 0.047896147, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 56 used 0 times,  waiting to start 0.04539156, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 57 used 0 times,  waiting to start 0.042912006, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 58 used 0 times,  waiting to start 0.040417433, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 59 used 0 times,  waiting to start 0.037908316, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 60 used 0 times,  waiting to start 0.035464287, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 61 used 0 times,  waiting to start 0.032914162, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 62 used 0 times,  waiting to start 0.030423403, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 63 used 0 times,  waiting to start 0.02786994, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 64 used 0 times,  waiting to start 0.025418997, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 65 used 0 times,  waiting to start 0.023049831, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 66 used 0 times,  waiting to start 0.020576239, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 67 used 0 times,  waiting to start 0.018200874, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 68 used 0 times,  waiting to start 0.015701771, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 69 used 0 times,  waiting to start 0.013230801, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 70 used 0 times,  waiting to start 0.010757208, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Thread 71 used 0 times,  waiting to start 0.0082576275, 0 cpu time, 0 locks, 0 locked, 0 waiting for locks
+Cbc0030I Main thread 0 waiting for threads,  1 locks, 6.6757202e-06 locked, 2.3841858e-07 waiting for locks
+Cbc0001I Search completed - best objective 50988, took 0 iterations and 0 nodes (0.23 seconds)
+Cbc0035I Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 50988 to 50988
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Optimal solution found
+
+Objective value:                50988.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.26
+Time (Wallclock seconds):       0.35
+
+Option for printingOptions changed from normal to csv
+Total time (CPU seconds):       0.27   (Wallclock seconds):       0.37
+

@@ -1,0 +1,1057 @@
+NodeMul * {HWFloat:8, 24} ID: 104
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(79) {HWFloat:8, 24} 79 ID: 2121
+	FIFO(36) {HWFloat:8, 24} 36 ID: 2391
+
+NodeMux MUX {HWFloat:8, 24} ID: 134
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.max(KernelMath.java:648)
+mcss.LoopKernel.sampleCosTheta(LoopKernel.java:18)
+mcss.LoopKernel.<init>(LoopKernel.java:76)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(85) {HWFloat:8, 24} 85 ID: 2331
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2407
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2408
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2087
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(49) {HWFloat:8, 24} 49 ID: 2395
+	FIFO(36) {HWFloat:8, 24} 36 ID: 2096
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2396
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2092
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2124
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2429
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2093
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2366
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2430
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2090
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(90) {HWFloat:8, 24} 90 ID: 2369
+
+NodeMux MUX {HWFloat:8, 24} ID: 20
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:51)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2416
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2342
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2418
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2415
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2417
+
+NodeMux MUX {HWFloat:8, 24} ID: 14
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:48)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(78) {HWFloat:8, 24} 78 ID: 2379
+
+NodeMux MUX {HWFloat:8, 24} ID: 18
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:50)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2423
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2350
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2422
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2424
+
+NodeAdd + {HWFloat:8, 24} ID: 117
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+mcss.LoopKernel.<init>(LoopKernel.java:73)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(58) {HWFloat:8, 24} 58 ID: 2427
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2381
+
+NodeMul * {HWFloat:8, 24} ID: 1190
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(58) {HWFloat:8, 24} 58 ID: 2346
+
+NodeMul * {HWFloat:8, 24} ID: 664
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(39) {HWFloat:8, 24} 39 ID: 2412
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2329
+
+NodeMux MUX {HWFloat:8, 24} ID: 22
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:52)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(27) {HWFloat:8, 24} 27 ID: 2330
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2413
+	FIFO(4) {HWFloat:8, 24} 4 ID: 2414
+
+NodeAdd + {HWFloat:8, 24} ID: 105
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+mcss.LoopKernel.<init>(LoopKernel.java:64)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(35) {HWFloat:8, 24} 35 ID: 2383
+	FIFO(5) {HWFloat:8, 24} 5 ID: 2393
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2394
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2392
+
+NodeMux MUX {HWFloat:8, 24} ID: 1156
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(38) {HWFloat:8, 24} 38 ID: 2227
+
+NodeMux MUX {HWFloat:8, 24} ID: 630
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(38) {HWFloat:8, 24} 38 ID: 2325
+
+NodeMux MUX {HWFloat:8, 24} ID: 24
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:53)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2428
+	FIFO(12) {HWFloat:8, 24} 12 ID: 2358
+
+NodeReinterpret <{HWFloat:8, 24}> {HWFloat:8, 24} ID: 35
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+mcss.LoopKernel.<init>(LoopKernel.java:62)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(28) {HWFloat:8, 24} 28 ID: 2134
+
+NodeAdd + {HWFloat:8, 24} ID: 1193
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.add(DFEVar.java:930)
+mcss.LoopKernel.<init>(LoopKernel.java:84)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(25) {HWFloat:8, 24} 25 ID: 2348
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2091
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(24) {HWFloat:8, 24} 24 ID: 2386
+
+NodeStreamOffset stream offset: -90 {HWFloat:8, 24} ID: 2088
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(21) {HWFloat:8, 24} 21 ID: 2341
+
+NodeFIFO FIFO(2) {HWFloat:8, 24} ID: 2424
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2425
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2426
+
+NodeMul * {HWFloat:8, 24} ID: 1165
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:147)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2225
+
+NodeMul * {HWFloat:8, 24} ID: 639
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:1020)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:147)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(19) {HWFloat:8, 24} 19 ID: 2323
+
+NodeMux MUX {HWFloat:8, 24} ID: 1245
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1187)
+mcss.LoopKernel.<init>(LoopKernel.java:100)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(18) {HWFloat:8, 24} 18 ID: 2339
+
+NodeCast NodeCast
+{HWOffsetFix:79, -79, UNSIGNED} 
+->
+ {HWOffsetFix:80, -79, TWOSCOMPLEMENT} {HWOffsetFix:80, -79, TWOSCOMPLEMENT} ID: 709
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:46)
+maxpower.math.Utils.ldexp(Utils.java:108)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 4 ID: 2410
+	FIFO(3) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 3 ID: 2141
+
+NodeCast NodeCast
+{HWOffsetFix:79, -79, UNSIGNED} 
+->
+ {HWOffsetFix:80, -79, TWOSCOMPLEMENT} {HWOffsetFix:80, -79, TWOSCOMPLEMENT} ID: 183
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:46)
+maxpower.math.Utils.ldexp(Utils.java:108)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 4 ID: 2411
+	FIFO(3) {HWOffsetFix:80, -79, TWOSCOMPLEMENT} 3 ID: 2241
+
+NodeMux MUX {HWOffsetFix:25, -24, UNSIGNED} ID: 95
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1187)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:50)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(18) {HWOffsetFix:25, -24, UNSIGNED} 18 ID: 2119
+
+NodeMul * {HWFloat:8, 24} ID: 121
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+mcss.LoopKernel.sampleCosTheta(LoopKernel.java:17)
+mcss.LoopKernel.<init>(LoopKernel.java:76)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(14) {HWFloat:8, 24} 14 ID: 2130
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 78
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(16) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 16 ID: 2115
+
+NodeSub - {HWFloat:8, 24} ID: 136
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.subAsRHS(DFEVar.java:1000)
+mcss.LoopKernel.<init>(LoopKernel.java:77)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(11) {HWFloat:8, 24} 11 ID: 2133
+
+NodeMux MUX {HWFloat:8, 24} ID: 16
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+mcss.LoopKernel.<init>(LoopKernel.java:49)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(11) {HWFloat:8, 24} 11 ID: 2371
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 79
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(10) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 10 ID: 2112
+
+NodeMux MUX {HWFloat:8, 24} ID: 1158
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2223
+
+NodeMux MUX {HWFloat:8, 24} ID: 632
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:134)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(8) {HWFloat:8, 24} 8 ID: 2321
+
+NodeSlice [7:0] {HWRawBits:8} ID: 65
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:46)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(29) {HWRawBits:8} 29 ID: 2102
+
+NodeMul * {HWFloat:8, 24} ID: 143
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mulAsRHS(DFEVar.java:1045)
+mcss.LoopKernel.<init>(LoopKernel.java:79)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWFloat:8, 24} 6 ID: 2136
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2409
+
+NodeMux MUX {HWOffsetFix:17, -17, UNSIGNED} ID: 77
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:181)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWOffsetFix:17, -17, UNSIGNED} 6 ID: 2110
+	FIFO(6) {HWOffsetFix:17, -17, UNSIGNED} 6 ID: 2390
+
+NodeMux MUX {HWOffsetFix:27, -23, TWOSCOMPLEMENT} ID: 80
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:124)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFix(CubicSplineBuilder.java:183)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:200)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:49)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:27, -23, TWOSCOMPLEMENT} 4 ID: 2109
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2008
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2161
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2009
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2191
+
+NodeFIFO FIFO(25) {HWFloat:8, 24} ID: 2348
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2419
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2010
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2259
+
+NodePO2FPMult PO2FPMult_N7 {HWFloat:8, 24} ID: 2011
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWFloat:8, 24} 3 ID: 2289
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 10
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+mcss.LoopKernel.<init>(LoopKernel.java:42)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(25) {HWOffsetFix:1, 0, UNSIGNED} 25 ID: 2398
+	FIFO(21) {HWOffsetFix:1, 0, UNSIGNED} 21 ID: 2340
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2399
+	FIFO(12) {HWOffsetFix:1, 0, UNSIGNED} 12 ID: 2397
+	FIFO(12) {HWOffsetFix:1, 0, UNSIGNED} 12 ID: 2400
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 1187
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:47)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(79) {HWOffsetFix:1, 0, UNSIGNED} 79 ID: 2230
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 661
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:43)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(79) {HWOffsetFix:1, 0, UNSIGNED} 79 ID: 2328
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 226
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:38)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(78) {HWOffsetFix:1, 0, UNSIGNED} 78 ID: 2327
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 752
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:41)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(76) {HWOffsetFix:1, 0, UNSIGNED} 76 ID: 2229
+
+NodeSub - {HWFloat:8, 24} ID: 128
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.subAsRHS(DFEVar.java:1000)
+mcss.LoopKernel.sampleCosTheta(LoopKernel.java:17)
+mcss.LoopKernel.<init>(LoopKernel.java:76)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2131
+
+NodeMux MUX {HWFloat:8, 24} ID: 132
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath.min(KernelMath.java:615)
+mcss.LoopKernel.sampleCosTheta(LoopKernel.java:18)
+mcss.LoopKernel.<init>(LoopKernel.java:76)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWFloat:8, 24} 2 ID: 2132
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 1172
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:151)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(64) {HWOffsetFix:1, 0, UNSIGNED} 64 ID: 2228
+
+NodeOr | {HWOffsetFix:1, 0, UNSIGNED} ID: 646
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.or(DFEVar.java:469)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:151)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(64) {HWOffsetFix:1, 0, UNSIGNED} 64 ID: 2326
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 780
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2154
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 981
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2159
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 254
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2252
+
+NodeMux MUX {HWOffsetFix:7, 0, UNSIGNED} ID: 455
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.fmem.FloatingPointAddressGenerator.getAddress(FloatingPointAddressGenerator.java:65)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:128)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(9) {HWOffsetFix:7, 0, UNSIGNED} 9 ID: 2257
+
+NodeSlice [30:0] {HWRawBits:31} ID: 2060
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWRawBits:31} 2 ID: 2337
+
+NodeCast NodeCast
+{HWOffsetFix:27, -23, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:25, -24, UNSIGNED} {HWOffsetFix:25, -24, UNSIGNED} ID: 70
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:48)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWOffsetFix:25, -24, UNSIGNED} 2 ID: 2105
+
+NodeGte >= {HWOffsetFix:1, 0, UNSIGNED} ID: 100
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:55)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(47) {HWOffsetFix:1, 0, UNSIGNED} 47 ID: 2120
+
+NodeGt > {HWOffsetFix:1, 0, UNSIGNED} ID: 107
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:845)
+mcss.LoopKernel.<init>(LoopKernel.java:65)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2232
+	FIFO(11) {HWOffsetFix:1, 0, UNSIGNED} 11 ID: 2403
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2404
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2401
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 2405
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2402
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2406
+
+NodeGt > {HWOffsetFix:1, 0, UNSIGNED} ID: 1195
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gt(DFEVar.java:845)
+mcss.LoopKernel.<init>(LoopKernel.java:85)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(20) {HWOffsetFix:1, 0, UNSIGNED} 20 ID: 2233
+	FIFO(18) {HWOffsetFix:1, 0, UNSIGNED} 18 ID: 2421
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 2420
+
+NodeNot ~ {HWOffsetFix:1, 0, UNSIGNED} ID: 2034
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(32) {HWOffsetFix:1, 0, UNSIGNED} 32 ID: 2103
+
+NodeCast NodeCast
+{HWOffsetFix:10, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, TWOSCOMPLEMENT} {HWOffsetFix:8, 0, TWOSCOMPLEMENT} ID: 2015
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:8, 0, TWOSCOMPLEMENT} 4 ID: 2140
+
+NodeMux MUX {HWFloat:8, 24} ID: 746
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.math.Utils.ldexp(Utils.java:117)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2146
+
+NodeCast NodeCast
+{HWOffsetFix:10, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, TWOSCOMPLEMENT} {HWOffsetFix:8, 0, TWOSCOMPLEMENT} ID: 2023
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:8, 0, TWOSCOMPLEMENT} 4 ID: 2240
+
+NodeMux MUX {HWFloat:8, 24} ID: 220
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.ternaryIf(DFEVar.java:1228)
+maxpower.math.Utils.ldexp(Utils.java:117)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWFloat:8, 24} 1 ID: 2246
+
+NodeSlice [79:79] {HWRawBits:1} ID: 1562
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(29) {HWRawBits:1} 29 ID: 2258
+
+NodeSlice [0:0] {HWRawBits:1} ID: 747
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:40)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(27) {HWRawBits:1} 27 ID: 2160
+
+NodeShift >> {HWRawBits:24} ID: 803
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2189
+
+NodeShift >> {HWRawBits:24} ID: 1004
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2219
+
+NodeShift >> {HWRawBits:24} ID: 277
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2287
+
+NodeShift >> {HWRawBits:24} ID: 478
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.shiftRight(DFEVar.java:243)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:50)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:24} 1 ID: 2317
+
+NodeSlice [22:0] {HWRawBits:23} ID: 1366
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:23} 1 ID: 2097
+
+NodeAnd & {HWOffsetFix:1, 0, UNSIGNED} ID: 1233
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:579)
+mcss.LoopKernel.<init>(LoopKernel.java:95)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(18) {HWOffsetFix:1, 0, UNSIGNED} 18 ID: 2356
+
+NodeReinterpret <{HWOffsetFix:8, 0, UNSIGNED}> {HWOffsetFix:8, 0, UNSIGNED} ID: 49
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getExponent(FloatingPoint.java:38)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:39)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWOffsetFix:8, 0, UNSIGNED} 2 ID: 2099
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 945
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2186
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 1146
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2216
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 419
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2284
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:5, 0, UNSIGNED} {HWOffsetFix:5, 0, UNSIGNED} ID: 620
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:59)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:5, 0, UNSIGNED} 3 ID: 2314
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 948
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2188
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 1149
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2218
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 422
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2286
+
+NodeReinterpret <{HWOffsetFix:2, 0, UNSIGNED}> {HWOffsetFix:2, 0, UNSIGNED} ID: 623
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:172)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:61)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:2, 0, UNSIGNED} 5 ID: 2316
+
+NodeSub - {HWOffsetFix:9, 0, TWOSCOMPLEMENT} ID: 51
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getExponent(FloatingPoint.java:41)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:39)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:9, 0, TWOSCOMPLEMENT} 1 ID: 2101
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, UNSIGNED} {HWOffsetFix:8, 0, UNSIGNED} ID: 734
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.Utils.ldexp(Utils.java:115)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:37)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:8, 0, UNSIGNED} 1 ID: 2144
+
+NodeCast NodeCast
+{HWOffsetFix:9, 0, TWOSCOMPLEMENT} 
+->
+ {HWOffsetFix:8, 0, UNSIGNED} {HWOffsetFix:8, 0, UNSIGNED} ID: 208
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.math.Utils.ldexp(Utils.java:115)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:34)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:8, 0, UNSIGNED} 1 ID: 2244
+
+NodeSlice [31:31] {HWRawBits:1} ID: 790
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2190
+
+NodeSlice [31:31] {HWRawBits:1} ID: 991
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:43)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2220
+
+NodeSlice [31:31] {HWRawBits:1} ID: 264
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2288
+
+NodeSlice [31:31] {HWRawBits:1} ID: 465
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getSignBit(FloatingPoint.java:264)
+com.maxeler.maxblox.funceval.Frac.<init>(Frac.maxj:36)
+com.maxeler.maxblox.funceval.Frac.getFrac(Frac.maxj:74)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.evalFloat(CubicSplineBuilder.java:130)
+maxpower.math.interpolation.CubicSplineBuilder$CubicSpline.eval(CubicSplineBuilder.java:202)
+maxpower.math.interpolation.InterpolatorBuilder$SplineInterpolator.eval(InterpolatorBuilder.java:60)
+maxpower.math.interpolation.functions.trigonometric.Cos.value(Cos.java:40)
+maxpower.math.functions.Trigonometric.cos(Trigonometric.java:40)
+mcss.LoopKernel.<init>(LoopKernel.java:80)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(6) {HWRawBits:1} 6 ID: 2318
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1385
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2139
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1553
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(5) {HWOffsetFix:1, 0, UNSIGNED} 5 ID: 2239
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1395
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2153
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1399
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2158
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1564
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2251
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 1568
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 2256
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1392
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2142
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1560
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(3) {HWOffsetFix:1, 0, UNSIGNED} 3 ID: 2242
+
+NodeSlice [80:79] {HWRawBits:2} ID: 701
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.math.interpolation.functions.trigonometric.Sin.value(Sin.java:29)
+maxpower.math.functions.Trigonometric.sin(Trigonometric.java:24)
+mcss.LoopKernel.<init>(LoopKernel.java:81)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWRawBits:2} 1 ID: 2149
+
+NodeSlice [31:31] {HWRawBits:1} ID: 2061
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(2) {HWRawBits:1} 2 ID: 2336
+
+NodeReinterpret <{HWOffsetFix:1, 0, UNSIGNED}> {HWOffsetFix:1, 0, UNSIGNED} ID: 45
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.FloatingPoint.getMantissa(FloatingPoint.java:94)
+com.maxeler.maxblox.utils.Frexpf.<init>(Frexpf.java:38)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:32)
+maxpower.math.interpolation.functions.arithmetic.FloatLog.value(FloatLog.java:66)
+maxpower.math.functions.Arithmetic.log(Arithmetic.java:25)
+mcss.LoopKernel.<init>(LoopKernel.java:63)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2098
+
+NodeGtInlined > {HWOffsetFix:1, 0, UNSIGNED} ID: 1368
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2100
+
+NodeLtInlined < {HWOffsetFix:1, 0, UNSIGNED} ID: 1390
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2145
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1404
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2162
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1475
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2192
+
+NodeLtInlined < {HWOffsetFix:1, 0, UNSIGNED} ID: 1558
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2245
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1573
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2260
+
+NodeLteInlined <= {HWOffsetFix:1, 0, UNSIGNED} ID: 1644
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:33)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 2290
+

@@ -1,0 +1,1 @@
+../scratch/processingKernel_NodeDiary.txt

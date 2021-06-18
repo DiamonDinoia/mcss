@@ -1,0 +1,22 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "<{HWFloat:8, 24}>" (ID 14) has unconnected outputs: [output]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+	mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:23)
+	mcss.MCSSManager.<init>(MCSSManager.maxj:19)
+	mcss.MCSSManager.main(MCSSManager.maxj:33)
+	
+node "<{HWFloat:8, 24}>" (ID 16) has unconnected outputs: [output]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+	mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:23)
+	mcss.MCSSManager.<init>(MCSSManager.maxj:19)
+	mcss.MCSSManager.main(MCSSManager.maxj:33)
+	
+node "<{HWFloat:8, 24}>" (ID 18) has unconnected outputs: [output]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.input(IO.java:629)
+	mcss.ProcessingKernel.<init>(ProcessingKernel.maxj:23)
+	mcss.MCSSManager.<init>(MCSSManager.maxj:19)
+	mcss.MCSSManager.main(MCSSManager.maxj:33)
+	

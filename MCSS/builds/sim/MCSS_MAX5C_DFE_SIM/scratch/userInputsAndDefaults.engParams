@@ -1,0 +1,11 @@
+#user parameters:
+DFEModel=DEPRECATED
+enableMPCX=false
+MPPRStartCT=1
+MPPREndCT=1
+MPPRThreads=1
+MPPRRetryThreshold=0
+
+#default parameters:
+maxFileName=MCSS
+target=DFE_SIM

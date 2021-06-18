@@ -1,0 +1,15 @@
+CXXFLAGS_OPTIONAL := -DHAVE_KERNELS -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS 
+CFLAGS_OPTIONAL   := -DMAXFILE_INC="../../MaxCompilerDesignData.dat" -g0  -DSLIC_NO_DECLARATIONS 
+LDFLAGS_OPTIONAL  := -O2 -s
+TARGET_BIN := MCSS.so
+MODE := SHARED_OBJECT
+OBJS :=  \
+	$(OBJDIR)/rngKernel_exec0.O2.o \
+	$(OBJDIR)/rngKernel.O0.o \
+	$(OBJDIR)/rngKernel_Templates.O2.o \
+	$(OBJDIR)/loopKernel_exec0.O2.o \
+	$(OBJDIR)/loopKernel.O0.o \
+	$(OBJDIR)/loopKernel_Templates.O2.o \
+	$(OBJDIR)/processingKernel_exec0.O2.o \
+	$(OBJDIR)/processingKernel.O0.o \
+	$(OBJDIR)/processingKernel_Templates.O2.o

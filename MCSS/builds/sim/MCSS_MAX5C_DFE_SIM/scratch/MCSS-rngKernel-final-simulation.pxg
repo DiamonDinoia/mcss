@@ -1,0 +1,1942 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Graph version="2020.2" pxg_version="2" maxfile_name="MCSS" design_name="rngKernel" compilation_phase="final-simulation" frequency="100.00">
+	<Node criticalPaths="[]" group="[]" id="152" isControl="true" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeInputMappedReg">
+		<Output latency="0" name="io_y_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_y_force_disabled)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:23)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>io_y_force_disabled</Name>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="153" dst_node_input="a" src_node_id="152" src_node_output="io_y_force_disabled" />
+	<Node criticalPaths="[]" group="[]" id="153" isControl="true" isVisible="false" pipelineFactor="0.0" powerUsage="N/A" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:23)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="155" dst_node_input="output_control" src_node_id="153" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="218" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="3" dst_node_input="enable" src_node_id="218" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="217" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(11, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:11, 0, UNSIGNED}\n0x270; 624.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>01001110000</Value>
+		<HexValue>0x270</HexValue>
+		<NumericValue>624.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="3" dst_node_input="max" src_node_id="217" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="3" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCounter">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(11, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<ResourceUsage DSPs="0" FFs="10" FMems="0" LUTs="10" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>STOP_AT_MAX</WrapMode>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="171" dst_node_input="a" src_node_id="3" src_node_output="count" />
+	<Edge criticalPaths="[]" dst_node_id="9" dst_node_input="addra" src_node_id="3" src_node_output="count" />
+	<Edge criticalPaths="[]" dst_node_id="7" dst_node_input="addra" src_node_id="3" src_node_output="count" />
+	<Edge criticalPaths="[]" dst_node_id="5" dst_node_input="addra" src_node_id="3" src_node_output="count" />
+	<Node criticalPaths="[]" group="[]" id="216" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:10, 0, UNSIGNED}\n0x270; 624.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>1001110000</Value>
+		<HexValue>0x270</HexValue>
+		<NumericValue>624.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="171" dst_node_input="b" src_node_id="216" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="171" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeGteInlined">
+		<Input name="a" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&gt;=</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="2" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="225" dst_node_input="input" src_node_id="171" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="225" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="1" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="17" dst_node_input="sel" src_node_id="225" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="16" dst_node_input="sel" src_node_id="225" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="15" dst_node_input="sel" src_node_id="225" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="9" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMappedRom">
+		<Input name="addra" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Output latency="2" name="dataa" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MappedRom 'rngKernelgen_seeds2':\n{HWOffsetFix:32, 0, UNSIGNED} x 624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>rngKernelgen_seeds2</Name>
+		<Depth>624</Depth>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="17" dst_node_input="option0" src_node_id="9" src_node_output="dataa" />
+	<Node criticalPaths="[]" group="[]" id="83" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="397" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 397</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="123" dst_node_input="a" src_node_id="83" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="222" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="396" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(396)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="86" dst_node_input="a" src_node_id="222" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="80" dst_node_input="input" src_node_id="222" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="86" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[31:31]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>31</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="224" dst_node_input="input" src_node_id="86" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="224" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="1" name="output" type="dfeBits(1)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="1" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="179" dst_node_input="in0" src_node_id="224" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="80" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="89" dst_node_input="a" src_node_id="80" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="115" dst_node_input="a" src_node_id="80" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="89" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(31)" />
+		<Text>[30:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>31</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="179" dst_node_input="in1" src_node_id="89" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="179" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCat">
+		<Input name="in0" type="dfeBits(1)" />
+		<Input name="in1" type="dfeBits(31)" />
+		<Output latency="0" name="result" type="dfeBits(32)" />
+		<Text>@</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="103" dst_node_input="input" src_node_id="179" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="103" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="180" dst_node_input="datain" src_node_id="103" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="180" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>1</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="112" dst_node_input="input" src_node_id="180" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="112" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="123" dst_node_input="b" src_node_id="112" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="123" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="126" dst_node_input="a" src_node_id="123" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[0:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="120" dst_node_input="sel" src_node_id="115" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:136)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:281)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="118" dst_node_input="option0" src_node_id="116" src_node_output="value" />
+	<Edge criticalPaths="[]" dst_node_id="119" dst_node_input="option0" src_node_id="116" src_node_output="value" />
+	<Edge criticalPaths="[]" dst_node_id="120" dst_node_input="option0" src_node_id="116" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="215" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x9908b0df; 2.567483615E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:120)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:282)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>10011001000010001011000011011111</Value>
+		<HexValue>0x9908b0df</HexValue>
+		<NumericValue>2.567483615E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="118" dst_node_input="option1" src_node_id="215" src_node_output="value" />
+	<Edge criticalPaths="[]" dst_node_id="119" dst_node_input="option1" src_node_id="215" src_node_output="value" />
+	<Edge criticalPaths="[]" dst_node_id="120" dst_node_input="option1" src_node_id="215" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="120" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeBits(1)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="126" dst_node_input="b" src_node_id="120" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="126" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="14" dst_node_input="input" src_node_id="126" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="14" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-624" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="226" dst_node_input="input" src_node_id="14" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="226" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="224" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(224)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="17" dst_node_input="option1" src_node_id="226" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="17" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="29" dst_node_input="a" src_node_id="17" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="83" dst_node_input="input" src_node_id="17" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="181" dst_node_input="datain" src_node_id="17" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="222" dst_node_input="input" src_node_id="17" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="181" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 11</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>11</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="26" dst_node_input="input" src_node_id="181" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="26" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="29" dst_node_input="b" src_node_id="26" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="29" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="182" dst_node_input="datain" src_node_id="29" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="227" dst_node_input="input" src_node_id="29" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="227" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="47" dst_node_input="a" src_node_id="227" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="182" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 7</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>7</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="38" dst_node_input="input" src_node_id="182" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="38" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="44" dst_node_input="a" src_node_id="38" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="214" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>10011101001011000101011010000000</Value>
+		<HexValue>0x9d2c5680</HexValue>
+		<NumericValue>2.63692864E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="44" dst_node_input="b" src_node_id="214" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="44" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="47" dst_node_input="b" src_node_id="44" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="47" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="183" dst_node_input="datain" src_node_id="47" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="228" dst_node_input="input" src_node_id="47" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="228" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="65" dst_node_input="a" src_node_id="228" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="183" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 15</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>15</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="56" dst_node_input="input" src_node_id="183" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="56" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="62" dst_node_input="a" src_node_id="56" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="213" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>11101111110001100000000000000000</Value>
+		<HexValue>0xefc60000</HexValue>
+		<NumericValue>4.022730752E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="62" dst_node_input="b" src_node_id="213" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="62" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="65" dst_node_input="b" src_node_id="62" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="65" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="77" dst_node_input="a" src_node_id="65" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="184" dst_node_input="datain" src_node_id="65" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="184" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 18</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>18</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="74" dst_node_input="input" src_node_id="184" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="74" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="77" dst_node_input="b" src_node_id="74" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="77" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="144" dst_node_input="i" src_node_id="77" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="144" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="5" name="o" type="dfeFloat(8, 24)" />
+		<Text>NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+-&gt;
+ {HWFloat:8, 24}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="219" dst_node_input="floatIn" src_node_id="144" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="219" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodePO2FPMult">
+		<Input name="floatIn" type="dfeFloat(8, 24)" />
+		<Output latency="1" name="floatOut" type="dfeFloat(8, 24)" />
+		<Text>PO2FPMult_N-32</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="8" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="197" dst_node_input="in0" src_node_id="219" src_node_output="floatOut" />
+	<Node criticalPaths="[]" group="[]" id="7" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMappedRom">
+		<Input name="addra" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Output latency="2" name="dataa" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MappedRom 'rngKernelgen_seeds1':\n{HWOffsetFix:32, 0, UNSIGNED} x 624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>rngKernelgen_seeds1</Name>
+		<Depth>624</Depth>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="16" dst_node_input="option0" src_node_id="7" src_node_output="dataa" />
+	<Node criticalPaths="[]" group="[]" id="82" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="397" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 397</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="122" dst_node_input="a" src_node_id="82" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="229" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="396" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(396)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="85" dst_node_input="a" src_node_id="229" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="79" dst_node_input="input" src_node_id="229" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="85" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[31:31]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>31</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="231" dst_node_input="input" src_node_id="85" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="231" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="1" name="output" type="dfeBits(1)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="1" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="202" dst_node_input="in0" src_node_id="231" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="79" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="88" dst_node_input="a" src_node_id="79" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="114" dst_node_input="a" src_node_id="79" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="88" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(31)" />
+		<Text>[30:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>31</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="202" dst_node_input="in1" src_node_id="88" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="202" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCat">
+		<Input name="in0" type="dfeBits(1)" />
+		<Input name="in1" type="dfeBits(31)" />
+		<Output latency="0" name="result" type="dfeBits(32)" />
+		<Text>@</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="101" dst_node_input="input" src_node_id="202" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="101" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="173" dst_node_input="datain" src_node_id="101" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="173" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>1</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="109" dst_node_input="input" src_node_id="173" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="122" dst_node_input="b" src_node_id="109" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="122" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="125" dst_node_input="a" src_node_id="122" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="114" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[0:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="119" dst_node_input="sel" src_node_id="114" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="119" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeBits(1)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="125" dst_node_input="b" src_node_id="119" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="125" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="13" dst_node_input="input" src_node_id="125" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="13" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-624" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="233" dst_node_input="input" src_node_id="13" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="233" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="224" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(224)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="16" dst_node_input="option1" src_node_id="233" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="16" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="28" dst_node_input="a" src_node_id="16" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="82" dst_node_input="input" src_node_id="16" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="185" dst_node_input="datain" src_node_id="16" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="229" dst_node_input="input" src_node_id="16" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="185" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 11</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>11</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="23" dst_node_input="input" src_node_id="185" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="23" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="28" dst_node_input="b" src_node_id="23" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="28" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="186" dst_node_input="datain" src_node_id="28" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="234" dst_node_input="input" src_node_id="28" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="234" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="46" dst_node_input="a" src_node_id="234" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="186" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 7</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>7</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="35" dst_node_input="input" src_node_id="186" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="35" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="42" dst_node_input="a" src_node_id="35" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="211" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>10011101001011000101011010000000</Value>
+		<HexValue>0x9d2c5680</HexValue>
+		<NumericValue>2.63692864E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="42" dst_node_input="b" src_node_id="211" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="42" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="46" dst_node_input="b" src_node_id="42" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="46" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="187" dst_node_input="datain" src_node_id="46" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="235" dst_node_input="input" src_node_id="46" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="235" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="64" dst_node_input="a" src_node_id="235" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="187" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 15</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>15</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="53" dst_node_input="input" src_node_id="187" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="53" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="60" dst_node_input="a" src_node_id="53" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="210" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>11101111110001100000000000000000</Value>
+		<HexValue>0xefc60000</HexValue>
+		<NumericValue>4.022730752E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="60" dst_node_input="b" src_node_id="210" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="60" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="64" dst_node_input="b" src_node_id="60" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="64" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="76" dst_node_input="a" src_node_id="64" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="188" dst_node_input="datain" src_node_id="64" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="188" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 18</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>18</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="71" dst_node_input="input" src_node_id="188" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="71" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="76" dst_node_input="b" src_node_id="71" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="76" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="143" dst_node_input="i" src_node_id="76" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="143" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="5" name="o" type="dfeFloat(8, 24)" />
+		<Text>NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+-&gt;
+ {HWFloat:8, 24}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="220" dst_node_input="floatIn" src_node_id="143" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="220" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodePO2FPMult">
+		<Input name="floatIn" type="dfeFloat(8, 24)" />
+		<Output latency="1" name="floatOut" type="dfeFloat(8, 24)" />
+		<Text>PO2FPMult_N-32</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="8" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="197" dst_node_input="in1" src_node_id="220" src_node_output="floatOut" />
+	<Node criticalPaths="[]" group="[]" id="5" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMappedRom">
+		<Input name="addra" type="dfeOffsetFix(10, 0, UNSIGNED)" />
+		<Output latency="2" name="dataa" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MappedRom 'rngKernelgen_seeds0':\n{HWOffsetFix:32, 0, UNSIGNED} x 624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>rngKernelgen_seeds0</Name>
+		<Depth>624</Depth>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="15" dst_node_input="option0" src_node_id="5" src_node_output="dataa" />
+	<Node criticalPaths="[]" group="[]" id="81" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="397" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 397</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="121" dst_node_input="a" src_node_id="81" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="236" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="396" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(396)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="84" dst_node_input="a" src_node_id="236" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="78" dst_node_input="input" src_node_id="236" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="84" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[31:31]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>31</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="238" dst_node_input="input" src_node_id="84" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="238" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="1" name="output" type="dfeBits(1)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="1" FMems="0" LUTs="1" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="200" dst_node_input="in0" src_node_id="238" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="78" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="87" dst_node_input="a" src_node_id="78" src_node_output="output" />
+	<Edge criticalPaths="[]" dst_node_id="113" dst_node_input="a" src_node_id="78" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="87" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(31)" />
+		<Text>[30:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>31</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="200" dst_node_input="in1" src_node_id="87" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="200" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCat">
+		<Input name="in0" type="dfeBits(1)" />
+		<Input name="in1" type="dfeBits(31)" />
+		<Output latency="0" name="result" type="dfeBits(32)" />
+		<Text>@</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="99" dst_node_input="input" src_node_id="200" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="99" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="175" dst_node_input="datain" src_node_id="99" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="175" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>1</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="106" dst_node_input="input" src_node_id="175" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="106" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="121" dst_node_input="b" src_node_id="106" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="121" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="124" dst_node_input="a" src_node_id="121" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="113" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeBits(1)" />
+		<Text>[0:0]</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>1</Width>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="118" dst_node_input="sel" src_node_id="113" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeBits(1)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="124" dst_node_input="b" src_node_id="118" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="124" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="12" dst_node_input="input" src_node_id="124" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="12" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="-624" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>stream offset: -624</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="240" dst_node_input="input" src_node_id="12" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="240" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="224" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(224)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="1" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="15" dst_node_input="option1" src_node_id="240" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="15" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>MUX</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="27" dst_node_input="a" src_node_id="15" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="81" dst_node_input="input" src_node_id="15" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="189" dst_node_input="datain" src_node_id="15" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="236" dst_node_input="input" src_node_id="15" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="189" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 11</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>11</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="20" dst_node_input="input" src_node_id="189" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="20" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="27" dst_node_input="b" src_node_id="20" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="27" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="190" dst_node_input="datain" src_node_id="27" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="241" dst_node_input="input" src_node_id="27" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="241" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="45" dst_node_input="a" src_node_id="241" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="190" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 7</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>7</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="32" dst_node_input="input" src_node_id="190" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="32" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="40" dst_node_input="a" src_node_id="32" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="208" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>10011101001011000101011010000000</Value>
+		<HexValue>0x9d2c5680</HexValue>
+		<NumericValue>2.63692864E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="40" dst_node_input="b" src_node_id="208" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="40" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="45" dst_node_input="b" src_node_id="40" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="45" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="191" dst_node_input="datain" src_node_id="45" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="242" dst_node_input="input" src_node_id="45" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="242" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="63" dst_node_input="a" src_node_id="242" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="191" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&lt;&lt; 15</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Left</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>15</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="50" dst_node_input="input" src_node_id="191" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="50" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="58" dst_node_input="a" src_node_id="50" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="207" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>11101111110001100000000000000000</Value>
+		<HexValue>0xefc60000</HexValue>
+		<NumericValue>4.022730752E9</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="58" dst_node_input="b" src_node_id="207" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="63" dst_node_input="b" src_node_id="58" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="63" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="75" dst_node_input="a" src_node_id="63" src_node_output="result" />
+	<Edge criticalPaths="[]" dst_node_id="192" dst_node_input="datain" src_node_id="63" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="192" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeShift">
+		<Input name="datain" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="dataout" type="dfeBits(32)" />
+		<Text>&gt;&gt; 18</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Direction>Right</Direction>
+		<Circular>false</Circular>
+		<StaticShiftAmount>18</StaticShiftAmount>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="68" dst_node_input="input" src_node_id="192" src_node_output="dataout" />
+	<Node criticalPaths="[]" group="[]" id="68" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(32)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:32, 0, UNSIGNED}&gt;</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="75" dst_node_input="b" src_node_id="68" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="75" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeXor">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>^</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="32" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:19)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="142" dst_node_input="i" src_node_id="75" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="142" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCast">
+		<Input name="i" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="5" name="o" type="dfeFloat(8, 24)" />
+		<Text>NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+-&gt;
+ {HWFloat:8, 24}</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="221" dst_node_input="floatIn" src_node_id="142" src_node_output="o" />
+	<Node criticalPaths="[]" group="[]" id="221" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodePO2FPMult">
+		<Input name="floatIn" type="dfeFloat(8, 24)" />
+		<Output latency="1" name="floatOut" type="dfeFloat(8, 24)" />
+		<Text>PO2FPMult_N-32</Text>
+		<ResourceUsage DSPs="0" FFs="32" FMems="0" LUTs="8" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:20)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="197" dst_node_input="in2" src_node_id="221" src_node_output="floatOut" />
+	<Node criticalPaths="[]" group="[]" id="197" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeCat">
+		<Input name="in0" type="dfeFloat(8, 24)" />
+		<Input name="in1" type="dfeFloat(8, 24)" />
+		<Input name="in2" type="dfeFloat(8, 24)" />
+		<Output latency="0" name="result" type="dfeBits(96)" />
+		<Text>@</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="155" dst_node_input="data" src_node_id="197" src_node_output="result" />
+	<Node criticalPaths="[]" group="[]" id="155" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeBits(96)" />
+		<Text>Output(y)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:23)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>y</Name>
+	</Node>
+	<Node criticalPaths="[]" group="[]" id="165" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="166" dst_node_input="load" src_node_id="165" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="205" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="163" dst_node_input="enable" src_node_id="205" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="162" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="163" dst_node_input="max" src_node_id="162" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="163" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeCounter">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<ResourceUsage DSPs="0" FFs="48" FMems="0" LUTs="48" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="164" dst_node_input="input" src_node_id="163" src_node_output="count" />
+	<Node criticalPaths="[]" group="[]" id="164" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="166" dst_node_input="data" src_node_id="164" src_node_output="output" />
+	<Node criticalPaths="[]" group="[]" id="166" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar output (current_run_cycle_count)</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Name>current_run_cycle_count</Name>
+	</Node>
+	<Node criticalPaths="[]" group="[]" id="0" isControl="false" isVisible="true" pipelineFactor="1.0" powerUsage="N/A" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x0; 0.0</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.Flush.disabled(Flush.java:174)
+mcss.RNGKernel.&lt;init&gt;(RNGKernel.maxj:16)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+		<Value>0</Value>
+		<HexValue>0x0</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge criticalPaths="[]" dst_node_id="170" dst_node_input="start" src_node_id="0" src_node_output="value" />
+	<Node criticalPaths="[]" group="[]" id="170" isControl="false" isVisible="false" pipelineFactor="1.0" powerUsage="N/A" type="NodeFlush">
+		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>flush on trigger</Text>
+		<ResourceUsage DSPs="0" FFs="0" FMems="0" LUTs="0" />
+		<OriginStackTrace>com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.&lt;init&gt;(MCSSManager.maxj:17)
+mcss.MCSSManager.main(MCSSManager.maxj:33)</OriginStackTrace>
+	</Node>
+</Graph>
