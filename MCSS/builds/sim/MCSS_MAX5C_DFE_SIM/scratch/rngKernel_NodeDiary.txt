@@ -5,8 +5,8 @@ Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.Flush.disabled(Flush.java:174)
 mcss.RNGKernel.<init>(RNGKernel.maxj:16)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
 NodeID     : 1
@@ -19,11 +19,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.ja
 maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 218
+  NodeID     : 212
   Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
   Node type  : NodeConstantRawBits
   Creator    : RemoveUntypedConstants
@@ -40,11 +41,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.ja
 maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 217
+  NodeID     : 211
   Node       : {HWOffsetFix:11, 0, UNSIGNED}\n0x270; 624.0
   Node type  : NodeConstantRawBits
   Creator    : RemoveUntypedConstants
@@ -59,9 +61,10 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.ja
 maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
 NodeID     : 4
@@ -77,12 +80,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181
 maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 5
-Node       : MappedRom 'rngKernelgen_seeds0':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
+Node       : MappedRom 'rngKernelgen1_seeds0':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
 Node type  : NodeMappedRom
 Creator    : User
 Stack Trace:
@@ -90,74 +94,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919
 maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
 NodeID     : 6
-Node       : NodeCast
-{HWOffsetFix:10, 0, UNSIGNED} 
-->
- {HWOffsetFix:10, 0, UNSIGNED}
-Node type  : NodeCast
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
-maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 7
-Node       : MappedRom 'rngKernelgen_seeds1':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
-Node type  : NodeMappedRom
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
-maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 8
-Node       : NodeCast
-{HWOffsetFix:10, 0, UNSIGNED} 
-->
- {HWOffsetFix:10, 0, UNSIGNED}
-Node type  : NodeCast
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
-maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 9
-Node       : MappedRom 'rngKernelgen_seeds2':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
-Node type  : NodeMappedRom
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
-maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 10
 Node       : 624.0
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
@@ -167,18 +110,19 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 216
+  NodeID     : 210
   Node       : {HWOffsetFix:10, 0, UNSIGNED}\n0x270; 624.0
   Node type  : NodeConstantRawBits
   Creator    : RemoveUntypedConstants
 
 ------------
 NODE WAS REMOVED!
-NodeID     : 11
+NodeID     : 7
 Node       : >=
 Node type  : NodeGte
 Removed by : [OptimiseNodesPass]
@@ -188,17 +132,18 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 171
+  NodeID     : 197
   Node       : >=
   Node type  : NodeGteInlined
   Creator    : OptimiseNodesPass
 
 ------------
-NodeID     : 12
+NodeID     : 8
 Node       : stream offset: -624
 Node type  : NodeStreamOffset
 Creator    : User
@@ -207,410 +152,145 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 9
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 10
+Node       : 11.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 11
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 199
+  Node       : >> 11
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 12
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 13
-Node       : stream offset: -624
-Node type  : NodeStreamOffset
+Node       : ^
+Node type  : NodeXor
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
+NODE WAS REMOVED!
 NodeID     : 14
-Node       : stream offset: -624
-Node type  : NodeStreamOffset
+Node       : 7.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
+NODE WAS REMOVED!
 NodeID     : 15
-Node       : MUX
-Node type  : NodeMux
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 200
+  Node       : << 7
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
 ------------
 NodeID     : 16
-Node       : MUX
-Node type  : NodeMux
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
+NODE WAS REMOVED!
 NodeID     : 17
-Node       : MUX
-Node type  : NodeMux
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 18
-Node       : 11.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 19
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 189
-  Node       : >> 11
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 20
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 21
-Node       : 11.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 22
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 185
-  Node       : >> 11
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 23
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 24
-Node       : 11.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 25
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 181
-  Node       : >> 11
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 26
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 27
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 28
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 29
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 30
-Node       : 7.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 31
-Node       : <<
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 190
-  Node       : << 7
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 32
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 33
-Node       : 7.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 34
-Node       : <<
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 186
-  Node       : << 7
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 35
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 36
-Node       : 7.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 37
-Node       : <<
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 182
-  Node       : << 7
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 38
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 39
 Node       : 2.63692864E9
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
@@ -620,9 +300,10 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
   NodeID     : 208
   Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9
@@ -630,7 +311,7 @@ Led to:
   Creator    : RemoveUntypedConstants
 
 ------------
-NodeID     : 40
+NodeID     : 18
 Node       : &
 Node type  : NodeAnd
 Creator    : User
@@ -639,79 +320,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 41
-Node       : 2.63692864E9
-Node type  : NodeConstantDouble
-Removed by : [RemoveUntypedConstants]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 211
-  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9
-  Node type  : NodeConstantRawBits
-  Creator    : RemoveUntypedConstants
-
-------------
-NodeID     : 42
-Node       : &
-Node type  : NodeAnd
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 43
-Node       : 2.63692864E9
-Node type  : NodeConstantDouble
-Removed by : [RemoveUntypedConstants]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 214
-  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9
-  Node type  : NodeConstantRawBits
-  Creator    : RemoveUntypedConstants
-
-------------
-NodeID     : 44
-Node       : &
-Node type  : NodeAnd
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 45
+NodeID     : 19
 Node       : ^
 Node type  : NodeXor
 Creator    : User
@@ -720,38 +334,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 46
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 47
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 48
+NodeID     : 20
 Node       : 15.0
 Node type  : NodeConstantDouble
 Removed by : [OptimiseNodesPass]
@@ -761,12 +350,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLef
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 49
+NodeID     : 21
 Node       : <<
 Node type  : NodeShift
 Removed by : [OptimiseNodesPass]
@@ -776,17 +366,18 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLef
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 191
+  NodeID     : 201
   Node       : << 15
   Node type  : NodeShift
   Creator    : OptimiseNodesPass
 
 ------------
-NodeID     : 50
+NodeID     : 22
 Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
 Node type  : NodeReinterpret
 Creator    : User
@@ -795,110 +386,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLef
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 51
-Node       : 15.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 52
-Node       : <<
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 187
-  Node       : << 15
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 53
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 54
-Node       : 15.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 55
-Node       : <<
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 183
-  Node       : << 15
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 56
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 57
+NodeID     : 23
 Node       : 4.022730752E9
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
@@ -908,9 +402,10 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
   NodeID     : 207
   Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9
@@ -918,7 +413,7 @@ Led to:
   Creator    : RemoveUntypedConstants
 
 ------------
-NodeID     : 58
+NodeID     : 24
 Node       : &
 Node type  : NodeAnd
 Creator    : User
@@ -927,79 +422,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 59
-Node       : 4.022730752E9
-Node type  : NodeConstantDouble
-Removed by : [RemoveUntypedConstants]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 210
-  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9
-  Node type  : NodeConstantRawBits
-  Creator    : RemoveUntypedConstants
-
-------------
-NodeID     : 60
-Node       : &
-Node type  : NodeAnd
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 61
-Node       : 4.022730752E9
-Node type  : NodeConstantDouble
-Removed by : [RemoveUntypedConstants]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 213
-  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9
-  Node type  : NodeConstantRawBits
-  Creator    : RemoveUntypedConstants
-
-------------
-NodeID     : 62
-Node       : &
-Node type  : NodeAnd
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 63
+NodeID     : 25
 Node       : ^
 Node type  : NodeXor
 Creator    : User
@@ -1008,38 +436,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 64
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 65
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 66
+NodeID     : 26
 Node       : 18.0
 Node type  : NodeConstantDouble
 Removed by : [OptimiseNodesPass]
@@ -1049,12 +452,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 67
+NodeID     : 27
 Node       : >>
 Node type  : NodeShift
 Removed by : [OptimiseNodesPass]
@@ -1064,17 +468,18 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 192
+  NodeID     : 202
   Node       : >> 18
   Node type  : NodeShift
   Creator    : OptimiseNodesPass
 
 ------------
-NodeID     : 68
+NodeID     : 28
 Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
 Node type  : NodeReinterpret
 Creator    : User
@@ -1083,109 +488,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 69
-Node       : 18.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 70
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 188
-  Node       : >> 18
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 71
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 72
-Node       : 18.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 73
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 184
-  Node       : >> 18
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 74
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 75
+NodeID     : 29
 Node       : ^
 Node type  : NodeXor
 Creator    : User
@@ -1194,37 +502,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 76
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 77
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 78
+NodeID     : 30
 Node       : stream offset: 1
 Node type  : NodeStreamOffset
 Creator    : User
@@ -1233,37 +516,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 79
-Node       : stream offset: 1
-Node type  : NodeStreamOffset
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 80
-Node       : stream offset: 1
-Node type  : NodeStreamOffset
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 81
+NodeID     : 31
 Node       : stream offset: 397
 Node type  : NodeStreamOffset
 Creator    : User
@@ -1272,9 +530,828 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 32
+Node       : [31:31]
+Node type  : NodeSlice
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 33
+Node       : [30:0]
+Node type  : NodeSlice
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 34
+Node       : @
+Node type  : NodeCat
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 35
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 36
+Node       : [31:0]
+Node type  : NodeSlice
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 37
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 38
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 39
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 198
+  Node       : >> 1
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 40
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 41
+Node       : [0:0]
+Node type  : NodeSlice
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 42
+Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:136)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:281)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 43
+Node       : 2.567483615E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:120)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:282)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 209
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9908b0df; 2.567483615E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 44
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 45
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 46
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 47
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 48
+Node       : [31:0]
+Node type  : NodeSlice
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 49
+Node       : [31:0]
+Node type  : NodeSlice
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 50
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 51
+Node       : NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+->
+ {HWOffsetFix:32, 0, UNSIGNED}
+Node type  : NodeCast
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:138)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 52
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 219
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 53
+Node       : 624.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 218
+  Node       : {HWOffsetFix:11, 0, UNSIGNED}\n0x270; 624.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 54
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 55
+Node       : NodeCast
+{HWOffsetFix:10, 0, UNSIGNED} 
+->
+ {HWOffsetFix:10, 0, UNSIGNED}
+Node type  : NodeCast
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 56
+Node       : MappedRom 'rngKernelgen2_seeds0':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
+Node type  : NodeMappedRom
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 57
+Node       : 624.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 217
+  Node       : {HWOffsetFix:10, 0, UNSIGNED}\n0x270; 624.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 58
+Node       : >=
+Node type  : NodeGte
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 190
+  Node       : >=
+  Node type  : NodeGteInlined
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 59
+Node       : stream offset: -624
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 60
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 61
+Node       : 11.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 62
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 192
+  Node       : >> 11
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 63
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 64
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 65
+Node       : 7.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 66
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 193
+  Node       : << 7
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 67
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 68
+Node       : 2.63692864E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 215
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 69
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 70
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 71
+Node       : 15.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 72
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 194
+  Node       : << 15
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 73
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 74
+Node       : 4.022730752E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 214
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 75
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 76
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 77
+Node       : 18.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 78
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 195
+  Node       : >> 18
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 79
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 80
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 81
+Node       : stream offset: 1
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 82
 Node       : stream offset: 397
@@ -1285,25 +1362,27 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 83
-Node       : stream offset: 397
-Node type  : NodeStreamOffset
+Node       : [31:31]
+Node type  : NodeSlice
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 84
-Node       : [31:31]
+Node       : [30:0]
 Node type  : NodeSlice
 Creator    : User
 Stack Trace:
@@ -1311,197 +1390,43 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DF
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NodeID     : 85
-Node       : [31:31]
-Node type  : NodeSlice
+Node       : @
+Node type  : NodeCat
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
+NODE WAS REMOVED!
 NodeID     : 86
-Node       : [31:31]
-Node type  : NodeSlice
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
+NODE WAS REMOVED!
 NodeID     : 87
-Node       : [30:0]
-Node type  : NodeSlice
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 88
-Node       : [30:0]
-Node type  : NodeSlice
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 89
-Node       : [30:0]
-Node type  : NodeSlice
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 90
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 91
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 92
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 93
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 94
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 95
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 96
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 97
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 98
 Node       : [31:0]
 Node type  : NodeSlice
 Removed by : [OptimiseNodesPass]
@@ -1511,11 +1436,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.jav
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 99
+NodeID     : 88
 Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
 Node type  : NodeReinterpret
 Creator    : User
@@ -1524,68 +1450,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.jav
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 100
-Node       : [63:32]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 101
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 102
-Node       : [95:64]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 103
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 104
+NodeID     : 89
 Node       : 1.0
 Node type  : NodeConstantDouble
 Removed by : [OptimiseNodesPass]
@@ -1595,12 +1466,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 105
+NodeID     : 90
 Node       : >>
 Node type  : NodeShift
 Removed by : [OptimiseNodesPass]
@@ -1610,17 +1482,18 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 175
+  NodeID     : 191
   Node       : >> 1
   Node type  : NodeShift
   Creator    : OptimiseNodesPass
 
 ------------
-NodeID     : 106
+NodeID     : 91
 Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
 Node type  : NodeReinterpret
 Creator    : User
@@ -1629,109 +1502,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRig
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 107
-Node       : 1.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 108
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 173
-  Node       : >> 1
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 109
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 110
-Node       : 1.0
-Node type  : NodeConstantDouble
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 111
-Node       : >>
-Node type  : NodeShift
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NodeID     : 180
-  Node       : >> 1
-  Node type  : NodeShift
-  Creator    : OptimiseNodesPass
-
-------------
-NodeID     : 112
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 113
+NodeID     : 92
 Node       : [0:0]
 Node type  : NodeSlice
 Creator    : User
@@ -1740,37 +1516,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DF
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 114
-Node       : [0:0]
-Node type  : NodeSlice
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 115
-Node       : [0:0]
-Node type  : NodeSlice
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 116
+NodeID     : 93
 Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0
 Node type  : NodeConstantRawBits
 Creator    : User
@@ -1779,12 +1530,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.jav
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:281)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 117
+NodeID     : 94
 Node       : 2.567483615E9
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
@@ -1794,17 +1546,18 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.jav
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:282)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 215
+  NodeID     : 216
   Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9908b0df; 2.567483615E9
   Node type  : NodeConstantRawBits
   Creator    : RemoveUntypedConstants
 
 ------------
-NodeID     : 118
+NodeID     : 95
 Node       : MUX
 Node type  : NodeMux
 Creator    : User
@@ -1813,37 +1566,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:1
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 119
-Node       : MUX
-Node type  : NodeMux
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 120
-Node       : MUX
-Node type  : NodeMux
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 121
+NodeID     : 96
 Node       : ^
 Node type  : NodeXor
 Creator    : User
@@ -1852,11 +1580,12 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 122
+NodeID     : 97
 Node       : ^
 Node type  : NodeXor
 Creator    : User
@@ -1865,64 +1594,13 @@ com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEV
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 123
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 124
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 125
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 126
-Node       : ^
-Node type  : NodeXor
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 127
+NodeID     : 98
 Node       : <{HWRawBits:32}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
@@ -1930,77 +1608,27 @@ Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 128
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 129
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 130
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 131
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 132
-Node       : [95:0]
+NodeID     : 99
+Node       : [31:0]
 Node type  : NodeSlice
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 133
+NodeID     : 100
 Node       : [31:0]
 Node type  : NodeSlice
 Removed by : [OptimiseNodesPass]
@@ -2008,64 +1636,845 @@ Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
+NodeID     : 101
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 102
+Node       : NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+->
+ {HWOffsetFix:32, 0, UNSIGNED}
+Node type  : NodeCast
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:138)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 103
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 226
+  Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 104
+Node       : 624.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 225
+  Node       : {HWOffsetFix:11, 0, UNSIGNED}\n0x270; 624.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 105
+Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
+Node type  : NodeCounter
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:385)
+maxpower.kernel.random.MersenneTwister.createCounter(MersenneTwister.maxj:213)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:198)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 106
+Node       : NodeCast
+{HWOffsetFix:10, 0, UNSIGNED} 
+->
+ {HWOffsetFix:10, 0, UNSIGNED}
+Node type  : NodeCast
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 107
+Node       : MappedRom 'rngKernelgen3_seeds0':\n{HWOffsetFix:32, 0, UNSIGNED} x 624
+Node type  : NodeMappedRom
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.romMapped(Mem.java:919)
+maxpower.kernel.random.MersenneTwister.createRom(MersenneTwister.maxj:221)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:202)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 108
+Node       : 624.0
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 224
+  Node       : {HWOffsetFix:10, 0, UNSIGNED}\n0x270; 624.0
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NODE WAS REMOVED!
+NodeID     : 109
+Node       : >=
+Node type  : NodeGte
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.gte(DFEVar.java:810)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:242)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 183
+  Node       : >=
+  Node type  : NodeGteInlined
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 110
+Node       : stream offset: -624
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 111
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 112
+Node       : 11.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 113
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 185
+  Node       : >> 11
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 114
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 115
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 116
+Node       : 7.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 117
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 186
+  Node       : << 7
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 118
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 119
+Node       : 2.63692864E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 222
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9d2c5680; 2.63692864E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 120
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 121
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 122
+Node       : 15.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 123
+Node       : <<
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 187
+  Node       : << 15
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 124
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftLeft(DFEVectorBase.java:1098)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 125
+Node       : 4.022730752E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 221
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0xefc60000; 4.022730752E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 126
+Node       : &
+Node type  : NodeAnd
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.and(DFEVectorBase.java:1237)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 127
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:259)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 128
+Node       : 18.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 129
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 188
+  Node       : >> 18
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 130
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 131
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:260)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 132
+Node       : stream offset: 1
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:271)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 133
+Node       : stream offset: 397
+Node type  : NodeStreamOffset
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:272)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
 NodeID     : 134
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 135
-Node       : [63:32]
+Node       : [31:31]
 Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 136
-Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
+NodeID     : 135
+Node       : [30:0]
+Node type  : NodeSlice
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 136
+Node       : @
+Node type  : NodeCat
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.cat(DFEVectorBase.java:375)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
 NodeID     : 137
-Node       : [95:64]
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 138
+Node       : [31:0]
+Node type  : NodeSlice
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 139
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 140
+Node       : 1.0
+Node type  : NodeConstantDouble
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 141
+Node       : >>
+Node type  : NodeShift
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 184
+  Node       : >> 1
+  Node type  : NodeShift
+  Creator    : OptimiseNodesPass
+
+------------
+NodeID     : 142
+Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
+Node type  : NodeReinterpret
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.shiftRight(DFEVectorBase.java:1123)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:276)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 143
+Node       : [0:0]
+Node type  : NodeSlice
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 144
+Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0
+Node type  : NodeConstantRawBits
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:136)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:281)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 145
+Node       : 2.567483615E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.vect(Constant.java:120)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:282)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NodeID     : 223
+  Node       : {HWOffsetFix:32, 0, UNSIGNED}\n0x9908b0df; 2.567483615E9
+  Node type  : NodeConstantRawBits
+  Creator    : RemoveUntypedConstants
+
+------------
+NodeID     : 146
+Node       : MUX
+Node type  : NodeMux
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:280)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 147
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NodeID     : 148
+Node       : ^
+Node type  : NodeXor
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:285)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 149
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.pack(DFEVectorBase.java:207)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 150
+Node       : [31:0]
+Node type  : NodeSlice
+Removed by : [OptimiseNodesPass]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:344)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 151
+Node       : [31:0]
 Node type  : NodeSlice
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 138
+NodeID     : 152
 Node       : <{HWOffsetFix:32, 0, UNSIGNED}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
@@ -2073,12 +2482,13 @@ Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.KernelType.unpack(KernelType.java:66)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 139
+NodeID     : 153
 Node       : NodeCast
 {HWOffsetFix:32, 0, UNSIGNED} 
 ->
@@ -2089,43 +2499,12 @@ Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:138)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NODE WAS REMOVED!
-NodeID     : 140
-Node       : NodeCast
-{HWOffsetFix:32, 0, UNSIGNED} 
-->
- {HWOffsetFix:32, 0, UNSIGNED}
-Node type  : NodeCast
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:138)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NODE WAS REMOVED!
-NodeID     : 141
-Node       : NodeCast
-{HWOffsetFix:32, 0, UNSIGNED} 
-->
- {HWOffsetFix:32, 0, UNSIGNED}
-Node type  : NodeCast
-Removed by : [OptimiseNodesPass]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:138)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 142
+NodeID     : 154
 Node       : NodeCast
 {HWOffsetFix:32, 0, UNSIGNED} 
 ->
@@ -2133,52 +2512,24 @@ Node       : NodeCast
 Node type  : NodeCast
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 143
-Node       : NodeCast
-{HWOffsetFix:32, 0, UNSIGNED} 
-->
- {HWFloat:8, 24}
-Node type  : NodeCast
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-------------
-NodeID     : 144
-Node       : NodeCast
-{HWOffsetFix:32, 0, UNSIGNED} 
-->
- {HWFloat:8, 24}
-Node type  : NodeCast
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector.cast(DFEVector.java:63)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:182)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:156)
+mcss.RNGKernel.<init>(RNGKernel.maxj:23)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 145
+NodeID     : 155
 Node       : 4.294967295E9
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:23)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
   NODE WAS REMOVED!
   NodeID     : 206
@@ -2189,39 +2540,53 @@ Led to:
 
 ------------
 NODE WAS REMOVED!
-NodeID     : 146
+NodeID     : 156
 Node       : /
 Node type  : NodeDiv
 Removed by : [PO2FPMultOptimiser]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:23)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 221
+  NodeID     : 229
   Node       : PO2FPMult_N-32
   Node type  : NodePO2FPMult
   Creator    : PO2FPMultOptimiser
 
 ------------
+NodeID     : 157
+Node       : NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+->
+ {HWFloat:8, 24}
+Node type  : NodeCast
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:156)
+mcss.RNGKernel.<init>(RNGKernel.maxj:24)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
 NODE WAS REMOVED!
-NodeID     : 147
+NodeID     : 158
 Node       : 4.294967295E9
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:24)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
   NODE WAS REMOVED!
-  NodeID     : 209
+  NodeID     : 213
   Node       : {HWFloat:8, 24}\n0x4f800000; 4.294967296E9
   Node type  : NodeConstantRawBits
   Removed by : [PO2FPMultOptimiser]
@@ -2229,39 +2594,53 @@ Led to:
 
 ------------
 NODE WAS REMOVED!
-NodeID     : 148
+NodeID     : 159
 Node       : /
 Node type  : NodeDiv
 Removed by : [PO2FPMultOptimiser]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:24)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
+  NodeID     : 228
+  Node       : PO2FPMult_N-32
+  Node type  : NodePO2FPMult
+  Creator    : PO2FPMultOptimiser
+
+------------
+NodeID     : 160
+Node       : NodeCast
+{HWOffsetFix:32, 0, UNSIGNED} 
+->
+ {HWFloat:8, 24}
+Node type  : NodeCast
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:181)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:156)
+mcss.RNGKernel.<init>(RNGKernel.maxj:25)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+------------
+NODE WAS REMOVED!
+NodeID     : 161
+Node       : 4.294967295E9
+Node type  : NodeConstantDouble
+Removed by : [RemoveUntypedConstants]
+Creator    : User
+Stack Trace:
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:25)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+Led to:
+  NODE WAS REMOVED!
   NodeID     : 220
-  Node       : PO2FPMult_N-32
-  Node type  : NodePO2FPMult
-  Creator    : PO2FPMultOptimiser
-
-------------
-NODE WAS REMOVED!
-NodeID     : 149
-Node       : 4.294967295E9
-Node type  : NodeConstantDouble
-Removed by : [RemoveUntypedConstants]
-Creator    : User
-Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-Led to:
-  NODE WAS REMOVED!
-  NodeID     : 212
   Node       : {HWFloat:8, 24}\n0x4f800000; 4.294967296E9
   Node type  : NodeConstantRawBits
   Removed by : [PO2FPMultOptimiser]
@@ -2269,148 +2648,148 @@ Led to:
 
 ------------
 NODE WAS REMOVED!
-NodeID     : 150
+NodeID     : 162
 Node       : /
 Node type  : NodeDiv
 Removed by : [PO2FPMultOptimiser]
 Creator    : User
 Stack Trace:
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.div(DFEVectorBase.java:1309)
-maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:183)
-mcss.RNGKernel.<init>(RNGKernel.maxj:20)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.div(DFEVar.java:1085)
+maxpower.kernel.random.MersenneTwister.toFloat32(MersenneTwister.maxj:157)
+mcss.RNGKernel.<init>(RNGKernel.maxj:25)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
-  NodeID     : 219
+  NodeID     : 227
   Node       : PO2FPMult_N-32
   Node type  : NodePO2FPMult
   Creator    : PO2FPMultOptimiser
 
 ------------
 NODE WAS REMOVED!
-NodeID     : 151
+NodeID     : 163
 Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
 Node type  : NodeConstantRawBits
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 152
+NodeID     : 164
 Node       : Scalar input (io_y_force_disabled)
 Node type  : NodeInputMappedReg
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 153
+NodeID     : 165
 Node       : ~
 Node type  : NodeNot
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 154
+NodeID     : 166
 Node       : &
 Node type  : NodeAnd
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 155
+NodeID     : 167
 Node       : Output(y)
 Node type  : NodeOutput
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 156
+NodeID     : 168
 Node       : <{HWRawBits:32}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 157
+NodeID     : 169
 Node       : <{HWRawBits:32}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 158
+NodeID     : 170
 Node       : @
 Node type  : NodeCat
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 159
+NodeID     : 171
 Node       : <{HWRawBits:32}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 160
+NodeID     : 172
 Node       : @
 Node type  : NodeCat
 Removed by : [OptimiseNodesPass]
 Creator    : User
 Stack Trace:
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:850)
-mcss.RNGKernel.<init>(RNGKernel.maxj:23)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.RNGKernel.<init>(RNGKernel.maxj:37)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 161
+NodeID     : 173
 Node       : 1.0
 Node type  : NodeConstantDouble
 Removed by : [RemoveUntypedConstants]
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 Led to:
   NodeID     : 205
   Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
@@ -2418,195 +2797,105 @@ Led to:
   Creator    : RemoveUntypedConstants
 
 ------------
-NodeID     : 162
+NodeID     : 174
 Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
 Node type  : NodeConstantRawBits
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 163
+NodeID     : 175
 Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
 Node type  : NodeCounter
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 164
+NodeID     : 176
 Node       : stream offset: 1
 Node type  : NodeStreamOffset
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 165
+NodeID     : 177
 Node       : {HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0
 Node type  : NodeConstantRawBits
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 166
+NodeID     : 178
 Node       : Scalar output (current_run_cycle_count)
 Node type  : NodeOutputMappedReg
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 167
+NodeID     : 179
 Node       : 1.0
 Node type  : NodeConstantDouble
 Removed by : [Init Graph]
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 168
+NodeID     : 180
 Node       : {HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14
 Node type  : NodeConstantRawBits
 Removed by : [Init Graph]
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 169
+NodeID     : 181
 Node       : Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0
 Node type  : NodeCounter
 Removed by : [Init Graph]
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
-NodeID     : 170
+NodeID     : 182
 Node       : flush on trigger
 Node type  : NodeFlush
 Creator    : User
 Stack Trace:
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 ------------
 NODE WAS REMOVED!
-NodeID     : 172
-Node       : [63:32]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 174
-Node       : [31:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 176
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 177
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 178
-Node       : [30:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NodeID     : 179
-Node       : @
-Node type  : NodeCat
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 193
-Node       : @
-Node type  : NodeCat
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 194
-Node       : [31:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 195
-Node       : [31:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 196
-Node       : [31:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NodeID     : 197
-Node       : @
-Node type  : NodeCat
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 198
+NodeID     : 189
 Node       : <{HWRawBits:32}>
 Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
 Creator    : OptimiseNodesPass
 ------------
 NODE WAS REMOVED!
-NodeID     : 199
-Node       : [30:0]
-Node type  : NodeSlice
+NodeID     : 196
+Node       : <{HWRawBits:32}>
+Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NodeID     : 200
-Node       : @
-Node type  : NodeCat
-Creator    : OptimiseNodesPass
-------------
-NODE WAS REMOVED!
-NodeID     : 201
-Node       : [30:0]
-Node type  : NodeSlice
-Removed by : [OptimiseNodesPass]
-Creator    : OptimiseNodesPass
-------------
-NodeID     : 202
-Node       : @
-Node type  : NodeCat
 Creator    : OptimiseNodesPass
 ------------
 NODE WAS REMOVED!
@@ -2616,81 +2905,35 @@ Node type  : NodeReinterpret
 Removed by : [OptimiseNodesPass]
 Creator    : OptimiseNodesPass
 ------------
-NODE WAS REMOVED!
 NodeID     : 204
-Node       : <{HWRawBits:32}>
-Node type  : NodeReinterpret
-Removed by : [OptimiseNodesPass]
+Node       : @
+Node type  : NodeCat
 Creator    : OptimiseNodesPass
 ------------
-NodeID     : 222
-Node       : FIFO(396)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NODE WAS REMOVED!
-NodeID     : 223
-Node       : FIFO(396)
-Node type  : NodeFIFO
-Removed by : [TapFIFOsPass]
-Creator    : ScheduleApplier
-------------
-NodeID     : 224
-Node       : FIFO(1)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NodeID     : 225
-Node       : FIFO(1)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NodeID     : 226
-Node       : FIFO(224)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NodeID     : 227
-Node       : FIFO(1)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NodeID     : 228
-Node       : FIFO(1)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NodeID     : 229
-Node       : FIFO(396)
-Node type  : NodeFIFO
-Creator    : ScheduleApplier
-------------
-NODE WAS REMOVED!
 NodeID     : 230
 Node       : FIFO(396)
 Node type  : NodeFIFO
-Removed by : [TapFIFOsPass]
-Creator    : ScheduleApplier
-------------
-NodeID     : 231
-Node       : FIFO(1)
-Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NODE WAS REMOVED!
-NodeID     : 232
-Node       : FIFO(1)
+NodeID     : 231
+Node       : FIFO(396)
 Node type  : NodeFIFO
 Removed by : [TapFIFOsPass]
 Creator    : ScheduleApplier
 ------------
+NodeID     : 232
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
 NodeID     : 233
-Node       : FIFO(224)
+Node       : FIFO(1)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NodeID     : 234
-Node       : FIFO(1)
+Node       : FIFO(224)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
@@ -2700,40 +2943,80 @@ Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NodeID     : 236
-Node       : FIFO(396)
+Node       : FIFO(1)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
-NODE WAS REMOVED!
 NodeID     : 237
 Node       : FIFO(396)
 Node type  : NodeFIFO
-Removed by : [TapFIFOsPass]
-Creator    : ScheduleApplier
-------------
-NodeID     : 238
-Node       : FIFO(1)
-Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NODE WAS REMOVED!
-NodeID     : 239
-Node       : FIFO(1)
+NodeID     : 238
+Node       : FIFO(396)
 Node type  : NodeFIFO
 Removed by : [TapFIFOsPass]
 Creator    : ScheduleApplier
 ------------
+NodeID     : 239
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
 NodeID     : 240
-Node       : FIFO(224)
+Node       : FIFO(1)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NodeID     : 241
-Node       : FIFO(1)
+Node       : FIFO(224)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier
 ------------
 NodeID     : 242
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 243
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 244
+Node       : FIFO(396)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NODE WAS REMOVED!
+NodeID     : 245
+Node       : FIFO(396)
+Node type  : NodeFIFO
+Removed by : [TapFIFOsPass]
+Creator    : ScheduleApplier
+------------
+NodeID     : 246
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 247
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 248
+Node       : FIFO(224)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 249
+Node       : FIFO(1)
+Node type  : NodeFIFO
+Creator    : ScheduleApplier
+------------
+NodeID     : 250
 Node       : FIFO(1)
 Node type  : NodeFIFO
 Creator    : ScheduleApplier

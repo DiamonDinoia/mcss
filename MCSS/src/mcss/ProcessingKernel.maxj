@@ -19,17 +19,23 @@ public class ProcessingKernel extends Kernel {
 		DFEVectorType<DFEVar> histogramType = new DFEVectorType<DFEVar>(dfeUInt(32), 304);
 		DFEVector<DFEVar> histograms = histogramType.newInstance(this);
 		
-		DFEVectorType<DFEVar> trackType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 7);
+		DFEVectorType<DFEVar> trackType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 4);
 		DFEVector<DFEVar> track = io.input("z", trackType);
-		track[6].simWatch("trackLength");
+//		track[6].simWatch("trackLength");
 		
-		DFEVar longi = track[2] / track[6];
-		DFEVar lInd = KernelMath.floor((longi + 1.0) * Constants.longiDistInvD, dfeUInt(32));
-		lInd.simWatch("lInd");
-		longi.simWatch("longi");
+		DFEVar longi = track[2] / track[3];
+		track[2].simWatch("track2");
+//		DFEVar lInd = KernelMath.floor((longi + 1.0) * Constants.longiDistInvD, dfeUInt(32));
+		DFEVar lInd = (longi + 1.0) * Constants.longiDistInvD;
+		lInd = lInd.cast(dfeUInt(32));
+//		lInd.simWatch("lInd");
+//		longi.simWatch("longi");
+		debug.simPrintf("COUNT %i track: %.10f %.10f %.10f %.10f\n", count, track[0], track[1], track[2], track[3]);
 		
-		DFEVar trans = KernelMath.sqrt(track[0] * track[0] + track[1] * track[1]) / track[6];
+		DFEVar trans = KernelMath.sqrt(track[0] * track[0] + track[1] * track[1]) / track[3];
+//		trans.simWatch("trans");
 		DFEVar tInd = KernelMath.floor(trans * Constants.transDistInvD, dfeUInt(32));
+//		tInd.simWatch("tInd");
 		
 		DFEVar p = control.count.pulse(1);
 		for (int i = 0; i < 101; i++) {
@@ -37,11 +43,11 @@ public class ProcessingKernel extends Kernel {
 			optimization.pushFixOpModeDefault(MathOps.ALL);
 			DFEVar correctBucketLong = i === lInd;
 			correctBucketLong = correctBucketLong.cast(dfeUInt(32));
-			histograms[i] <== (p ? correctBucketLong : (stream.offset(histograms[i], -1) + correctBucketLong));
+			histograms[i] <== p ? correctBucketLong : (stream.offset(histograms[i], -1) + correctBucketLong);
 			
 			DFEVar correctBucketTrans = i === tInd;
 			correctBucketTrans = correctBucketTrans.cast(dfeUInt(32));
-			histograms[i + 201] <== (p ? correctBucketTrans : (stream.offset(histograms[i + 201], -1) + correctBucketTrans));
+			histograms[i + 201] <== p ? correctBucketTrans : (stream.offset(histograms[i + 201], -1) + correctBucketTrans);
 			optimization.popFixOpMode(MathOps.ALL);
 			optimization.popPipeliningFactor();
 		}
@@ -51,7 +57,7 @@ public class ProcessingKernel extends Kernel {
 			optimization.pushFixOpModeDefault(MathOps.ALL);
 			DFEVar correctBucket = i === lInd;
 			correctBucket = correctBucket.cast(dfeUInt(32));
-			histograms[i] <== (p ? correctBucket : stream.offset(histograms[i], -1) + correctBucket);
+			histograms[i] <== p ? correctBucket : (stream.offset(histograms[i], -1) + correctBucket);
 			optimization.popFixOpMode(MathOps.ALL);
 			optimization.popPipeliningFactor();
 		}
@@ -60,7 +66,7 @@ public class ProcessingKernel extends Kernel {
 		histograms[303] <== constant.var(dfeUInt(32), 0);
 		
 		// Output
-		io.output("output", histograms, histogramType, count + 2 === h);
+		io.output("output", histograms, histogramType, count + 1 === h);
 	}
 
 }

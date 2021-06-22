@@ -1,156 +1,183 @@
-NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 17
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 111
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 222
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 230
 
-NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 16
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 60
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 229
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 237
 
-NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 15
+NodeMux MUX {HWOffsetFix:32, 0, UNSIGNED} ID: 9
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:100)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:247)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 236
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(396) {HWOffsetFix:32, 0, UNSIGNED} 396 ID: 244
 
-NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 14
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 110
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 226
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 234
 
-NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 13
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 59
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 233
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 241
 
-NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 12
+NodeStreamOffset stream offset: -624 {HWOffsetFix:32, 0, UNSIGNED} ID: 8
 com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:225)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:248)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 240
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(224) {HWOffsetFix:32, 0, UNSIGNED} 224 ID: 248
 
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 29
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 115
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 227
-
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 47
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 228
-
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 28
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 234
-
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 46
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 235
 
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 27
-com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
-maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
-maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 241
-
-NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 45
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 121
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 236
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 64
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
 	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 242
 
-NodeGteInlined >= {HWOffsetFix:1, 0, UNSIGNED} ID: 171
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 70
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 243
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 13
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:257)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 249
+
+NodeXor ^ {HWOffsetFix:32, 0, UNSIGNED} ID: 19
+com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.xor(DFEVectorBase.java:1064)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:258)
+maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:32, 0, UNSIGNED} 1 ID: 250
+
+NodeGteInlined >= {HWOffsetFix:1, 0, UNSIGNED} ID: 183
 com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 225
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 233
 
-NodeSlice [31:31] {HWRawBits:1} ID: 86
+NodeSlice [31:31] {HWRawBits:1} ID: 134
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWRawBits:1} 1 ID: 224
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:22)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWRawBits:1} 1 ID: 232
 
-NodeSlice [31:31] {HWRawBits:1} ID: 85
+NodeGteInlined >= {HWOffsetFix:1, 0, UNSIGNED} ID: 190
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 240
+
+NodeSlice [31:31] {HWRawBits:1} ID: 83
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWRawBits:1} 1 ID: 231
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:21)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWRawBits:1} 1 ID: 239
 
-NodeSlice [31:31] {HWRawBits:1} ID: 84
+NodeGteInlined >= {HWOffsetFix:1, 0, UNSIGNED} ID: 197
+com.maxeler.platform.max5.manager.Max5ManagerBase.addKernel(Unknown Source)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 247
+
+NodeSlice [31:31] {HWRawBits:1} ID: 32
 com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorBase.slice(DFEVectorBase.java:997)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:275)
 maxpower.kernel.random.MersenneTwister.build(MersenneTwister.maxj:206)
 maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:137)
-mcss.RNGKernel.<init>(RNGKernel.maxj:19)
-mcss.MCSSManager.<init>(MCSSManager.maxj:17)
-mcss.MCSSManager.main(MCSSManager.maxj:33)
-	FIFO(1) {HWRawBits:1} 1 ID: 238
+maxpower.kernel.random.MersenneTwister.getRand(MersenneTwister.maxj:73)
+mcss.RNGKernel.<init>(RNGKernel.maxj:20)
+mcss.MCSSManager.<init>(MCSSManager.maxj:18)
+mcss.MCSSManager.main(MCSSManager.maxj:34)
+	FIFO(1) {HWRawBits:1} 1 ID: 246
 

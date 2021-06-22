@@ -1,8 +1,0 @@
-*** After kernel graph-pass 'Init Graph' ***
-node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 7) has unconnected outputs: [count]
-stack trace of node origin follows:
-	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.simpleCounter(Count.java:524)
-	mcss.LoopKernel.<init>(LoopKernel.java:31)
-	mcss.MCSSManager.<init>(MCSSManager.maxj:18)
-	mcss.MCSSManager.main(MCSSManager.maxj:33)
-	

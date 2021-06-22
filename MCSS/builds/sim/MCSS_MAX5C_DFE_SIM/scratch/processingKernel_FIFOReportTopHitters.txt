@@ -1,32 +1,29 @@
 Top 10 largest FIFOs
      Costs                                              From                                                To
-         7                          ProcessingKernel.maxj:27                          ProcessingKernel.maxj:27
-         7                          ProcessingKernel.maxj:32                          ProcessingKernel.maxj:32
-         4                          ProcessingKernel.maxj:34                          ProcessingKernel.maxj:54
-         4                          ProcessingKernel.maxj:34                          ProcessingKernel.maxj:44
-         4                          ProcessingKernel.maxj:34                          ProcessingKernel.maxj:40
-         3                          ProcessingKernel.maxj:38                          ProcessingKernel.maxj:39
-         1                          ProcessingKernel.maxj:23                          ProcessingKernel.maxj:31
-         1                          ProcessingKernel.maxj:23                               MCSSManager.maxj:19
-         1                          ProcessingKernel.maxj:26                               MCSSManager.maxj:19
-         1                          ProcessingKernel.maxj:26                          ProcessingKernel.maxj:27
+        13                          ProcessingKernel.maxj:30                          ProcessingKernel.maxj:44
+         7                          ProcessingKernel.maxj:37                          ProcessingKernel.maxj:37
+         4                          ProcessingKernel.maxj:40                          ProcessingKernel.maxj:60
+         4                          ProcessingKernel.maxj:40                          ProcessingKernel.maxj:50
+         4                          ProcessingKernel.maxj:40                          ProcessingKernel.maxj:46
+         3                          ProcessingKernel.maxj:44                          ProcessingKernel.maxj:45
+         1                          ProcessingKernel.maxj:30                          ProcessingKernel.maxj:30
+         1                          ProcessingKernel.maxj:23                          ProcessingKernel.maxj:35
 
 Top 10 lines with FIFO sinks
      Costs                                              LineFIFO Count
-         8                          ProcessingKernel.maxj:27         7
-         7                          ProcessingKernel.maxj:32         6
-         4                          ProcessingKernel.maxj:40         4
-         4                          ProcessingKernel.maxj:54         4
-         4                          ProcessingKernel.maxj:44         4
-         3                          ProcessingKernel.maxj:39         3
-         2                               MCSSManager.maxj:19         2
-         1                          ProcessingKernel.maxj:31         1
+        13                          ProcessingKernel.maxj:44         1
+         7                          ProcessingKernel.maxj:37         6
+         4                          ProcessingKernel.maxj:60         4
+         4                          ProcessingKernel.maxj:50         4
+         4                          ProcessingKernel.maxj:46         4
+         3                          ProcessingKernel.maxj:45         3
+         1                          ProcessingKernel.maxj:30         1
+         1                          ProcessingKernel.maxj:35         1
 
 Top 10 lines with FIFO sources
      Costs                                              LineFIFO Count
-        12                          ProcessingKernel.maxj:34        12
-         7                          ProcessingKernel.maxj:32         6
-         7                          ProcessingKernel.maxj:27         6
-         3                          ProcessingKernel.maxj:38         3
-         2                          ProcessingKernel.maxj:23         2
-         2                          ProcessingKernel.maxj:26         2
+        14                          ProcessingKernel.maxj:30         2
+        12                          ProcessingKernel.maxj:40        12
+         7                          ProcessingKernel.maxj:37         6
+         3                          ProcessingKernel.maxj:44         3
+         1                          ProcessingKernel.maxj:23         1

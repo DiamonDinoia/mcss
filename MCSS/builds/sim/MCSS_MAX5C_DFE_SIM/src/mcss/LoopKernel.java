@@ -24,11 +24,12 @@ public class LoopKernel extends Kernel {
 		flush.disabled();
 		
 		OffsetExpr loopLength = stream.makeOffsetAutoLoop("loopLength");
-		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(8));
-		loopLengthVal.simWatch("llv");
+		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(32));
+//		loopLengthVal.simWatch("llv");
 		
-		DFEVar p = control.count.pulse(90);
-		DFEVar count = control.count.simpleCounter(32);
+		DFEVar p = control.count.pulse(1);
+		DFEVar count = control.count.simpleCounter(32, loopLengthVal);
+//		DFEVar correctTick = KernelMath.modulo(count, 90) === 0;
 		
 		DFEVar carriedPosX = dfeFloat(8, 24).newInstance(this);
 		DFEVar carriedPosY = dfeFloat(8, 24).newInstance(this);
@@ -40,10 +41,10 @@ public class LoopKernel extends Kernel {
 		DFEVar carriedLength = dfeFloat(8, 24).newInstance(this);
 		
 		DFEVar reset = carriedLength > Constants.theLimit | p;
-		carriedPosX.simWatch("carriedPosX");
-		carriedPosZ.simWatch("carriedPosZ");
-		carriedDirX.simWatch("carriedDirX");
-		carriedLength.simWatch("carriedLength");
+//		carriedPosX.simWatch("carriedPosX");
+//		carriedPosZ.simWatch("carriedPosZ");
+//		carriedDirX.simWatch("carriedDirX");
+//		carriedLength.simWatch("carriedLength");
 		DFEVar posX = reset ? 0.0 : carriedPosX;
 		DFEVar posY = reset ? 0.0 : carriedPosY;
 		DFEVar posZ = reset ? 0.0 : carriedPosZ;
@@ -53,25 +54,25 @@ public class LoopKernel extends Kernel {
 		DFEVar trackLength = reset ? 0.0 : carriedTrackLength;
 		DFEVar length = reset ? 0.0 : carriedLength;
 		
-		posZ.simWatch("posZ");
-		dirX.simWatch("dirX");
+//		posZ.simWatch("posZ");
+//		dirX.simWatch("dirX");
 		
-		trackLength.simWatch("trackLength"); //
+//		trackLength.simWatch("trackLength"); //
 		
 		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
-		DFEVector<DFEVar> randNums = io.input("y", randNumType);
+		DFEVector<DFEVar> randNums = io.input("y", randNumType, count === 0);
 		DFEVar stepLength = -Constants.theMFP * Arithmetic.log(randNums[0]);
 		length += stepLength;
 		DFEVar pastLimit = length > Constants.theLimit;
-		reset.simWatch("reset");
-		pastLimit.simWatch("pastLimit");
+//		reset.simWatch("reset");
+//		pastLimit.simWatch("pastLimit");
 		stepLength = pastLimit ? Constants.theLimit - trackLength : stepLength;
 		
 		posX += dirX * stepLength;
 		posY += dirY * stepLength;
 		posZ += dirZ * stepLength;
 		trackLength += stepLength;
-		debug.simPrintf("%f %i\n", trackLength, pastLimit);
+//		debug.simPrintf(count === (loopLengthVal - 1), "%f %i\n", trackLength, pastLimit);
 		
 		DFEVar cost = sampleCosTheta(Constants.theScrPar, randNums[1]);
 		DFEVar dum0 = 1.0 - cost;
@@ -80,6 +81,11 @@ public class LoopKernel extends Kernel {
 		DFEVar u1 = sint * Trigonometric.cos(phi);
 		DFEVar u2 = sint * Trigonometric.sin(phi);
 		DFEVar u3 = cost;
+		
+//		u1.simWatch("u1");
+//		u2.simWatch("u2");
+//		u3.simWatch("u3");
+//		debug.simPrintf("U %.10f %.10f %.10f\n", u1, u2, u3);
 	
 		DFEVar up = dirX * dirX + dirY * dirY;
 		DFEVar upGreater = up > 0.0;
@@ -88,18 +94,28 @@ public class LoopKernel extends Kernel {
 		DFEVar py = u2;
 		DFEVar pz = u3;
 		u1 = ~pastLimit & upGreater ? (dirX * dirZ * px - dirY * py) / up + dirX * pz : u1;
-		u2 = ~pastLimit & upGreater ? (dirY * dirZ * px - dirX * py) / up + dirY * pz : u2;
+		u2 = ~pastLimit & upGreater ? (dirY * dirZ * px + dirX * py) / up + dirY * pz : u2;
 		u3 = ~pastLimit & upGreater ? -up * px + dirZ * pz : u3;
+		
+//		u1.simWatch("v1");
+//		u2.simWatch("v2");
+//		u3.simWatch("v3");
+//		debug.simPrintf("V %.10f %.10f %.10f\n", u1, u2, u3);
 		
 		DFEVar yLess = dirZ < 0.0 & ~upGreater;
 		u1 = ~pastLimit & yLess ? -u1 : u1;
 		u3 = ~pastLimit & yLess ? -u3 : u3;
 		
+//		u1.simWatch("w1");
+//		u2.simWatch("w2");
+//		u3.simWatch("w3");
+//		debug.simPrintf("W %.10f %.10f %.10f\n\n", u1, u2, u3);
+		
 		dirX = ~pastLimit ? u1 : dirX;
 		dirY = ~pastLimit ? u2 : dirY;
 		dirZ = ~pastLimit ? u3 : dirZ;
 		
-		DFEVectorType<DFEVar> trackType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 7);
+		DFEVectorType<DFEVar> trackType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 4);
 		DFEVector<DFEVar> track = trackType.newInstance(this);
 		
 		DFEVar posXOffset = stream.offset(posX, -loopLength);
@@ -119,22 +135,21 @@ public class LoopKernel extends Kernel {
 		carriedDirZ <== dirZOffset;
 		carriedTrackLength <== trackLengthOffset;
 		carriedLength <== lengthOffset;
-		lengthOffset.simWatch("lengthOffset");
+//		lengthOffset.simWatch("lengthOffset");
 		
 		track[0] <== posX;
 		track[1] <== posY;
 		track[2] <== posZ;
-		track[3] <== dirX;
-		track[4] <== dirY;
-		track[5] <== dirZ;
-		track[6] <== trackLength;
+		track[3] <== trackLength;
 		
-		debug.simPrintf("%f %f %f %f %f %i\n", Constants.theLimit, trackLength, length, lengthOffset, trackLengthOffset, length > Constants.theLimit);
-		length.simWatch("length");
-		track.simWatch("track");
+//		debug.simPrintf(count === (loopLengthVal - 1), "%f %.10f %.10f %f %f %i\n", Constants.theLimit, trackLength, length, lengthOffset, trackLengthOffset, length > Constants.theLimit);
+//		debug.simPrintf(count === (loopLengthVal - 1), "%.10f %.10f %.10f %.10f\n\n", track[0], track[1], track[2], track[3]);
+//		length.simWatch("length");
+//		track.simWatch("track");
 		
 		// Output
-		io.output("z", track, trackType, pastLimit);
+		io.output("z", track, trackType, pastLimit & count === (loopLengthVal - 1));
+//		io.output("z", track, trackType, count === (loopLengthVal - 1));
 	}
 
 }

@@ -21,44 +21,74 @@ rngKernel::rngKernel(const std::string &instance_name) :
 , c_hw_fix_49_0_uns_bits_1((HWOffsetFix<49,0,UNSIGNED>(varint_u<49>(0x0000000000000l))))
 , c_hw_fix_49_0_uns_bits_2((HWOffsetFix<49,0,UNSIGNED>(varint_u<49>(0x0000000000001l))))
 {
-  { // Node ID: 152 (NodeInputMappedReg)
+  { // Node ID: 164 (NodeInputMappedReg)
     registerMappedRegister("io_y_force_disabled", Data(1));
   }
+  { // Node ID: 226 (NodeConstantRawBits)
+    id226out_value = (c_hw_fix_1_0_uns_bits);
+  }
+  { // Node ID: 225 (NodeConstantRawBits)
+    id225out_value = (c_hw_fix_11_0_uns_bits);
+  }
+  { // Node ID: 224 (NodeConstantRawBits)
+    id224out_value = (c_hw_fix_10_0_uns_bits);
+  }
+  { // Node ID: 107 (NodeMappedRom)
+    registerMappedMemory("rngKernelgen3_seeds0", 32, 624);
+  }
+  { // Node ID: 144 (NodeConstantRawBits)
+    id144out_value = (c_hw_fix_32_0_uns_bits);
+  }
+  { // Node ID: 223 (NodeConstantRawBits)
+    id223out_value = (c_hw_fix_32_0_uns_bits_1);
+  }
+  { // Node ID: 222 (NodeConstantRawBits)
+    id222out_value = (c_hw_fix_32_0_uns_bits_2);
+  }
+  { // Node ID: 221 (NodeConstantRawBits)
+    id221out_value = (c_hw_fix_32_0_uns_bits_3);
+  }
+  { // Node ID: 219 (NodeConstantRawBits)
+    id219out_value = (c_hw_fix_1_0_uns_bits);
+  }
   { // Node ID: 218 (NodeConstantRawBits)
-    id218out_value = (c_hw_fix_1_0_uns_bits);
+    id218out_value = (c_hw_fix_11_0_uns_bits);
   }
   { // Node ID: 217 (NodeConstantRawBits)
-    id217out_value = (c_hw_fix_11_0_uns_bits);
+    id217out_value = (c_hw_fix_10_0_uns_bits);
+  }
+  { // Node ID: 56 (NodeMappedRom)
+    registerMappedMemory("rngKernelgen2_seeds0", 32, 624);
+  }
+  { // Node ID: 93 (NodeConstantRawBits)
+    id93out_value = (c_hw_fix_32_0_uns_bits);
   }
   { // Node ID: 216 (NodeConstantRawBits)
-    id216out_value = (c_hw_fix_10_0_uns_bits);
-  }
-  { // Node ID: 9 (NodeMappedRom)
-    registerMappedMemory("rngKernelgen_seeds2", 32, 624);
-  }
-  { // Node ID: 116 (NodeConstantRawBits)
-    id116out_value = (c_hw_fix_32_0_uns_bits);
+    id216out_value = (c_hw_fix_32_0_uns_bits_1);
   }
   { // Node ID: 215 (NodeConstantRawBits)
-    id215out_value = (c_hw_fix_32_0_uns_bits_1);
+    id215out_value = (c_hw_fix_32_0_uns_bits_2);
   }
   { // Node ID: 214 (NodeConstantRawBits)
-    id214out_value = (c_hw_fix_32_0_uns_bits_2);
+    id214out_value = (c_hw_fix_32_0_uns_bits_3);
   }
-  { // Node ID: 213 (NodeConstantRawBits)
-    id213out_value = (c_hw_fix_32_0_uns_bits_3);
-  }
-  { // Node ID: 7 (NodeMappedRom)
-    registerMappedMemory("rngKernelgen_seeds1", 32, 624);
+  { // Node ID: 212 (NodeConstantRawBits)
+    id212out_value = (c_hw_fix_1_0_uns_bits);
   }
   { // Node ID: 211 (NodeConstantRawBits)
-    id211out_value = (c_hw_fix_32_0_uns_bits_2);
+    id211out_value = (c_hw_fix_11_0_uns_bits);
   }
   { // Node ID: 210 (NodeConstantRawBits)
-    id210out_value = (c_hw_fix_32_0_uns_bits_3);
+    id210out_value = (c_hw_fix_10_0_uns_bits);
   }
   { // Node ID: 5 (NodeMappedRom)
-    registerMappedMemory("rngKernelgen_seeds0", 32, 624);
+    registerMappedMemory("rngKernelgen1_seeds0", 32, 624);
+  }
+  { // Node ID: 42 (NodeConstantRawBits)
+    id42out_value = (c_hw_fix_32_0_uns_bits);
+  }
+  { // Node ID: 209 (NodeConstantRawBits)
+    id209out_value = (c_hw_fix_32_0_uns_bits_1);
   }
   { // Node ID: 208 (NodeConstantRawBits)
     id208out_value = (c_hw_fix_32_0_uns_bits_2);
@@ -66,19 +96,19 @@ rngKernel::rngKernel(const std::string &instance_name) :
   { // Node ID: 207 (NodeConstantRawBits)
     id207out_value = (c_hw_fix_32_0_uns_bits_3);
   }
-  { // Node ID: 155 (NodeOutput)
+  { // Node ID: 167 (NodeOutput)
     m_y = registerOutput("y",0 );
   }
-  { // Node ID: 165 (NodeConstantRawBits)
-    id165out_value = (c_hw_fix_1_0_uns_bits);
+  { // Node ID: 177 (NodeConstantRawBits)
+    id177out_value = (c_hw_fix_1_0_uns_bits);
   }
   { // Node ID: 205 (NodeConstantRawBits)
     id205out_value = (c_hw_fix_1_0_uns_bits);
   }
-  { // Node ID: 162 (NodeConstantRawBits)
-    id162out_value = (c_hw_fix_49_0_uns_bits);
+  { // Node ID: 174 (NodeConstantRawBits)
+    id174out_value = (c_hw_fix_49_0_uns_bits);
   }
-  { // Node ID: 166 (NodeOutputMappedReg)
+  { // Node ID: 178 (NodeOutputMappedReg)
     registerMappedRegister("current_run_cycle_count", Data(48), true);
   }
   { // Node ID: 0 (NodeConstantRawBits)
@@ -94,79 +124,37 @@ void rngKernel::resetComputation() {
 }
 
 void rngKernel::resetComputationAfterFlush() {
-  { // Node ID: 152 (NodeInputMappedReg)
-    id152out_io_y_force_disabled = getMappedRegValue<HWOffsetFix<1,0,UNSIGNED> >("io_y_force_disabled");
+  { // Node ID: 164 (NodeInputMappedReg)
+    id164out_io_y_force_disabled = getMappedRegValue<HWOffsetFix<1,0,UNSIGNED> >("io_y_force_disabled");
   }
-  { // Node ID: 3 (NodeCounter)
+  { // Node ID: 105 (NodeCounter)
 
-    (id3st_count) = (c_hw_fix_11_0_uns_bits_1);
-  }
-  { // Node ID: 225 (NodeFIFO)
-
-    for(int i=0; i<2; i++)
-    {
-      id225out_output[i] = (HWOffsetFix<1,0,UNSIGNED>(varint_u<1>(m_undefined_value.get_bits(1))));
-    }
-  }
-  { // Node ID: 222 (NodeFIFO)
-
-    for(int i=0; i<397; i++)
-    {
-      id222out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
-    }
-  }
-  { // Node ID: 224 (NodeFIFO)
-
-    for(int i=0; i<2; i++)
-    {
-      id224out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
-    }
-  }
-  { // Node ID: 226 (NodeFIFO)
-
-    for(int i=0; i<225; i++)
-    {
-      id226out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
-    }
-  }
-  { // Node ID: 227 (NodeFIFO)
-
-    for(int i=0; i<2; i++)
-    {
-      id227out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
-    }
-  }
-  { // Node ID: 228 (NodeFIFO)
-
-    for(int i=0; i<2; i++)
-    {
-      id228out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
-    }
-  }
-  { // Node ID: 229 (NodeFIFO)
-
-    for(int i=0; i<397; i++)
-    {
-      id229out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
-    }
-  }
-  { // Node ID: 231 (NodeFIFO)
-
-    for(int i=0; i<2; i++)
-    {
-      id231out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
-    }
+    (id105st_count) = (c_hw_fix_11_0_uns_bits_1);
   }
   { // Node ID: 233 (NodeFIFO)
 
-    for(int i=0; i<225; i++)
+    for(int i=0; i<2; i++)
     {
-      id233out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+      id233out_output[i] = (HWOffsetFix<1,0,UNSIGNED>(varint_u<1>(m_undefined_value.get_bits(1))));
+    }
+  }
+  { // Node ID: 230 (NodeFIFO)
+
+    for(int i=0; i<397; i++)
+    {
+      id230out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 232 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id232out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
     }
   }
   { // Node ID: 234 (NodeFIFO)
 
-    for(int i=0; i<2; i++)
+    for(int i=0; i<225; i++)
     {
       id234out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
     }
@@ -180,28 +168,39 @@ void rngKernel::resetComputationAfterFlush() {
   }
   { // Node ID: 236 (NodeFIFO)
 
-    for(int i=0; i<397; i++)
+    for(int i=0; i<2; i++)
     {
       id236out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
     }
   }
-  { // Node ID: 238 (NodeFIFO)
+  { // Node ID: 54 (NodeCounter)
 
-    for(int i=0; i<2; i++)
-    {
-      id238out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
-    }
+    (id54st_count) = (c_hw_fix_11_0_uns_bits_1);
   }
   { // Node ID: 240 (NodeFIFO)
 
-    for(int i=0; i<225; i++)
+    for(int i=0; i<2; i++)
     {
-      id240out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+      id240out_output[i] = (HWOffsetFix<1,0,UNSIGNED>(varint_u<1>(m_undefined_value.get_bits(1))));
+    }
+  }
+  { // Node ID: 237 (NodeFIFO)
+
+    for(int i=0; i<397; i++)
+    {
+      id237out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 239 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id239out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
     }
   }
   { // Node ID: 241 (NodeFIFO)
 
-    for(int i=0; i<2; i++)
+    for(int i=0; i<225; i++)
     {
       id241out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
     }
@@ -213,15 +212,68 @@ void rngKernel::resetComputationAfterFlush() {
       id242out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
     }
   }
-  { // Node ID: 163 (NodeCounter)
+  { // Node ID: 243 (NodeFIFO)
 
-    (id163st_count) = (c_hw_fix_49_0_uns_bits_1);
+    for(int i=0; i<2; i++)
+    {
+      id243out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 3 (NodeCounter)
+
+    (id3st_count) = (c_hw_fix_11_0_uns_bits_1);
+  }
+  { // Node ID: 247 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id247out_output[i] = (HWOffsetFix<1,0,UNSIGNED>(varint_u<1>(m_undefined_value.get_bits(1))));
+    }
+  }
+  { // Node ID: 244 (NodeFIFO)
+
+    for(int i=0; i<397; i++)
+    {
+      id244out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 246 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id246out_output[i] = (HWRawBits<1>(varint_u<1>(m_undefined_value.get_bits(1))));
+    }
+  }
+  { // Node ID: 248 (NodeFIFO)
+
+    for(int i=0; i<225; i++)
+    {
+      id248out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 249 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id249out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 250 (NodeFIFO)
+
+    for(int i=0; i<2; i++)
+    {
+      id250out_output[i] = (HWOffsetFix<32,0,UNSIGNED>(varint_u<32>(m_undefined_value.get_bits(32))));
+    }
+  }
+  { // Node ID: 175 (NodeCounter)
+
+    (id175st_count) = (c_hw_fix_49_0_uns_bits_1);
   }
 }
 
 void rngKernel::updateState() {
-  { // Node ID: 152 (NodeInputMappedReg)
-    id152out_io_y_force_disabled = getMappedRegValue<HWOffsetFix<1,0,UNSIGNED> >("io_y_force_disabled");
+  { // Node ID: 164 (NodeInputMappedReg)
+    id164out_io_y_force_disabled = getMappedRegValue<HWOffsetFix<1,0,UNSIGNED> >("io_y_force_disabled");
   }
 }
 

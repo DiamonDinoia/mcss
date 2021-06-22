@@ -31,6 +31,7 @@ CMakeFiles/mcss.dir/src/mcss.c.o
  /vol/cc/opt/maxeler/maxcompiler-2020.2/include/slic/slic_udp.h
  /vol/cc/opt/maxeler/maxcompiler-2020.2/include/slic/slic_utils.h
  inc/Maxfiles.h
+ inc/max/MCSS.h
  inc/random_mt.h
 CMakeFiles/mcss.dir/src/random_mt.c.o
  /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/src/random_mt.c

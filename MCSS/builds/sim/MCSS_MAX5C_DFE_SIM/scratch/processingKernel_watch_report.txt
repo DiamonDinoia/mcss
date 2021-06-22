@@ -1,3 +1,1 @@
-internal_watch_tracklength_output*tracklength*20*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_lind_output*lind*69*{HWOffsetFix:32, 0, UNSIGNED}*0*DECIMAL:
-internal_watch_longi_output*longi*22*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_track2_output*track2*12*{HWFloat:8, 24}*0*DECIMAL:

@@ -6,7 +6,6 @@ namespace maxcompilersim {
 // Templated Types used in the kernel
 template class HWOffsetFix<42,-37,TWOSCOMPLEMENT>;
 template class HWOffsetFix<49,0,UNSIGNED>;
-template class HWRawBits<224>;
 template class HWOffsetFix<8,0,TWOSCOMPLEMENT>;
 template class HWRawBits<80>;
 template class HWRawBits<27>;
@@ -22,8 +21,10 @@ template class HWOffsetFix<1,0,UNSIGNED>;
 template class HWOffsetFix<27,-23,TWOSCOMPLEMENT>;
 template class HWRawBits<31>;
 template class HWRawBits<79>;
+template class HWOffsetFix<32,0,UNSIGNED>;
 template class HWRawBits<96>;
 template class HWRawBits<12>;
+template class HWOffsetFix<33,0,UNSIGNED>;
 template class HWOffsetFix<25,-19,TWOSCOMPLEMENT>;
 template class HWRawBits<2>;
 template class HWOffsetFix<81,0,UNSIGNED>;
@@ -51,7 +52,6 @@ template class HWRawBits<17>;
 template class HWOffsetFix<42,-36,TWOSCOMPLEMENT>;
 template class HWRawBits<3>;
 template class HWOffsetFix<24,-23,UNSIGNED>;
-template class HWFloat<11,53>;
 template class HWFloat<8,24>;
 template class HWOffsetFix<25,-24,UNSIGNED>;
 template class HWRawBits<1>;
@@ -106,12 +106,12 @@ template HWOffsetFix<79,-79,UNSIGNED> cast_bits2fixed<79,-79,UNSIGNED>(const HWR
 template HWRawBits<25> cat<>(const HWRawBits<2> &a, const HWRawBits<23> &b);
 template HWRawBits<1> slice<9,1>(const HWFloat<8,24> &a);
 template HWRawBits<32> slice<0,32>(const HWRawBits<96> &a);
-template void KernelManagerBlockSync::writeOutput< HWFloat<8,24> >(const t_port_number port_number, const HWFloat<8,24> &value);
 template HWRawBits<80> cast_fixed2bits<>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWOffsetFix<81,0,UNSIGNED> cast_bits2fixed<81,0,UNSIGNED>(const HWRawBits<81> &a);
 template HWRawBits<1> slice<4,1>(const HWFloat<8,24> &a);
 template HWOffsetFix<1,0,UNSIGNED>lt_fixed<>(const HWOffsetFix<9,0,TWOSCOMPLEMENT> &a, const HWOffsetFix<9,0,TWOSCOMPLEMENT> &b );
 template void KernelManagerBlockSync::setMappedRegValue< HWOffsetFix<48,0,UNSIGNED> >(const std::string &name, const HWOffsetFix<48,0,UNSIGNED> & value);
+template HWOffsetFix<32,0,UNSIGNED>sub_fixed <32,0,UNSIGNED,TONEAREVEN,32,0,UNSIGNED,32,0,UNSIGNED, false>(const HWOffsetFix<32,0,UNSIGNED> &a, const HWOffsetFix<32,0,UNSIGNED> &b , EXCEPTOVERFLOW);
 template HWRawBits<1> slice<79,1>(const HWOffsetFix<80,-79,TWOSCOMPLEMENT> &a);
 template HWRawBits<3> cat<>(const HWRawBits<2> &a, const HWRawBits<1> &b);
 template HWFloat<8,24> cast_fixed2float<8,24>(const HWOffsetFix<25,-19,TWOSCOMPLEMENT> &a);
@@ -130,7 +130,6 @@ template HWRawBits<23> slice<0,23>(const HWRawBits<96> &a);
 template HWRawBits<1> slice<0,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<2,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<64> cat<>(const HWFloat<8,24> &a, const HWFloat<8,24> &b);
-template HWRawBits<96> cat<>(const HWRawBits<64> &a, const HWFloat<8,24> &b);
 template HWRawBits<1> slice<35,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<55,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<15,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
@@ -165,6 +164,7 @@ template HWRawBits<1> slice<39,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWOffsetFix<1,0,UNSIGNED>gte_fixed<>(const HWOffsetFix<49,0,UNSIGNED> &a, const HWOffsetFix<49,0,UNSIGNED> &b );
 template HWRawBits<1>xor_bits<>(const HWRawBits<1> &a,  const HWRawBits<1> &b );
 template HWRawBits<1> slice<31,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
+template void KernelManagerBlockSync::writeOutput< HWRawBits<128> >(const t_port_number port_number, const HWRawBits<128> &value);
 template HWRawBits<80> cast_fixed2bits<>(const HWOffsetFix<80,-79,TWOSCOMPLEMENT> &a);
 template HWRawBits<1> slice<11,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<18,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
@@ -177,7 +177,6 @@ template HWRawBits<1> slice<31,1>(const HWFloat<8,24> &a);
 template HWRawBits<185>shift_left_bits<>(const HWRawBits<185> &a, long shift_by );
 template HWRawBits<1> slice<22,1>(const HWFloat<8,24> &a);
 template HWRawBits<1> slice<24,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
-template void KernelManagerBlockSync::writeOutput< HWOffsetFix<8,0,UNSIGNED> >(const t_port_number port_number, const HWOffsetFix<8,0,UNSIGNED> &value);
 template HWRawBits<6> cat<>(const HWRawBits<3> &a, const HWRawBits<3> &b);
 template HWRawBits<1> slice<64,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<54,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
@@ -187,7 +186,7 @@ template HWOffsetFix<9,0,TWOSCOMPLEMENT>sub_fixed <9,0,TWOSCOMPLEMENT,TONEAREVEN
 template HWOffsetFix<1,0,UNSIGNED> cast_bits2fixed<1,0,UNSIGNED>(const HWRawBits<1> &a);
 template HWRawBits<1> slice<74,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<24>shift_right_bits<>(const HWRawBits<24> &a, long shift_by );
-template void KernelManagerBlockSync::writeOutput< HWOffsetFix<1,0,UNSIGNED> >(const t_port_number port_number, const HWOffsetFix<1,0,UNSIGNED> &value);
+template HWOffsetFix<1,0,UNSIGNED>gte_fixed<>(const HWOffsetFix<33,0,UNSIGNED> &a, const HWOffsetFix<33,0,UNSIGNED> &b );
 template HWRawBits<1> slice<38,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<7,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<68,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
@@ -231,6 +230,7 @@ template HWRawBits<1> slice<69,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<30,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<70,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<29,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
+template HWOffsetFix<32,0,UNSIGNED> cast_fixed2fixed<32,0,UNSIGNED,TRUNCATE>(const HWOffsetFix<33,0,UNSIGNED> &a);
 template HWRawBits<1> slice<21,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWRawBits<1> slice<19,1>(const HWFloat<8,24> &a);
 template HWRawBits<1> slice<0,1>(const HWFloat<8,24> &a);
@@ -251,15 +251,15 @@ template HWOffsetFix<9,0,TWOSCOMPLEMENT>sub_fixed <9,0,TWOSCOMPLEMENT,TRUNCATE,9
 template HWRawBits<1> slice<17,1>(const HWFloat<8,24> &a);
 template HWOffsetFix<1,0,UNSIGNED>gt_fixed<>(const HWOffsetFix<9,0,TWOSCOMPLEMENT> &a, const HWOffsetFix<9,0,TWOSCOMPLEMENT> &b );
 template HWFloat<8,24> cast_fixed2float<8,24>(const HWOffsetFix<24,-24,UNSIGNED> &a);
-template HWRawBits<224> cat<>(const HWRawBits<128> &a, const HWRawBits<96> &b);
 template HWOffsetFix<25,-23,TWOSCOMPLEMENT> cast_bits2fixed<25,-23,TWOSCOMPLEMENT>(const HWRawBits<25> &a);
-template void KernelManagerBlockSync::writeOutput< HWRawBits<224> >(const t_port_number port_number, const HWRawBits<224> &value);
 template HWOffsetFix<25,-19,TWOSCOMPLEMENT> cast_fixed2fixed<25,-19,TWOSCOMPLEMENT,TONEAREVEN>(const HWOffsetFix<42,-36,TWOSCOMPLEMENT> &a);
 template HWOffsetFix<24,-23,UNSIGNED> cast_fixed2fixed<24,-23,UNSIGNED,TONEAREVEN>(const HWOffsetFix<80,-78,TWOSCOMPLEMENT> &a);
+template HWOffsetFix<33,0,UNSIGNED> cast_fixed2fixed<33,0,UNSIGNED,TRUNCATE>(const HWOffsetFix<32,0,UNSIGNED> &a);
 template HWRawBits<12> cat<>(const HWRawBits<6> &a, const HWRawBits<6> &b);
 template HWRawBits<3> cat<>(const HWRawBits<2> &a, const HWOffsetFix<1,0,UNSIGNED> &b);
 template HWRawBits<27> slice<27,27>(const HWRawBits<108> &a);
 template HWOffsetFix<48,0,UNSIGNED> cast_fixed2fixed<48,0,UNSIGNED,TRUNCATE>(const HWOffsetFix<49,0,UNSIGNED> &a);
+template HWOffsetFix<1,0,UNSIGNED>eq_fixed<>(const HWOffsetFix<32,0,UNSIGNED> &a, const HWOffsetFix<32,0,UNSIGNED> &b );
 template HWRawBits<185>shift_right_bits<>(const HWRawBits<185> &a, long shift_by );
 template HWOffsetFix<80,0,UNSIGNED>add_fixed <80,0,UNSIGNED,TRUNCATE,80,0,UNSIGNED,80,0,UNSIGNED, false>(const HWOffsetFix<80,0,UNSIGNED> &a, const HWOffsetFix<80,0,UNSIGNED> &b , EXCEPTOVERFLOW);
 template HWOffsetFix<7,0,UNSIGNED> cast_bits2fixed<7,0,UNSIGNED>(const HWRawBits<7> &a);
@@ -289,6 +289,7 @@ template HWRawBits<1> slice<43,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 template HWOffsetFix<8,0,UNSIGNED> cast_fixed2fixed<8,0,UNSIGNED,TONEAREVEN>(const HWOffsetFix<9,0,TWOSCOMPLEMENT> &a);
 template HWRawBits<24> cat<>(const HWRawBits<12> &a, const HWRawBits<12> &b);
 template HWRawBits<1> slice<52,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
+template HWOffsetFix<33,0,UNSIGNED>add_fixed <33,0,UNSIGNED,TRUNCATE,33,0,UNSIGNED,33,0,UNSIGNED, false>(const HWOffsetFix<33,0,UNSIGNED> &a, const HWOffsetFix<33,0,UNSIGNED> &b , EXCEPTOVERFLOW);
 template HWOffsetFix<80,-78,TWOSCOMPLEMENT> cast_bits2fixed<80,-78,TWOSCOMPLEMENT>(const HWRawBits<80> &a);
 template HWOffsetFix<42,-37,TWOSCOMPLEMENT>mul_fixed <42,-37,TWOSCOMPLEMENT,TONEAREVEN,25,-20,TWOSCOMPLEMENT,17,-17,UNSIGNED, false>(const HWOffsetFix<25,-20,TWOSCOMPLEMENT> &a, const HWOffsetFix<17,-17,UNSIGNED> &b , EXCEPTOVERFLOW);
 template HWOffsetFix<80,-79,TWOSCOMPLEMENT>not_fixed<>(const HWOffsetFix<80,-79,TWOSCOMPLEMENT> &a );
@@ -331,9 +332,5 @@ template HWRawBits<1> slice<1,1>(const HWOffsetFix<80,0,UNSIGNED> &a);
 
 
 // Additional Code
-std::string loopKernel::format_string_loopKernel_1 (const char* _format_arg_format_string, const HWFloat<8,24> &_format_arg_0, const HWOffsetFix<1,0,UNSIGNED> &_format_arg_1)
-{return ( bfmt(_format_arg_format_string)% _format_arg_0 % _format_arg_1 ).str();}
-std::string loopKernel::format_string_loopKernel_2 (const char* _format_arg_format_string, const HWFloat<11,53> &_format_arg_0, const HWFloat<8,24> &_format_arg_1, const HWFloat<8,24> &_format_arg_2, const HWFloat<8,24> &_format_arg_3, const HWFloat<8,24> &_format_arg_4, const HWOffsetFix<1,0,UNSIGNED> &_format_arg_5)
-{return ( bfmt(_format_arg_format_string)% _format_arg_0 % _format_arg_1 % _format_arg_2 % _format_arg_3 % _format_arg_4 % _format_arg_5 ).str();}
 
 } // End of maxcompilersim namespace

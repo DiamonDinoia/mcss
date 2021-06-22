@@ -13,6 +13,7 @@ public class MCSSManager extends MAX5CManager {
 
 	public MCSSManager(EngineParameters params) {
 		super(params);
+		getCurrentKernelConfig().optimization.setInlining(true);
 
 		final KernelBlock rngKernel = addKernel(new RNGKernel(makeKernelParameters(rngKernelName)));
 		final KernelBlock loopKernel = addKernel(new LoopKernel(makeKernelParameters(loopKernelName)));

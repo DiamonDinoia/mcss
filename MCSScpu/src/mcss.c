@@ -11,7 +11,7 @@ int main(void) {
     int dataOut[SIZE];
     double longitudinal[201];
     double transverse[101];
-    long seed = 39840583;
+    long seed = 42;
 
     int numHists = 10000;
     int material = 4;
@@ -23,7 +23,10 @@ int main(void) {
 	max_set_ticks   ( actions, "processingKernel", numHists );
 	max_set_uint64t ( actions, "processingKernel", "numHists", numHists);
 	max_queue_output( actions, "output", dataOut, 304 * sizeof(int) );
-	random_mt_init(maxfile, actions, "rngKernel", "gen", seed);
+	random_mt_init(maxfile, actions, "rngKernel", "gen1", seed);
+	random_mt_init(maxfile, actions, "rngKernel", "gen2", seed);
+	random_mt_init(maxfile, actions, "rngKernel", "gen3", seed);
+	printf("Starting simulation\n");
 	max_run ( engine, actions );
 
 	max_actions_free( actions );
@@ -40,11 +43,11 @@ int main(void) {
 	}
 
     for (int i = 0; i < 201; i++) {
-        printf("longitudinal[%i]: %f\n", i, longitudinal[i]);
+        printf("longitudinal[%i]: %.10f\n", i, longitudinal[i]);
     }
 
     for (int i = 0; i < 101; i++) {
-		printf("transverse[%i]: %f\n", i, transverse[i]);
+		printf("transverse[%i]: %.10f\n", i, transverse[i]);
 	}
 
     for (int i = 0; i < 302; i++) {

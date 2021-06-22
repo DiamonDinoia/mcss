@@ -7,8 +7,10 @@ extern "C" {
 #endif /* __cplusplus */
 
 #define MCSS_MersenneTwister_seedOffset (8256754)
-#define MCSS_rngKernelgen (3)
+#define MCSS_rngKernelgen1 (1)
 #define MCSS_PCIE_ALIGNMENT (16)
+#define MCSS_rngKernelgen2 (1)
+#define MCSS_rngKernelgen3 (1)
 #define MCSS_MersenneTwister_n (624)
 
 
@@ -26,18 +28,18 @@ extern "C" {
  * \param [in] inscalar_processingKernel_numHists Input scalar parameter "processingKernel.numHists".
  * \param [out] outstream_output Stream "output".
  * \param [in] outstream_size_output The size of the stream outstream_output in bytes.
- * \param [in] inmem_rngKernel_rngKernelgen_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen_seeds0, should be of size (624 * sizeof(uint64_t)).
- * \param [in] inmem_rngKernel_rngKernelgen_seeds1 Mapped ROM inmem_rngKernel_rngKernelgen_seeds1, should be of size (624 * sizeof(uint64_t)).
- * \param [in] inmem_rngKernel_rngKernelgen_seeds2 Mapped ROM inmem_rngKernel_rngKernelgen_seeds2, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen1_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen1_seeds0, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen2_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen2_seeds0, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen3_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen3_seeds0, should be of size (624 * sizeof(uint64_t)).
  */
 void MCSS(
 	uint64_t ticks_processingKernel,
 	uint64_t inscalar_processingKernel_numHists,
 	void *outstream_output,
 	size_t outstream_size_output,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds0,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds1,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds2);
+	const uint64_t *inmem_rngKernel_rngKernelgen1_seeds0,
+	const uint64_t *inmem_rngKernel_rngKernelgen2_seeds0,
+	const uint64_t *inmem_rngKernel_rngKernelgen3_seeds0);
 
 /**
  * \brief Basic static non-blocking function for the interface 'default'.
@@ -51,9 +53,9 @@ void MCSS(
  * \param [in] inscalar_processingKernel_numHists Input scalar parameter "processingKernel.numHists".
  * \param [out] outstream_output Stream "output".
  * \param [in] outstream_size_output The size of the stream outstream_output in bytes.
- * \param [in] inmem_rngKernel_rngKernelgen_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen_seeds0, should be of size (624 * sizeof(uint64_t)).
- * \param [in] inmem_rngKernel_rngKernelgen_seeds1 Mapped ROM inmem_rngKernel_rngKernelgen_seeds1, should be of size (624 * sizeof(uint64_t)).
- * \param [in] inmem_rngKernel_rngKernelgen_seeds2 Mapped ROM inmem_rngKernel_rngKernelgen_seeds2, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen1_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen1_seeds0, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen2_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen2_seeds0, should be of size (624 * sizeof(uint64_t)).
+ * \param [in] inmem_rngKernel_rngKernelgen3_seeds0 Mapped ROM inmem_rngKernel_rngKernelgen3_seeds0, should be of size (624 * sizeof(uint64_t)).
  * \return A handle on the execution status, or NULL in case of error.
  */
 max_run_t *MCSS_nonblock(
@@ -61,9 +63,9 @@ max_run_t *MCSS_nonblock(
 	uint64_t inscalar_processingKernel_numHists,
 	void *outstream_output,
 	size_t outstream_size_output,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds0,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds1,
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds2);
+	const uint64_t *inmem_rngKernel_rngKernelgen1_seeds0,
+	const uint64_t *inmem_rngKernel_rngKernelgen2_seeds0,
+	const uint64_t *inmem_rngKernel_rngKernelgen3_seeds0);
 
 /**
  * \brief Advanced static interface, structure for the engine interface 'default'
@@ -74,9 +76,9 @@ typedef struct {
 	uint64_t inscalar_processingKernel_numHists; /**<  [in] Input scalar parameter "processingKernel.numHists". */
 	void *outstream_output; /**<  [out] Stream "output". */
 	size_t outstream_size_output; /**<  [in] The size of the stream outstream_output in bytes. */
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds0; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen_seeds0, should be of size (624 * sizeof(uint64_t)). */
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds1; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen_seeds1, should be of size (624 * sizeof(uint64_t)). */
-	const uint64_t *inmem_rngKernel_rngKernelgen_seeds2; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen_seeds2, should be of size (624 * sizeof(uint64_t)). */
+	const uint64_t *inmem_rngKernel_rngKernelgen1_seeds0; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen1_seeds0, should be of size (624 * sizeof(uint64_t)). */
+	const uint64_t *inmem_rngKernel_rngKernelgen2_seeds0; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen2_seeds0, should be of size (624 * sizeof(uint64_t)). */
+	const uint64_t *inmem_rngKernel_rngKernelgen3_seeds0; /**<  [in] Mapped ROM inmem_rngKernel_rngKernelgen3_seeds0, should be of size (624 * sizeof(uint64_t)). */
 } MCSS_actions_t;
 
 /**

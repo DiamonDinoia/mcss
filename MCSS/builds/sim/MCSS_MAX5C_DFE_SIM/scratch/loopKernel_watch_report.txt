@@ -1,19 +1,10 @@
-internal_watch_llv_output*llv*1*{HWOffsetFix:8, 0, UNSIGNED}*0*DECIMAL:
-internal_watch_carriedposx_output*carriedposx*1246*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_carriedposz_output*carriedposz*1248*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_carrieddirx_output*carrieddirx*1249*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_carriedlength_output*carriedlength*1253*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_posz_output*posz*16*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_dirx_output*dirx*18*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_tracklength_output*tracklength*24*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_reset_output*reset*10*{HWOffsetFix:1, 0, UNSIGNED}*0*DECIMAL:
-internal_watch_pastlimit_output*pastlimit*107*{HWOffsetFix:1, 0, UNSIGNED}*0*DECIMAL:
-internal_watch_lengthoffset_output*lengthoffset*1253*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_length_output*length*105*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_0_output*track_0*112*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_1_output*track_1*114*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_2_output*track_2*116*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_3_output*track_3*1241*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_4_output*track_4*1243*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_5_output*track_5*1245*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_track_6_output*track_6*117*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_llv_output*llv*1*{HWOffsetFix:32, 0, UNSIGNED}*0*DECIMAL:
+internal_watch_u1_output*u1*664*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_u2_output*u2*1190*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_u3_output*u3*134*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_v1_output*v1*1210*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_v2_output*v2*1220*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_v3_output*v3*1227*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_w1_output*w1*1235*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_w2_output*w2*1220*{HWFloat:8, 24}*0*DECIMAL:
+internal_watch_w3_output*w3*1239*{HWFloat:8, 24}*0*DECIMAL:
