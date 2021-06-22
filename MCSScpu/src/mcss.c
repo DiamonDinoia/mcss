@@ -13,7 +13,7 @@ int main(void) {
     double transverse[101];
     long seed = 42;
 
-    int numHists = 10000;
+    int numHists = 1000;
     int material = 4;
 
 	max_file_t    *maxfile = MCSS_init();
@@ -23,9 +23,10 @@ int main(void) {
 	max_set_ticks   ( actions, "processingKernel", numHists );
 	max_set_uint64t ( actions, "processingKernel", "numHists", numHists);
 	max_queue_output( actions, "output", dataOut, 304 * sizeof(int) );
-	random_mt_init(maxfile, actions, "rngKernel", "gen1", seed);
-	random_mt_init(maxfile, actions, "rngKernel", "gen2", seed);
-	random_mt_init(maxfile, actions, "rngKernel", "gen3", seed);
+//	random_mt_init(maxfile, actions, "rngKernel", "gen1", seed);
+//	random_mt_init(maxfile, actions, "rngKernel", "gen2", seed);
+//	random_mt_init(maxfile, actions, "rngKernel", "gen3", seed);
+	random_mt_init(maxfile, actions, "rngKernel", "gen", seed);
 	printf("Starting simulation\n");
 	max_run ( engine, actions );
 
