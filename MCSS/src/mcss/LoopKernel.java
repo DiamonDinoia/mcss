@@ -13,9 +13,17 @@ import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
 
 public class LoopKernel extends Kernel {
 	
-	DFEVar sampleCosTheta(double theScrPar2, DFEVar randNum) {
+	DFEVar sampleCosTheta(DFEVar theScrPar2, DFEVar randNum) {
 	    DFEVar cost = 1.0 - 2 * theScrPar2 * randNum / (1.0 - randNum + theScrPar2);
 	    return KernelMath.max(constant.var(dfeFloat(8, 24), -1.0),  KernelMath.min(constant.var(dfeFloat(8, 24), 1.0), cost));
+	}
+	
+	DFEVar computeScrParam(DFEVar molierBc, DFEVar molierXc2, double ptot2) {
+		return molierXc2 / (4.0 * ptot2 * molierBc);
+	}
+	
+	DFEVar computeMFP(DFEVar molierBc,  double beta2, DFEVar scrpar) {
+		return beta2 * (1.0 + scrpar) / molierBc;
 	}
 	
 	public LoopKernel(final KernelParameters parameters) {
@@ -23,12 +31,18 @@ public class LoopKernel extends Kernel {
 
 		flush.disabled();
 		
+		DFEVar molierBc = io.scalarInput("molierBc", dfeFloat(8, 24));
+		DFEVar molierXc2 = io.scalarInput("molierXc2", dfeFloat(8, 24));
+		DFEVar theScrPar = computeScrParam(molierBc, molierXc2, Constants.thePC2);
+		DFEVar theMFP = computeMFP(molierBc, Constants.theBeta2, theScrPar);
+		DFEVar theLimit = theMFP * 33.5;
+		
 		OffsetExpr loopLength = stream.makeOffsetAutoLoop("loopLength");
 		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(32));
 //		loopLengthVal.simWatch("llv");
 		
 		DFEVar p = control.count.pulse(1);
-		DFEVar count = control.count.simpleCounter(32, loopLengthVal);
+//		DFEVar count = control.count.simpleCounter(32, loopLengthVal);
 //		DFEVar correctTick = KernelMath.modulo(count, 90) === 0;
 		
 		DFEVar carriedPosX = dfeFloat(8, 24).newInstance(this);
@@ -40,7 +54,7 @@ public class LoopKernel extends Kernel {
 		DFEVar carriedTrackLength = dfeFloat(8, 24).newInstance(this);
 		DFEVar carriedLength = dfeFloat(8, 24).newInstance(this);
 		
-		DFEVar reset = carriedLength > Constants.theLimit | p;
+		DFEVar reset = carriedLength > theLimit | p;
 //		carriedPosX.simWatch("carriedPosX");
 //		carriedPosZ.simWatch("carriedPosZ");
 //		carriedDirX.simWatch("carriedDirX");
@@ -61,13 +75,13 @@ public class LoopKernel extends Kernel {
 		
 		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
 //		DFEVector<DFEVar> randNums = io.input("y", randNumType, count === 0);
-		DFEVector<DFEVar> randNums = io.input("y", randNumType);
-		DFEVar stepLength = -Constants.theMFP * Arithmetic.log(randNums[0]);
+		DFEVector<DFEVar> randNums = io.input("y", randNumType, reset);
+		DFEVar stepLength = -theMFP * Arithmetic.log(randNums[0]);
 		length += stepLength;
-		DFEVar pastLimit = length > Constants.theLimit;
+		DFEVar pastLimit = length > theLimit;
 //		reset.simWatch("reset");
 //		pastLimit.simWatch("pastLimit");
-		stepLength = pastLimit ? Constants.theLimit - trackLength : stepLength;
+		stepLength = pastLimit ? theLimit - trackLength : stepLength;
 		
 		posX += dirX * stepLength;
 		posY += dirY * stepLength;
@@ -75,7 +89,7 @@ public class LoopKernel extends Kernel {
 		trackLength += stepLength;
 //		debug.simPrintf(count === (loopLengthVal - 1), "%f %i\n", trackLength, pastLimit);
 		
-		DFEVar cost = sampleCosTheta(Constants.theScrPar, randNums[1]);
+		DFEVar cost = sampleCosTheta(theScrPar, randNums[1]);
 		DFEVar dum0 = 1.0 - cost;
 		DFEVar sint = KernelMath.sqrt(dum0 * (2.0 - dum0));
 		DFEVar phi = 2.0 * Constants.pi * randNums[2];

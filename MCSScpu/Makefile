@@ -126,32 +126,59 @@ mcss/fast:
 	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/build
 .PHONY : mcss/fast
 
-src/mcss.o: src/mcss.cpp.o
+mcss.o: mcss.cpp.o
 
-.PHONY : src/mcss.o
+.PHONY : mcss.o
 
 # target to build an object file
-src/mcss.cpp.o:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.o
-.PHONY : src/mcss.cpp.o
+mcss.cpp.o:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/mcss.cpp.o
+.PHONY : mcss.cpp.o
 
-src/mcss.i: src/mcss.cpp.i
+mcss.i: mcss.cpp.i
 
-.PHONY : src/mcss.i
+.PHONY : mcss.i
 
 # target to preprocess a source file
-src/mcss.cpp.i:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.i
-.PHONY : src/mcss.cpp.i
+mcss.cpp.i:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/mcss.cpp.i
+.PHONY : mcss.cpp.i
 
-src/mcss.s: src/mcss.cpp.s
+mcss.s: mcss.cpp.s
 
-.PHONY : src/mcss.s
+.PHONY : mcss.s
 
 # target to generate assembly for a file
-src/mcss.cpp.s:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.s
-.PHONY : src/mcss.cpp.s
+mcss.cpp.s:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/mcss.cpp.s
+.PHONY : mcss.cpp.s
+
+src/mcss_dfe.o: src/mcss_dfe.cpp.o
+
+.PHONY : src/mcss_dfe.o
+
+# target to build an object file
+src/mcss_dfe.cpp.o:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss_dfe.cpp.o
+.PHONY : src/mcss_dfe.cpp.o
+
+src/mcss_dfe.i: src/mcss_dfe.cpp.i
+
+.PHONY : src/mcss_dfe.i
+
+# target to preprocess a source file
+src/mcss_dfe.cpp.i:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss_dfe.cpp.i
+.PHONY : src/mcss_dfe.cpp.i
+
+src/mcss_dfe.s: src/mcss_dfe.cpp.s
+
+.PHONY : src/mcss_dfe.s
+
+# target to generate assembly for a file
+src/mcss_dfe.cpp.s:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss_dfe.cpp.s
+.PHONY : src/mcss_dfe.cpp.s
 
 src/random_mt.o: src/random_mt.c.o
 
@@ -189,9 +216,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mcss"
-	@echo "... src/mcss.o"
-	@echo "... src/mcss.i"
-	@echo "... src/mcss.s"
+	@echo "... mcss.o"
+	@echo "... mcss.i"
+	@echo "... mcss.s"
+	@echo "... src/mcss_dfe.o"
+	@echo "... src/mcss_dfe.i"
+	@echo "... src/mcss_dfe.s"
 	@echo "... src/random_mt.o"
 	@echo "... src/random_mt.i"
 	@echo "... src/random_mt.s"

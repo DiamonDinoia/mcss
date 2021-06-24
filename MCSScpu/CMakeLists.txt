@@ -33,7 +33,7 @@ include_directories("inc/max")
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
-file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c*)
+file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c* mcss.cpp)
  
  
 message(STATUS "MAXFILES found ${MAXFILES}")
