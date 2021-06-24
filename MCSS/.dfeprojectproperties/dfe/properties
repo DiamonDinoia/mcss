@@ -1,3 +1,0 @@
-manager=mcss.MCSSManager
-jvmargs=-Xmx2G
-parameters=target\=DFE maxFileName\=MCSS

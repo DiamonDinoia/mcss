@@ -1,3 +1,0 @@
-BUILD_FILES ?= ../MCSS/.maxdc_builds_MCSS
-BUILD_DIRS ?= 
-SELECTED_MAXFILES ?= 

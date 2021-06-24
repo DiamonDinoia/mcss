@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/rng.dir/src/random_mt.c.o CMakeFiles/rng.dir/src/rng-cpu.c.o max/rng.o  -o rng -L '/vol/cc/opt/maxeler/maxcompiler-2020.2/lib' -lslic -L '/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/maxeleros-sim/lib' -lmaxeleros -lpthread -lm -lrt -lcurl 
