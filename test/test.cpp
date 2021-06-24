@@ -1,16 +1,18 @@
 #define CATCH_CONFIG_MAIN
 #define CATCH_CONFIG_ENABLE_BENCHMARKING
-#include <ksTest.h>
-#include <mcss_multithread.h>
-#include <mcss_reference.h>
+#include "ksTest.h"
+#include "mcss_multithread.h"
+#include "mcss_reference.h"
+#include "mcss_dfe.h"
 
-#include <catch2/catch.hpp>
+#include "lib/Catch2/single_include/catch2/catch.hpp"
 
 // Compare the distributions of the original MCSS program with the
 // multi-threaded implementation in order to check correctness.
 // Returns a vector including the longitudinal and transverse
 // values of the K-S test.
-std::vector<double> compareDistributions(Reference::Histograms originalHistograms, Multithread::Histograms multithreadHistograms) {
+template <class T>
+std::vector<double> compareDistributions(Reference::Histograms originalHistograms, T histograms) {
     std::vector<real_type> originalLongi(
         originalHistograms.longiHist,
         originalHistograms.longiHist + longiDistNumBin);
@@ -18,23 +20,34 @@ std::vector<double> compareDistributions(Reference::Histograms originalHistogram
         originalHistograms.transHist,
         originalHistograms.transHist + transDistNumBin);
 
-    double pLong = ks_test(originalLongi, multithreadHistograms.longiHist);
-    double pTrans = ks_test(originalTrans, multithreadHistograms.transHist);
+    double pLong = ks_test(originalLongi, histograms.longiHist);
+    double pTrans = ks_test(originalTrans, histograms.transHist);
     return std::vector<double>{pLong, pTrans};
 }
 
 TEST_CASE("Correctness") {
+    std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate();
+    auto dfeHistograms = Dfe::Simulate(GOLD, 100000);
+    std::cout << "Finished simulations" << std::endl;
 
     SECTION("Default K-S test p values are statistically significant") {
         auto pValues = compareDistributions(referenceHistograms, multithreadedHistograms);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
-        std::cout << std::fixed;
-        std::cout << "Longitudinal K-S test p-value is " << pValues[0] << "."
+	std::cout << std::fixed;
+        std::cout << "Multithread: Longitudinal K-S test p-value is " << pValues[0] << "."
                   << std::endl;
-        std::cout << "Transverse K-S test p-value is " << pValues[1] << "."
+        std::cout << "Multithread: Transverse K-S test p-value is " << pValues[1] << "."
+                  << std::endl;
+
+	pValues = compareDistributions(referenceHistograms, dfeHistograms);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        std::cout << "DFE: Longitudinal K-S test p-value is " << pValues[0] << "."
+                  << std::endl;
+        std::cout << "DFE: Transverse K-S test p-value is " << pValues[1] << "."
                   << std::endl;
     }
 

@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/mcss.dir/src/mcss.c.o CMakeFiles/mcss.dir/src/random_mt.c.o max/MCSS.o  -o mcss -L '/vol/cc/opt/maxeler/maxcompiler-2020.2/lib' -lslic -L '/vol/cc/opt/maxeler/maxcompiler-2020.2/lib/maxeleros-sim/lib' -lmaxeleros -lpthread -lm -lrt -lcurl 

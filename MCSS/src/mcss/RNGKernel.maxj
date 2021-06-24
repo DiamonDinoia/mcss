@@ -16,18 +16,18 @@ public class RNGKernel extends Kernel {
 		flush.disabled();
 		
 		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
-		DFEVector<DFEVar> gen1 = MersenneTwister.getRand(this, "gen", new DFEVectorType<DFEVar>(dfeUInt(32), 3));
-		DFEVector<DFEVar> randNums = MersenneTwister.toFloat32(gen1);
-//		DFEVar gen1 = MersenneTwister.getRand(this, "gen1");
-//		DFEVar gen2 = MersenneTwister.getRand(this, "gen2");
-//		DFEVar gen3 = MersenneTwister.getRand(this, "gen3");
-//		DFEVar randNum1 = MersenneTwister.toFloat32(gen1);
-//		DFEVar randNum2 = MersenneTwister.toFloat32(gen2);
-//		DFEVar randNum3 = MersenneTwister.toFloat32(gen3);
-//		DFEVector<DFEVar> randNums = randNumType.newInstance(this);
-//		randNums[0] <== randNum1;
-//		randNums[1] <== randNum2;
-//		randNums[2] <== randNum3;
+//		DFEVector<DFEVar> gen1 = MersenneTwister.getRand(this, "gen", new DFEVectorType<DFEVar>(dfeUInt(32), 3));
+//		DFEVector<DFEVar> randNums = MersenneTwister.toFloat32(gen1);
+		DFEVar gen1 = MersenneTwister.getRand(this, "gen1");
+		DFEVar gen2 = MersenneTwister.getRand(this, "gen2");
+		DFEVar gen3 = MersenneTwister.getRand(this, "gen3");
+		DFEVar randNum1 = MersenneTwister.toFloat32(gen1);
+		DFEVar randNum2 = MersenneTwister.toFloat32(gen2);
+		DFEVar randNum3 = MersenneTwister.toFloat32(gen3);
+		DFEVector<DFEVar> randNums = randNumType.newInstance(this);
+		randNums[0] <== randNum1;
+		randNums[1] <== randNum2;
+		randNums[2] <== randNum3;
 		
 //		for (int i = 0; i < 3; i++) {
 //			randNums[i] <== constant.var(dfeFloat(8, 24), 0.9);

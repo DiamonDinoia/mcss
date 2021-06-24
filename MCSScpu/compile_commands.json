@@ -1,8 +1,8 @@
 [
 {
   "directory": "/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu",
-  "command": "/usr/bin/cc  -I/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/inc -I/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/inc/max -I/vol/cc/opt/maxeler/maxcompiler-2020.2/include/slic    -Wall -Wextra -pedantic -std=gnu99 -o CMakeFiles/mcss.dir/src/mcss.c.o   -c /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/src/mcss.c",
-  "file": "/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/src/mcss.c"
+  "command": "/usr/bin/c++   -I/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/inc -I/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/inc/max -I/vol/cc/opt/maxeler/maxcompiler-2020.2/include/slic    -Wall -Wextra -pedantic -std=gnu++11 -o CMakeFiles/mcss.dir/src/mcss.cpp.o -c /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/src/mcss.cpp",
+  "file": "/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/src/mcss.cpp"
 },
 {
   "directory": "/mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu",

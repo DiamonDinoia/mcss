@@ -60,7 +60,8 @@ public class LoopKernel extends Kernel {
 //		trackLength.simWatch("trackLength"); //
 		
 		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
-		DFEVector<DFEVar> randNums = io.input("y", randNumType, count === 0);
+//		DFEVector<DFEVar> randNums = io.input("y", randNumType, count === 0);
+		DFEVector<DFEVar> randNums = io.input("y", randNumType);
 		DFEVar stepLength = -Constants.theMFP * Arithmetic.log(randNums[0]);
 		length += stepLength;
 		DFEVar pastLimit = length > Constants.theLimit;
@@ -148,7 +149,8 @@ public class LoopKernel extends Kernel {
 //		track.simWatch("track");
 		
 		// Output
-		io.output("z", track, trackType, pastLimit & count === (loopLengthVal - 1));
+//		io.output("z", track, trackType, pastLimit & count === (loopLengthVal - 1));
+		io.output("z", track, trackType, pastLimit);
 //		io.output("z", track, trackType, count === (loopLengthVal - 1));
 	}
 

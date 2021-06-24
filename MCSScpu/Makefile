@@ -126,32 +126,32 @@ mcss/fast:
 	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/build
 .PHONY : mcss/fast
 
-src/mcss.o: src/mcss.c.o
+src/mcss.o: src/mcss.cpp.o
 
 .PHONY : src/mcss.o
 
 # target to build an object file
-src/mcss.c.o:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.c.o
-.PHONY : src/mcss.c.o
+src/mcss.cpp.o:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.o
+.PHONY : src/mcss.cpp.o
 
-src/mcss.i: src/mcss.c.i
+src/mcss.i: src/mcss.cpp.i
 
 .PHONY : src/mcss.i
 
 # target to preprocess a source file
-src/mcss.c.i:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.c.i
-.PHONY : src/mcss.c.i
+src/mcss.cpp.i:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.i
+.PHONY : src/mcss.cpp.i
 
-src/mcss.s: src/mcss.c.s
+src/mcss.s: src/mcss.cpp.s
 
 .PHONY : src/mcss.s
 
 # target to generate assembly for a file
-src/mcss.c.s:
-	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.c.s
-.PHONY : src/mcss.c.s
+src/mcss.cpp.s:
+	$(MAKE) -f CMakeFiles/mcss.dir/build.make CMakeFiles/mcss.dir/src/mcss.cpp.s
+.PHONY : src/mcss.cpp.s
 
 src/random_mt.o: src/random_mt.c.o
 
