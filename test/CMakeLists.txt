@@ -1,38 +1,42 @@
 cmake_minimum_required(VERSION 3.9)
-project(mcss)
- 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_VERBOSE_MAKEFILE ON)
-set(DCMAKE_RULE_MESSAGES OFF)
- 
-# Setting Some compilation flags
+project(tests)
+
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
- 
-add_compile_options(-Wall -Wextra -pedantic)
- 
-if (CMAKE_BUILD_TYPE MATCHES Debug)
-	message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")	
-endif ()
-if (CMAKE_BUILD_TYPE MATCHES Release)
-	message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-	add_compile_options(-ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
-	add_compile_options(-march=native)
-	set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
-endif ()
- 
-set(MAXFILES_DIR "max")
-# Directory containing the C/C++ sources
-set(CFILES_DIR "src")
+
+add_definitions(-DTEST=42)
+
+include_directories(include)
+include_directories("${tests_SOURCE_DIR}/../include")
+include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc")
+include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc/max")
+include_directories("${tests_SOURCE_DIR}/../MCSScpu/Includes")
+
+#file(GLOB_RECURSE MAX_INCLUDES "${tests_SOURCE_DIR}/../MCSScpu/Includes/*")
+#message(INCS = ${MAX_INCLUDES})
+#include_directories(${MAX_INCLUDES})
+
+#add_subdirectory("../MCSScpu/")
+
+#set(CFILES_DIR "../../MCSScpu/src")
 # Directory containing the C/C++ headers
-set(INCLUDE_DIR "inc")
+#set(INCLUDE_DIR "../../MCSScpu/inc")
+
+#include("${tests_SOURCE_DIR}/../MCSScpu/CMakeLists.txt")
+
+
+set(MAXFILES_DIR "../MCSScpu/max")
+# Directory containing the C/C++ sources
+set(CFILES_DIR "../MCSScpu/src")
+# Directory containing the C/C++ headers
+set(INCLUDE_DIR "../MCSScpu/inc")
  
-include_directories("inc")
-include_directories("inc/max")
+include_directories("../../MCSScpu/inc")
+include_directories("../../MCSScpu/inc/max")
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
-file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c* mcss.cpp)
+file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c*)
  
  
 message(STATUS "MAXFILES found ${MAXFILES}")
@@ -54,9 +58,9 @@ else()
 endif()
  
 # Directory for the compiled maxfiles
-set(MAXOBJS_DIR "max")
+set(MAXOBJS_DIR "../../MCSScpu/max")
 # List of the compiled object files used in the dependency tree 
-set(MAXOBJS "")
+set(MAXOBJS "../../MCSScpu/")
  
 # Using sliccompile to compile maxfiles
 FIND_PROGRAM(SLIC_COMPILE sliccompile)
@@ -81,8 +85,11 @@ else()
 endif()
  
 message(STATUS "max objects generated ${MAXOBJS}")
- 
-# Link sources headers and maxfiles together
-add_executable(mcss ${CFILES} ${MAXOBJS})
-# Link slic libraries
-target_link_libraries(mcss ${SLIC_LDFLAGS})
+
+file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../MCSScpu/src/*")
+message(TEST SOURCES = ${SOURCES})
+
+add_executable(test ${SOURCES} ${CFILES} ${MAXOBJS})
+
+find_package(OpenMP REQUIRED)
+target_link_libraries(test PUBLIC OpenMP::OpenMP_CXX ${SLIC_LDFLAGS})
