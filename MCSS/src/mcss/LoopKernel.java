@@ -41,9 +41,9 @@ public class LoopKernel extends Kernel {
 		DFEVar loopLengthVal = loopLength.getDFEVar(this, dfeUInt(32));
 //		loopLengthVal.simWatch("llv");
 		
-		DFEVar p = control.count.pulse(1);
-//		DFEVar count = control.count.simpleCounter(32, loopLengthVal);
-//		DFEVar correctTick = KernelMath.modulo(count, 90) === 0;
+//		DFEVar p = control.count.pulse(90);
+		DFEVar count = control.count.simpleCounter(32);
+		DFEVar p = count <= loopLengthVal;
 		
 		DFEVar carriedPosX = dfeFloat(8, 24).newInstance(this);
 		DFEVar carriedPosY = dfeFloat(8, 24).newInstance(this);
@@ -75,7 +75,7 @@ public class LoopKernel extends Kernel {
 		
 		DFEVectorType<DFEVar> randNumType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 3);
 //		DFEVector<DFEVar> randNums = io.input("y", randNumType, count === 0);
-		DFEVector<DFEVar> randNums = io.input("y", randNumType, reset);
+		DFEVector<DFEVar> randNums = io.input("y", randNumType);
 		DFEVar stepLength = -theMFP * Arithmetic.log(randNums[0]);
 		length += stepLength;
 		DFEVar pastLimit = length > theLimit;

@@ -30,7 +30,7 @@ public class ProcessingKernel extends Kernel {
 		lInd = lInd.cast(dfeUInt(32));
 //		lInd.simWatch("lInd");
 //		longi.simWatch("longi");
-//		debug.simPrintf("COUNT %i track: %.10f %.10f %.10f %.10f\n", count, track[0], track[1], track[2], track[3]);
+		debug.simPrintf("COUNT %i track: %.10f %.10f %.10f %.10f\n", count, track[0], track[1], track[2], track[3]);
 		
 		DFEVar trans = KernelMath.sqrt(track[0] * track[0] + track[1] * track[1]) / track[3];
 //		trans.simWatch("trans");
