@@ -1,3 +1,0 @@
-manager=rng.rngManager
-jvmargs=-Xmx2G
-parameters=target\=DFE maxFileName\=rng

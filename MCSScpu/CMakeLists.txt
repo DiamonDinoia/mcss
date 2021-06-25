@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 cmake_minimum_required(VERSION 3.9.4)
  
-=======
-cmake_minimum_required(VERSION 3.9)
->>>>>>> 218132d8e5f55e7a080bb86f54a4e8b8a496eb5c
 project(mcss)
  
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

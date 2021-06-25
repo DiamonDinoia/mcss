@@ -1,17 +1,0 @@
-,NodeEvalStreamOffset,0
-!,NodeOutput,0
-,NodeCounter,0
-",NodeOutput,0
-,NodeWatch,0
-,NodePulse,4
-%,NodeStreamOffset,16
-,NodeMux,4
-	,NodeInput,0
-,NodeAdd,5
-,NodeGte,16
-,NodeAnd,18
-,NodeOutput,18
-,NodeCounter,0
-,NodeStreamOffset,0
-,NodeOutputMappedReg,1
-,NodeFlush,0

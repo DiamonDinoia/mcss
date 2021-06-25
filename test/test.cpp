@@ -29,7 +29,7 @@ TEST_CASE("Correctness") {
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate();
-    auto dfeHistograms = Dfe::Simulate(GOLD, 100000000);
+    auto dfeHistograms = Dfe::Simulate(GOLD, 100000);
     std::cout << "Finished simulations" << std::endl;
 
     SECTION("Default K-S test p values are statistically significant") {

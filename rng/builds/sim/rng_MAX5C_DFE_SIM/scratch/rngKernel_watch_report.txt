@@ -1,3 +1,0 @@
-internal_watch_randnums_0_output*randnums_0*146*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_randnums_1_output*randnums_1*148*{HWFloat:8, 24}*0*DECIMAL:
-internal_watch_randnums_2_output*randnums_2*150*{HWFloat:8, 24}*0*DECIMAL:

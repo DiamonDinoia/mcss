@@ -1,8 +1,0 @@
-Top 10 largest FIFOs
-     Costs                                              From                                                To
-
-Top 10 lines with FIFO sinks
-     Costs                                              LineFIFO Count
-
-Top 10 lines with FIFO sources
-     Costs                                              LineFIFO Count
