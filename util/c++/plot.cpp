@@ -10,7 +10,7 @@ void createCSV(const Reference::Histograms& histograms) {
     auto longitudinal = histograms.longiHist;
     auto transverse = histograms.transHist;
     std::ofstream longFile;
-    longFile.open("../../plots/reference_longitudinal.csv");
+    longFile.open("plots/reference_longitudinal.csv");
     for (int i = 0; i < longiDistNumBin; i++) {
         longFile << ((i + 0.5) / longiDistInvD - 1.0) << "," << longitudinal[i]
                  << std::endl;
@@ -18,7 +18,7 @@ void createCSV(const Reference::Histograms& histograms) {
     longFile.close();
 
     std::ofstream transFile;
-    transFile.open("../../plots/reference_transverse.csv");
+    transFile.open("plots/reference_transverse.csv");
     for (int i = 0; i < transDistNumBin; i++) {
         transFile << (i + 0.5) / transDistInvD << "," << transverse[i]
                   << std::endl;
@@ -32,7 +32,7 @@ void createCSV(const T& histograms) {
     auto longitudinal = histograms.longiHist;
     auto transverse = histograms.transHist;
     std::ofstream longFile;
-    longFile.open("../../plots/multithreaded_longitudinal.csv");
+    longFile.open("plots/multithreaded_longitudinal.csv");
     for (int i = 0; i < longiDistNumBin; i++) {
         longFile << ((i + 0.5) / longiDistInvD - 1.0) << "," << longitudinal[i]
                  << std::endl;
@@ -40,7 +40,7 @@ void createCSV(const T& histograms) {
     longFile.close();
 
     std::ofstream transFile;
-    transFile.open("../../plots/multithreaded_transverse.csv");
+    transFile.open("plots/multithreaded_transverse.csv");
     for (int i = 0; i < transDistNumBin; i++) {
         transFile << (i + 0.5) / transDistInvD << "," << transverse[i]
                   << std::endl;
