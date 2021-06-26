@@ -30,16 +30,11 @@ if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
     add_subdirectory(test)
 endif ()
 
-include_directories(include)
-include_directories("${mcss_SOURCE_DIR}/*")
-include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc")
-include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc/max")
-
 set(MAXFILES_DIR "MCSScpu/max")
 # Directory containing the C/C++ sources
 set(CFILES_DIR "MCSScpu/src")
 # Directory containing the C/C++ headers
-set(INCLUDE_DIR "${mcss_SOURCE_DIR}/inc")
+set(INCLUDE_DIR "${mcss_SOURCE_DIR}/MCSSCPU/inc")
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
@@ -49,6 +44,12 @@ file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c*)
 message(STATUS "MAXFILES found ${MAXFILES}")
 message(STATUS "CFILES found ${CFILES}")
 message(STATUS "INCLUDE dirs ${INCLUDE_DIR}")
+
+include_directories(include)
+include_directories("${INCLUDE_DIR}")
+include_directories("${mcss_SOURCE_DIR}/*")
+include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc")
+include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc/max")
  
  
 # Using slic-config to specify the correct flags and libraries
@@ -60,7 +61,8 @@ if(SLIC_CONFIG)
 	# Output of slic-config starts with space -- cmake considers this as error
 	string(STRIP "${SLIC_LDFLAGS_QUOTED}" SLIC_LDFLAGS)
 	include_directories($ENV{MAXCOMPILERDIR}/include/slic)
-#	include_directories($ENV{MAXCOMPILERDIR}/src/slicinterface/)
+	include_directories($ENV{MAXCOMPILERDIR}/include/slic_maxeler)
+	include_directories($ENV{MAXCOMPILERDIR}/src/slicinterface/)
 else()
 	message(FATAL_ERROR "slic config not found")
 endif()
@@ -96,11 +98,12 @@ message(STATUS "max objects generated ${MAXOBJS}")
 
 #file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../MCSScpu/src/*")
 
-file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*" "${mcss_SOURCE_DIR}/MCSScpu/src/*")
+
+file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*")
 message(SOURCES = ${SOURCES})
 
 add_executable(mcss ${SOURCES} mcss.cpp)
 target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
 
 add_executable(plot ${SOURCES} ${CFILES} ${MAXOBJS} util/c++/plot.cpp)
-target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX)
+target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX ${SLIC_LDFLAGS})

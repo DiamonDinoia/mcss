@@ -16,7 +16,7 @@ public class MCSSManager extends MAX5CManager {
 	
 	void setupMax5(BuildConfig buildConf) {
 	// this is how to change the clock 250Mhz here
-		pushDefaultClock(generateStaticClock("MainClk", 200));
+		pushDefaultClock(generateStaticClock("MainClk", 250));
         buildConf.setImplementationStrategies(getImpStrategies());
         buildConf.setParallelism(8);
         buildConf.setImplementationNearMissRetries(2);
