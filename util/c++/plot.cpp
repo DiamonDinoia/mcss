@@ -3,6 +3,7 @@
 #include "common.h"
 #include "mcss_multithread.h"
 #include "mcss_reference.h"
+#include "mcss_dfe.h"
 
 // Overloaded function to create and save a histogram to a CSV file.
 void createCSV(const Reference::Histograms& histograms) {
@@ -26,7 +27,8 @@ void createCSV(const Reference::Histograms& histograms) {
 }
 
 // Overloaded function to create and save a histogram to a CSV file.
-void createCSV(const Multithread::Histograms& histograms) {
+template <typename T>
+void createCSV(const T& histograms) {
     auto longitudinal = histograms.longiHist;
     auto transverse = histograms.transHist;
     std::ofstream longFile;
@@ -48,7 +50,7 @@ void createCSV(const Multithread::Histograms& histograms) {
 
 // Creates data files representing histograms.
 int main() {
-    auto multithreadedHistograms = Multithread::Simulate(GOLD, 1000000);
+    auto dfeHistograms = Dfe::Simulate(GOLD, 1000000);
     auto referenceHistograms = Reference::Simulate(GOLD, 1000000);
     //    std::vector<real_type> referenceLongi(
     //        referenceHistograms.longiHist,
@@ -57,7 +59,7 @@ int main() {
     //        referenceHistograms.transHist,
     //        referenceHistograms.transHist + transDistNumBin);
 
-    createCSV(multithreadedHistograms);
+    createCSV(dfeHistograms);
     createCSV(referenceHistograms);
     return EXIT_SUCCESS;
 }

@@ -10,29 +10,12 @@ include_directories(include)
 include_directories("${tests_SOURCE_DIR}/../include")
 include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc")
 include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc/max")
-include_directories("${tests_SOURCE_DIR}/../MCSScpu/Includes")
-
-#file(GLOB_RECURSE MAX_INCLUDES "${tests_SOURCE_DIR}/../MCSScpu/Includes/*")
-#message(INCS = ${MAX_INCLUDES})
-#include_directories(${MAX_INCLUDES})
-
-#add_subdirectory("../MCSScpu/")
-
-#set(CFILES_DIR "../../MCSScpu/src")
-# Directory containing the C/C++ headers
-#set(INCLUDE_DIR "../../MCSScpu/inc")
-
-#include("${tests_SOURCE_DIR}/../MCSScpu/CMakeLists.txt")
-
 
 set(MAXFILES_DIR "../MCSScpu/max")
 # Directory containing the C/C++ sources
 set(CFILES_DIR "../MCSScpu/src")
 # Directory containing the C/C++ headers
 set(INCLUDE_DIR "../MCSScpu/inc")
- 
-include_directories("../../MCSScpu/inc")
-include_directories("../../MCSScpu/inc/max")
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
@@ -58,9 +41,9 @@ else()
 endif()
  
 # Directory for the compiled maxfiles
-set(MAXOBJS_DIR "../../MCSScpu/max")
+set(MAXOBJS_DIR "../MCSScpu/max")
 # List of the compiled object files used in the dependency tree 
-set(MAXOBJS "../../MCSScpu/")
+set(MAXOBJS "../MCSScpu/")
  
 # Using sliccompile to compile maxfiles
 FIND_PROGRAM(SLIC_COMPILE sliccompile)

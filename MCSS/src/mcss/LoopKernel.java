@@ -51,9 +51,6 @@ public class LoopKernel extends Kernel {
 		DFEVar carriedDirZ = dfeFloat(8, 24).newInstance(this);
 		DFEVar carriedTrackLength = dfeFloat(8, 24).newInstance(this);
 		DFEVar carriedLength = dfeFloat(8, 24).newInstance(this);
-		DFEVar carriedRandNum0 = dfeFloat(8, 24).newInstance(this);
-		DFEVar carriedRandNum1 = dfeFloat(8, 24).newInstance(this);
-		DFEVar carriedRandNum2 = dfeFloat(8, 24).newInstance(this);
 		
 		DFEVar reset = carriedLength > theLimit | init;
 		DFEVar posX = reset ? 0.0 : carriedPosX;
