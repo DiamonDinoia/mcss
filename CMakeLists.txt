@@ -30,9 +30,9 @@ if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
     add_subdirectory(test)
 endif ()
 
-set(MAXFILES_DIR "MCSScpu/max")
+set(MAXFILES_DIR "FPGA/CPU/max")
 # Directory containing the C/C++ sources
-set(CFILES_DIR "MCSScpu/src")
+set(CFILES_DIR "FPGA/CPU/src")
 # Directory containing the C/C++ headers
 set(INCLUDE_DIR "${mcss_SOURCE_DIR}/MCSSCPU/inc")
  
@@ -45,7 +45,7 @@ message(STATUS "MAXFILES found ${MAXFILES}")
 message(STATUS "CFILES found ${CFILES}")
 message(STATUS "INCLUDE dirs ${INCLUDE_DIR}")
 
-include_directories(include)
+include_directories(software-model/include)
 include_directories("${INCLUDE_DIR}")
 include_directories("${mcss_SOURCE_DIR}/*")
 include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc")
@@ -68,9 +68,9 @@ else()
 endif()
  
 # Directory for the compiled maxfiles
-set(MAXOBJS_DIR "/MCSScpu/max")
+set(MAXOBJS_DIR "/FPGA/CPU/max")
 # List of the compiled object files used in the dependency tree 
-set(MAXOBJS "MCSScpu/")
+set(MAXOBJS "FPGA/CPU/")
  
 # Using sliccompile to compile maxfiles
 FIND_PROGRAM(SLIC_COMPILE sliccompile)
@@ -96,13 +96,13 @@ endif()
  
 message(STATUS "max objects generated ${MAXOBJS}")
 
-#file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../MCSScpu/src/*")
+#file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../CPU/src/*")
 
 
 file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*")
 message(SOURCES = ${SOURCES})
 
-add_executable(mcss ${SOURCES} mcss.cpp)
+add_executable(mcss ${SOURCES} software-model/src/mcss.cpp)
 target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
 
 add_executable(plot ${SOURCES} ${CFILES} ${MAXOBJS} util/c++/plot.cpp)

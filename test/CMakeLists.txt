@@ -11,11 +11,11 @@ include_directories("${tests_SOURCE_DIR}/../include")
 include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc")
 include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc/max")
 
-set(MAXFILES_DIR "../MCSScpu/max")
+set(MAXFILES_DIR "../FPGA/CPU/max")
 # Directory containing the C/C++ sources
-set(CFILES_DIR "../MCSScpu/src")
+set(CFILES_DIR "../FPGA/CPU/src")
 # Directory containing the C/C++ headers
-set(INCLUDE_DIR "../MCSScpu/inc")
+set(INCLUDE_DIR "../FPGA/CPU/inc")
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
@@ -41,9 +41,9 @@ else()
 endif()
  
 # Directory for the compiled maxfiles
-set(MAXOBJS_DIR "../MCSScpu/max")
+set(MAXOBJS_DIR "../FPGA/CPU/max")
 # List of the compiled object files used in the dependency tree 
-set(MAXOBJS "../MCSScpu/")
+set(MAXOBJS "../FPGA/CPU")
  
 # Using sliccompile to compile maxfiles
 FIND_PROGRAM(SLIC_COMPILE sliccompile)

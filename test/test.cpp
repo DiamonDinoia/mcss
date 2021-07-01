@@ -29,7 +29,7 @@ TEST_CASE("Correctness") {
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate();
-    auto dfeHistograms = Dfe::Simulate(GOLD, 100000);
+    auto dfeHistograms = Dfe::Simulate(GOLD, 1000000);
     std::cout << "Finished simulations" << std::endl;
 
     SECTION("Default K-S test p values are statistically significant") {
@@ -65,31 +65,47 @@ TEST_CASE("Correctness") {
     SECTION("Water, 1,000,000 histories") {
         auto reference = Reference::Simulate(WATER, 1000000);
         auto multithreaded = Multithread::Simulate(WATER, 1000000);
+        auto dfe = Dfe::Simulate(WATER, 1000000);
         auto pValues = compareDistributions(reference, multithreaded);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        auto pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
-    SECTION("Air, 100,000 histories") {
-        auto reference = Reference::Simulate(AIR, 100000);
-        auto multithreaded = Multithread::Simulate(AIR, 100000);
+    SECTION("Air, 1,000,000 histories") {
+        auto reference = Reference::Simulate(AIR, 1000000);
+        auto multithreaded = Multithread::Simulate(AIR, 1000000);
+        auto dfe = Dfe::Simulate(AIR, 1000000);
         auto pValues = compareDistributions(reference, multithreaded);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        auto pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
-    SECTION("Bone, 100,000 histories") {
-        auto reference = Reference::Simulate(BONE, 100000);
-        auto multithreaded = Multithread::Simulate(BONE, 100000);
+    SECTION("Bone, 1,000,000 histories") {
+        auto reference = Reference::Simulate(BONE, 1000000);
+        auto multithreaded = Multithread::Simulate(BONE, 1000000);
+        auto dfe = Dfe::Simulate(BONE, 1000000);
         auto pValues = compareDistributions(reference, multithreaded);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        auto pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
 
-    SECTION("Tissue, 500,000 histories") {
-        auto reference = Reference::Simulate(TISSUE, 500000);
-        auto multithreaded = Multithread::Simulate(TISSUE, 500000);
+    SECTION("Tissue, 1,000,000 histories") {
+        auto reference = Reference::Simulate(TISSUE, 1000000);
+        auto multithreaded = Multithread::Simulate(TISSUE, 1000000);
+        auto dfe = Dfe::Simulate(TISSUE, 1000000);
         auto pValues = compareDistributions(reference, multithreaded);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        auto pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
@@ -100,6 +116,10 @@ TEST_CASE("Benchmarking") {
     Material material = GOLD;
     BENCHMARK("Reference") {
         return Reference::Simulate(material, numHists);
+    };
+
+    BENCHMARK("DFE") {
+        return Dfe::Simulate(material, numHists);
     };
 
     BENCHMARK("Multithreaded") {

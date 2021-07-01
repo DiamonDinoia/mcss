@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCatch2WithMain.a  CMakeFiles/Catch2WithMain.dir/src/catch_with_main.cpp.o
+/usr/bin/ranlib libCatch2WithMain.a
