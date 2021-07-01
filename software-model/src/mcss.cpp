@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
                     exit(EXIT_FAILURE);
                 }
                 break;
-            // Number of historieshistories
+            // Number of histories
             case 'n':
                 numHists = std::stoi(optarg);
                 if (numHists < 0) {
