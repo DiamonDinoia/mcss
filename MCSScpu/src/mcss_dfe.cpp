@@ -1,4 +1,5 @@
 #include <cstring>
+#include <chrono>
 
 #include "Maxfiles.h"
 #include "random_mt.h"
@@ -19,6 +20,8 @@ Histograms Simulate(Material material, int numHists) {
 
     double materialMolierBc = kMolierBc[material];
     double materialMolierXc2 = kMolierXc2[material];
+
+	std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 
 	max_file_t    *maxfile = MCSS_init();
 	max_actions_t *actions = max_actions_init( maxfile, NULL );
@@ -58,14 +61,25 @@ Histograms Simulate(Material material, int numHists) {
 	for (int i = 0; i < PARALLELISM; i++) {
 		for (int j = 0; j < 201; j++) {
 			longiDistr[j] += dataOut[i][j] * normalisationFactor;
-			std::cout << "longitudinal[" << j << "]: " << longiDistr[j] << std::endl;;
 		}
 
 		for (int j = 0; j < 101; j++) {
 			transDistr[j] += dataOut[i][j + 201] * normalisationFactor;
-			std::cout << "transverse[" << j << "]: " << transDistr[j] << std::endl;;
 		}
 	}
+
+	std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+
+	for (int j = 0; j < 201; j++) {
+		std::cout << "longitudinal[" << j << "]: " << longiDistr[j] << std::endl;
+	}
+
+	for (int j = 0; j < 101; j++) {
+		std::cout << "transverse[" << j << "]: " << transDistr[j] << std::endl;
+	}
+
+	std::chrono::duration<double> window = std::chrono::duration_cast<std::chrono::duration<double>>(end - start);
+	std::cout << "Time taken: " << window.count() << " seconds" << std::endl;
 
     return {longiDistr, transDistr};
 }

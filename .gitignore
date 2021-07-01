@@ -3,4 +3,9 @@ cmake-build-debug
 cmake-build-release
 MCSS/bin
 MCSS/builds
+MCSS/.dfeprojectproperties
+MCSS/.maxbuttons/Build
+MCSS/.maxdc_builds_MCSS
 MCSScpu/CMakeFiles
+plots
+
