@@ -30,27 +30,27 @@ if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
     add_subdirectory(test)
 endif ()
 
-set(MAXFILES_DIR "FPGA/CPU/max")
+set(MAXFILES_DIR "${mcss_SOURCE_DIR}/FPGA/CPU/max")
 # Directory containing the C/C++ sources
-set(CFILES_DIR "FPGA/CPU/src")
-# Directory containing the C/C++ headers
-set(INCLUDE_DIR "${mcss_SOURCE_DIR}/MCSSCPU/inc")
+set(CFILES_DIR "${mcss_SOURCE_DIR}/FPGA/CPU/src")
  
+file(GLOB INCLUDE 
+"${mcss_SOURCE_DIR}/FPGA/CPU/inc/max" 
+"${mcss_SOURCE_DIR}/FPGA/CPU/inc" 
+"${mcss_SOURCE_DIR}/FPGA/CPU/max"
+"${mcss_SOURCE_DIR}/FPGA/CPU"
+"${mcss_SOURCE_DIR}/software-model/include" 
+"${mcss_SOURCE_DIR}/FPGA/include" 
+"${mcss_SOURCE_DIR}/common/include" 
+"${mcss_SOURCE_DIR}/reference/include")
+include_directories(${INCLUDE}) 
+
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
 file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c*)
  
- 
 message(STATUS "MAXFILES found ${MAXFILES}")
 message(STATUS "CFILES found ${CFILES}")
-message(STATUS "INCLUDE dirs ${INCLUDE_DIR}")
-
-include_directories(software-model/include)
-include_directories("${INCLUDE_DIR}")
-include_directories("${mcss_SOURCE_DIR}/*")
-include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc")
-include_directories("${mcss_SOURCE_DIR}/MCSScpu/inc/max")
- 
  
 # Using slic-config to specify the correct flags and libraries
 FIND_PROGRAM(SLIC_CONFIG slic-config)
@@ -61,16 +61,14 @@ if(SLIC_CONFIG)
 	# Output of slic-config starts with space -- cmake considers this as error
 	string(STRIP "${SLIC_LDFLAGS_QUOTED}" SLIC_LDFLAGS)
 	include_directories($ENV{MAXCOMPILERDIR}/include/slic)
-	include_directories($ENV{MAXCOMPILERDIR}/include/slic_maxeler)
-	include_directories($ENV{MAXCOMPILERDIR}/src/slicinterface/)
 else()
 	message(FATAL_ERROR "slic config not found")
 endif()
  
 # Directory for the compiled maxfiles
-set(MAXOBJS_DIR "/FPGA/CPU/max")
+set(MAXOBJS_DIR "${mcss_SOURCE_DIR}/FPGA/CPU/max")
 # List of the compiled object files used in the dependency tree 
-set(MAXOBJS "FPGA/CPU/")
+set(MAXOBJS "${mcss_SOURCE_DIR}/FPGA/CPU")
  
 # Using sliccompile to compile maxfiles
 FIND_PROGRAM(SLIC_COMPILE sliccompile)
@@ -96,14 +94,18 @@ endif()
  
 message(STATUS "max objects generated ${MAXOBJS}")
 
-#file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../CPU/src/*")
-
-
-file(GLOB SOURCES "${mcss_SOURCE_DIR}/src/*")
+file(GLOB SOURCES 
+"${mcss_SOURCE_DIR}/common/src/*" 
+"${mcss_SOURCE_DIR}/FPGA/CPU/inc/max/*" 
+"${mcss_SOURCE_DIR}/FPGA/CPU/inc/*" 
+"${mcss_SOURCE_DIR}/reference/src/*" 
+"${mcss_SOURCE_DIR}/software-model/src/mcss_multithread.cpp"
+)
 message(SOURCES = ${SOURCES})
 
-add_executable(mcss ${SOURCES} software-model/src/mcss.cpp)
-target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
+add_executable(mcss ${SOURCES} ${CFILES} ${MAXOBJS} software-model/src/mcss.cpp)
+target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX ${SLIC_LDFLAGS})
 
 add_executable(plot ${SOURCES} ${CFILES} ${MAXOBJS} util/c++/plot.cpp)
+#add_executable(plot ${SOURCES} ${MAXOBJS})
 target_link_libraries(plot PUBLIC OpenMP::OpenMP_CXX ${SLIC_LDFLAGS})

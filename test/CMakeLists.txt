@@ -6,16 +6,23 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_definitions(-DTEST=42)
 
-include_directories(include)
-include_directories("${tests_SOURCE_DIR}/../include")
-include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc")
-include_directories("${tests_SOURCE_DIR}/../MCSScpu/inc/max")
-
 set(MAXFILES_DIR "../FPGA/CPU/max")
 # Directory containing the C/C++ sources
 set(CFILES_DIR "../FPGA/CPU/src")
 # Directory containing the C/C++ headers
 set(INCLUDE_DIR "../FPGA/CPU/inc")
+
+file(GLOB INCLUDE 
+"../FPGA/CPU/inc/max" 
+"../FPGA/CPU/inc" 
+"../FPGA/CPU/max"
+"../FPGA/CPU"
+"../software-model/include" 
+"../FPGA/include" 
+"../common/include" 
+"../reference/include"
+"../test/include")
+include_directories(${INCLUDE}) 
  
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
@@ -69,10 +76,15 @@ endif()
  
 message(STATUS "max objects generated ${MAXOBJS}")
 
-file(GLOB SOURCES "${tests_SOURCE_DIR}/*" "${tests_SOURCE_DIR}/../src/*" "${tests_SOURCE_DIR}/../MCSScpu/src/*")
-message(TEST SOURCES = ${SOURCES})
+file(GLOB SOURCES 
+"../common/src/*" 
+"../FPGA/CPU/inc/max/*" 
+"../FPGA/CPU/inc/*" 
+"../reference/src/*" 
+"../software-model/src/mcss_multithread.cpp"
+)
+message(SOURCES = ${SOURCES})
 
-add_executable(test ${SOURCES} ${CFILES} ${MAXOBJS})
-
+add_executable(test ${SOURCES} ${CFILES} ${MAXOBJS} test.cpp ksTest.cpp)
 find_package(OpenMP REQUIRED)
 target_link_libraries(test PUBLIC OpenMP::OpenMP_CXX ${SLIC_LDFLAGS})

@@ -4,7 +4,7 @@
 #include "Maxfiles.h"
 #include "random_mt.h"
 
-#include "../../../include/mcss_dfe.h"
+#include "mcss_dfe.h"
 
 #define PARALLELISM 15
 
@@ -23,7 +23,7 @@ Histograms Simulate(Material material, int numHists) {
 
 	std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 
-	max_file_t    *maxfile = MCSS_init();
+	max_file_t    *maxfile = DFE_init();
 	max_actions_t *actions = max_actions_init( maxfile, NULL );
 	max_engine_t  *engine  = max_load( maxfile, "*" );
 

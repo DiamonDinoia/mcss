@@ -69,7 +69,7 @@ TEST_CASE("Correctness") {
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
-        auto pValues = compareDistributions(reference, dfe);
+        pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
@@ -81,7 +81,7 @@ TEST_CASE("Correctness") {
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
-        auto pValues = compareDistributions(reference, dfe);
+        pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
@@ -93,7 +93,7 @@ TEST_CASE("Correctness") {
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
-        auto pValues = compareDistributions(reference, dfe);
+        pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }
@@ -105,7 +105,7 @@ TEST_CASE("Correctness") {
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
-        auto pValues = compareDistributions(reference, dfe);
+        pValues = compareDistributions(reference, dfe);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
     }

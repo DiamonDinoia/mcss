@@ -51,10 +51,10 @@ RM = /mnt/ccnas2/tdp/dc3117/cmake/cmake-3.12.3/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu
+CMAKE_SOURCE_DIR = /mnt/ccnas2/tdp/dc3117/max/mcss/FPGA/CPU
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu
+CMAKE_BINARY_DIR = /mnt/ccnas2/tdp/dc3117/max/mcss/FPGA/CPU
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +83,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/CMakeFiles /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/ccnas2/tdp/dc3117/max/mcss/FPGA/CPU/CMakeFiles /mnt/ccnas2/tdp/dc3117/max/mcss/FPGA/CPU/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/ccnas2/tdp/dc3117/max/mcss/MCSScpu/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/ccnas2/tdp/dc3117/max/mcss/FPGA/CPU/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

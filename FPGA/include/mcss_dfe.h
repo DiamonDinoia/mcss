@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "../../include/common.h"
+#include "common.h"
 
 namespace Dfe {
 struct Histograms {
