@@ -1,0 +1,66 @@
+package dfe;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration;
+import com.maxeler.maxcompiler.v2.managers.custom.DFELink;
+import com.maxeler.maxcompiler.v2.managers.custom.blocks.KernelBlock;
+import com.maxeler.platform.max5.manager.BuildConfig;
+import com.maxeler.platform.max5.manager.ImplementationStrategy;
+import com.maxeler.platform.max5.manager.MAX5CManager;;
+
+public class DFEManager extends MAX5CManager {
+
+	public static final String rngKernelName = "rngKernel";
+	public static final String loopKernelName = "loopKernel";
+	public static final String processingKernelName = "processingKernel";
+	
+	void setupMax5(BuildConfig buildConf) {
+	// this is how to change the clock 250Mhz here
+		pushDefaultClock(generateStaticClock("MainClk", 250));
+        buildConf.setImplementationStrategies(getImpStrategies());
+        buildConf.setParallelism(8);
+        buildConf.setImplementationNearMissRetries(2);
+        buildConf.setImplementationNearMissThreshold(2000);
+        KernelConfiguration kernelConfig = getCurrentKernelConfig();
+        kernelConfig.debug.setEnableLatencyAnnotation(true);
+    }
+	   
+    static ImplementationStrategy[] getImpStrategies() {
+        ImplementationStrategy[] strats = {ImplementationStrategy.MAXELER1, ImplementationStrategy.MAXELER2,
+                ImplementationStrategy.MAXELER3, ImplementationStrategy.MAXELER4,
+                ImplementationStrategy.PERFORMANCE_EXPLORE, ImplementationStrategy.PERFORMANCE_NET_DELAY_HIGH,
+                ImplementationStrategy.CONGESTION_SPREAD_LOGIC_HIGH, ImplementationStrategy.CONGESTION_SPREAD_LOGIC_EXPLORE,
+                ImplementationStrategy.AREA_EXPLORE_WITH_REMAP, ImplementationStrategy.PERFORMANCE_EXTRA_TIMING_OPT,
+                ImplementationStrategy.PERFORMANCE_NET_DELAY_LOW};
+       return strats;
+    }
+
+
+	public DFEManager(EngineParameters params) {
+		super(params);
+		setupMax5(getBuildConfig());
+		getCurrentKernelConfig().optimization.setInlining(true);
+
+		for (int i = 0; i < 15; i++) {
+			final KernelBlock rngKernel = addKernel(new RNGKernel(makeKernelParameters(rngKernelName + i)));
+			final KernelBlock loopKernel = addKernel(new LoopKernel(makeKernelParameters(loopKernelName + i)));
+			final KernelBlock processingKernel = addKernel(new ProcessingKernel(makeKernelParameters(processingKernelName + i)));
+			
+			DFELink y = rngKernel.getOutput("y");
+			
+			loopKernel.getInput("y") <== y;
+			DFELink z = loopKernel.getOutput("z");
+			
+			processingKernel.getInput("z") <== z;
+			DFELink output = addStreamToCPU("output" + i);
+			output <== processingKernel.getOutput("output");
+		}
+	}
+
+	public static void main(final String[] argv) {
+		final EngineParameters params = new EngineParameters(argv);
+		final DFEManager manager = new DFEManager(params);
+		manager.build();
+	}
+
+}

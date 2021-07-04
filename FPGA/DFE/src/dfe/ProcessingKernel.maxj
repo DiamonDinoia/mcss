@@ -1,0 +1,64 @@
+package dfe;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.op_management.MathOps;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+
+public class ProcessingKernel extends Kernel {
+	@SuppressWarnings("deprecation")
+	public ProcessingKernel(final KernelParameters parameters) {
+		super(parameters);
+		
+		DFEVar h = io.scalarInput("numHists", dfeUInt(64));
+		
+		DFEVar count = control.count.simpleCounter(64);
+		DFEVectorType<DFEVar> histogramType = new DFEVectorType<DFEVar>(dfeUInt(32), 304);
+		DFEVector<DFEVar> histograms = histogramType.newInstance(this);
+		
+		DFEVectorType<DFEVar> trackType = new DFEVectorType<DFEVar>(dfeFloat(8, 24), 4);
+		DFEVector<DFEVar> track = io.input("z", trackType);
+		
+		DFEVar longi = track[2] / track[3];
+		DFEVar lInd = (longi + 1.0) * Constants.longiDistInvD;
+		lInd = lInd.cast(dfeUInt(32));
+
+		DFEVar trans = KernelMath.sqrt(track[0] * track[0] + track[1] * track[1]) / track[3];
+		DFEVar tInd = KernelMath.floor(trans * Constants.transDistInvD, dfeUInt(32));
+		
+		DFEVar p = control.count.pulse(1);
+		for (int i = 0; i < 101; i++) {
+			optimization.pushPipeliningFactor(0);
+			optimization.pushFixOpModeDefault(MathOps.ALL);
+			DFEVar correctBucketLong = i === lInd;
+			correctBucketLong = correctBucketLong.cast(dfeUInt(32));
+			histograms[i] <== p ? correctBucketLong : (stream.offset(histograms[i], -1) + correctBucketLong);
+			
+			DFEVar correctBucketTrans = i === tInd;
+			correctBucketTrans = correctBucketTrans.cast(dfeUInt(32));
+			histograms[i + 201] <== p ? correctBucketTrans : (stream.offset(histograms[i + 201], -1) + correctBucketTrans);
+			optimization.popFixOpMode(MathOps.ALL);
+			optimization.popPipeliningFactor();
+		}
+		
+		for (int i = 101; i < 201; i++) {
+			optimization.pushPipeliningFactor(0);
+			optimization.pushFixOpModeDefault(MathOps.ALL);
+			DFEVar correctBucket = i === lInd;
+			correctBucket = correctBucket.cast(dfeUInt(32));
+			histograms[i] <== p ? correctBucket : (stream.offset(histograms[i], -1) + correctBucket);
+			optimization.popFixOpMode(MathOps.ALL);
+			optimization.popPipeliningFactor();
+		}
+		
+		histograms[302] <== constant.var(dfeUInt(32), 0);
+		histograms[303] <== constant.var(dfeUInt(32), 0);
+		
+		// Output
+		io.output("output", histograms, histogramType, count + 1 === h);
+	}
+
+}
