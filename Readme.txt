@@ -41,11 +41,24 @@ https://indico.fnal.gov/event/9717/contributions/115128/attachments/74561/89448/
 
 Compile and Run
 ----------------
+To run the multithreaded CPU version:
+	1. cmake .
+	2. make
+	3. ./mcss
 
-There is no any dependencies and everything is implemented in the single `mcss.cc`
-source file. Some C++11 functionalities are used to generate uniformly random 
-variable values on [0,1) so easy to compile and execute:  
+To run the FPGA version, create a DFE hardware build. Then:
+	1. cd FPGA/CPU
+	2. cmake .
+	3. make
+	4. ./mcss
 
-    Compile :  g++ -std=c++11 -O3 -o mcss mcss.cc 
-    Run     : ./mcss
+To run the tests:
+	1. cd test
+	2. cmake .
+	3. make
+	4. ./test
+
+The number of threads for the multithreaded CPU version can be changed via -t, and the material and number of histories for both versions can be changed with -m and -n, respectively.
+Example usage:
+	./mcss -m 3 -n 10000000
 
