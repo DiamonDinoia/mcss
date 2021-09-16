@@ -71,4 +71,8 @@ struct Track {
     }
 };
 
+struct Histograms {
+    std::vector<real_type> longiHist;
+    std::vector<real_type> transHist;
+};
 #endif
