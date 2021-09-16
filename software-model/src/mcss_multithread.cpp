@@ -91,7 +91,7 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 
     // Thread-specific histograms are combined and normalised
     // to form the overall distributions.
-    for (int i = 0; i < numThreads; i++) {
+    for (unsigned int i = 0; i < numThreads; i++) {
         for (int j = 0; j < longiDistNumBin; j++) {
             globalLongiDistr[j] += threadsLongiHists[i][j] * (longiDistInvD / numHists);
         }
