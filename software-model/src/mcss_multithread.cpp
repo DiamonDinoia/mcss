@@ -99,7 +99,6 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
             globalTransDistr[j] += threadsTransHists[i][j] * (transDistInvD / numHists);
         }
     }
-
     return {globalLongiDistr, globalTransDistr};
 }
 }  // namespace Multithread

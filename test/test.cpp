@@ -14,9 +14,8 @@
 // multi-threaded implementation in order to check correctness.
 // Returns a vector including the longitudinal and transverse
 // values of the K-S test.
-template <class T>
-std::vector<double> compareDistributions(Histograms originalHistograms,
-                                         T histograms) {
+std::vector<double> compareDistributions(const Histograms& originalHistograms,
+                                         const Histograms& histograms) {
     double pLong = ks_test(originalHistograms.longiHist, histograms.longiHist);
     double pTrans = ks_test(originalHistograms.transHist, histograms.transHist);
     return std::vector<double>{pLong, pTrans};
@@ -61,13 +60,9 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Histogram lengths are consistent") {
-        REQUIRE(sizeof(referenceHistograms.longiHist) /
-                    sizeof(referenceHistograms.longiHist[0]) ==
+        REQUIRE(referenceHistograms.longiHist.size() ==
                 multithreadedHistograms.longiHist.size());
-        REQUIRE(sizeof(referenceHistograms.transHist) /
-                    sizeof(referenceHistograms.transHist[0]) ==
-                multithreadedHistograms.transHist.size());
-        REQUIRE(multithreadedHistograms.longiHist.size() !=
+        REQUIRE(referenceHistograms.transHist.size() ==
                 multithreadedHistograms.transHist.size());
     }
 
@@ -140,9 +135,11 @@ TEST_CASE("Correctness") {
 TEST_CASE("Benchmarking") {
     int numHists = 1000000;
     Material material = GOLD;
-    BENCHMARK("Reference") { Reference::Simulate(material, numHists); };
+    BENCHMARK("Reference") { return Reference::Simulate(material, numHists); };
 #ifdef FPGA_BUILD
     BENCHMARK("DFE") { return Dfe::Simulate(material, numHists); };
 #endif
-    BENCHMARK("Multithreaded") { Multithread::Simulate(material, numHists); };
+    BENCHMARK("Multithreaded") {
+        return Multithread::Simulate(material, numHists);
+    };
 }

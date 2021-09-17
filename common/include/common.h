@@ -12,10 +12,11 @@
 #include <random>
 #include <thread>
 #include <type_traits>
+#include <utility>
 
 #if defined(SINGLE)
 using real_type = float;
-#else  // SINGLE
+#else   // SINGLE
 using real_type = double;
 #endif  // SINGLE
 
@@ -23,8 +24,7 @@ enum Material { WATER, AIR, BONE, TISSUE, GOLD };
 
 real_type computeScrParam(const Material &mat, real_type ptot2);
 
-real_type computeMFP(const Material &mat, real_type beta2,
-                     real_type scrpar);
+real_type computeMFP(const Material &mat, real_type beta2, real_type scrpar);
 
 real_type sampleCosTheta(real_type scrpar, real_type rn);
 
@@ -74,5 +74,12 @@ struct Track {
 struct Histograms {
     std::vector<real_type> longiHist;
     std::vector<real_type> transHist;
+    Histograms(const unsigned long longBins, const unsigned long transBins)
+        : longiHist(longBins), transHist(transBins) {}
+
+    Histograms(std::vector<real_type> longi_hist,
+               std::vector<real_type> trans_hist)
+        : longiHist(std::move(longi_hist)), transHist(std::move(trans_hist)) {}
+    Histograms() = default;
 };
 #endif
