@@ -1,4 +1,4 @@
-package dfe;
+package uk.ac.imperial.mcss;
 
 import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
 import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;

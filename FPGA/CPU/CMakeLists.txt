@@ -1,38 +1,14 @@
 cmake_minimum_required(VERSION 3.9.4)
  
-project(mcss)
- 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_VERBOSE_MAKEFILE ON)
-set(DCMAKE_RULE_MESSAGES OFF)
- 
-# Setting Some compilation flags
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_CXX_STANDARD 11)
- 
-add_compile_options(-Wall -Wextra -pedantic)
- 
-if (CMAKE_BUILD_TYPE MATCHES Debug)
-	message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")	
-endif ()
-if (CMAKE_BUILD_TYPE MATCHES Release)
-	message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-	add_compile_options(-ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
-	add_compile_options(-march=native)
-	set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
-endif ()
- 
-set(MAXFILES_DIR "max")
-# Directory containing the C/C++ sources
-set(CFILES_DIR "src")
+project(mcss_dfe)
 
-file(GLOB INCLUDE 
-"${mcss_SOURCE_DIR}/inc/max" 
-"${mcss_SOURCE_DIR}/inc"
-"${mcss_SOURCE_DIR}/../../common/include" 
-"${mcss_SOURCE_DIR}/../include")
-include_directories(${INCLUDE})
- 
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+
+include_directories(inc)
+
+set(CFILES src)
+set(MAXFILES max)
+
 # Recursively find all the files in the specified directories
 file(GLOB_RECURSE MAXFILES ${MAXFILES_DIR}/*.max)
 file(GLOB_RECURSE CFILES ${CFILES_DIR}/*.c* mcss.cpp)

@@ -4,17 +4,19 @@ project(mcss)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(DCMAKE_RULE_MESSAGES OFF)
+
 find_package(OpenMP REQUIRED)
+set(LIBRARIES OpenMP::OpenMP_CXX)
 
 if (NOT DEFINED SINGLE)
     set(SINGLE ON)
     add_definitions("-DSINGLE")
 endif ()
 
-if (FPGA_BUILD)
-    add_subdirectory(FPGA)
-    add_definitions(FPGA_BUILD)
-endif ()
+
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
     add_compile_options(-fstack-protector-all)
@@ -45,11 +47,25 @@ file(GLOB SOURCES
         "${mcss_SOURCE_DIR}/software-model/src/*.cpp"
         )
 
+set(INCLUDE_DIRS "")
+if (FPGA_BUILD)
+    add_definitions(-DFPGA_BUILD)
+    add_subdirectory(FPGA)
+    include_directories(${INCLUDE_DIRS})
+endif ()
+
 if (TESTS)
     add_subdirectory(test)
 endif ()
 
+
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+foreach(dir ${dirs})
+  message(STATUS "dir='${dir}'")
+endforeach()
+
 message(SOURCES = ${SOURCES})
+message(LIBRARIES = ${LIBRARIES})
 
 add_executable(mcss mcss.cpp ${SOURCES})
-target_link_libraries(mcss PUBLIC OpenMP::OpenMP_CXX)
+target_link_libraries(mcss PUBLIC ${LIBRARIES})
