@@ -68,7 +68,7 @@ Histograms Simulate(Material material, int numHists) {
     double longiNormFactor = 1.0 / numHists * longiDistInvD;
     double transNormFactor = 1.0 / numHists * transDistInvD;
 
-    Histograms histograms = {};
+    Histograms histograms{longiDistNumBin, transDistNumBin};
     for (int i = 0; i < longiDistNumBin; i++) {
         histograms.longiHist[i] = theLongiDistr[i] * (longiDistInvD / numHists);
     }

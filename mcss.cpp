@@ -70,8 +70,8 @@ int main(int argc, char *argv[]) {
                 exit(EXIT_FAILURE);
         }
     }
-    const auto start = std::chrono::steady_clock::now();  // get the time...
     Histograms histograms;
+    const auto start = std::chrono::steady_clock::now();  // get the time...
     if (numThreads > 1) {
         histograms = Multithread::Simulate(material, numHists, numThreads);
     } else {
