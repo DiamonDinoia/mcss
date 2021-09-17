@@ -1,4 +1,4 @@
-package dfe;
+package uk.ac.imperial.mcss;
 
 import maxpower.kernel.random.MersenneTwister;
 

@@ -1,4 +1,4 @@
-package dfe;
+package uk.ac.imperial.mcss;
 
 public class Constants {
 	// Constants

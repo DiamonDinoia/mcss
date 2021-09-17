@@ -1,4 +1,4 @@
-package dfe;
+package uk.ac.imperial.mcss;
 
 import maxpower.math.functions.Arithmetic;
 import maxpower.math.functions.Trigonometric;

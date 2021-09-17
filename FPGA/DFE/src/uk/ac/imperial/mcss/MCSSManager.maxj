@@ -1,6 +1,7 @@
-package dfe;
+package uk.ac.imperial.mcss;
 
 import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.build.EngineParameters.Target;
 import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration;
 import com.maxeler.maxcompiler.v2.managers.custom.DFELink;
 import com.maxeler.maxcompiler.v2.managers.custom.blocks.KernelBlock;
@@ -8,7 +9,7 @@ import com.maxeler.platform.max5.manager.BuildConfig;
 import com.maxeler.platform.max5.manager.ImplementationStrategy;
 import com.maxeler.platform.max5.manager.MAX5CManager;;
 
-public class DFEManager extends MAX5CManager {
+public class MCSSManager extends MAX5CManager {
 
 	public static final String rngKernelName = "rngKernel";
 	public static final String loopKernelName = "loopKernel";
@@ -36,7 +37,7 @@ public class DFEManager extends MAX5CManager {
     }
 
 
-	public DFEManager(EngineParameters params) {
+	public MCSSManager(EngineParameters params) {
 		super(params);
 		setupMax5(getBuildConfig());
 		getCurrentKernelConfig().optimization.setInlining(true);
@@ -57,9 +58,15 @@ public class DFEManager extends MAX5CManager {
 		}
 	}
 
-	public static void main(final String[] argv) {
-		final EngineParameters params = new EngineParameters(argv);
-		final DFEManager manager = new DFEManager(params);
+	public static void main(final String[] args) {
+		final Target target;
+        if (args.length > 0 && args[0].equals("DFE")) {
+            target = Target.DFE;
+        } else {
+            target = Target.DFE_SIM;
+        }
+		final EngineParameters params = new EngineParameters("MCSS_DFE", target);
+		final MCSSManager manager = new MCSSManager(params);
 		manager.build();
 	}
 
