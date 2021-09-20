@@ -11,4 +11,5 @@ add_definitions(-DTEST=42)
 include_directories(include)
 
 add_executable(test test.cpp ksTest.cpp ${SOURCES})
-target_link_libraries(test PUBLIC OpenMP::OpenMP_CXX Catch2::Catch2)
+list(APPEND LIBRARIES Catch2::Catch2)
+target_link_libraries(test PUBLIC ${LIBRARIES})
