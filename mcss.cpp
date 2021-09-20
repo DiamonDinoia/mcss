@@ -6,6 +6,10 @@
 #include "mcss_multithread.h"
 #include "mcss_reference.h"
 
+#ifdef FPGA_BUILD
+#include "mcss_dfe.h"
+#endif
+
 // Overloaded function to create and save a histogram to a CSV file.
 void createCSV(const Histograms& histograms, const std::string& filename) {
     auto longitudinal = histograms.longiHist;
@@ -27,14 +31,18 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
     transFile.close();
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
     int numHists = 1000000;
     std::string filename;
+#ifdef FPGA_BUILD
+    bool use_dfe = false;
+#endif
+
     unsigned int numThreads = std::thread::hardware_concurrency();
     // Input flag options.
-    while ((opt = getopt(argc, argv, "m:n:t:f:")) != -1) {
+    while ((opt = getopt(argc, argv, "m:n:t:f:d")) != -1) {
         switch (opt) {
             // Material
             case 'm':
@@ -65,6 +73,11 @@ int main(int argc, char *argv[]) {
             case 'f':
                 filename = optarg;
                 break;
+#ifdef FPGA_BUILD
+            case 'd':
+                use_dfe = true;
+                break;
+#endif
             default:
                 std::cerr << "Invalid program options" << std::endl;
                 exit(EXIT_FAILURE);
@@ -72,11 +85,17 @@ int main(int argc, char *argv[]) {
     }
     Histograms histograms;
     const auto start = std::chrono::steady_clock::now();  // get the time...
+#ifdef FPGA_BUILD
+    if (use_dfe) {
+        histograms = Dfe::Simulate(material, numHists);
+    } else
+#endif
     if (numThreads > 1) {
         histograms = Multithread::Simulate(material, numHists, numThreads);
     } else {
         histograms = Reference::Simulate(material, numHists);
     }
+
     const auto end = std::chrono::steady_clock::now();  // get the time...
     std::chrono::duration<double, std::milli> timeRequired = (end - start);
     std::cout << "Monte Carlo Simulation required " << timeRequired.count()
