@@ -66,3 +66,6 @@ Compile and Run
 Example usage:
 	./mcss -m 3 -n 10000000
 
+Acknowledgements: 
+	1. topas for providing ks-test.cpp https://github.com/tumi8/topas/blob/master/detectionmodules/statmodules/wkp-module/ks-test.cpp
+	2. Geant4 for providing the original algorithm https://geant4.web.cern.ch/
