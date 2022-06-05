@@ -14,26 +14,12 @@ if (NOT DEFINED SINGLE)
     add_definitions("-DSINGLE")
 endif ()
 
+if (GPU)
+    enable_language(CUDA)
+endif ()
+
 find_package(OpenMP REQUIRED)
 set(LIBRARIES OpenMP::OpenMP_CXX)
-
-
-
-if (CMAKE_BUILD_TYPE MATCHES Debug)
-    add_compile_options(-fstack-protector-all)
-    add_compile_options(-Wall -Wextra -pedantic)
-endif ()
-
-if (CMAKE_BUILD_TYPE MATCHES Release)
-    add_compile_options(-O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
-    add_compile_options(-march=native)
-endif ()
-
-if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
-    add_compile_options(-g -fno-omit-frame-pointer)
-    add_compile_options(-O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants)
-    add_compile_options(-march=native)
-endif ()
 
 
 include_directories(
@@ -119,6 +105,30 @@ if (FPGA_BUILD)
     list(APPEND LIBRARIES ${SLIC_LDFLAGS})
 endif ()
 
+
+
+
+
+if (GPU)
+	
+	include_directories("${mcss_SOURCE_DIR}/GPU/include")
+	file(GLOB CUFILES "${mcss_SOURCE_DIR}/GPU/src/*.cu")
+	list(APPEND SOURCES ${CUFILES})
+
+	add_definitions(-DGPU)
+		
+    find_package(CUDA REQUIRED)
+	
+    CUDA_SELECT_NVCC_ARCH_FLAGS(CUDA_ARCHS 3.5 5.0 5.2 5.3 6.0 6.2 7.0 7.5)
+	
+    include_directories(${CUDA_INCLUDE_DIRS})
+    list(APPEND LIBRARIES ${CUDA_LIBRARIES})
+
+endif ()
+
+
+
+
 if (TESTS)
     add_subdirectory(test)
 endif ()
@@ -134,3 +144,38 @@ message(LIBRARIES = ${LIBRARIES})
 
 add_executable(mcss mcss.cpp ${SOURCES})
 target_link_libraries(mcss PUBLIC ${LIBRARIES})
+
+
+
+
+# -arch= Needs to be set in accordance with the GPU architecture that the CUDA files will be compiled for.
+if (GPU)
+	target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-arch=sm_61 -Xcompiler>)
+endif ()
+
+
+
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -fstack-protector-all>)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -Wall -Wextra -pedantic>)
+endif ()
+
+if (CMAKE_BUILD_TYPE MATCHES Release)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants>)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -march=native>)
+endif ()
+
+if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -g -fno-omit-frame-pointer>)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants>)
+    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -march=native>)
+endif ()
+
+
+
+
+
+
+
+
+
