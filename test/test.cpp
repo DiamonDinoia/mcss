@@ -10,6 +10,10 @@
 #include "mcss_dfe.h"
 #endif
 
+#ifdef GPU
+#include "mcss_gpu.cuh"
+#endif
+
 // Compare the distributions of the original MCSS program with the
 // multi-threaded implementation in order to check correctness.
 // Returns a vector including the longitudinal and transverse
@@ -28,6 +32,11 @@ TEST_CASE("Correctness") {
 #ifdef FPGA_BUILD
     auto dfeHistograms = Dfe::Simulate(GOLD, 1000000);
 #endif
+
+#ifdef GPU
+    auto gpuHistograms = Gpu::Simulate(GOLD, 1000000);
+#endif
+
     std::cout << "Finished simulations" << std::endl;
 
     SECTION("Default K-S test p values are statistically significant") {
@@ -50,6 +59,18 @@ TEST_CASE("Correctness") {
         std::cout << "DFE: Transverse K-S test p-value is " << pValues[1] << "."
                   << std::endl;
 #endif
+
+#ifdef GPU
+
+        pValues = compareDistributions(referenceHistograms, gpuHistograms);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+        std::cout << "GPU: Longitudinal K-S test p-value is " << pValues[0]
+                  << "." << std::endl;
+        std::cout << "GPU: Transverse K-S test p-value is " << pValues[1] << "."
+                  << std::endl;
+#endif
+
     }
 
     SECTION(
@@ -72,6 +93,11 @@ TEST_CASE("Correctness") {
 #ifdef FPGA_BUILD
         auto dfe = Dfe::Simulate(WATER, 1000000);
 #endif
+
+#ifdef GPU
+        auto gpu = Gpu::Simulate(WATER, 1000000);
+#endif
+
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
@@ -80,6 +106,13 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
+
+#ifdef GPU
+        pValues = compareDistributions(reference, gpu);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+#endif
+
     }
 
     SECTION("Air, 1,000,000 histories") {
@@ -88,6 +121,11 @@ TEST_CASE("Correctness") {
 #ifdef FPGA_BUILD
         auto dfe = Dfe::Simulate(AIR, 1000000);
 #endif
+
+#ifdef GPU
+        auto gpu = Gpu::Simulate(AIR, 1000000);
+#endif
+
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
@@ -96,6 +134,13 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
+
+#ifdef GPU
+        pValues = compareDistributions(reference, gpu);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+#endif
+
     }
 
     SECTION("Bone, 1,000,000 histories") {
@@ -104,11 +149,20 @@ TEST_CASE("Correctness") {
 #ifdef FPGA_BUILD
         auto dfe = Dfe::Simulate(BONE, 1000000);
 #endif
+
+#ifdef GPU
+        auto gpu = Gpu::Simulate(BONE, 1000000);
+#endif
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #ifdef FPGA_BUILD
         pValues = compareDistributions(reference, dfe);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+#endif
+#ifdef GPU
+        pValues = compareDistributions(reference, gpu);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
@@ -121,6 +175,11 @@ TEST_CASE("Correctness") {
 
         auto dfe = Dfe::Simulate(TISSUE, 1000000);
 #endif
+
+#ifdef GPU
+        auto gpu = Gpu::Simulate(TISSUE, 1000000);
+#endif
+
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
@@ -129,6 +188,14 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
+
+#ifdef GPU
+        pValues = compareDistributions(reference, gpu);
+        REQUIRE(pValues[0] >= 0.95);
+        REQUIRE(pValues[1] >= 0.95);
+#endif
+
+
     }
 }
 
@@ -139,6 +206,11 @@ TEST_CASE("Benchmarking") {
 #ifdef FPGA_BUILD
     BENCHMARK("DFE") { return Dfe::Simulate(material, numHists); };
 #endif
+
+#ifdef GPU
+    BENCHMARK("GPU") { return Gpu::Simulate(material, numHists); };
+#endif
+
     BENCHMARK("Multithreaded") {
         return Multithread::Simulate(material, numHists);
     };
