@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(mcss)
+project(mcss LANGUAGES CXX)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
@@ -7,7 +7,85 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(DCMAKE_RULE_MESSAGES OFF)
+set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
+Include(FetchContent)
+include(CheckLanguage)
+
+if ("cxx_std_23" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    message(STATUS "Using C++23 standard")
+    set(CMAKE_CXX_STANDARD 23)
+elseif ("cxx_std_20" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    message(STATUS "Using C++20 standard")
+    set(CMAKE_CXX_STANDARD 20)
+elseif ("cxx_std_17" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    set(CMAKE_CXX_STANDARD 17)
+    message(STATUS "Detected support for C++17 standard")
+elseif ("cxx_std_14" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    set(CMAKE_CXX_STANDARD 14)
+    message(STATUS "Detected support for C++14 standard")
+elseif ("cxx_std_11" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    set(CMAKE_CXX_STANDARD 11)
+    message(STATUS "Detected support for C++14 standard")
+else ()
+    message(FATAL_ERROR "Cannot detect CXX_STANDARD of C++14 or newer.")
+endif ()
+
+if (GPU)
+    check_language(CUDA)
+    if (NOT CMAKE_CUDA_COMPILER)
+        message(FATAL_ERROR "Requested CUDA support, but no CMAKE_CUDA_COMPILER available")
+    endif ()
+    enable_language(CUDA)
+    if ("cuda_std_23" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
+        set(CMAKE_CUDA_STANDARD 23)
+        message(STATUS "Detected support for CUDA20 standard")
+    elseif ("cuda_std_20" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
+        set(CMAKE_CUDA_STANDARD 20)
+        message(STATUS "Detected support for CUDA20 standard")
+    elseif ("cuda_std_17" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
+        set(CMAKE_CUDA_STANDARD 17)
+        message(STATUS "Detected support for CUDA17 standard")
+    elseif ("cuda_std_14" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
+        set(CMAKE_CUDA_STANDARD 14)
+        message(STATUS "Detected support for CUDA14 standard")
+    elseif ("cuda_std_11" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
+        set(CMAKE_CUDA_STANDARD 11)
+        message(STATUS "Detected support for CUDA14 standard")
+    else ()
+        message(FATAL_ERROR "Cannot detect CUDA_STANDARD of C++14 or newer.")
+    endif ()
+    set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+endif ()
+
+function(add_compilation_flags variableName)
+    set(old_flags ${${variableName}})
+    message(STATUS "COMPILATION FLAGS ${old_flags}")
+    if (GPU)
+        if (NOT "${old_flags}" STREQUAL "")
+            string(REPLACE ";" "," CUDA_flags "${old_flags}")
+            string(REPLACE "-pedantic" "-Wno-pedantic" CUDA_flags "${CUDA_flags}")
+            add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${old_flags}>$<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=${CUDA_flags}>")
+        endif ()
+    else ()
+        add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:${old_flags}>")
+    endif ()
+endfunction()
+
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    set(FLAGS -O0 -fstack-protector-all -Wall -Wextra -pedantic)
+    add_compile_options("$<$<COMPILE_LANGUAGE:CUDA>:-G>")
+elseif (CMAKE_BUILD_TYPE MATCHES Release)
+    set(FLAGS -fcx-limited-range -ffp-contract=fast -freciprocal-math
+            -fmerge-all-constants -fno-math-errno -march=native -funroll-loops
+            -ftree-vectorize)
+elseif (CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
+    set(FLAGS -g -fno-omit-frame-pointer -fcx-limited-range
+            -ffp-contract=fast -freciprocal-math -fmerge-all-constants
+            -fno-math-errno -march=native -funroll-loops -ftree-vectorize)
+endif ()
+
+add_compilation_flags(FLAGS)
 
 if (NOT DEFINED SINGLE)
     set(SINGLE ON)
@@ -106,72 +184,64 @@ if (FPGA_BUILD)
 endif ()
 
 
-
-
-
 if (GPU)
-	
-	include_directories("${mcss_SOURCE_DIR}/GPU/include")
-	file(GLOB CUFILES "${mcss_SOURCE_DIR}/GPU/src/*.cu")
-	list(APPEND SOURCES ${CUFILES})
+    if (${CMAKE_VERSION} VERSION_LESS_EQUAL "3.13.4")
+        cuda_select_nvcc_arch_flags(ARCH_FLAGS "Auto") # optional argument for arch to add
+        message("ARCH_FLAGS = ${ARCH_FLAGS}")
+        string(REPLACE "-gencode;" "--generate-code=" ARCH_FLAGS "${ARCH_FLAGS}")
+        string(APPEND CMAKE_CUDA_FLAGS "${ARCH_FLAGS}")
+    else ()
+        include(FindCUDA/select_compute_arch)
+        CUDA_DETECT_INSTALLED_GPUS(INSTALLED_GPU_CCS_1)
+        string(STRIP "${INSTALLED_GPU_CCS_1}" INSTALLED_GPU_CCS_2)
+        string(REPLACE " " ";" INSTALLED_GPU_CCS_3 "${INSTALLED_GPU_CCS_2}")
+        string(REPLACE "." "" CUDA_ARCH_LIST "${INSTALLED_GPU_CCS_3}")
+        SET(CMAKE_CUDA_ARCHITECTURES ${CUDA_ARCH_LIST})
+        set_property(GLOBAL PROPERTY CUDA_ARCHITECTURES "${CUDA_ARCH_LIST}")
+    endif ()
+    list(APPEND GPU_FLAGS -Wno-deprecated-gpu-targets --default-stream per-thread
+            --use_fast_math --extra-device-vectorization --expt-relaxed-constexpr
+            --extended-lambda --restrict --ptxas-options=-v)
+    add_compile_options("$<$<COMPILE_LANGUAGE:CUDA>:${GPU_FLAGS}>")
+    find_package(CUDAToolkit REQUIRED)
+    message("CUDA INCLUDE ${CUDA_INCLUDE_DIRS}")
+    message(STATUS "CUDA Version: ${CUDAToolkit_VERSION_MAJOR}")
+    message(STATUS "CUDA Path: ${CMAKE_CUDA_COMPILER}")
+    message(STATUS "CUDA CUDAToolkit include: ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}")
+    list(APPEND LIBRARIES CUDA::cudart_static CUDA::curand_static)
+    FetchContent_Declare(
+            cudawrappers
+            GIT_REPOSITORY https://github.com/eyalroz/cuda-api-wrappers.git
+            GIT_TAG v0.5.0
+            GIT_SHALLOW TRUE
+            GIT_PROGRESS TRUE)
+    FetchContent_GetProperties(cudawrappers)
+    if (NOT CUDAWRAPPERS_POPULATED)
+        FetchContent_Populate(cudawrappers)
+        add_subdirectory(${cudawrappers_SOURCE_DIR} ${cudawrappers_BINARY_DIR} EXCLUDE_FROM_ALL)
+        list(APPEND LIBRARIES runtime-and-driver)
+    endif ()
+    message("GPU LIBRARIES: ${LIBRARIES}")
 
-	add_definitions(-DGPU)
-		
-    find_package(CUDA REQUIRED)
-	
-    CUDA_SELECT_NVCC_ARCH_FLAGS(CUDA_ARCHS 3.5 5.0 5.2 5.3 6.0 6.2 7.0 7.5)
-	
-    include_directories(${CUDA_INCLUDE_DIRS})
-    list(APPEND LIBRARIES ${CUDA_LIBRARIES})
-
+    include_directories("${mcss_SOURCE_DIR}/GPU/include")
+    file(GLOB CUFILES "${mcss_SOURCE_DIR}/GPU/src/*.cu")
+    list(APPEND SOURCES ${CUFILES})
 endif ()
-
-
-
 
 if (TESTS)
     add_subdirectory(test)
 endif ()
 
-
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
-foreach(dir ${dirs})
-  message(STATUS "dir='${dir}'")
-endforeach()
+foreach (dir ${dirs})
+    message(STATUS "dir='${dir}'")
+endforeach ()
 
 message(SOURCES = ${SOURCES})
 message(LIBRARIES = ${LIBRARIES})
 
 add_executable(mcss mcss.cpp ${SOURCES})
 target_link_libraries(mcss PUBLIC ${LIBRARIES})
-
-
-
-
-# -arch= Needs to be set in accordance with the GPU architecture that the CUDA files will be compiled for.
-if (GPU)
-	target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-arch=sm_61 -Xcompiler>)
-endif ()
-
-
-
-if (CMAKE_BUILD_TYPE MATCHES Debug)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -fstack-protector-all>)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -Wall -Wextra -pedantic>)
-endif ()
-
-if (CMAKE_BUILD_TYPE MATCHES Release)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants>)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -march=native>)
-endif ()
-
-if (CMAKE_BUILD_TYPE MATCHES DebugOptimized)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -g -fno-omit-frame-pointer>)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -O3 -ffp-contract=fast -ffast-math -freciprocal-math -fmerge-all-constants>)
-    target_compile_options(mcss PRIVATE $<$<COMPILE_LANGUAGE:CXX>: -march=native>)
-endif ()
-
-
 
 
 

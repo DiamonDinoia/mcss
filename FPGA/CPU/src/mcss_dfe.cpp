@@ -5,8 +5,8 @@
 #include <chrono>
 #include <cstring>
 
-#include "mcss_dfe.h"
 #include "common.h"
+#include "mcss_dfe.h"
 
 #define PARALLELISM 15
 

@@ -61,7 +61,6 @@ TEST_CASE("Correctness") {
 #endif
 
 #ifdef GPU
-
         pValues = compareDistributions(referenceHistograms, gpuHistograms);
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
