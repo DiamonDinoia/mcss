@@ -1,6 +1,6 @@
 .idea
-cmake-build-debug
-cmake-build-release
+cmake-build-*
+cmake-build-*
 MCSS/bin
 MCSS/builds
 MCSS/.dfeprojectproperties

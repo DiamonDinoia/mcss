@@ -1,4 +1,5 @@
 #include "mcss_multithread.h"
+
 #include "common.h"
 
 namespace Multithread {
@@ -93,10 +94,12 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
     // to form the overall distributions.
     for (unsigned int i = 0; i < numThreads; i++) {
         for (int j = 0; j < longiDistNumBin; j++) {
-            globalLongiDistr[j] += threadsLongiHists[i][j] * (longiDistInvD / numHists);
+            globalLongiDistr[j] +=
+                threadsLongiHists[i][j] * (longiDistInvD / numHists);
         }
         for (int j = 0; j < transDistNumBin; j++) {
-            globalTransDistr[j] += threadsTransHists[i][j] * (transDistInvD / numHists);
+            globalTransDistr[j] +=
+                threadsTransHists[i][j] * (transDistInvD / numHists);
         }
     }
     return {globalLongiDistr, globalTransDistr};
