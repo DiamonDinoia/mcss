@@ -1,4 +1,9 @@
 #include "mcss_multithread.h"
+
+#include <omp.h>
+
+#include <random>
+
 #include "common.h"
 
 namespace Multithread {
@@ -39,8 +44,10 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 #pragma omp parallel for num_threads(numThreads)
     for (int i = 0; i < numHists; i++) {
         // Generate a random decimal between 0 and 1.
-        std::random_device rd;
-        std::mt19937 gen(rd());
+        unsigned int seed;
+#pragma omp critical
+        seed = std::random_device()();
+        std::mt19937 gen(seed);
         std::uniform_real_distribution<> dis(0, 1.0);
 
         Track aTrack;
@@ -93,10 +100,12 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
     // to form the overall distributions.
     for (unsigned int i = 0; i < numThreads; i++) {
         for (int j = 0; j < longiDistNumBin; j++) {
-            globalLongiDistr[j] += threadsLongiHists[i][j] * (longiDistInvD / numHists);
+            globalLongiDistr[j] +=
+                threadsLongiHists[i][j] * (longiDistInvD / numHists);
         }
         for (int j = 0; j < transDistNumBin; j++) {
-            globalTransDistr[j] += threadsTransHists[i][j] * (transDistInvD / numHists);
+            globalTransDistr[j] +=
+                threadsTransHists[i][j] * (transDistInvD / numHists);
         }
     }
     return {globalLongiDistr, globalTransDistr};

@@ -1,14 +1,14 @@
 #ifndef MultithreadedMCSS_H
 #define MultithreadedMCSS_H
 
-#include <vector>
 
 #include "common.h"
+#include <thread>
 
 namespace Multithread {
 
 Histograms Simulate(
-    Material material = GOLD, int numHists = 1000000,
+    Material material, int numHists,
     unsigned int numThreads = std::thread::hardware_concurrency());
 }  // namespace Multithread
 
