@@ -2,6 +2,8 @@
 
 #include <chrono>  //for high_resolution_clock, now, duration
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
 
 #include "mcss_multithread.h"
 #include "mcss_reference.h"
@@ -38,7 +40,7 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1000000;
+    int numHists = 1e6;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
