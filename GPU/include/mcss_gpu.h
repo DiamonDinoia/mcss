@@ -7,7 +7,7 @@
 
 #include "common.h"
 
-#define NUM_THREADS 1024
+#define NUM_THREADS 512
 
 namespace Gpu {
 Histograms Simulate(Material material, int numHists);
