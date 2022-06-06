@@ -283,11 +283,6 @@ void mPower(double *A, int eA, double *V, int *eV, int m, int n) {
 double K(int n, double d) {
     int k, m, i, j, g, eH, eQ;
     double h, s, *H, *Q;
-    // OMIT NEXT LINE IF YOU REQUIRE >7 DIGIT ACCURACY IN THE RIGHT TAIL
-    s = d * d * n;
-    if (s > 7.24 || (s > 3.76 && n > 99))
-        return 1 -
-               2 * exp(-(2.000071 + .331 / sqrt((double)n) + 1.409 / n) * s);
     k = (int)(n * d) + 1;
     m = 2 * k - 1;
     h = k - n * d;

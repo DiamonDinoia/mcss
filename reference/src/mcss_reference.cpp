@@ -1,8 +1,9 @@
 #include "mcss_reference.h"
-#include "common.h"
 
 #include <cmath>
 #include <random>
+
+#include "common.h"
 
 // Minimally-altered, single-threaded MCSS implementation.
 namespace Reference {
@@ -18,7 +19,7 @@ Histograms Simulate(Material material, int numHists) {
     std::mt19937 gen(rd());
     std::uniform_real_distribution<> dis(0, 1.0);
     Track aTrack;
-
+    double iterations = 0;
     for (int ih = 0; ih < numHists; ih++) {
         aTrack.Reset();
         double trackLength = 0.0;
@@ -51,8 +52,8 @@ Histograms Simulate(Material material, int numHists) {
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
             }
+            iterations++;
         } while (!stop);
-
         const double longi = aTrack.fPosition[2] / aTrack.fTrackLength;
         const int lIndx = (int)((longi + 1.0) * longiDistInvD);
         ++theLongiDistr[lIndx];
@@ -80,7 +81,5 @@ Histograms Simulate(Material material, int numHists) {
     return histograms;
 }
 
-Histograms Simulate() {
-    return Simulate(GOLD, 1000000);
-}
+Histograms Simulate() { return Simulate(GOLD, 1000000); }
 }  // namespace Reference

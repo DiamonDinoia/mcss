@@ -2,12 +2,18 @@
 
 #include <chrono>  //for high_resolution_clock, now, duration
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
 
 #include "mcss_multithread.h"
 #include "mcss_reference.h"
 
 #ifdef FPGA_BUILD
 #include "mcss_dfe.h"
+#endif
+
+#ifdef GPU
+#include "mcss_gpu.cuh"
 #endif
 
 // Overloaded function to create and save a histogram to a CSV file.
@@ -34,15 +40,18 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1000000;
+    int numHists = 1e6;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
 #endif
+#ifdef GPU
+    bool use_gpu = false;
+#endif
 
     unsigned int numThreads = std::thread::hardware_concurrency();
     // Input flag options.
-    while ((opt = getopt(argc, argv, "m:n:t:f:d")) != -1) {
+    while ((opt = getopt(argc, argv, "m:n:t:f:d:g")) != -1) {
         switch (opt) {
             // Material
             case 'm':
@@ -78,6 +87,11 @@ int main(int argc, char* argv[]) {
                 use_dfe = true;
                 break;
 #endif
+#ifdef GPU
+            case 'g':
+                use_gpu = true;
+                break;
+#endif
             default:
                 std::cerr << "Invalid program options" << std::endl;
                 exit(EXIT_FAILURE);
@@ -88,6 +102,11 @@ int main(int argc, char* argv[]) {
 #ifdef FPGA_BUILD
     if (use_dfe) {
         histograms = Dfe::Simulate(material, numHists);
+    } else
+#endif
+#ifdef GPU
+    if (use_gpu) {
+        histograms = Gpu::Simulate(material, numHists);
     } else
 #endif
     if (numThreads > 1) {
