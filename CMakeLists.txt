@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 project(mcss LANGUAGES CXX)
 
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_CXX_STANDARD 11)
-
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(DCMAKE_RULE_MESSAGES OFF)
@@ -11,6 +8,8 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
 Include(FetchContent)
 include(CheckLanguage)
+
+message(STATUS "DETECTED C++ COMPILER:${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 
 if ("cxx_std_23" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
     message(STATUS "Using C++23 standard")
@@ -23,9 +22,6 @@ elseif ("cxx_std_17" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
     message(STATUS "Detected support for C++17 standard")
 elseif ("cxx_std_14" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
     set(CMAKE_CXX_STANDARD 14)
-    message(STATUS "Detected support for C++14 standard")
-elseif ("cxx_std_11" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
-    set(CMAKE_CXX_STANDARD 11)
     message(STATUS "Detected support for C++14 standard")
 else ()
     message(FATAL_ERROR "Cannot detect CXX_STANDARD of C++14 or newer.")
@@ -48,9 +44,6 @@ if (GPU)
         message(STATUS "Detected support for CUDA17 standard")
     elseif ("cuda_std_14" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
         set(CMAKE_CUDA_STANDARD 14)
-        message(STATUS "Detected support for CUDA14 standard")
-    elseif ("cuda_std_11" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
-        set(CMAKE_CUDA_STANDARD 11)
         message(STATUS "Detected support for CUDA14 standard")
     else ()
         message(FATAL_ERROR "Cannot detect CUDA_STANDARD of C++14 or newer.")
@@ -99,7 +92,6 @@ endif ()
 find_package(OpenMP REQUIRED)
 set(LIBRARIES OpenMP::OpenMP_CXX)
 
-
 include_directories(
         "${mcss_SOURCE_DIR}/software-model/include"
         "${mcss_SOURCE_DIR}/common/include"
@@ -107,7 +99,6 @@ include_directories(
 )
 
 file(GLOB SOURCES
-        "${mcss_SOURCE_DIR}/common/src/*.cpp"
         "${mcss_SOURCE_DIR}/reference/src/*.cpp"
         "${mcss_SOURCE_DIR}/software-model/src/*.cpp"
         )
@@ -185,6 +176,7 @@ endif ()
 
 
 if (GPU)
+    add_definitions(-DGPU=1)
     if (${CMAKE_VERSION} VERSION_LESS_EQUAL "3.13.4")
         cuda_select_nvcc_arch_flags(ARCH_FLAGS "Auto") # optional argument for arch to add
         message("ARCH_FLAGS = ${ARCH_FLAGS}")
@@ -209,20 +201,7 @@ if (GPU)
     message(STATUS "CUDA Path: ${CMAKE_CUDA_COMPILER}")
     message(STATUS "CUDA CUDAToolkit include: ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES}")
     list(APPEND LIBRARIES CUDA::cudart_static CUDA::curand_static)
-    FetchContent_Declare(
-            cudawrappers
-            GIT_REPOSITORY https://github.com/eyalroz/cuda-api-wrappers.git
-            GIT_TAG v0.5.0
-            GIT_SHALLOW TRUE
-            GIT_PROGRESS TRUE)
-    FetchContent_GetProperties(cudawrappers)
-    if (NOT CUDAWRAPPERS_POPULATED)
-        FetchContent_Populate(cudawrappers)
-        add_subdirectory(${cudawrappers_SOURCE_DIR} ${cudawrappers_BINARY_DIR} EXCLUDE_FROM_ALL)
-        list(APPEND LIBRARIES runtime-and-driver)
-    endif ()
     message("GPU LIBRARIES: ${LIBRARIES}")
-
     include_directories("${mcss_SOURCE_DIR}/GPU/include")
     file(GLOB CUFILES "${mcss_SOURCE_DIR}/GPU/src/*.cu")
     list(APPEND SOURCES ${CUFILES})

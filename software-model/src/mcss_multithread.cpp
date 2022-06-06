@@ -1,5 +1,9 @@
 #include "mcss_multithread.h"
 
+#include <omp.h>
+
+#include <random>
+
 #include "common.h"
 
 namespace Multithread {

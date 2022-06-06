@@ -26,15 +26,17 @@ std::vector<double> compareDistributions(const Histograms& originalHistograms,
 }
 
 TEST_CASE("Correctness") {
+    const Material material = GOLD;
+    const int histories = 1e6;
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
-    auto multithreadedHistograms = Multithread::Simulate();
+    auto multithreadedHistograms = Multithread::Simulate(material, histories);
 #ifdef FPGA_BUILD
-    auto dfeHistograms = Dfe::Simulate(GOLD, 1000000);
+    auto dfeHistograms = Dfe::Simulate(material, histories);
 #endif
 
 #ifdef GPU
-    auto gpuHistograms = Gpu::Simulate(GOLD, 1000000);
+    auto gpuHistograms = Gpu::Simulate(material, histories);
 #endif
 
     std::cout << "Finished simulations" << std::endl;
@@ -69,7 +71,6 @@ TEST_CASE("Correctness") {
         std::cout << "GPU: Transverse K-S test p-value is " << pValues[1] << "."
                   << std::endl;
 #endif
-
     }
 
     SECTION(
@@ -111,7 +112,6 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
-
     }
 
     SECTION("Air, 1,000,000 histories") {
@@ -139,7 +139,6 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
-
     }
 
     SECTION("Bone, 1,000,000 histories") {
@@ -193,8 +192,6 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[0] >= 0.95);
         REQUIRE(pValues[1] >= 0.95);
 #endif
-
-
     }
 }
 
