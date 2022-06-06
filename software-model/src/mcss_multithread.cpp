@@ -44,8 +44,10 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 #pragma omp parallel for num_threads(numThreads)
     for (int i = 0; i < numHists; i++) {
         // Generate a random decimal between 0 and 1.
-        std::random_device rd;
-        std::mt19937 gen(rd());
+        unsigned int seed;
+#pragma omp critical
+        seed = std::random_device()();
+        std::mt19937 gen(seed);
         std::uniform_real_distribution<> dis(0, 1.0);
 
         Track aTrack;

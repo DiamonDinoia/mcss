@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <random>
 
 #include "common.h"
 #include "mcss_gpu.h"
@@ -161,7 +162,7 @@ __global__ void initialise_RNG(curandState *states, int numStates) {
 Histograms Simulate(Material material, int numHists) {
     real_type *longHist_h, *transHist_h;
     cudaError_t cuda_ret;
-    const auto seed = 42;
+    const auto seed = std::random_device()();
     // Wake up GPU (seems to be a problem with Peregrine GPUs being in
     // sleep mode, so I wake them up before timing the application)
     // cudaFree(0);
@@ -181,14 +182,9 @@ Histograms Simulate(Material material, int numHists) {
     auto num_blocks = div_rounding_up(numHists, num_threads);
     // CUDA has a limit on the grid size
     num_blocks = math::min(num_blocks, std::numeric_limits<unsigned int>::max());
-    // Since we are using __shared__ memory we need to check we do not exceed
-    // 48KB
-    const auto shared_mem_size = 48000;  // bytes
-    const auto shared_mem_usage =
-        sizeof(real_type) * (longiDistNumBin + transDistNumBin);
-    num_blocks = math::min(shared_mem_size / shared_mem_usage, num_blocks);
     auto thread_histories = div_rounding_up(numHists, num_blocks*num_threads);
     thread_histories = math::max(thread_histories, 1);
+
     // Initialise histograms on GPU
     real_type *longHist_d;
     real_type *transHist_d;
