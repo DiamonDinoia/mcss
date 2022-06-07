@@ -20,22 +20,8 @@ __global__ static void compute_terminal_positions(
     int threadX = threadIdx.x;
     int i = blockIdx.x * blockDim.x + threadX;
 
-    // Initialise local histograms
-    __shared__ real_type shared_longHist[longiDistNumBin];
-    __shared__ real_type shared_transHist[transDistNumBin];
-
-    curandState local_state;
+    curandStatePhilox4_32_10 local_state{};
     curand_init(i, seed, 0, &local_state);
-
-    if (threadX < longHistNumBins) {
-        shared_longHist[threadX] = 0.0;
-    }
-    if (threadX < transHistNumBins) {
-        shared_transHist[threadX] = 0.0;
-    }
-
-    // Ensure that every thread has initialised the histograms
-    __syncthreads();
 
     // Initialise local variables
     real_type trackPosition_x;
@@ -129,29 +115,8 @@ __global__ static void compute_terminal_positions(
             (unsigned int)(transversal_deviation * transDistInvD);
 
         // Write simulation result to histograms
-        atomicAdd(&(shared_longHist[longIdx]), longDistInvD / numSims);
-        atomicAdd(&(shared_transHist[transIdx]), transDistInvD / numSims);
-    }
-
-    // Sync up threads after simulations
-    __syncthreads();
-
-    // Add shared histogram to global histogram
-    if (threadX < longHistNumBins) {
-        atomicAdd(&(longHist[threadX]), shared_longHist[threadX]);
-    }
-    if (threadX < transHistNumBins) {
-        atomicAdd(&(transHist[threadX]), shared_transHist[threadX]);
-    }
-}
-
-__global__ void initialise_RNG(curandState *states, int numStates) {
-    unsigned long i = blockIdx.x * blockDim.x + threadIdx.x;
-    unsigned long seed = 0;
-
-    // Use the same seed but different sequence number
-    if (i < numStates) {
-        curand_init(i, seed, 0, &states[i]);
+        atomicAdd(&(longHist[longIdx]), longDistInvD / numSims);
+        atomicAdd(&(transHist[transIdx]), transDistInvD / numSims);
     }
 }
 
@@ -167,6 +132,11 @@ Histograms Simulate(Material material, int numHists) {
     // sleep mode, so I wake them up before timing the application)
     // cudaFree(0);
     // cudaDeviceSynchronize();
+    cuda_ret = cudaFuncSetCacheConfig(compute_terminal_positions, cudaFuncCachePreferL1);
+        if (cuda_ret != cudaSuccess) {
+        printf("ERROR: Failed to initialise longHist on the GPU.\n");
+        exit(-1);
+    }
 
     // Initialise space on host for histograms
     longHist_h = (real_type *)malloc(longiDistNumBin * sizeof(real_type));
