@@ -195,8 +195,25 @@ TEST_CASE("Correctness") {
     }
 }
 
-TEST_CASE("Benchmarking") {
-    int numHists = 1000000;
+TEST_CASE("Benchmarking numHists = 1e8") {
+    int numHists = 1e8;
+    Material material = GOLD;
+    BENCHMARK("Reference") { return Reference::Simulate(material, numHists); };
+#ifdef FPGA_BUILD
+    BENCHMARK("DFE") { return Dfe::Simulate(material, numHists); };
+#endif
+
+#ifdef GPU
+    BENCHMARK("GPU") { return Gpu::Simulate(material, numHists); };
+#endif
+
+    BENCHMARK("Multithreaded") {
+        return Multithread::Simulate(material, numHists);
+    };
+}
+
+TEST_CASE("Benchmarking numHists = 1e9") {
+    int numHists = 1e9;
     Material material = GOLD;
     BENCHMARK("Reference") { return Reference::Simulate(material, numHists); };
 #ifdef FPGA_BUILD
