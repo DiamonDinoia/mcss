@@ -13,7 +13,7 @@
 #endif
 
 #ifdef GPU
-#include "mcss_gpu.cuh"
+#include "mcss_gpu.h"
 #endif
 
 // Overloaded function to create and save a histogram to a CSV file.

@@ -11,7 +11,7 @@
 #endif
 
 #ifdef GPU
-#include "mcss_gpu.cuh"
+#include "mcss_gpu.h"
 #endif
 
 // Compare the distributions of the original MCSS program with the
