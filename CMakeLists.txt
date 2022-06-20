@@ -35,7 +35,7 @@ if (GPU)
     enable_language(CUDA)
     if ("cuda_std_23" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
         set(CMAKE_CUDA_STANDARD 23)
-        message(STATUS "Detected support for CUDA20 standard")
+        message(STATUS "Detected support for CUDA23 standard")
     elseif ("cuda_std_20" IN_LIST CMAKE_CUDA_COMPILE_FEATURES)
         set(CMAKE_CUDA_STANDARD 20)
         message(STATUS "Detected support for CUDA20 standard")
@@ -80,10 +80,16 @@ endif ()
 
 add_compilation_flags(FLAGS)
 
-if (NOT DEFINED SINGLE)
-    set(SINGLE ON)
+
+
+
+if (SINGLE)
     add_definitions("-DSINGLE")
 endif ()
+
+
+
+
 
 if (GPU)
     enable_language(CUDA)

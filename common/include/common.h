@@ -4,7 +4,7 @@
 #include <cmath>
 #include <vector>
 
-#if defined(SINGLE)
+#ifdef SINGLE
 using real_type = float;
 #else   // SINGLE
 using real_type = double;
