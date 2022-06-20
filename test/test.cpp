@@ -27,7 +27,7 @@ std::vector<double> compareDistributions(const Histograms& originalHistograms,
 
 TEST_CASE("Correctness") {
     const Material material = GOLD;
-    const int histories = 1e6;
+    const int histories = 1e7;
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate(material, histories);
@@ -88,14 +88,14 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Water, 1,000,000 histories") {
-        auto reference = Reference::Simulate(WATER, 1000000);
-        auto multithreaded = Multithread::Simulate(WATER, 1000000);
+        auto reference = Reference::Simulate(WATER, histories);
+        auto multithreaded = Multithread::Simulate(WATER, histories);
 #ifdef FPGA_BUILD
-        auto dfe = Dfe::Simulate(WATER, 1000000);
+        auto dfe = Dfe::Simulate(WATER, histories);
 #endif
 
 #ifdef GPU
-        auto gpu = Gpu::Simulate(WATER, 1000000);
+        auto gpu = Gpu::Simulate(WATER, histories);
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
@@ -115,14 +115,14 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Air, 1,000,000 histories") {
-        auto reference = Reference::Simulate(AIR, 1000000);
-        auto multithreaded = Multithread::Simulate(AIR, 1000000);
+        auto reference = Reference::Simulate(AIR, histories);
+        auto multithreaded = Multithread::Simulate(AIR, histories);
 #ifdef FPGA_BUILD
-        auto dfe = Dfe::Simulate(AIR, 1000000);
+        auto dfe = Dfe::Simulate(AIR, histories);
 #endif
 
 #ifdef GPU
-        auto gpu = Gpu::Simulate(AIR, 1000000);
+        auto gpu = Gpu::Simulate(AIR, histories);
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
@@ -142,14 +142,14 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Bone, 1,000,000 histories") {
-        auto reference = Reference::Simulate(BONE, 1000000);
-        auto multithreaded = Multithread::Simulate(BONE, 1000000);
+        auto reference = Reference::Simulate(BONE, histories);
+        auto multithreaded = Multithread::Simulate(BONE, histories);
 #ifdef FPGA_BUILD
-        auto dfe = Dfe::Simulate(BONE, 1000000);
+        auto dfe = Dfe::Simulate(BONE, histories);
 #endif
 
 #ifdef GPU
-        auto gpu = Gpu::Simulate(BONE, 1000000);
+        auto gpu = Gpu::Simulate(BONE, histories);
 #endif
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= 0.95);
@@ -167,15 +167,15 @@ TEST_CASE("Correctness") {
     }
 
     SECTION("Tissue, 1,000,000 histories") {
-        auto reference = Reference::Simulate(TISSUE, 1000000);
-        auto multithreaded = Multithread::Simulate(TISSUE, 1000000);
+        auto reference = Reference::Simulate(TISSUE, histories);
+        auto multithreaded = Multithread::Simulate(TISSUE, histories);
 #ifdef FPGA_BUILD
 
-        auto dfe = Dfe::Simulate(TISSUE, 1000000);
+        auto dfe = Dfe::Simulate(TISSUE, histories);
 #endif
 
 #ifdef GPU
-        auto gpu = Gpu::Simulate(TISSUE, 1000000);
+        auto gpu = Gpu::Simulate(TISSUE, histories);
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
