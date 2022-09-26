@@ -80,19 +80,8 @@ endif ()
 
 add_compilation_flags(FLAGS)
 
-
-
-
 if (SINGLE)
     add_definitions("-DSINGLE")
-endif ()
-
-
-
-
-
-if (GPU)
-    enable_language(CUDA)
 endif ()
 
 find_package(OpenMP REQUIRED)
