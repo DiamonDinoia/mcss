@@ -19,12 +19,12 @@ using real_type = double;
 namespace math {
 
 template <typename T, typename V>
-constexpr T min(T x, V y) {
+inline constexpr T min(T x, V y) {
     return x < y ? x : y;
 }
 
 template <typename T, typename V>
-constexpr T max(T x, V y) {
+inline constexpr T max(T x, V y) {
     return x > y ? x : y;
 }
 };  // namespace math
@@ -50,16 +50,13 @@ constexpr real_type longiDistInvD = (longiDistNumBin - 1.0) / 2.0;
 constexpr int transDistNumBin = 101;
 constexpr real_type transDistInvD = (transDistNumBin - 1.0) / 1.0;
 
-
-inline constexpr real_type computeScrParam(const Material &mat,
+inline constexpr real_type computeScrParam(const Material mat,
                                            const real_type ptot2) {
     return kMolierXc2[mat] /
            (static_cast<real_type>(4.0) * ptot2 * kMolierBc[mat]);
 }
 
-
-inline constexpr real_type computeMFP(const Material &mat,
-                                      const real_type beta2,
+inline constexpr real_type computeMFP(const Material mat, const real_type beta2,
                                       const real_type scrpar) {
     return beta2 * (1.0 + scrpar) / kMolierBc[mat];
 }
@@ -71,8 +68,8 @@ inline constexpr real_type sampleCosTheta(const real_type scrpar,
 }
 
 inline constexpr void rotateToLabFrame(real_type &u, real_type &v, real_type &w,
-                             const real_type &u1, const real_type &u2,
-                             const real_type &u3) {
+                                       const real_type &u1, const real_type &u2,
+                                       const real_type &u3) {
     real_type up = u1 * u1 + u2 * u2;
     if (up > 0.) {
         up = std::sqrt(up);
@@ -93,9 +90,10 @@ struct Track {
     real_type fDirection[3]{};  // dx, dy, dz normalised to 1
     real_type fTrackLength{};   // cumulative track length
 
-    Track() { Reset(); }
+    constexpr Track() { Reset(); }
+    virtual ~Track() = default;
 
-    void Reset() {
+    inline constexpr void Reset() {
         fPosition[0] = 0.0;
         fPosition[1] = 0.0;
         fPosition[2] = 0.0;

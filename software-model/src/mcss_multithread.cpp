@@ -2,6 +2,7 @@
 
 #include <omp.h>
 
+#include <algorithm>
 #include <random>
 
 #include "common.h"
@@ -34,80 +35,84 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 
     // A vector of num_threads histograms, each dedicated to a
     // different thread. Each histogram is independently thread-safe.
-    std::vector<std::vector<real_type>> threadsLongiHists =
-        initialiseHistogram(numThreads, longiDistNumBin);
-    std::vector<std::vector<real_type>> threadsTransHists =
-        initialiseHistogram(numThreads, transDistNumBin);
 
     // Main loop to simulate a particle history.
     // Multi-threaded using OpenMP threading.
-#pragma omp parallel for num_threads(numThreads)
-    for (int i = 0; i < numHists; i++) {
-        // Generate a random decimal between 0 and 1.
+#pragma omp parallel num_threads(numThreads)
+    {
         unsigned int seed;
-#pragma omp critical
         seed = std::random_device()();
         std::mt19937 gen(seed);
         std::uniform_real_distribution<> dis(0, 1.0);
+        std::vector<unsigned> threadsLongiHist(longiDistNumBin);
+        std::vector<unsigned> threadsTransHist(transDistNumBin);
+#pragma omp for
+        for (int i = 0; i < numHists; i++) {
+            // Generate a random decimal between 0 and 1.
+            Track aTrack;
+            aTrack.Reset();
+            real_type trackLength = 0.0;
+            bool stop = false;
+            do {
+                real_type stepLength = -theMFP * std::log(dis(gen));
+                trackLength += stepLength;
+                if (trackLength > theLimit) {
+                    stepLength = theLimit - aTrack.fTrackLength;
+                    stop = true;
+                }
+                aTrack.fPosition[0] += aTrack.fDirection[0] * stepLength;
+                aTrack.fPosition[1] += aTrack.fDirection[1] * stepLength;
+                aTrack.fPosition[2] += aTrack.fDirection[2] * stepLength;
+                aTrack.fTrackLength += stepLength;
+                if (!stop) {
+                    const real_type cost = sampleCosTheta(theScrPar, dis(gen));
+                    const real_type dum0 = 1.0 - cost;
+                    const real_type sint = std::sqrt(dum0 * (2.0 - dum0));
+                    const real_type phi = 2.0 * kPI * dis(gen);
+                    real_type u1 = sint * std::cos(phi);
+                    real_type u2 = sint * std::sin(phi);
+                    real_type u3 = cost;
+                    rotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
+                                     aTrack.fDirection[1],
+                                     aTrack.fDirection[2]);
+                    aTrack.fDirection[0] = u1;
+                    aTrack.fDirection[1] = u2;
+                    aTrack.fDirection[2] = u3;
+                }
+            } while (!stop);
 
-        Track aTrack;
-        aTrack.Reset();
-        real_type trackLength = 0.0;
-        bool stop = false;
-        do {
-            real_type stepLength = -theMFP * std::log(dis(gen));
-            trackLength += stepLength;
-            if (trackLength > theLimit) {
-                stepLength = theLimit - aTrack.fTrackLength;
-                stop = true;
-            }
-            aTrack.fPosition[0] += aTrack.fDirection[0] * stepLength;
-            aTrack.fPosition[1] += aTrack.fDirection[1] * stepLength;
-            aTrack.fPosition[2] += aTrack.fDirection[2] * stepLength;
-            aTrack.fTrackLength += stepLength;
-            if (!stop) {
-                const real_type cost = sampleCosTheta(theScrPar, dis(gen));
-                const real_type dum0 = 1.0 - cost;
-                const real_type sint = std::sqrt(dum0 * (2.0 - dum0));
-                const real_type phi = 2.0 * kPI * dis(gen);
-                real_type u1 = sint * std::cos(phi);
-                real_type u2 = sint * std::sin(phi);
-                real_type u3 = cost;
-                rotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
-                                 aTrack.fDirection[1], aTrack.fDirection[2]);
-                aTrack.fDirection[0] = u1;
-                aTrack.fDirection[1] = u2;
-                aTrack.fDirection[2] = u3;
-            }
-        } while (!stop);
-
-        // Calculate final longitudinal location.
-        const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
-        real_type lIndx = (longi + 1.0) * longiDistInvD;
-        // Increment the relevent element of the thread-specific
-        // longitudinal histogram.
-        threadsLongiHists[omp_get_thread_num()][lIndx]++;
-
-        const real_type trans =
-            std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
-                      aTrack.fPosition[1] * aTrack.fPosition[1]) /
-            aTrack.fTrackLength;
-        real_type tIndx = trans * transDistInvD;
-        threadsTransHists[omp_get_thread_num()][tIndx]++;
+            // Calculate final longitudinal location.
+            const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
+            const real_type lIndx = (longi + 1.0) * longiDistInvD;
+            // Increment the relevent element of the thread-specific
+            // longitudinal histogram.
+            threadsLongiHist[lIndx]++;
+            const real_type trans =
+                std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
+                          aTrack.fPosition[1] * aTrack.fPosition[1]) /
+                aTrack.fTrackLength;
+            const real_type tIndx = trans * transDistInvD;
+            threadsTransHist[tIndx]++;
+        }
+#pragma omp critical
+        for (int j = 0; j < longiDistNumBin; j++) {
+            globalLongiDistr[j] += threadsLongiHist[j];
+        }
+#pragma omp critical
+        for (int j = 0; j < transDistNumBin; j++) {
+            globalTransDistr[j] += threadsTransHist[j];
+        }
     }
+
+    for (int j = 0; j < longiDistNumBin; j++) {
+        globalLongiDistr[j] *= (longiDistInvD / numHists);
+    }
+    for (int j = 0; j < transDistNumBin; j++) {
+        globalTransDistr[j] *= (transDistInvD / numHists);
+    }
+    return {globalLongiDistr, globalTransDistr};
 
     // Thread-specific histograms are combined and normalised
     // to form the overall distributions.
-    for (unsigned int i = 0; i < numThreads; i++) {
-        for (int j = 0; j < longiDistNumBin; j++) {
-            globalLongiDistr[j] +=
-                threadsLongiHists[i][j] * (longiDistInvD / numHists);
-        }
-        for (int j = 0; j < transDistNumBin; j++) {
-            globalTransDistr[j] +=
-                threadsTransHists[i][j] * (transDistInvD / numHists);
-        }
-    }
-    return {globalLongiDistr, globalTransDistr};
 }
 }  // namespace Multithread
