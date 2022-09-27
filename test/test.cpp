@@ -14,6 +14,7 @@
 #include "mcss_gpu.h"
 #endif
 
+
 // Compare the distributions of the original MCSS program with the
 // multi-threaded implementation in order to check correctness.
 // Returns a vector including the longitudinal and transverse
@@ -26,8 +27,9 @@ std::vector<double> compareDistributions(const Histograms& originalHistograms,
 }
 
 TEST_CASE("Correctness") {
-    const Material material = GOLD;
-    const int histories = 1e7;
+    constexpr Material material = GOLD;
+    constexpr int histories = 1e7;
+    constexpr auto alpha = 0.99;
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate(material, histories);
@@ -44,8 +46,8 @@ TEST_CASE("Correctness") {
     SECTION("Default K-S test p values are statistically significant") {
         auto pValues =
             compareDistributions(referenceHistograms, multithreadedHistograms);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
         std::cout << std::fixed;
         std::cout << "Multithread: Longitudinal K-S test p-value is "
                   << pValues[0] << "." << std::endl;
@@ -54,8 +56,8 @@ TEST_CASE("Correctness") {
 #ifdef FPGA_BUILD
 
         pValues = compareDistributions(referenceHistograms, dfeHistograms);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
         std::cout << "DFE: Longitudinal K-S test p-value is " << pValues[0]
                   << "." << std::endl;
         std::cout << "DFE: Transverse K-S test p-value is " << pValues[1] << "."
@@ -64,8 +66,8 @@ TEST_CASE("Correctness") {
 
 #ifdef GPU
         pValues = compareDistributions(referenceHistograms, gpuHistograms);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
         std::cout << "GPU: Longitudinal K-S test p-value is " << pValues[0]
                   << "." << std::endl;
         std::cout << "GPU: Transverse K-S test p-value is " << pValues[1] << "."
@@ -99,18 +101,18 @@ TEST_CASE("Correctness") {
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #ifdef FPGA_BUILD
         pValues = compareDistributions(reference, dfe);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
 
 #ifdef GPU
         pValues = compareDistributions(reference, gpu);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
     }
 
@@ -126,18 +128,18 @@ TEST_CASE("Correctness") {
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #ifdef FPGA_BUILD
         pValues = compareDistributions(reference, dfe);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
 
 #ifdef GPU
         pValues = compareDistributions(reference, gpu);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
     }
 
@@ -152,17 +154,17 @@ TEST_CASE("Correctness") {
         auto gpu = Gpu::Simulate(BONE, histories);
 #endif
         auto pValues = compareDistributions(reference, multithreaded);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #ifdef FPGA_BUILD
         pValues = compareDistributions(reference, dfe);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
 #ifdef GPU
         pValues = compareDistributions(reference, gpu);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
     }
 
@@ -179,18 +181,18 @@ TEST_CASE("Correctness") {
 #endif
 
         auto pValues = compareDistributions(reference, multithreaded);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #ifdef FPGA_BUILD
         pValues = compareDistributions(reference, dfe);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
 
 #ifdef GPU
         pValues = compareDistributions(reference, gpu);
-        REQUIRE(pValues[0] >= 0.95);
-        REQUIRE(pValues[1] >= 0.95);
+        REQUIRE(pValues[0] >= alpha);
+        REQUIRE(pValues[1] >= alpha);
 #endif
     }
 }

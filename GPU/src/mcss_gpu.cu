@@ -12,7 +12,7 @@ static constexpr size_t div_rounding_up(size_t dividend, size_t divisor) {
 }
 
 __global__ static void compute_terminal_positions(
-    const unsigned seed, real_type *longHist, real_type *transHist,
+    const unsigned seed, unsigned int* longHist, unsigned int* transHist,
     real_type screening_param, real_type mean_free_path, real_type track_limit,
     const unsigned int longHistNumBins, const unsigned int transHistNumBins,
     real_type longDistInvD, real_type transDistInvD, int numSims,
@@ -103,7 +103,7 @@ __global__ static void compute_terminal_positions(
 
         // Compute longitudinal deviation and its bin index
         real_type longitudinal_deviation = trackPosition_z / trackLength;
-        unsigned int longIdx =
+        auto longIdx =
             (unsigned int)((longitudinal_deviation + 1.0) * longDistInvD);
 
         // Compute transversal deviation and its bin index
@@ -111,12 +111,11 @@ __global__ static void compute_terminal_positions(
             sqrt(trackPosition_x * trackPosition_x +
                  trackPosition_y * trackPosition_y) /
             trackLength;
-        unsigned int transIdx =
-            (unsigned int)(transversal_deviation * transDistInvD);
+        auto transIdx = (unsigned int)(transversal_deviation * transDistInvD);
 
         // Write simulation result to histograms
-        atomicAdd(&(longHist[longIdx]), longDistInvD / numSims);
-        atomicAdd(&(transHist[transIdx]), transDistInvD / numSims);
+        atomicAdd(&(longHist[longIdx]), 1);
+        atomicAdd(&(transHist[transIdx]), 1);
     }
 }
 
@@ -125,22 +124,25 @@ __global__ static void compute_terminal_positions(
  */
 
 Histograms Simulate(Material material, int numHists) {
-    real_type *longHist_h, *transHist_h;
+    unsigned int *longHist_h, *transHist_h;
     cudaError_t cuda_ret;
     const auto seed = std::random_device()();
     // Wake up GPU (seems to be a problem with Peregrine GPUs being in
     // sleep mode, so I wake them up before timing the application)
     // cudaFree(0);
     // cudaDeviceSynchronize();
-    cuda_ret = cudaFuncSetCacheConfig(compute_terminal_positions, cudaFuncCachePreferL1);
-        if (cuda_ret != cudaSuccess) {
+    cuda_ret = cudaFuncSetCacheConfig(compute_terminal_positions,
+                                      cudaFuncCachePreferL1);
+    if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to initialise longHist on the GPU.\n");
         exit(-1);
     }
 
     // Initialise space on host for histograms
-    longHist_h = (real_type *)malloc(longiDistNumBin * sizeof(real_type));
-    transHist_h = (real_type *)malloc(transDistNumBin * sizeof(real_type));
+    longHist_h =
+        (unsigned int*)malloc(longiDistNumBin * sizeof(unsigned int));
+    transHist_h =
+        (unsigned int*)malloc(transDistNumBin * sizeof(unsigned int));
 
     // Initialise constants
     const real_type theScrPar = computeScrParam(material, thePC2);
@@ -151,33 +153,36 @@ Histograms Simulate(Material material, int numHists) {
     constexpr auto num_threads = NUM_THREADS;
     auto num_blocks = div_rounding_up(numHists, num_threads);
     // CUDA has a limit on the grid size
-    num_blocks = math::min(num_blocks, std::numeric_limits<unsigned int>::max());
-    auto thread_histories = div_rounding_up(numHists, num_blocks*num_threads);
+    num_blocks =
+        math::min(num_blocks, std::numeric_limits<unsigned int>::max());
+    auto thread_histories = div_rounding_up(numHists, num_blocks * num_threads);
     thread_histories = math::max(thread_histories, 1);
 
     // Initialise histograms on GPU
-    real_type *longHist_d;
-    real_type *transHist_d;
-    cuda_ret = cudaMalloc(&longHist_d, longiDistNumBin * sizeof(real_type));
+    unsigned int* longHist_d;
+    unsigned int* transHist_d;
+    cuda_ret = cudaMalloc(&longHist_d, longiDistNumBin * sizeof(unsigned int));
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to initialise longHist on the GPU.\n");
         exit(-1);
     }
 
-    cuda_ret = cudaMalloc(&transHist_d, transDistNumBin * sizeof(real_type));
+    cuda_ret = cudaMalloc(&transHist_d, transDistNumBin * sizeof(unsigned int));
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to initialise transHist on the GPU.\n");
         exit(-1);
     }
 
     // Set histogram values to 0
-    cuda_ret = cudaMemset(longHist_d, 0, longiDistNumBin * sizeof(real_type));
+    cuda_ret =
+        cudaMemset(longHist_d, 0, longiDistNumBin * sizeof(unsigned int));
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to set longHist to zero on the GPU.\n");
         exit(-1);
     }
 
-    cuda_ret = cudaMemset(transHist_d, 0, transDistNumBin * sizeof(real_type));
+    cuda_ret =
+        cudaMemset(transHist_d, 0, transDistNumBin * sizeof(unsigned int));
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to set transHist to zero on the GPU.\n");
         exit(-1);
@@ -200,18 +205,17 @@ Histograms Simulate(Material material, int numHists) {
         printf("ERROR: Failed to complete simulation kernel.\n");
         exit(-1);
     }
-
     // Retrieve histograms from GPU
-    cuda_ret =
-        cudaMemcpy(longHist_h, longHist_d, longiDistNumBin * sizeof(real_type),
-                   cudaMemcpyDeviceToHost);
+    cuda_ret = cudaMemcpy(longHist_h, longHist_d,
+                          longiDistNumBin * sizeof(unsigned int),
+                          cudaMemcpyDeviceToHost);
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to retrieve longitudinal histogram from GPU.\n");
         exit(-1);
     }
-    cuda_ret =
-        cudaMemcpy(transHist_h, transHist_d,
-                   transDistNumBin * sizeof(real_type), cudaMemcpyDeviceToHost);
+    cuda_ret = cudaMemcpy(transHist_h, transHist_d,
+                          transDistNumBin * sizeof(unsigned int),
+                          cudaMemcpyDeviceToHost);
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to retrieve transversal histogram from GPU.\n");
         exit(-1);
@@ -225,10 +229,12 @@ Histograms Simulate(Material material, int numHists) {
 
     // Copy array pointers into histogram variable
     Histograms histograms{longiDistNumBin, transDistNumBin};
-    memcpy(&(histograms.longiHist[0]), &(longHist_h[0]),
-           longiDistNumBin * sizeof(real_type));
-    memcpy(&(histograms.transHist[0]), &(transHist_h[0]),
-           transDistNumBin * sizeof(real_type));
+    for (int i = 0; i < longiDistNumBin; ++i) {
+        histograms.longiHist[i] = longHist_h[i] * (longiDistInvD / numHists);
+    }
+    for (int i = 0; i < transDistNumBin; ++i) {
+        histograms.transHist[i] = transHist_h[i] * (transDistInvD / numHists);
+    }
 
     // Free buffers
     cudaFree(longHist_d);
