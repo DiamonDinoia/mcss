@@ -10,12 +10,6 @@ using real_type = float;
 using real_type = double;
 #endif  // SINGLE
 
-#ifdef __CUDACC__
-#define MCSS_HOST_AND_DEVICE __host__ __device__
-#else
-#define MCSS_HOST_AND_DEVICE
-#endif
-
 namespace math {
 
 template <typename T, typename V>

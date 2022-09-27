@@ -4,7 +4,7 @@
 
 #include <algorithm>
 #include <random>
-
+#include <array>
 #include "common.h"
 
 namespace Multithread {
@@ -30,8 +30,8 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
     omp_set_num_threads(numThreads);
 
     // Final longitudinal and transverse histograms.
-    std::vector<real_type> globalLongiDistr(longiDistNumBin);
-    std::vector<real_type> globalTransDistr(transDistNumBin);
+    std::vector<real_type> globalLongiDistr(longiDistNumBin, 0);
+    std::vector<real_type> globalTransDistr(transDistNumBin, 0);
 
     // A vector of num_threads histograms, each dedicated to a
     // different thread. Each histogram is independently thread-safe.
@@ -44,13 +44,12 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
         seed = std::random_device()();
         std::mt19937 gen(seed);
         std::uniform_real_distribution<> dis(0, 1.0);
-        std::vector<unsigned> threadsLongiHist(longiDistNumBin);
-        std::vector<unsigned> threadsTransHist(transDistNumBin);
+        std::array<real_type, longiDistNumBin> threadsLongiHist{0};
+        std::array<real_type, transDistNumBin> threadsTransHist{0};
 #pragma omp for
         for (int i = 0; i < numHists; i++) {
             // Generate a random decimal between 0 and 1.
-            Track aTrack;
-            aTrack.Reset();
+            Track aTrack{};
             real_type trackLength = 0.0;
             bool stop = false;
             do {
@@ -83,7 +82,7 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 
             // Calculate final longitudinal location.
             const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
-            const real_type lIndx = (longi + 1.0) * longiDistInvD;
+            const unsigned lIndx = (longi + 1.0) * longiDistInvD;
             // Increment the relevent element of the thread-specific
             // longitudinal histogram.
             threadsLongiHist[lIndx]++;
@@ -91,18 +90,18 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
                 std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                           aTrack.fPosition[1] * aTrack.fPosition[1]) /
                 aTrack.fTrackLength;
-            const real_type tIndx = trans * transDistInvD;
+            const unsigned tIndx = trans * transDistInvD;
             threadsTransHist[tIndx]++;
         }
-#pragma omp critical
         for (int j = 0; j < longiDistNumBin; j++) {
+#pragma omp atomic
             globalLongiDistr[j] += threadsLongiHist[j];
         }
-#pragma omp critical
         for (int j = 0; j < transDistNumBin; j++) {
+#pragma omp atomic
             globalTransDistr[j] += threadsTransHist[j];
         }
-    }
+    } // parallel region end
 
     for (int j = 0; j < longiDistNumBin; j++) {
         globalLongiDistr[j] *= (longiDistInvD / numHists);
