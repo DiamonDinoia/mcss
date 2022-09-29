@@ -40,7 +40,7 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1e10;
+    int numHists = 1e9;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
