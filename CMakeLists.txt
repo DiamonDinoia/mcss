@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
 project(mcss LANGUAGES CXX)
 
+option(SINGLE "enable single precision" ON)
+option(USE_SHARED_MEMORY "enable explicit shared memory use" OFF)
+option(GPU "enable GPU Acceleration" OFF)
+option(FPGA_BUILD "enable FPGA Acceleration" OFF)
+option(TESTS "enable tests" OFF)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(DCMAKE_RULE_MESSAGES OFF)
@@ -78,14 +84,14 @@ elseif (CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
             -fno-math-errno -march=native -funroll-loops -ftree-vectorize)
 endif ()
 
-add_compilation_flags(FLAGS)
-
 if (SINGLE)
-    add_definitions("-DSINGLE")
+    add_definitions(-DSINGLE)
 endif ()
 if (USE_SHARED_MEMORY)
-    add_definitions("-DUSE_SHARED_MEMORY")
+    add_definitions(-DUSE_SHARED_MEMORY)
 endif ()
+
+add_compilation_flags(FLAGS)
 
 find_package(OpenMP REQUIRED)
 set(LIBRARIES OpenMP::OpenMP_CXX)
