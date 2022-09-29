@@ -40,7 +40,7 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1e7;
+    int numHists = 1e10;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
@@ -105,11 +105,11 @@ int main(int argc, char* argv[]) {
     } else
 #endif
 #ifdef GPU
-    if (use_gpu) {
+        if (use_gpu) {
         histograms = Gpu::Simulate(material, numHists);
     } else
 #endif
-    if (numThreads > 1) {
+        if (numThreads > 1) {
         histograms = Multithread::Simulate(material, numHists, numThreads);
     } else {
         histograms = Reference::Simulate(material, numHists);
