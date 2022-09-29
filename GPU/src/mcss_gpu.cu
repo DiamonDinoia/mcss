@@ -22,7 +22,19 @@ __global__ static void compute_terminal_positions(
     // Load cuda random state into local register memory
     curandStatePhilox4_32_10 local_state{};
     curand_init(i, seed, 0, &local_state);
+#ifdef USE_SHARED_MEMORY
+    __shared__ unsigned int shared_longHist[longiDistNumBin];
+    __shared__ unsigned int shared_transHist[transDistNumBin];
+    if (threadX < longiDistNumBin) {
+        shared_longHist[threadX] = 0.0;
+    }
+    if (threadX < transDistNumBin) {
+        shared_transHist[threadX] = 0.0;
+    }
 
+    // Ensure that every thread has initialised the histograms
+    __syncthreads();
+#endif
     // Perform multiple simulations per thread
     for (int j = 0; j < thread_histories; j++) {
         // Use strides of size blockDim.x*gridDim.x to divide work as
@@ -72,7 +84,6 @@ __global__ static void compute_terminal_positions(
         const unsigned lIndx = (longi + 1.0) * longiDistInvD;
         // Increment the relevant element of the thread-specific
         // longitudinal histogram.
-        atomicAdd(&(longHist[lIndx]), 1);
         const real_type trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
@@ -80,8 +91,25 @@ __global__ static void compute_terminal_positions(
         const unsigned tIndx = trans * transDistInvD;
         // Increment the relevent element of the thread-specific
         // trans histogram.
+#ifndef USE_SHARED_MEMORY
+        atomicAdd(&(longHist[lIndx]), 1);
         atomicAdd(&(transHist[tIndx]), 1);
+#endif
+#ifdef USE_SHARED_MEMORY
+
+        atomicAdd(&(shared_longHist[lIndx]), 1);
+        atomicAdd(&(shared_transHist[tIndx]), 1);
+#endif
     }
+#ifdef USE_SHARED_MEMORY
+    // Add shared histogram to global histogram
+    if (threadX < longiDistNumBin) {
+        atomicAdd(&(longHist[threadX]), shared_longHist[threadX]);
+    }
+    if (threadX < transDistNumBin) {
+        atomicAdd(&(longHist[threadX]), shared_transHist[threadX]);
+    }
+#endif
 }
 
 /*
@@ -95,8 +123,13 @@ Histograms Simulate(Material material, int numHists) {
     // sleep mode, so I wake them up before timing the application)
     // cudaFree(0);
     // cudaDeviceSynchronize();
+#ifndef USE_SHARED_MEMORY
     cuda_ret = cudaFuncSetCacheConfig(compute_terminal_positions,
                                       cudaFuncCachePreferL1);
+#else
+    cuda_ret = cudaFuncSetCacheConfig(compute_terminal_positions,
+                                      cudaFuncCachePreferShared);
+#endif
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to initialise longHist on the GPU.\n");
         exit(-1);
