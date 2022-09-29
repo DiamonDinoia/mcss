@@ -40,7 +40,7 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1e6;
+    int numHists = 1e7;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
             // Material
             case 'm':
                 material = (Material)std::stoi(optarg);
-                if (material < 0 || material > 4) {
+                if (material > 4) {
                     std::cerr << "Invalid material" << std::endl;
                     exit(EXIT_FAILURE);
                 }
