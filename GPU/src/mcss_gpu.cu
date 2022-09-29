@@ -12,26 +12,16 @@ static constexpr size_t div_rounding_up(size_t dividend, size_t divisor) {
     return (dividend + divisor - 1) / divisor;
 }
 
-__global__ void initialise_RNG(curandStatePhilox4_32_10* states,
-                               int numStates) {
-    unsigned long i = blockIdx.x * blockDim.x + threadIdx.x;
-    unsigned long seed = 0;
-
-    // Use the same seed but different sequence number
-    if (i < numStates) {
-        curand_init(i, seed, 0, &states[i]);
-    }
-}
-
 __global__ static void compute_terminal_positions(
-    curandStatePhilox4_32_10* states, unsigned int* longHist,
-    unsigned int* transHist, const real_type theScrPar, const real_type theMFP,
-    const real_type theLimit, const int numSims, const int thread_histories) {
+    unsigned int seed, unsigned int* longHist, unsigned int* transHist,
+    const real_type theScrPar, const real_type theMFP, const real_type theLimit,
+    const int numSims, const int thread_histories) {
     const int threadX = threadIdx.x;
     const int i = blockIdx.x * blockDim.x + threadX;
 
     // Load cuda random state into local register memory
-    curandStatePhilox4_32_10 local_state = states[i];
+    curandStatePhilox4_32_10 local_state{};
+    curand_init(i, seed, 0, &local_state);
 
     // Perform multiple simulations per thread
     for (int j = 0; j < thread_histories; j++) {
@@ -125,23 +115,10 @@ Histograms Simulate(Material material, int numHists) {
     constexpr auto num_threads = NUM_THREADS;
     auto num_blocks = div_rounding_up(numHists, num_threads);
     // CUDA has a limit on the grid size
-    num_blocks =
-        math::min(num_blocks, std::numeric_limits<unsigned int>::max());
+    num_blocks = math::min(num_blocks, GRID_SIZE);
 
     auto thread_histories = div_rounding_up(numHists, num_blocks * num_threads);
     thread_histories = math::max(thread_histories, 1);
-
-    // Initialise the RNG state for use in the simulations
-    curandStatePhilox4_32_10* states_d;
-
-    cuda_ret = cudaMalloc(&states_d, (num_blocks * num_threads) *
-                                         sizeof(curandStatePhilox4_32_10));
-    if (cuda_ret != cudaSuccess) {
-        printf("ERROR: Failed to initialise states on the GPU.\n");
-        exit(-1);
-    }
-
-    initialise_RNG<<<num_blocks, num_threads>>>(states_d, numHists);
 
     // Initialise histograms on GPU
     unsigned int* longHist_d;
@@ -181,8 +158,8 @@ Histograms Simulate(Material material, int numHists) {
 
     // Run simulation on GPU
     compute_terminal_positions<<<num_blocks, num_threads>>>(
-        states_d, longHist_d, transHist_d, theScrPar, theMFP, theLimit,
-        numHists, thread_histories);
+        seed, longHist_d, transHist_d, theScrPar, theMFP, theLimit, numHists,
+        thread_histories);
 
     cuda_ret = cudaDeviceSynchronize();
     if (cuda_ret != cudaSuccess) {
