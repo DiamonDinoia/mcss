@@ -80,11 +80,11 @@ inline constexpr void rotateToLabFrame(real_type &u, real_type &v, real_type &w,
 }
 
 struct Track {
-    real_type fPosition[3]{};   // rx, ry, rz
-    real_type fDirection[3]{};  // dx, dy, dz normalised to 1
-    real_type fTrackLength{};   // cumulative track length
+    real_type fPosition[3]{0};   // rx, ry, rz
+    real_type fDirection[3]{0};  // dx, dy, dz normalised to 1
+    real_type fTrackLength{0};   // cumulative track length
 
-    constexpr Track() { Reset(); }
+    inline constexpr Track() { Reset(); };
     virtual ~Track() = default;
 
     inline constexpr void Reset() {
@@ -110,5 +110,6 @@ struct Histograms {
                std::vector<real_type> trans_hist)
         : longiHist(std::move(longi_hist)), transHist(std::move(trans_hist)) {}
     Histograms() = default;
+    virtual ~Histograms() = default;
 };
 #endif

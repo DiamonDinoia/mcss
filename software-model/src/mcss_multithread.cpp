@@ -9,17 +9,6 @@
 
 namespace Multithread {
 
-// Create and initialise histograms with correct dimensions.
-std::vector<std::vector<real_type>> initialiseHistogram(int numThreads,
-                                                        int numBins) {
-    std::vector<std::vector<real_type>> histogram;
-    for (int i = 0; i < numThreads; i++) {
-        std::vector<real_type> sub_vector(numBins, 0.0);
-        histogram.push_back(sub_vector);
-    }
-    return histogram;
-}
-
 // Simulates a given number of particle histories and plots the outputs
 // on transverse and longitudinal histograms.
 Histograms Simulate(Material material, int numHists, unsigned int numThreads) {

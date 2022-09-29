@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <memory>
 #include <random>
 
 #include "common.h"
@@ -11,111 +12,85 @@ static constexpr size_t div_rounding_up(size_t dividend, size_t divisor) {
     return (dividend + divisor - 1) / divisor;
 }
 
+__global__ void initialise_RNG(curandStatePhilox4_32_10* states,
+                               int numStates) {
+    unsigned long i = blockIdx.x * blockDim.x + threadIdx.x;
+    unsigned long seed = 0;
+
+    // Use the same seed but different sequence number
+    if (i < numStates) {
+        curand_init(i, seed, 0, &states[i]);
+    }
+}
+
 __global__ static void compute_terminal_positions(
-    const unsigned seed, unsigned int* longHist, unsigned int* transHist,
-    real_type screening_param, real_type mean_free_path, real_type track_limit,
-    const unsigned int longHistNumBins, const unsigned int transHistNumBins,
-    real_type longDistInvD, real_type transDistInvD, int numSims,
-    int thread_histories) {
-    int threadX = threadIdx.x;
-    int i = blockIdx.x * blockDim.x + threadX;
+    curandStatePhilox4_32_10* states, unsigned int* longHist,
+    unsigned int* transHist, const real_type theScrPar, const real_type theMFP,
+    const real_type theLimit, const int numSims, const int thread_histories) {
+    const int threadX = threadIdx.x;
+    const int i = blockIdx.x * blockDim.x + threadX;
 
-    curandStatePhilox4_32_10 local_state{};
-    curand_init(i, seed, 0, &local_state);
-
-    // Initialise local variables
-    real_type trackPosition_x;
-    real_type trackPosition_y;
-    real_type trackPosition_z;
-    real_type trackDirection_x;
-    real_type trackDirection_y;
-    real_type trackDirection_z;
-    real_type stepLength;
-    real_type trackLength;
-    bool stop;
-    unsigned int local_idx;
-    real_type rand_val;
+    // Load cuda random state into local register memory
+    curandStatePhilox4_32_10 local_state = states[i];
 
     // Perform multiple simulations per thread
     for (int j = 0; j < thread_histories; j++) {
         // Use strides of size blockDim.x*gridDim.x to divide work as
         // equally as possible
-        local_idx =
+
+        const auto local_idx =
             j * blockDim.x * gridDim.x + blockDim.x * blockIdx.x + threadX;
 
         if (local_idx >= numSims) {
             break;
         }
 
-        // Initialise local variables
-        trackPosition_x = 0.0;
-        trackPosition_y = 0.0;
-        trackPosition_z = 0.0;
-        trackDirection_x = 0.0;
-        trackDirection_y = 0.0;
-        trackDirection_z = 1.0;
-
-        stepLength = 0.0;
-        trackLength = 0.0;
-        stop = false;
-
-        // Start the simulation
-        while (!stop) {
-            // Compute step length
-            rand_val = curand_uniform(&local_state);
-
-            stepLength = -mean_free_path * log(rand_val);
-            if (trackLength > track_limit) {  // Last step, so shorten it
-                                              // and stop afterwards
-                stepLength = track_limit - trackLength;
+        Track aTrack{};
+        real_type trackLength = 0.0;
+        bool stop = false;
+        do {
+            real_type stepLength =
+                -theMFP * std::log(curand_uniform(&local_state));
+            trackLength += stepLength;
+            if (trackLength > theLimit) {
+                stepLength = theLimit - aTrack.fTrackLength;
                 stop = true;
             }
-
-            // Update track positions
-            trackPosition_x += stepLength * trackDirection_x;
-            trackPosition_y += stepLength * trackDirection_y;
-            trackPosition_z += stepLength * trackDirection_z;
-            trackLength += stepLength;
-
-            // Update track direction if we are not at the end already
+            aTrack.fPosition[0] += aTrack.fDirection[0] * stepLength;
+            aTrack.fPosition[1] += aTrack.fDirection[1] * stepLength;
+            aTrack.fPosition[2] += aTrack.fDirection[2] * stepLength;
+            aTrack.fTrackLength += stepLength;
             if (!stop) {
-                // Compute new positions based on random collision direction
-                rand_val = curand_uniform(&local_state);
-
-                real_type cost = sampleCosTheta(screening_param, rand_val);
-                real_type sint = sqrt((1.0 - cost) * (1.0 + cost));
-                rand_val = curand_uniform(&local_state);
-                real_type phi = 2.0 * kPI * rand_val;
-
-                real_type u1 = sint * cos(phi);
-                real_type u2 = sint * sin(phi);
+                const real_type cost =
+                    sampleCosTheta(theScrPar, curand_uniform(&local_state));
+                const real_type dum0 = 1.0 - cost;
+                const real_type sint = std::sqrt(dum0 * (2.0 - dum0));
+                const real_type phi = 2.0 * kPI * curand_uniform(&local_state);
+                real_type u1 = sint * std::cos(phi);
+                real_type u2 = sint * std::sin(phi);
                 real_type u3 = cost;
-
-                // Rotate back to lab frame
-                rotateToLabFrame(u1, u2, u3, trackDirection_x, trackDirection_y,
-                                 trackDirection_z);
-
-                trackDirection_x = u1;
-                trackDirection_y = u2;
-                trackDirection_z = u3;
+                rotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
+                                 aTrack.fDirection[1], aTrack.fDirection[2]);
+                aTrack.fDirection[0] = u1;
+                aTrack.fDirection[1] = u2;
+                aTrack.fDirection[2] = u3;
             }
-        }
+        } while (!stop);
 
-        // Compute longitudinal deviation and its bin index
-        real_type longitudinal_deviation = trackPosition_z / trackLength;
-        auto longIdx =
-            (unsigned int)((longitudinal_deviation + 1.0) * longDistInvD);
-
-        // Compute transversal deviation and its bin index
-        real_type transversal_deviation =
-            sqrt(trackPosition_x * trackPosition_x +
-                 trackPosition_y * trackPosition_y) /
-            trackLength;
-        auto transIdx = (unsigned int)(transversal_deviation * transDistInvD);
-
-        // Write simulation result to histograms
-        atomicAdd(&(longHist[longIdx]), 1);
-        atomicAdd(&(transHist[transIdx]), 1);
+        // Calculate final longitudinal location.
+        const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
+        const unsigned lIndx = (longi + 1.0) * longiDistInvD;
+        // Increment the relevant element of the thread-specific
+        // longitudinal histogram.
+        atomicAdd(&(longHist[lIndx]), 1);
+        const real_type trans =
+            std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
+                      aTrack.fPosition[1] * aTrack.fPosition[1]) /
+            aTrack.fTrackLength;
+        const unsigned tIndx = trans * transDistInvD;
+        // Increment the relevent element of the thread-specific
+        // trans histogram.
+        atomicAdd(&(transHist[tIndx]), 1);
     }
 }
 
@@ -124,7 +99,6 @@ __global__ static void compute_terminal_positions(
  */
 
 Histograms Simulate(Material material, int numHists) {
-    unsigned int *longHist_h, *transHist_h;
     cudaError_t cuda_ret;
     const auto seed = std::random_device()();
     // Wake up GPU (seems to be a problem with Peregrine GPUs being in
@@ -139,10 +113,8 @@ Histograms Simulate(Material material, int numHists) {
     }
 
     // Initialise space on host for histograms
-    longHist_h =
-        (unsigned int*)malloc(longiDistNumBin * sizeof(unsigned int));
-    transHist_h =
-        (unsigned int*)malloc(transDistNumBin * sizeof(unsigned int));
+    auto longHist_h = std::make_unique<unsigned int[]>(longiDistNumBin);
+    auto transHist_h = std::make_unique<unsigned int[]>(transDistNumBin);
 
     // Initialise constants
     const real_type theScrPar = computeScrParam(material, thePC2);
@@ -155,8 +127,21 @@ Histograms Simulate(Material material, int numHists) {
     // CUDA has a limit on the grid size
     num_blocks =
         math::min(num_blocks, std::numeric_limits<unsigned int>::max());
+
     auto thread_histories = div_rounding_up(numHists, num_blocks * num_threads);
     thread_histories = math::max(thread_histories, 1);
+
+    // Initialise the RNG state for use in the simulations
+    curandStatePhilox4_32_10* states_d;
+
+    cuda_ret = cudaMalloc(&states_d, (num_blocks * num_threads) *
+                                         sizeof(curandStatePhilox4_32_10));
+    if (cuda_ret != cudaSuccess) {
+        printf("ERROR: Failed to initialise states on the GPU.\n");
+        exit(-1);
+    }
+
+    initialise_RNG<<<num_blocks, num_threads>>>(states_d, numHists);
 
     // Initialise histograms on GPU
     unsigned int* longHist_d;
@@ -196,8 +181,7 @@ Histograms Simulate(Material material, int numHists) {
 
     // Run simulation on GPU
     compute_terminal_positions<<<num_blocks, num_threads>>>(
-        seed, longHist_d, transHist_d, theScrPar, theMFP, theLimit,
-        longiDistNumBin, transDistNumBin, longiDistInvD, transDistInvD,
+        states_d, longHist_d, transHist_d, theScrPar, theMFP, theLimit,
         numHists, thread_histories);
 
     cuda_ret = cudaDeviceSynchronize();
@@ -206,14 +190,14 @@ Histograms Simulate(Material material, int numHists) {
         exit(-1);
     }
     // Retrieve histograms from GPU
-    cuda_ret = cudaMemcpy(longHist_h, longHist_d,
+    cuda_ret = cudaMemcpy(longHist_h.get(), longHist_d,
                           longiDistNumBin * sizeof(unsigned int),
                           cudaMemcpyDeviceToHost);
     if (cuda_ret != cudaSuccess) {
         printf("ERROR: Failed to retrieve longitudinal histogram from GPU.\n");
         exit(-1);
     }
-    cuda_ret = cudaMemcpy(transHist_h, transHist_d,
+    cuda_ret = cudaMemcpy(transHist_h.get(), transHist_d,
                           transDistNumBin * sizeof(unsigned int),
                           cudaMemcpyDeviceToHost);
     if (cuda_ret != cudaSuccess) {
@@ -239,9 +223,6 @@ Histograms Simulate(Material material, int numHists) {
     // Free buffers
     cudaFree(longHist_d);
     cudaFree(transHist_d);
-
-    free(longHist_h);
-    free(transHist_h);
 
     return histograms;
 }

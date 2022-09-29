@@ -172,14 +172,12 @@ TEST_CASE("Correctness") {
         auto reference = Reference::Simulate(TISSUE, histories);
         auto multithreaded = Multithread::Simulate(TISSUE, histories);
 #ifdef FPGA_BUILD
-
         auto dfe = Dfe::Simulate(TISSUE, histories);
 #endif
 
 #ifdef GPU
         auto gpu = Gpu::Simulate(TISSUE, histories);
 #endif
-
         auto pValues = compareDistributions(reference, multithreaded);
         REQUIRE(pValues[0] >= alpha);
         REQUIRE(pValues[1] >= alpha);
