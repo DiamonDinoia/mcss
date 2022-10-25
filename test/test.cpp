@@ -29,7 +29,7 @@ std::vector<double> compareDistributions(const Histograms& originalHistograms,
 TEST_CASE("Correctness") {
     constexpr Material material = GOLD;
     constexpr int histories = 1e7;
-    constexpr auto alpha = 0.99;
+    constexpr auto alpha = 1-10e-4;
     std::cout << "Starting correctness tests" << std::endl;
     auto referenceHistograms = Reference::Simulate();
     auto multithreadedHistograms = Multithread::Simulate(material, histories);
@@ -193,21 +193,4 @@ TEST_CASE("Correctness") {
         REQUIRE(pValues[1] >= alpha);
 #endif
     }
-}
-
-TEST_CASE("Benchmarking") {
-    int numHists = 1000000;
-    Material material = GOLD;
-    BENCHMARK("Reference") { return Reference::Simulate(material, numHists); };
-#ifdef FPGA_BUILD
-    BENCHMARK("DFE") { return Dfe::Simulate(material, numHists); };
-#endif
-
-#ifdef GPU
-    BENCHMARK("GPU") { return Gpu::Simulate(material, numHists); };
-#endif
-
-    BENCHMARK("Multithreaded") {
-        return Multithread::Simulate(material, numHists);
-    };
 }
