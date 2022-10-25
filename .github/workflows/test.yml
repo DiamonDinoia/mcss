@@ -25,3 +25,10 @@ jobs:
         configure-options: -DTESTS=ON
         run-test: true
         ctest-options: --test-dir test  --output-on-failure 
+    - uses: DoozyX/clang-format-lint-action@v0.11
+    - name: test-clang-format
+      with:
+        source: '.'
+        exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util'
+        extensions: 'h,cpp'
+        clangFormatVersion: 10
