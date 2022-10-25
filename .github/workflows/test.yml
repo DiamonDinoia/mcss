@@ -1,12 +1,12 @@
 - name: Build & Test
-    uses: ashutoshvarma/action-cmake-build@master
-    with:
-      build-dir: ${{ runner.workspace }}/build
-      # will set the CC & CXX for cmake
-      cc: gcc
-      cxx: g++
-      build-type: RelWithDebInfo
-      # Extra options pass to cmake while configuring project
-      configure-options: -DTESTS=ON
-      run-test: true
-      ctest-options: --test-dir build/test  --output-on-failure 
+  uses: ashutoshvarma/action-cmake-build@master
+  with:
+    build-dir: ${{ runner.workspace }}/build
+    # will set the CC & CXX for cmake
+    cc: gcc
+    cxx: g++
+    build-type: RelWithDebInfo
+    # Extra options pass to cmake while configuring project
+    configure-options: -DTESTS=ON
+    run-test: true
+    ctest-options: --test-dir build/test  --output-on-failure 
