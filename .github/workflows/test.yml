@@ -24,4 +24,4 @@ jobs:
         # Extra options pass to cmake while configuring project
         configure-options: -DTESTS=ON
         run-test: true
-        ctest-options: --test-dir build/test  --output-on-failure 
+        ctest-options: --test-dir test  --output-on-failure 
