@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: sudo apt-get install git -y
     - uses: actions/checkout@v2
     - name: Run unit tests
       uses: HorstBaerbel/action-ctest@1.1
