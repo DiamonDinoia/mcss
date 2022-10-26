@@ -10,7 +10,6 @@
 #define NUM_THREADS 512
 #define GRID_SIZE std::numeric_limits<unsigned int>::max()
 
-
 namespace Gpu {
 Histograms Simulate(Material material, int numHists);
 

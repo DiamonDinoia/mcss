@@ -1,9 +1,8 @@
 #ifndef MultithreadedMCSS_H
 #define MultithreadedMCSS_H
 
-
-#include "common.h"
 #include <thread>
+#include "common.h"
 
 namespace Multithread {
 
