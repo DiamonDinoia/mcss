@@ -29,6 +29,6 @@ jobs:
       uses: DoozyX/clang-format-lint-action@v0.11
       with:
         source: '.'
-        exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util'
+        exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util ./FPGA/CPU/inc'
         extensions: 'h,cpp'
         clangFormatVersion: 10
