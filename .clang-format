@@ -1,7 +1,7 @@
 Language: Cpp
 BasedOnStyle: Google
 TabWidth: 4
-UseTab: Never
+UseTab: Always
 AlignOperands: true
 AllowShortBlocksOnASingleLine: true
 AlignConsecutiveAssignments: true

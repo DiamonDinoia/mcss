@@ -247,35 +247,35 @@ void mMultiply(double *A, double *B, double *C, int m) {
   int i, j, k;
   double s;
   for (i = 0; i < m; i++)
-    for (j = 0; j < m; j++) {
-      s = 0.;
-      for (k = 0; k < m; k++) s += A[i * m + k] * B[k * m + j];
-      C[i * m + j] = s;
-    }
+	for (j = 0; j < m; j++) {
+	  s = 0.;
+	  for (k = 0; k < m; k++) s += A[i * m + k] * B[k * m + j];
+	  C[i * m + j] = s;
+	}
 }
 
 void mPower(double *A, int eA, double *V, int *eV, int m, int n) {
   double *B;
   int eB, i;
   if (n == 1) {
-    for (i = 0; i < m * m; i++) V[i] = A[i];
-    *eV = eA;
-    return;
+	for (i = 0; i < m * m; i++) V[i] = A[i];
+	*eV = eA;
+	return;
   }
   mPower(A, eA, V, eV, m, n / 2);
   B = (double *)malloc((m * m) * sizeof(double));
   mMultiply(V, V, B, m);
   eB = 2 * (*eV);
   if (n % 2 == 0) {
-    for (i = 0; i < m * m; i++) V[i] = B[i];
-    *eV = eB;
+	for (i = 0; i < m * m; i++) V[i] = B[i];
+	*eV = eB;
   } else {
-    mMultiply(A, B, V, m);
-    *eV = eA + eB;
+	mMultiply(A, B, V, m);
+	*eV = eA + eB;
   }
   if (V[(m / 2) * m + (m / 2)] > 1e140) {
-    for (i = 0; i < m * m; i++) V[i] = V[i] * 1e-140;
-    *eV += 140;
+	for (i = 0; i < m * m; i++) V[i] = V[i] * 1e-140;
+	*eV += 140;
   }
   free(B);
 }
@@ -289,29 +289,29 @@ double K(int n, double d) {
   H = (double *)malloc((m * m) * sizeof(double));
   Q = (double *)malloc((m * m) * sizeof(double));
   for (i = 0; i < m; i++)
-    for (j = 0; j < m; j++)
-      if (i - j + 1 < 0)
-        H[i * m + j] = 0;
-      else
-        H[i * m + j] = 1;
+	for (j = 0; j < m; j++)
+	  if (i - j + 1 < 0)
+		H[i * m + j] = 0;
+	  else
+		H[i * m + j] = 1;
   for (i = 0; i < m; i++) {
-    H[i * m] -= pow(h, i + 1);
-    H[(m - 1) * m + i] -= pow(h, (m - i));
+	H[i * m] -= pow(h, i + 1);
+	H[(m - 1) * m + i] -= pow(h, (m - i));
   }
   H[(m - 1) * m] += (2 * h - 1 > 0 ? pow(2 * h - 1, m) : 0);
   for (i = 0; i < m; i++)
-    for (j = 0; j < m; j++)
-      if (i - j + 1 > 0)
-        for (g = 1; g <= i - j + 1; g++) H[i * m + j] /= g;
+	for (j = 0; j < m; j++)
+	  if (i - j + 1 > 0)
+		for (g = 1; g <= i - j + 1; g++) H[i * m + j] /= g;
   eH = 0;
   mPower(H, eH, Q, &eQ, m, n);
   s = Q[(k - 1) * m + k - 1];
   for (i = 1; i <= n; i++) {
-    s = s * i / n;
-    if (s < 1e-140) {
-      s *= 1e140;
-      eQ -= 140;
-    }
+	s = s * i / n;
+	if (s < 1e-140) {
+	  s *= 1e140;
+	  eQ -= 140;
+	}
   }
   s *= pow(10., eQ);
   free(H);
@@ -322,8 +322,8 @@ double K(int n, double d) {
 std::ostream &operator<<(std::ostream &os, const std::list<int64_t> &L) {
   std::list<int64_t>::const_iterator it = L.begin();
   while (it != L.end()) {
-    os << *it << ',';
-    it++;
+	os << *it << ',';
+	it++;
   }
   return os;
 }
@@ -331,8 +331,8 @@ std::ostream &operator<<(std::ostream &os, const std::list<int64_t> &L) {
 std::ostream &operator<<(std::ostream &os, const std::list<double> &L) {
   std::list<double>::const_iterator it = L.begin();
   while (it != L.end()) {
-    os << *it << ',';
-    it++;
+	os << *it << ',';
+	it++;
   }
   return os;
 }
@@ -340,8 +340,8 @@ std::ostream &operator<<(std::ostream &os, const std::list<double> &L) {
 std::ostream &operator<<(std::ostream &os, const std::vector<unsigned> &V) {
   std::vector<unsigned>::const_iterator it = V.begin();
   while (it != V.end()) {
-    os << *it << ',';
-    it++;
+	os << *it << ',';
+	it++;
   }
   return os;
 }
@@ -350,8 +350,8 @@ std::ostream &operator<<(std::ostream &os, const std::vector<int64_t> &V) {
   std::vector<int64_t>::const_iterator it = V.begin();
   os << "( ";
   while (it != V.end()) {
-    os << *it << " ";
-    it++;
+	os << *it << " ";
+	it++;
   }
   os << ")";
   return os;
@@ -361,39 +361,39 @@ std::ostream &operator<<(std::ostream &os, const std::vector<double> &V) {
   std::vector<double>::const_iterator it = V.begin();
   os << "( ";
   while (it != V.end()) {
-    os << *it << " ";
-    it++;
+	os << *it << " ";
+	it++;
   }
   os << ")";
   return os;
 }
 
 std::ostream &operator<<(std::ostream &os,
-                         const std::list<std::vector<int64_t> > &L) {
+						 const std::list<std::vector<int64_t> > &L) {
   // We need a ckeck as L for sample_new is initially empty
   if (L.size() > 0) {
-    std::list<std::vector<int64_t> >::const_iterator it = L.begin();
-    os << *it;
-    it++;
-    while (it != L.end()) {
-      os << ", " << *it;
-      it++;
-    }
+	std::list<std::vector<int64_t> >::const_iterator it = L.begin();
+	os << *it;
+	it++;
+	while (it != L.end()) {
+	  os << ", " << *it;
+	  it++;
+	}
   }
   return os;
 }
 
 std::ostream &operator<<(std::ostream &os,
-                         const std::list<std::vector<double> > &L) {
+						 const std::list<std::vector<double> > &L) {
   // We need a ckeck as L for sample_new is initially empty
   if (L.size() > 0) {
-    std::list<std::vector<double> >::const_iterator it = L.begin();
-    os << *it;
-    it++;
-    while (it != L.end()) {
-      os << ", " << *it;
-      it++;
-    }
+	std::list<std::vector<double> >::const_iterator it = L.begin();
+	os << *it;
+	it++;
+	while (it != L.end()) {
+	  os << ", " << *it;
+	  it++;
+	}
   }
   return os;
 }
@@ -445,50 +445,50 @@ double ks_test(std::vector<real_type> vector1, std::vector<real_type> vector2) {
   sample1.sort();
   sample2.sort();
 
-  D    = 0;
+  D	   = 0;
   Dmin = 0;
   Dmax = 0;
   it1  = sample1.begin();
   it2  = sample2.begin();
 
   while ((it1 != sample1.end()) && (it2 != sample2.end())) {
-    if (*it1 == *it2) {
-      s = *it1;
-      do {
-        D += n2;
-        it1++;
-      } while ((*it1 == s) && (it1 != sample1.end()));
-      do {
-        D -= n1;
-        it2++;
-      } while ((*it2 == s) && (it2 != sample2.end()));
+	if (*it1 == *it2) {
+	  s = *it1;
+	  do {
+		D += n2;
+		it1++;
+	  } while ((*it1 == s) && (it1 != sample1.end()));
+	  do {
+		D -= n1;
+		it2++;
+	  } while ((*it2 == s) && (it2 != sample2.end()));
 
-      if (D > Dmax)
-        Dmax = D;
-      else if (D < Dmin)
-        Dmin = D;
+	  if (D > Dmax)
+		Dmax = D;
+	  else if (D < Dmin)
+		Dmin = D;
 
-    }
+	}
 
-    else if (*it1 < *it2) {
-      D += n2;
-      it1++;
+	else if (*it1 < *it2) {
+	  D += n2;
+	  it1++;
 
-      if (D > Dmax) Dmax = D;
-    }
+	  if (D > Dmax) Dmax = D;
+	}
 
-    else {
-      D -= n1;
-      it2++;
+	else {
+	  D -= n1;
+	  it2++;
 
-      if (D < Dmin) Dmin = D;
-    }
+	  if (D < Dmin) Dmin = D;
+	}
   }
 
   if (-Dmin > Dmax)
-    D = -Dmin;
+	D = -Dmin;
   else
-    D = Dmax;
+	D = Dmax;
 
   d = float(D) / (n1 * n2);
   return 1 - K(n_approx, d);
