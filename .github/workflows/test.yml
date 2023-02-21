@@ -31,6 +31,7 @@ jobs:
         exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util ./FPGA/CPU/inc'
         extensions: 'h,cpp'
         clangFormatVersion: 14
+        inplace: True
     - uses: EndBug/add-and-commit@v4
       with:
         author_name: Clang Robot
