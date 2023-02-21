@@ -32,6 +32,7 @@ jobs:
         exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util ./FPGA/CPU/inc'
         extensions: 'h,cpp'
         clangFormatVersion: 14
+    - name: commit-clang-changes
       uses: EndBug/add-and-commit@v4
       with:
         author_name: Clang Robot
