@@ -5,6 +5,9 @@
 #include <chrono>
 #include <cstring>
 
+#include <string>
+#include <iostream>
+
 #include "common.h"
 #include "mcss_dfe.h"
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(mcss LANGUAGES CXX)
+project(mcss LANGUAGES CXX C)
 
 option(SINGLE "enable single precision" ON)
 option(USE_SHARED_MEMORY "enable explicit shared memory use" OFF)
@@ -108,7 +108,7 @@ file(GLOB SOURCES
         )
 
 if (FPGA_BUILD)
-    add_definitions(-DFPGA_BUILD)
+    add_definitions(-DFPGA_BUILD=1)
     include_directories(FPGA/include)
 
     set(MAXFILES_DIR "FPGA/CPU/max")
@@ -172,10 +172,11 @@ if (FPGA_BUILD)
     else ()
         message(FATAL_ERROR "sliccompile not found")
     endif ()
-
+	
+    add_custom_target(MAX_OBJS_LIB SOURCES ${MAXOBJS})
     message(STATUS "max objects generated ${MAXOBJS}")
-    list(APPEND SOURCES ${MAXOBJS} ${CFILES})
-    list(APPEND LIBRARIES ${SLIC_LDFLAGS})
+    list(APPEND LIBRARIES ${SLIC_LDFLAGS} ${MAXOBJS})
+    list(APPEND SOURCES ${CFILES})
 endif ()
 
 
@@ -225,7 +226,10 @@ message(LIBRARIES = ${LIBRARIES})
 
 add_executable(mcss mcss.cpp ${SOURCES})
 target_link_libraries(mcss PUBLIC ${LIBRARIES})
-
+if (FPGA_BUILD)
+    add_dependencies(mcss MAX_OBJS_LIB)
+    target_compile_definitions(mcss PUBLIC FPGA_BUILD)
+endif ()
 
 
 
