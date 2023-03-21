@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build & Test
+    - name: Build & Test & Format
       uses: ashutoshvarma/action-cmake-build@master
       with:
         build-dir: ${{ runner.workspace }}/build
@@ -25,10 +25,17 @@ jobs:
         configure-options: -DTESTS=ON
         run-test: true
         ctest-options: --test-dir test  --output-on-failure 
-    - name: test-clang-format
-      uses: DoozyX/clang-format-lint-action@v0.11
+    - uses: DoozyX/clang-format-lint-action@v0.14
       with:
         source: '.'
         exclude: './build ./FPGA/DFE ./FPGA/CPU/max ./util ./FPGA/CPU/inc'
         extensions: 'h,cpp'
-        clangFormatVersion: 10
+        clangFormatVersion: 14
+        inplace: True
+    - uses: EndBug/add-and-commit@v4
+      with:
+        author_name: Clang Robot
+        author_email: robot@example.com
+        message: 'Committing clang-format changes'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

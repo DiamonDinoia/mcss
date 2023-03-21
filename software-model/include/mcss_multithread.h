@@ -8,8 +8,8 @@
 namespace Multithread {
 
 Histograms Simulate(
-	Material material, int numHists,
-	unsigned int numThreads = std::thread::hardware_concurrency());
+    Material material, int numHists,
+    unsigned int numThreads = std::thread::hardware_concurrency());
 }  // namespace Multithread
 
 #endif
