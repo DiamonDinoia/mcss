@@ -40,7 +40,7 @@ void createCSV(const Histograms& histograms, const std::string& filename) {
 int main(int argc, char* argv[]) {
     int opt;
     Material material = GOLD;
-    int numHists = 1e9;
+    int numHists = 1e7;
     std::string filename;
 #ifdef FPGA_BUILD
     bool use_dfe = false;
@@ -122,6 +122,17 @@ int main(int argc, char* argv[]) {
 
     if (!filename.empty()) {
         createCSV(histograms, filename);
+    } else {
+        std::cout << "longitudinal" << ',';
+        for(const auto& elem : histograms.longiHist){
+            std::cout << elem << ',';
+        }
+        std::cout << std::endl;
+        std::cout << "transversal" << ',';
+        for(const auto& elem : histograms.transHist){
+            std::cout << elem << ',';
+        }
+        std::cout << std::endl;
     }
     exit(EXIT_SUCCESS);
 }
