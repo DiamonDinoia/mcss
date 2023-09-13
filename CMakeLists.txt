@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.24)
 project(mcss LANGUAGES CXX C)
 
 option(SINGLE "enable single precision" ON)
@@ -182,20 +182,7 @@ endif ()
 
 if (GPU)
     add_definitions(-DGPU=1)
-    if (${CMAKE_VERSION} VERSION_LESS_EQUAL "3.13.4")
-        cuda_select_nvcc_arch_flags(ARCH_FLAGS "Auto") # optional argument for arch to add
-        message("ARCH_FLAGS = ${ARCH_FLAGS}")
-        string(REPLACE "-gencode;" "--generate-code=" ARCH_FLAGS "${ARCH_FLAGS}")
-        string(APPEND CMAKE_CUDA_FLAGS "${ARCH_FLAGS}")
-    else ()
-        include(FindCUDA/select_compute_arch)
-        CUDA_DETECT_INSTALLED_GPUS(INSTALLED_GPU_CCS_1)
-        string(STRIP "${INSTALLED_GPU_CCS_1}" INSTALLED_GPU_CCS_2)
-        string(REPLACE " " ";" INSTALLED_GPU_CCS_3 "${INSTALLED_GPU_CCS_2}")
-        string(REPLACE "." "" CUDA_ARCH_LIST "${INSTALLED_GPU_CCS_3}")
-        SET(CMAKE_CUDA_ARCHITECTURES ${CUDA_ARCH_LIST})
-        set_property(GLOBAL PROPERTY CUDA_ARCHITECTURES "${CUDA_ARCH_LIST}")
-    endif ()
+    set_property(GLOBAL PROPERTY CUDA_ARCHITECTURES native)
     list(APPEND GPU_FLAGS -Wno-deprecated-gpu-targets --default-stream per-thread
             --use_fast_math --extra-device-vectorization --expt-relaxed-constexpr
             --extended-lambda --restrict --ptxas-options=-v)
