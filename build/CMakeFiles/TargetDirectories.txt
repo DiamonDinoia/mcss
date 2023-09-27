@@ -1,3 +1,0 @@
-/home/mbarbone/repos/mcss/build/CMakeFiles/mcss.dir
-/home/mbarbone/repos/mcss/build/CMakeFiles/edit_cache.dir
-/home/mbarbone/repos/mcss/build/CMakeFiles/rebuild_cache.dir
