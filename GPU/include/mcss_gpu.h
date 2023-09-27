@@ -11,10 +11,11 @@
 
 #include "common.h"
 
-#define NUM_THREADS 512
-#define GRID_SIZE   std::numeric_limits<unsigned int>::max()
+#define NUM_THREADS 256
+#define GRID_SIZE   256
 
 namespace Gpu {
+template <typename T>
 Histograms Simulate(Material material, int numHists);
 
 }  // namespace Gpu

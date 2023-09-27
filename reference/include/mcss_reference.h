@@ -8,7 +8,8 @@
 #include "common.h"
 
 namespace Reference {
-Histograms Simulate(Material material = GOLD, int numHists = 1000000);
+template <typename T>
+Histograms Simulate(Material material, int numHists);
 }  // namespace Reference
 
 #endif

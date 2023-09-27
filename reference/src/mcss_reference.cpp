@@ -2,7 +2,11 @@
 // -----------------------------------------------------------------------
 // Modified by D. Chen 2020
 // Modified by M. Barbone 2020
+
 #include "mcss_reference.h"
+
+#include <VectorXoshiro/xoshiroPlusPlus.h>
+#include <mixmax/mixmax.h>
 
 #include <cmath>
 #include <random>
@@ -11,25 +15,25 @@
 
 // Minimally-altered, single-threaded MCSS implementation.
 namespace Reference {
-Histograms Simulate(Material material, int numHists) {
-    const real_type    theScrPar = computeScrParam(material, thePC2);
-    const real_type    theMFP    = computeMFP(material, theBeta2, theScrPar);
-    const real_type    theLimit  = theMFP * 33.5;
-
-    double             theLongiDistr[longiDistNumBin] = {0.0};
-    double             theTransDistr[transDistNumBin] = {0.0};
+template <typename T>
+Histograms Simulate(const Material material, const int numHists) {
+    const real_type theScrPar = computeScrParam(material, thePC2);
+    const real_type theMFP    = computeMFP(material, theBeta2, theScrPar);
+    const real_type theLimit  = theMFP * 33.5;
+    //
+    real_type          theLongiDistr[longiDistNumBin] = {0.0};
+    real_type          theTransDistr[transDistNumBin] = {0.0};
 
     std::random_device rd;
-    std::mt19937       gen(rd());
-    std::uniform_real_distribution<> dis(0, 1.0);
-    Track                            aTrack;
-    double                           iterations = 0;
+    T       gen(42);
+    std::uniform_real_distribution<real_type> dis(0, 1.0);
+    Track                                     aTrack;
     for (int ih = 0; ih < numHists; ih++) {
         aTrack.Reset();
-        double trackLength = 0.0;
-        bool   stop        = false;
+        real_type trackLength = 0.0;
+        bool      stop        = false;
         do {
-            double stepLength = -theMFP * std::log(dis(gen));
+            real_type stepLength = -theMFP * std::log(dis(gen));
             trackLength += stepLength;
             if (trackLength > theLimit) {
                 stepLength = theLimit - aTrack.fTrackLength;
@@ -42,13 +46,13 @@ Histograms Simulate(Material material, int numHists) {
             aTrack.fTrackLength += stepLength;
 
             if (!stop) {
-                const double cost = sampleCosTheta(theScrPar, dis(gen));
-                const double dum0 = 1.0 - cost;
-                const double sint = std::sqrt(dum0 * (2.0 - dum0));
-                const double phi  = 2.0 * kPI * dis(gen);
-                real_type    u1   = sint * std::cos(phi);
-                real_type    u2   = sint * std::sin(phi);
-                real_type    u3   = cost;
+                const real_type cost = sampleCosTheta(theScrPar, dis(gen));
+                const real_type dum0 = 1.0 - cost;
+                const real_type sint = std::sqrt(dum0 * (2.0 - dum0));
+                const real_type phi  = 2.0 * kPI * dis(gen);
+                real_type       u1   = sint * std::cos(phi);
+                real_type       u2   = sint * std::sin(phi);
+                real_type       u3   = cost;
 
                 rotateToLabFrame(u1, u2, u3, aTrack.fDirection[0],
                                  aTrack.fDirection[1], aTrack.fDirection[2]);
@@ -56,13 +60,12 @@ Histograms Simulate(Material material, int numHists) {
                 aTrack.fDirection[1] = u2;
                 aTrack.fDirection[2] = u3;
             }
-            iterations++;
         } while (!stop);
-        const double longi = aTrack.fPosition[2] / aTrack.fTrackLength;
-        const int    lIndx = (int)((longi + 1.0) * longiDistInvD);
+        const real_type longi = aTrack.fPosition[2] / aTrack.fTrackLength;
+        const int       lIndx = (int)((longi + 1.0) * longiDistInvD);
         ++theLongiDistr[lIndx];
 
-        const double trans =
+        const real_type trans =
             std::sqrt(aTrack.fPosition[0] * aTrack.fPosition[0] +
                       aTrack.fPosition[1] * aTrack.fPosition[1]) /
             aTrack.fTrackLength;
@@ -70,8 +73,8 @@ Histograms Simulate(Material material, int numHists) {
         ++theTransDistr[tIndx];
     }
 
-    double     longiNormFactor = 1.0 / numHists * longiDistInvD;
-    double     transNormFactor = 1.0 / numHists * transDistInvD;
+    real_type  longiNormFactor = 1.0 / numHists * longiDistInvD;
+    real_type  transNormFactor = 1.0 / numHists * transDistInvD;
 
     Histograms histograms{longiDistNumBin, transDistNumBin};
     for (int i = 0; i < longiDistNumBin; i++) {
@@ -84,6 +87,10 @@ Histograms Simulate(Material material, int numHists) {
 
     return histograms;
 }
+template Histograms Simulate<XoshiroPlusPlus>(Material, int);
+template Histograms Simulate<MIXMAX::MixMaxRng8>(Material, int);
+template Histograms Simulate<std::mt19937_64>(Material, int);
+template Histograms Simulate<CounterRNG>(Material, int);
+template Histograms Simulate<ChaCha8>(Material, int);
 
-Histograms Simulate() { return Simulate(GOLD, 1000000); }
 }  // namespace Reference

@@ -15,6 +15,45 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 Include(FetchContent)
 include(CheckLanguage)
 
+set(CPM_DOWNLOAD_VERSION 0.38.1)
+
+if (CPM_SOURCE_CACHE)
+    set(CPM_DOWNLOAD_LOCATION "${CPM_SOURCE_CACHE}/cpm/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
+elseif (DEFINED ENV{CPM_SOURCE_CACHE})
+    set(CPM_DOWNLOAD_LOCATION "$ENV{CPM_SOURCE_CACHE}/cpm/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
+else ()
+    set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/cmake/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
+endif ()
+if (NOT (EXISTS ${CPM_DOWNLOAD_LOCATION}))
+    message(STATUS "Downloading CPM.cmake to ${CPM_DOWNLOAD_LOCATION}")
+    file(DOWNLOAD
+            https://github.com/TheLartians/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake
+            ${CPM_DOWNLOAD_LOCATION}
+    )
+endif ()
+include(${CPM_DOWNLOAD_LOCATION})
+
+
+CPMAddPackage(
+        NAME Xoshiro
+        GIT_REPOSITORY git@github.com:DiamonDinoia/VectorXoshiro.git
+        GIT_TAG main
+        GIT_SHALLOW YES
+        GIT_PROGRESS YES
+        EXCLUDE_FROM_ALL YES
+        SYSTEM YES
+)
+
+CPMAddPackage(
+        NAME MixMax
+        GIT_REPOSITORY git@github.com:DiamonDinoia/mixmax.git
+        GIT_TAG main
+        GIT_SHALLOW YES
+        GIT_PROGRESS YES
+        EXCLUDE_FROM_ALL YES
+        SYSTEM YES
+)
+
 message(STATUS "DETECTED C++ COMPILER:${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 
 if ("cxx_std_23" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
@@ -91,10 +130,14 @@ if (USE_SHARED_MEMORY)
     add_definitions(-DUSE_SHARED_MEMORY)
 endif ()
 
+if (COUNT_NUMBERS)
+    add_definitions(-DCOUNT_NUMBERS)
+endif ()
+
 add_compilation_flags(FLAGS)
 
 find_package(OpenMP REQUIRED)
-set(LIBRARIES OpenMP::OpenMP_CXX)
+set(LIBRARIES OpenMP::OpenMP_CXX mixmax vectorXoshiro)
 
 include_directories(
         "${mcss_SOURCE_DIR}/software-model/include"

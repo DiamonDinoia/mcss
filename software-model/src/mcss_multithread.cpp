@@ -5,9 +5,10 @@
 
 #include "mcss_multithread.h"
 
+#include <VectorXoshiro/xoshiroPlusPlus.h>
+#include <mixmax/mixmax.h>
 #include <omp.h>
 
-#include <algorithm>
 #include <array>
 #include <random>
 
@@ -17,12 +18,23 @@ namespace Multithread {
 
 // Simulates a given number of particle histories and plots the outputs
 // on transverse and longitudinal histograms.
+template <typename T>
 Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
     const real_type theScrPar = computeScrParam(material, thePC2);
     const real_type theMFP    = computeMFP(material, theBeta2, theScrPar);
     const real_type theLimit  = theMFP * 33.5;
 
     omp_set_num_threads(numThreads);
+
+    auto getGenerator = [](const std::uint64_t seed) {
+        if constexpr (std::is_same_v<T, std::mt19937_64>) {
+            std::seed_seq              seq{seed};
+            std::vector<std::uint32_t> seeds(omp_get_thread_num()+1);
+            seq.generate(seeds.begin(), seeds.end());
+            return std::mt19937_64{seeds.back()};
+        } else
+            return T{seed, static_cast<uint64_t>(omp_get_thread_num())};
+    };
 
     // Final longitudinal and transverse histograms.
     std::vector<real_type> globalLongiDistr(longiDistNumBin, 0);
@@ -33,11 +45,12 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
 
     // Main loop to simulate a particle history.
     // Multi-threaded using OpenMP threading.
-#pragma omp parallel num_threads(numThreads)
+#pragma omp parallel num_threads(numThreads) default(none)                  \
+    shared(globalLongiDistr, globalTransDistr, numHists, theScrPar, theMFP, \
+               theLimit, getGenerator)
     {
-        unsigned int seed;
-        seed = std::random_device()();
-        std::mt19937                           gen(seed);
+        const auto                             seed = std::random_device()();
+        T                                      gen  = getGenerator(42);
         std::uniform_real_distribution<>       dis(0, 1.0);
         std::array<real_type, longiDistNumBin> threadsLongiHist{0};
         std::array<real_type, transDistNumBin> threadsTransHist{0};
@@ -109,4 +122,10 @@ Histograms Simulate(Material material, int numHists, unsigned int numThreads) {
     // Thread-specific histograms are combined and normalised
     // to form the overall distributions.
 }
+template Histograms Simulate<XoshiroPlusPlus>(Material, int, unsigned int);
+template Histograms Simulate<MIXMAX::MixMaxRng8>(Material, int, unsigned int);
+template Histograms Simulate<std::mt19937_64>(Material, int, unsigned int);
+template Histograms Simulate<CounterRNG>(Material, int, unsigned int);
+template Histograms Simulate<ChaCha8>(Material, int, unsigned int);
+
 }  // namespace Multithread
