@@ -36,14 +36,11 @@ Requirements:
 	(OPTIONAL) MaxCompiler and MaxPower 2021.1
 	(OPTIONAL) Vivado 2019.2
 	(OPTIONAL) ant
-
-(OPTIONAL) catch2 library required for testing: 
-	git submodule update --init 
 	
 (OPTIONAL) Build FPGA Bitstream
 --------------------
 	1. cd FPGA/DFE 
-	2. run ./buid.sh
+	2. ./buid.sh
 	
 Compile and Run
 ----------------
@@ -55,6 +52,7 @@ Compile and Run
 		- -DCMAKE_BUILD_TYPE=DebugOptimized -> optimised debug build with debug symbols
 		- -DTESTS=ON -> build unit tests (requires catch2)
 		- -DFPGA_BUILD=ON -> build FPGA CPU code (requires building FPGA bitstream)
+		- -DGPU=ON -> build GPU code (requires CUDA)
 	4. ./mccs [options]
 		- -t number of threads to use (-t1 for sequential version)
 		- -m material index  0 -> WATER, 1-> AIR, 2 -> BONE, 3 -> TISSUE, 4 -> GOLD
