@@ -41,7 +41,7 @@ export MAXCOMPILER=$MAXCOMPILERDIR/lib/MaxCompiler.jar
 export MAXCOMPILERJCP=$MAXCOMPILERDIR/lib/ecj.jar:$MAXCOMPILERDIR/lib/MaxCompiler.jar:$MAXCOMPILERDIR/lib/Max5Platform.jar:$MAXPOWERDIR/lib/MaxPower.jar
 export MAXAPPJCP=$APPDIR/bin
 export MAXSOURCEDIRS=$APPDIR/src
-export MAXMPPRMAILTO=mb5119@ic.ac.uk
+export MAXMPPRMAILTO=$USER@ic.ac.uk
 
 #update binaries (calls ant)
 ant
